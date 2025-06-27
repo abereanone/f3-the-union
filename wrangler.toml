@@ -1,0 +1,5 @@
+name = "f3-the-union"
+compatibility_date = "2025-06-27"
+
+[site]
+bucket = "./dist"
