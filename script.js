@@ -27,6 +27,7 @@ function populateAO(selectElement) {
     option.textContent = ao;
     selectElement.appendChild(option);
   }
+  selectElement.value = '#the_show'; // Set default to #the_show
 }
 
 populateAO(aoSelect);
