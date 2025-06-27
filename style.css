@@ -1,0 +1,47 @@
+body {
+  font-family: sans-serif;
+  margin: 2rem;
+  max-width: 600px;
+}
+
+label {
+  display: block;
+  margin-top: 1rem;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.output {
+  margin-top: 2rem;
+  white-space: pre-wrap;
+  background: #f0f0f0;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.hidden {
+  display: none;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+.radio-group {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-weight: bold;
+}

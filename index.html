@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>F3 The Union Beatdown Helper</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>F3 The Union Beatdown Helper</h1>
+<div class="radio-group">
+  <label><input type="radio" name="formType" value="preblast" checked /> Preblast</label>
+  <label><input type="radio" name="formType" value="backblast" /> Backblast</label>
+</div>
+  <form id="preblastForm">
+    <label for="title">Title:</label>
+    <input type="text" id="title" />
+
+    <label for="ao">AO:</label>
+    <select id="ao"></select>
+
+    <label for="date">Date:</label>
+    <input type="date" id="date" />
+
+    <label for="time">Time:</label>
+    <input type="text" id="time" placeholder="e.g., 0530-0615" />
+
+    <label for="who">Who:</label>
+    <input type="text" id="who" value="@channel" />
+  
+    <label for="what">What:</label>
+    <textarea id="what"></textarea>
+
+    <label for="gear">Gear:</label>
+    <input type="text" id="gear" />
+
+    <button type="button" onclick="generatePreblast()">Generate</button>
+  </form>
+
+<form id="backblastForm" class="hidden">
+  <label for="bbTitle">Title:</label>
+  <input type="text" id="bbTitle" />
+
+  <label for="bbDate">Date:</label>
+  <input type="date" id="bbDate" />
+
+  <label for="bbAo">AO:</label>
+  <select id="bbAo"></select>
+
+  <label for="bbTotal">Total Pax:</label>
+  <input type="number" id="bbTotal" min="1" />
+
+  <label for="bbConditions">Conditions:</label>
+  <textarea id="bbConditions"></textarea>
+
+  <label for="bbCop">COP:</label>
+  <textarea id="bbCop"></textarea>
+
+  <label for="bbThang">The Thang:</label>
+  <textarea id="bbThang"></textarea>
+
+  <label for="bbSix">The Six:</label>
+  <textarea id="bbSix"></textarea>
+
+  <label for="bbAnnouncements">Announcements:</label>
+  <textarea id="bbAnnouncements"></textarea>
+
+  <button type="button" onclick="generateBackblast()">Generate</button>
+</form>
+
+  <div class="output" id="output"></div>
+  <button type="button" onclick="copyOutput()">Copy to Clipboard</button>
+
+  <script src="script.js"></script>
+</body>
+<footer style="margin-top: 3rem; text-align: center; font-size: 0.9rem; color: #555;">
+  Send feedback to <strong>Floppy Disk</strong> on Slack.
+</footer>
+</html>
