@@ -57,3 +57,15 @@ button {
     align-items: flex-start;
   }
 }
+
+.warning {
+  color: red;
+  font-weight: bold;
+  margin-top: 1rem;
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+}
+
+.warning.visible {
+  opacity: 1;
+}

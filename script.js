@@ -1,24 +1,42 @@
+const dayMap = ['Su', 'M', 'Tu', 'W', 'Th', 'F', 'Sa'];
+const dayNamesFull = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+const aoDayNames = {
+  'Su': 'Sunday',
+  'M': 'Monday',
+  'Tu': 'Tuesday',
+  'W': 'Wednesday',
+  'Th': 'Thursday',
+  'F': 'Friday',
+  'Sa': 'Saturday'
+};
+
 const aoInfo = {
   '#the_breakroom': { time: '0600-0645', days: ['M', 'W'] },
   '#the_clocktower': { time: '0530-0615', days: ['Tu', 'Th'] },
   '#the_dock': { time: '0530-0615', days: ['M', 'W', 'F'] },
+  '#the_factory': { time: '0530-0615', days: ['M', 'W', 'F'] },
   '#the_farm': { time: '0530-0615', days: ['M'] },
   '#the_floor': { time: '0500-0545', days: ['F'] },
   '#the_forge': { time: '0530-0630', days: ['Tu', 'Th'] },
   '#the_fountain': { time: '0530-0615', days: ['W'] },
-  '#the_factory': { time: '0530-0615', days: ['M', 'W', 'F'] },
   '#the_plant': { time: '0630-0730', days: ['Sa'] },
   '#the_redzone': { time: '0515-0600', days: ['Tu'] },
   '#the_show': { time: '0515-0600', days: ['Th'] },
   '#the_yard': { time: '0500-0545', days: ['F'] },
 };
 
+const warningDiv = document.getElementById('warning');
 const preblastForm = document.getElementById('preblastForm');
 const backblastForm = document.getElementById('backblastForm');
 const aoSelect = document.getElementById('ao');
 const dateInput = document.getElementById('date');
 const timeInput = document.getElementById('time');
 const outputDiv = document.getElementById('output');
+
+function resetWarningDiv() {
+  warningDiv.textContent = '';
+  warningDiv.classList.remove('visible');
+}
 
 function populateAO(selectElement) {
   for (const ao in aoInfo) {
@@ -59,6 +77,7 @@ formRadios.forEach(radio => {
     preblastForm.classList.toggle('hidden', !isPre);
     backblastForm.classList.toggle('hidden', isPre);
     outputDiv.textContent = '';
+	resetWarningDiv();
   });
 });
 
@@ -72,6 +91,8 @@ function generatePreblast() {
   const who = document.getElementById('who').value;
   const what = document.getElementById('what').value;
   const gear = document.getElementById('gear').value;
+  
+  checkAoDayMatch(ao, rawDate.toISOString().split('T')[0]);
 
   const message = `Pre-Blast: ${date}
 Where: ${ao}
@@ -96,6 +117,8 @@ function generateBackblast() {
   const thang = document.getElementById('bbThang').value;
   const six = document.getElementById('bbSix').value;
   const announcements = document.getElementById('bbAnnouncements').value;
+  
+  checkAoDayMatch(ao, rawDate.toISOString().split('T')[0]);
 
   const message = `Backblast: ${title}
 Date: ${date}
@@ -126,3 +149,21 @@ function copyOutput() {
     () => alert('Failed to copy.')
   );
 }
+
+function checkAoDayMatch(selectedAo, selectedDateStr) {
+  resetWarningDiv();
+
+  const aoDays = aoInfo[selectedAo]?.days || [];
+  const selectedDate = new Date(selectedDateStr);
+  const selectedDay = dayMap[selectedDate.getDay()];
+
+  const selectedDayCode = dayMap[selectedDate.getDay()];
+  const selectedDayFull = dayNamesFull[selectedDate.getDay()];
+
+if (!aoDays.includes(selectedDayCode)) {
+  const aoDayFullNames = aoDays.map(code => aoDayNames[code]).join(', ');
+  warningDiv.textContent = `⚠️ ${selectedAo} usually meets on ${aoDayFullNames}, but you selected ${selectedDayFull}.`;
+  setTimeout(() => warningDiv.classList.add('visible'), 50);
+}
+}
+

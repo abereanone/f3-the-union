@@ -9,8 +9,8 @@
 <body>
   <h1>F3 The Union Beatdown Helper</h1>
 <div class="radio-group">
-  <label><input type="radio" name="formType" value="preblast" checked /> Preblast</label>
-  <label><input type="radio" name="formType" value="backblast" /> Backblast</label>
+  <label><input type="radio" name="formType" value="preblast" checked />Preblast</label>
+  <label><input type="radio" name="formType" value="backblast" />Backblast</label>
 </div>
   <form id="preblastForm">
     <label for="title">Title:</label>
@@ -67,6 +67,10 @@
 
   <button type="button" onclick="generateBackblast()">Generate</button>
 </form>
+
+  <div id="warning" class="warning"></div>
+
+  <div class="output" id="output"></div>
 
   <div class="output" id="output"></div>
   <button type="button" onclick="copyOutput()">Copy to Clipboard</button>
