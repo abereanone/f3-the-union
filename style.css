@@ -34,15 +34,18 @@ button {
 
 .radio-group {
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  gap: 1rem;
+  align-items: center;
+  justify-content: flex-start;
   margin-top: 1rem;
+  flex-wrap: wrap;
 }
 
 .radio-group label {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 0.25rem;
   font-weight: bold;
-  font-size: 1rem;
+  margin: 0;
+  padding: 0;
 }
