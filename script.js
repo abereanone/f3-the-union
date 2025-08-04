@@ -2,168 +2,181 @@ const dayMap = ['Su', 'M', 'Tu', 'W', 'Th', 'F', 'Sa'];
 const dayNamesFull = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 const aoDayNames = {
   'Su': 'Sunday',
-  'M': 'Monday',
+  'M':  'Monday',
   'Tu': 'Tuesday',
-  'W': 'Wednesday',
+  'W':  'Wednesday',
   'Th': 'Thursday',
-  'F': 'Friday',
+  'F':  'Friday',
   'Sa': 'Saturday'
 };
 
 const aoInfo = {
   '#the_breakroom': { time: '0600-0645', days: ['M', 'W'] },
   '#the_clocktower': { time: '0530-0615', days: ['Tu', 'Th'] },
-  '#the_dock': { time: '0530-0615', days: ['M', 'W', 'F'] },
-  '#the_factory': { time: '0530-0615', days: ['M', 'W', 'F'] },
-  '#the_farm': { time: '0530-0615', days: ['M'] },
-  '#the_floor': { time: '0500-0545', days: ['F'] },
-  '#the_forge': { time: '0530-0630', days: ['Tu', 'Th'] },
-  '#the_fountain': { time: '0530-0615', days: ['W'] },
-  '#the_plant': { time: '0630-0730', days: ['Sa'] },
-  '#the_redzone': { time: '0515-0600', days: ['Tu'] },
-  '#the_show': { time: '0515-0600', days: ['Th'] },
-  '#the_yard': { time: '0500-0545', days: ['F'] },
+  '#the_dock':       { time: '0530-0615', days: ['M', 'W'] },
+  '#the_factory':    { time: '0530-0615', days: ['M', 'W', 'F'] },
+  '#the_farm':       { time: '0530-0615', days: ['M'] },
+  '#the_floor':      { time: '0500-0545', days: ['F'] },
+  '#the_forge':      { time: '0530-0615', days: ['F'] },
+  '#the_fountain':   { time: '0530-0615', days: ['W'] },
+  '#the_plant':      { time: '0630-0730', days: ['Sa'] },
+  '#the_redzone':    { time: '0515-0600', days: ['Tu'] },
+  '#the_show':       { time: '0515-0600', days: ['Tu', 'Th'] },
+  '#the_yard':       { time: '0500-0545', days: ['F'] }
 };
 
-const warningDiv = document.getElementById('warning');
-const preblastForm = document.getElementById('preblastForm');
+// DOM elements
+const warningDiv    = document.getElementById('warning');
+const preblastForm  = document.getElementById('preblastForm');
 const backblastForm = document.getElementById('backblastForm');
-const aoSelect = document.getElementById('ao');
-const dateInput = document.getElementById('date');
-const timeInput = document.getElementById('time');
-const outputDiv = document.getElementById('output');
+const aoSelect      = document.getElementById('ao');
+const bbAoSelect    = document.getElementById('bbAo');
+const dateInput     = document.getElementById('date');
+const bbDateInput   = document.getElementById('bbDate');
+const timeInput     = document.getElementById('time');
+const outputDiv     = document.getElementById('output');
 
+// Clear warnings
 function resetWarningDiv() {
   warningDiv.textContent = '';
   warningDiv.classList.remove('visible');
 }
 
+// Populate AO dropdowns
 function populateAO(selectElement) {
   for (const ao in aoInfo) {
-    const option = document.createElement('option');
-    option.value = ao;
-    option.textContent = ao;
-    selectElement.appendChild(option);
+    const opt = document.createElement('option');
+    opt.value = ao;
+    opt.textContent = ao;
+    selectElement.appendChild(opt);
   }
-  selectElement.value = '#the_show'; // Set default to #the_show
+  selectElement.value = '#the_show';
+}
+populateAO(aoSelect);
+populateAO(bbAoSelect);
+
+// Helpers to find next/previous meeting dates
+function getNextMeetingDate(aoKey, fromDate) {
+  const aoDays       = aoInfo[aoKey]?.days || [];
+  const aoDayIndices = aoDays.map(code => dayMap.indexOf(code));
+  const d = new Date(fromDate);
+  d.setDate(d.getDate() + 1);
+  for (let i = 0; i < 7; i++) {
+    if (aoDayIndices.includes(d.getDay())) return new Date(d);
+    d.setDate(d.getDate() + 1);
+  }
+  return d;
 }
 
-populateAO(aoSelect);
-populateAO(document.getElementById('bbAo'));
+function getPreviousMeetingDate(aoKey, fromDate) {
+  const aoDays       = aoInfo[aoKey]?.days || [];
+  const aoDayIndices = aoDays.map(code => dayMap.indexOf(code));
+  const d = new Date(fromDate);
+  for (let i = 0; i < 7; i++) {
+    if (aoDayIndices.includes(d.getDay())) return new Date(d);
+    d.setDate(d.getDate() - 1);
+  }
+  return d;
+}
 
-// Set default date to tomorrow
+// Initialize default dates and time
 const today = new Date();
-const bbDateInput = document.getElementById('bbDate');
-bbDateInput.value = today.toISOString().split('T')[0];
+dateInput.value  = getNextMeetingDate(aoSelect.value, today)
+  .toISOString().split('T')[0];
+bbDateInput.value = getPreviousMeetingDate(bbAoSelect.value, today)
+  .toISOString().split('T')[0];
+timeInput.value  = aoInfo[aoSelect.value].time;
 
-const tomorrow = new Date(today);
-tomorrow.setDate(tomorrow.getDate() + 1);
-dateInput.value = tomorrow.toISOString().split('T')[0];
-
-// Set initial default time
-timeInput.value = aoInfo[aoSelect.value].time;
-
-// Change time on AO change
+// AO change handlers
 aoSelect.addEventListener('change', () => {
   timeInput.value = aoInfo[aoSelect.value].time;
+  dateInput.value = getNextMeetingDate(aoSelect.value, new Date())
+    .toISOString().split('T')[0];
+  resetWarningDiv();
 });
 
-// Listen for radio button changes
+bbAoSelect.addEventListener('change', () => {
+  bbDateInput.value = getPreviousMeetingDate(bbAoSelect.value, new Date())
+    .toISOString().split('T')[0];
+  resetWarningDiv();
+});
+
+// Form toggle
 const formRadios = document.querySelectorAll('input[name="formType"]');
-formRadios.forEach(radio => {
-  radio.addEventListener('change', () => {
-    const selected = document.querySelector('input[name="formType"]:checked').value;
-    const isPre = selected === 'preblast';
-    preblastForm.classList.toggle('hidden', !isPre);
-    backblastForm.classList.toggle('hidden', isPre);
-    outputDiv.textContent = '';
-	resetWarningDiv();
-  });
-});
+formRadios.forEach(radio => radio.addEventListener('change', () => {
+  const isPre = document.querySelector('input[name="formType"]:checked').value === 'preblast';
+  preblastForm.classList.toggle('hidden', !isPre);
+  backblastForm.classList.toggle('hidden', isPre);
+  outputDiv.textContent = '';
+  resetWarningDiv();
+}));
 
-// Generate output for Preblast
+// Generate Preblast
 function generatePreblast() {
-  const title = document.getElementById('title').value;
-  const ao = document.getElementById('ao').value;
-  const rawDate = new Date(document.getElementById('date').value);
-  const date = `${String(rawDate.getMonth() + 1).padStart(2, '0')}/${String(rawDate.getDate()).padStart(2, '0')}/${String(rawDate.getFullYear()).slice(-2)}`;
-  const time = document.getElementById('time').value;
-  const who = document.getElementById('who').value;
+  resetWarningDiv();
+  outputDiv.textContent = '';
+
+  const title   = document.getElementById('title').value;
+  const ao      = aoSelect.value;
+  const isoDate = dateInput.value;             // "YYYY-MM-DD"
+  const [yyyy, mm, dd] = isoDate.split('-');
+  const display = `${mm}/${dd}/${yyyy.slice(-2)}`; // "MM/DD/YY"
+
+  checkAoDayMatch(ao, isoDate);
+
+  const time = timeInput.value;
+  const who  = document.getElementById('who').value;
   const what = document.getElementById('what').value;
   const gear = document.getElementById('gear').value;
-  
-  checkAoDayMatch(ao, rawDate.toISOString().split('T')[0]);
 
-  const message = `Pre-Blast: ${date}
-Where: ${ao}
-When: ${time}
-Who: ${who}
-What: ${title}
-Gear: ${gear}
-${what}
-Hit that HC!`;
-
-  outputDiv.textContent = message;
+  const msg = `Pre-Blast: ${display}\nWhere: ${ao}\nWhen: ${time}\nWho: ${who}\nWhat: ${title}\nGear: ${gear}\n${what}\nHit that HC!`;
+  outputDiv.textContent = msg;
 }
 
+// Generate Backblast
 function generateBackblast() {
-  const title = document.getElementById('bbTitle').value;
-  const rawDate = new Date(document.getElementById('bbDate').value);
-  const date = `${String(rawDate.getMonth() + 1).padStart(2, '0')}/${String(rawDate.getDate()).padStart(2, '0')}/${String(rawDate.getFullYear()).slice(-2)}`;
-  const ao = document.getElementById('bbAo').value;
-  const total = document.getElementById('bbTotal').value;
-  const conditions = document.getElementById('bbConditions').value;
-  const cop = document.getElementById('bbCop').value;
-  const thang = document.getElementById('bbThang').value;
-  const six = document.getElementById('bbSix').value;
+  resetWarningDiv();
+  outputDiv.textContent = '';
+
+  const title   = document.getElementById('bbTitle').value;
+  const ao      = bbAoSelect.value;
+  const isoDate = bbDateInput.value;
+  const [yyyy, mm, dd] = isoDate.split('-');
+  const display = `${mm}/${dd}/${yyyy.slice(-2)}`;
+
+  checkAoDayMatch(ao, isoDate);
+
+  const total         = document.getElementById('bbTotal').value;
+  const conditions    = document.getElementById('bbConditions').value;
+  const cop           = document.getElementById('bbCop').value;
+  const thang         = document.getElementById('bbThang').value;
+  const six           = document.getElementById('bbSix').value;
   const announcements = document.getElementById('bbAnnouncements').value;
-  
-  checkAoDayMatch(ao, rawDate.toISOString().split('T')[0]);
 
-  const message = `Backblast: ${title}
-Date: ${date}
-AO: ${ao}
-Q: 
-PAX: 
-FNG: 
-Total Pax: ${total}
-Fartsack: 
-Conditions: ${conditions}
+  const msg = `Backblast: ${title}\nDate: ${display}\nAO: ${ao}\nQ: \nPAX: \nCount: ${total}\nFNG: \nFartsack: \nConditions: ${conditions}\n\nCOP: ${cop}\n\nThe Thang: ${thang}\n\nThe Six: ${six}\n\nAnnouncements: ${announcements}`;
 
-COP: ${cop}
-
-The Thang: ${thang}
-
-The Six: ${six}
-
-Announcements: ${announcements}`;
-
-  outputDiv.textContent = message;
+  outputDiv.textContent = msg;
 }
 
-// Copy output
+// Copy to clipboard
 function copyOutput() {
-  const text = outputDiv.textContent;
-  navigator.clipboard.writeText(text).then(
-    () => alert('Copied to clipboard!'),
-    () => alert('Failed to copy.')
-  );
+  navigator.clipboard.writeText(outputDiv.textContent)
+    .then(() => alert('Copied to clipboard!'))
+    .catch(() => alert('Failed to copy.'));
 }
 
+// Day-of-week check
 function checkAoDayMatch(selectedAo, selectedDateStr) {
   resetWarningDiv();
-
   const aoDays = aoInfo[selectedAo]?.days || [];
-  const selectedDate = new Date(selectedDateStr);
-  const selectedDay = dayMap[selectedDate.getDay()];
-
-  const selectedDayCode = dayMap[selectedDate.getDay()];
-  const selectedDayFull = dayNamesFull[selectedDate.getDay()];
-
-if (!aoDays.includes(selectedDayCode)) {
-  const aoDayFullNames = aoDays.map(code => aoDayNames[code]).join(', ');
-  warningDiv.textContent = `⚠️ ${selectedAo} usually meets on ${aoDayFullNames}, but you selected ${selectedDayFull}.`;
-  setTimeout(() => warningDiv.classList.add('visible'), 50);
+  const [yyyy, mm, dd] = selectedDateStr.split('-').map(Number);
+  const d = new Date(yyyy, mm - 1, dd);
+  const dow = d.getDay();
+  const code = dayMap[dow];
+  const full = dayNamesFull[dow];
+  if (!aoDays.includes(code)) {
+    const names = aoDays.map(c => aoDayNames[c]).join(', ');
+    warningDiv.textContent = `⚠️ ${selectedAo} usually meets on ${names}, but you selected ${full}.`;
+    setTimeout(() => warningDiv.classList.add('visible'), 50);
+  }
 }
-}
-
