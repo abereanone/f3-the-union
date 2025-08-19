@@ -153,7 +153,7 @@ function generateBackblast() {
   const six           = document.getElementById('bbSix').value;
   const announcements = document.getElementById('bbAnnouncements').value;
 
-  const msg = `Backblast: ${title}\nDate: ${display}\nAO: ${ao}\nQ: \nPAX: \nCount: ${total}\nFNG: \nFartsack: \nConditions: ${conditions}\n\nCOP: ${cop}\n\nThe Thang: ${thang}\n\nThe Six: ${six}\n\nAnnouncements: ${announcements}`;
+  const msg = `Backblast: ${title}\nDate: ${display}\nAO: ${ao}\nQ: \nPAX: \nCount: ${total}\nFNGs: \nFartsack: \nConditions: ${conditions}\n\nCOP: ${cop}\n\nThe Thang: ${thang}\n\nThe Six: ${six}\n\nAnnouncements: ${announcements}`;
 
   outputDiv.textContent = msg;
 }
