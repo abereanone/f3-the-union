@@ -147,13 +147,14 @@ function generateBackblast() {
   checkAoDayMatch(ao, isoDate);
 
   const total         = document.getElementById('bbTotal').value;
+  const fngTotal      = document.getElementById('bbFngTotal').value;
   const conditions    = document.getElementById('bbConditions').value;
   const cop           = document.getElementById('bbCop').value;
   const thang         = document.getElementById('bbThang').value;
   const six           = document.getElementById('bbSix').value;
   const announcements = document.getElementById('bbAnnouncements').value;
 
-  const msg = `Backblast: ${title}\nDate: ${display}\nAO: ${ao}\nQ: \nPAX: \nCount: ${total}\nFNGs: \nFartsack: \nConditions: ${conditions}\n\nCOP: ${cop}\n\nThe Thang: ${thang}\n\nThe Six: ${six}\n\nAnnouncements: ${announcements}`;
+  const msg = `Backblast: ${title}\nDate: ${display}\nAO: ${ao}\nQ: \nPAX: \nCount: ${total}\nFNGs: ${fngTotal}\nFartsack: \nConditions: ${conditions}\n\nCOP: ${cop}\n\nThe Thang: ${thang}\n\nThe Six: ${six}\n\nAnnouncements: ${announcements}`;
 
   outputDiv.textContent = msg;
 }
