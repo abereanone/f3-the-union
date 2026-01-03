@@ -93,12 +93,14 @@ aoSelect.addEventListener('change', () => {
   dateInput.value = getNextMeetingDate(aoSelect.value, new Date())
     .toISOString().split('T')[0];
   resetWarningDiv();
+  generatePreblast();
 });
 
 bbAoSelect.addEventListener('change', () => {
   bbDateInput.value = getPreviousMeetingDate(bbAoSelect.value, new Date())
     .toISOString().split('T')[0];
   resetWarningDiv();
+  generateBackblast();
 });
 
 // Form toggle
@@ -109,6 +111,7 @@ formRadios.forEach(radio => radio.addEventListener('change', () => {
   backblastForm.classList.toggle('hidden', isPre);
   outputDiv.textContent = '';
   resetWarningDiv();
+  updateOutput();
 }));
 
 // Generate Preblast
@@ -158,6 +161,29 @@ function generateBackblast() {
 
   outputDiv.textContent = msg;
 }
+
+
+// Auto-generate output
+function attachAutoGenerate(formElement, generateFn) {
+  const fields = formElement.querySelectorAll('input, select, textarea');
+  fields.forEach((field) => {
+    field.addEventListener('input', generateFn);
+    field.addEventListener('change', generateFn);
+  });
+}
+
+function updateOutput() {
+  const isPre = document.querySelector('input[name="formType"]:checked').value === 'preblast';
+  if (isPre) {
+    generatePreblast();
+  } else {
+    generateBackblast();
+  }
+}
+
+attachAutoGenerate(preblastForm, generatePreblast);
+attachAutoGenerate(backblastForm, generateBackblast);
+updateOutput();
 
 // Copy to clipboard
 function copyOutput() {

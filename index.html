@@ -5,12 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>F3 The Union Beatdown Helper</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .top-nav {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      background: #fff;
+    }
+
+    .top-nav a {
+      color: #1f3b6d;
+      text-decoration: none;
+    }
+
+    .top-nav a:hover,
+    .top-nav a:focus {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
+  <nav class="top-nav">
+    <a href="index.html">Pre/BackBlast</a>
+    <a href="kog/">KoG</a>
+    <a href="miles/">Miles</a>
+  </nav>
   <h1>F3 The Union Beatdown Helper</h1>
-  <p><a href="kog.html">KOG form</a></p>
-  <p><a href="miles/">Miles</a></p>
-<div class="radio-group">
+  <div class="radio-group">
   <label><input type="radio" name="formType" value="preblast" checked />Preblast</label>
   <label><input type="radio" name="formType" value="backblast" />Backblast</label>
 </div>
@@ -34,7 +57,7 @@
     <input type="text" id="time" placeholder="e.g., 0530-0615" />
 
     <label for="who">Who:</label>
-    <input type="text" id="who" value="@channel" />
+    <input type="text" id="who" />
   
     <label for="what">What:</label>
     <textarea id="what"></textarea>
@@ -43,8 +66,7 @@
     <input type="text" id="gear" />
 
   <div class="button-row">
-    <button type="button" onclick="generatePreblast()">Generate</button>
-    <button type="button" onclick="copyOutput()">Copy to Clipboard</button>
+        <button type="button" onclick="copyOutput()">Copy to Clipboard</button>
   </div>
 </form>
 
@@ -90,8 +112,7 @@
   <textarea id="bbAnnouncements"></textarea>
 
   <div class="button-row">
-    <button type="button" onclick="generateBackblast()">Generate</button>
-    <button type="button" onclick="copyOutput()">Copy to Clipboard</button>
+        <button type="button" onclick="copyOutput()">Copy to Clipboard</button>
   </div>
 </form>
 
@@ -103,5 +124,6 @@
   Send feedback to <strong>Floppy Disk</strong> on Slack.
 </footer>
 </html>
+
 
 
