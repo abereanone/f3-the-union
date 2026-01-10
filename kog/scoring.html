@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Kings of the Gloom - 2026</title>
+  <title>KOG Score - Kings of the Gloom - 2026</title>
+  <link rel="icon" href="crown.svg" type="image/svg+xml" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     body {
@@ -20,6 +21,22 @@
     summary {
       cursor: pointer;
       font-weight: 600;
+    }
+    .top-nav {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      background: #fff;
+    }
+    .top-nav a {
+      color: #1f3b6d;
+      text-decoration: none;
+    }
+    .top-nav a:hover,
+    .top-nav a:focus {
+      text-decoration: underline;
     }
     .team {
       border: 1px solid #ccc;
@@ -52,7 +69,8 @@
 </head>
 <body>
 
-<h1>Kings of the Gloom - 2026</h1>
+<div id="top-nav"></div>
+<h1>KOG Score</h1>
 
 <div id="app">Loading…</div>
 
@@ -198,6 +216,7 @@ function groupBy(arr, keyFn) {
   });
 })();
 </script>
+<script src="/shared/top-nav.js"></script>
 
 </body>
 </html>
