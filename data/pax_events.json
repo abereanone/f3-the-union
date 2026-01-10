@@ -1031,8 +1031,8 @@
     "Pax": "Quaker",
     "Team": "Farm",
     "AO": "PreWork",
-    "Counted": true,
-    "Reason": ""
+    "Counted": false,
+    "Reason": "Duplicate same-day"
   },
   {
     "Date": "2026-01-05T05:00:00.000Z",
@@ -1040,8 +1040,8 @@
     "Pax": "Iceberg",
     "Team": "Farm",
     "AO": "PreWork",
-    "Counted": true,
-    "Reason": ""
+    "Counted": false,
+    "Reason": "Duplicate same-day"
   },
   {
     "Date": "2026-01-05T05:00:00.000Z",
@@ -1049,8 +1049,8 @@
     "Pax": "Popup",
     "Team": "Farm",
     "AO": "PreWork",
-    "Counted": true,
-    "Reason": ""
+    "Counted": false,
+    "Reason": "Duplicate same-day"
   },
   {
     "Date": "2026-01-05T05:00:00.000Z",
@@ -1121,8 +1121,8 @@
     "Pax": "Midriff",
     "Team": "Extras",
     "AO": "PreWork",
-    "Counted": true,
-    "Reason": ""
+    "Counted": false,
+    "Reason": "Duplicate same-day"
   },
   {
     "Date": "2026-01-05T05:00:00.000Z",
@@ -1130,8 +1130,8 @@
     "Pax": "Goosebumps",
     "Team": "Extras",
     "AO": "PreWork",
-    "Counted": true,
-    "Reason": ""
+    "Counted": false,
+    "Reason": "Duplicate same-day"
   },
   {
     "Date": "2026-01-05T05:00:00.000Z",
@@ -1139,8 +1139,8 @@
     "Pax": "Vagabond",
     "Team": "Extras",
     "AO": "PreWork",
-    "Counted": true,
-    "Reason": ""
+    "Counted": false,
+    "Reason": "Duplicate same-day"
   },
   {
     "Date": "2026-01-05T05:00:00.000Z",
@@ -1148,8 +1148,8 @@
     "Pax": "Uniball",
     "Team": "Extras",
     "AO": "PreWork",
-    "Counted": true,
-    "Reason": ""
+    "Counted": false,
+    "Reason": "Duplicate same-day"
   },
   {
     "Date": "2026-01-06T05:00:00.000Z",
@@ -1157,8 +1157,8 @@
     "Pax": "Iceberg",
     "Team": "Farm",
     "AO": "PreWork",
-    "Counted": false,
-    "Reason": "Extras cap (2)"
+    "Counted": true,
+    "Reason": ""
   },
   {
     "Date": "2026-01-06T05:00:00.000Z",
@@ -1211,8 +1211,8 @@
     "Pax": "Goosebumps",
     "Team": "Extras",
     "AO": "PreWork",
-    "Counted": false,
-    "Reason": "Extras cap (2)"
+    "Counted": true,
+    "Reason": ""
   },
   {
     "Date": "2026-01-06T05:00:00.000Z",
@@ -1220,8 +1220,8 @@
     "Pax": "Vagabond",
     "Team": "Extras",
     "AO": "PreWork",
-    "Counted": false,
-    "Reason": "Extras cap (2)"
+    "Counted": true,
+    "Reason": ""
   },
   {
     "Date": "2026-01-06T05:00:00.000Z",
@@ -1283,8 +1283,8 @@
     "Pax": "Uniball",
     "Team": "Extras",
     "AO": "PreWork",
-    "Counted": false,
-    "Reason": "Extras cap (2)"
+    "Counted": true,
+    "Reason": ""
   },
   {
     "Date": "2026-01-07T05:00:00.000Z",
@@ -1382,8 +1382,8 @@
     "Pax": "Quaker",
     "Team": "Farm",
     "AO": "PreWork",
-    "Counted": false,
-    "Reason": "Extras cap (2)"
+    "Counted": true,
+    "Reason": ""
   },
   {
     "Date": "2026-01-07T05:00:00.000Z",
@@ -1581,7 +1581,7 @@
     "Team": "Factory",
     "AO": "PreWork",
     "Counted": false,
-    "Reason": "Extras cap (2)"
+    "Reason": "Duplicate same-day"
   },
   {
     "Date": "2026-01-08T05:00:00.000Z",
@@ -1634,8 +1634,8 @@
     "Pax": "Midriff",
     "Team": "Extras",
     "AO": "PreWork",
-    "Counted": false,
-    "Reason": "Extras cap (2)"
+    "Counted": true,
+    "Reason": ""
   },
   {
     "Date": "2026-01-10T05:00:00.000Z",
