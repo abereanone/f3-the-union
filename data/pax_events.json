@@ -605,6 +605,15 @@
   {
     "Date": "2026-01-06T05:00:00.000Z",
     "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Kinevil",
+    "Team": "Farm",
+    "AO": "the_factory",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-06T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
     "Pax": "Midriff",
     "Team": "Extras",
     "AO": "the_factory",
