@@ -6,7 +6,7 @@
     "Team": "Clocktower",
     "AO": "the_yard",
     "Counted": false,
-    "Reason": "Beatdown cap (3)"
+    "Reason": "Beatdowns capped at 3"
   },
   {
     "Date": "2026-01-09T05:00:00.000Z",
@@ -15,7 +15,7 @@
     "Team": "Richwood",
     "AO": "the_yard",
     "Counted": false,
-    "Reason": "Beatdown cap (3)"
+    "Reason": "Beatdowns capped at 3"
   },
   {
     "Date": "2026-01-09T05:00:00.000Z",
@@ -24,7 +24,7 @@
     "Team": "Extras",
     "AO": "the_yard",
     "Counted": false,
-    "Reason": "Beatdown cap (3)"
+    "Reason": "Beatdowns capped at 3"
   },
   {
     "Date": "2026-01-09T05:00:00.000Z",
@@ -33,7 +33,7 @@
     "Team": "Farm",
     "AO": "the_yard",
     "Counted": false,
-    "Reason": "Beatdown cap (3)"
+    "Reason": "Beatdowns capped at 3"
   },
   {
     "Date": "2026-01-09T05:00:00.000Z",
@@ -42,7 +42,7 @@
     "Team": "Redzone",
     "AO": "the_yard",
     "Counted": false,
-    "Reason": "Beatdown cap (3)"
+    "Reason": "Beatdowns capped at 3"
   },
   {
     "Date": "2026-01-09T05:00:00.000Z",
@@ -51,7 +51,7 @@
     "Team": "Clocktower",
     "AO": "the_yard",
     "Counted": false,
-    "Reason": "Beatdown cap (3)"
+    "Reason": "Beatdowns capped at 3"
   },
   {
     "Date": "2026-01-09T05:00:00.000Z",
@@ -114,7 +114,7 @@
     "Team": "Clocktower",
     "AO": "the_factory",
     "Counted": false,
-    "Reason": "Beatdown cap (3)"
+    "Reason": "Beatdowns capped at 3"
   },
   {
     "Date": "2026-01-08T05:00:00.000Z",
@@ -132,7 +132,7 @@
     "Team": "Factory",
     "AO": "the_factory",
     "Counted": false,
-    "Reason": "Beatdown cap (3)"
+    "Reason": "Beatdowns capped at 3"
   },
   {
     "Date": "2026-01-08T05:00:00.000Z",
@@ -168,7 +168,7 @@
     "Team": "Farm",
     "AO": "the_redzone",
     "Counted": false,
-    "Reason": "Beatdown cap (3)"
+    "Reason": "Beatdowns capped at 3"
   },
   {
     "Date": "2026-01-08T05:00:00.000Z",
@@ -177,7 +177,7 @@
     "Team": "Redzone",
     "AO": "the_redzone",
     "Counted": false,
-    "Reason": "Beatdown cap (3)"
+    "Reason": "Beatdowns capped at 3"
   },
   {
     "Date": "2026-01-08T05:00:00.000Z",
@@ -186,7 +186,7 @@
     "Team": "Redzone",
     "AO": "the_redzone",
     "Counted": false,
-    "Reason": "Beatdown cap (3)"
+    "Reason": "Beatdowns capped at 3"
   },
   {
     "Date": "2026-01-08T05:00:00.000Z",
@@ -204,7 +204,7 @@
     "Team": "Farm",
     "AO": "the_redzone",
     "Counted": false,
-    "Reason": "Beatdown cap (3)"
+    "Reason": "Beatdowns capped at 3"
   },
   {
     "Date": "2026-01-08T05:00:00.000Z",
@@ -1311,7 +1311,7 @@
     "Team": "Richwood",
     "AO": "PreWork",
     "Counted": false,
-    "Reason": "Extras cap (2)"
+    "Reason": "Extra Credit Capped at 2"
   },
   {
     "Date": "2026-01-07T05:00:00.000Z",
@@ -1392,7 +1392,7 @@
     "Team": "Farm",
     "AO": "PreWork",
     "Counted": false,
-    "Reason": "Extras cap (2)"
+    "Reason": "Extra Credit Capped at 2"
   },
   {
     "Date": "2026-01-07T05:00:00.000Z",
@@ -1464,7 +1464,7 @@
     "Team": "Redzone",
     "AO": "PreWork",
     "Counted": false,
-    "Reason": "Extras cap (2)"
+    "Reason": "Extra Credit Capped at 2"
   },
   {
     "Date": "2026-01-07T05:00:00.000Z",
@@ -1482,7 +1482,7 @@
     "Team": "Clocktower",
     "AO": "PreWork",
     "Counted": false,
-    "Reason": "Extras cap (2)"
+    "Reason": "Extra Credit Capped at 2"
   },
   {
     "Date": "2026-01-08T05:00:00.000Z",
@@ -1491,7 +1491,7 @@
     "Team": "Clocktower",
     "AO": "PreWork",
     "Counted": false,
-    "Reason": "Extras cap (2)"
+    "Reason": "Extra Credit Capped at 2"
   },
   {
     "Date": "2026-01-08T05:00:00.000Z",
@@ -1500,7 +1500,7 @@
     "Team": "Clocktower",
     "AO": "PreWork",
     "Counted": false,
-    "Reason": "Extras cap (2)"
+    "Reason": "Extra Credit Capped at 2"
   },
   {
     "Date": "2026-01-08T05:00:00.000Z",
@@ -1509,7 +1509,7 @@
     "Team": "Clocktower",
     "AO": "PreWork",
     "Counted": false,
-    "Reason": "Extras cap (2)"
+    "Reason": "Extra Credit Capped at 2"
   },
   {
     "Date": "2026-01-08T05:00:00.000Z",
@@ -1518,7 +1518,7 @@
     "Team": "Clocktower",
     "AO": "PreWork",
     "Counted": false,
-    "Reason": "Extras cap (2)"
+    "Reason": "Extra Credit Capped at 2"
   },
   {
     "Date": "2026-01-08T05:00:00.000Z",
@@ -1527,7 +1527,7 @@
     "Team": "Redzone",
     "AO": "PreWork",
     "Counted": false,
-    "Reason": "Extras cap (2)"
+    "Reason": "Extra Credit Capped at 2"
   },
   {
     "Date": "2026-01-08T05:00:00.000Z",
@@ -1554,7 +1554,7 @@
     "Team": "Extras",
     "AO": "PreWork",
     "Counted": false,
-    "Reason": "Extras cap (2)"
+    "Reason": "Extra Credit Capped at 2"
   },
   {
     "Date": "2026-01-08T05:00:00.000Z",
@@ -1590,7 +1590,7 @@
     "Team": "Extras",
     "AO": "PreWork",
     "Counted": false,
-    "Reason": "Extras cap (2)"
+    "Reason": "Extra Credit Capped at 2"
   },
   {
     "Date": "2026-01-09T05:00:00.000Z",
@@ -1599,7 +1599,7 @@
     "Team": "Richwood",
     "AO": "BlackOps",
     "Counted": false,
-    "Reason": "Extras cap (2)"
+    "Reason": "Extra Credit Capped at 2"
   },
   {
     "Date": "2026-01-09T05:00:00.000Z",
@@ -1617,7 +1617,7 @@
     "Team": "Fountain",
     "AO": "BlackOps",
     "Counted": false,
-    "Reason": "Extras cap (2)"
+    "Reason": "Extra Credit Capped at 2"
   },
   {
     "Date": "2026-01-09T05:00:00.000Z",
@@ -1644,6 +1644,6 @@
     "Team": "Farm",
     "AO": "PreWork",
     "Counted": false,
-    "Reason": "Extras cap (2)"
+    "Reason": "Extra Credit Capped at 2"
   }
 ]
