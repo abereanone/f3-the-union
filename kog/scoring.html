@@ -15,6 +15,11 @@
     h1 {
       margin-bottom: 1rem;
     }
+    .meta {
+      color: #555;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
     details {
       margin: 0.25rem 0;
     }
@@ -71,6 +76,7 @@
 
 <div id="top-nav"></div>
 <h1>KOG Score</h1>
+<div id="generated-at" class="meta"></div>
 
 <div id="app">Loading…</div>
 
@@ -83,6 +89,15 @@ async function loadJSON(path) {
 function normalizeDateString(dateStr) {
   if (!dateStr) return '';
   return dateStr.split('T')[0].split(' ')[0];
+}
+
+function formatGeneratedAt(value) {
+  if (!value) return '';
+  const [datePart, timePartRaw] = value.split('T');
+  if (!timePartRaw) return datePart;
+  const timePart = timePartRaw.split(/[+-]/)[0];
+  const hm = timePart.split(':').slice(0, 2).join(':');
+  return `${datePart} ${hm}`;
 }
 
 function parseYmd(dateStr) {
@@ -131,13 +146,20 @@ function groupBy(arr, keyFn) {
     teamCumulative,
     teamWeekly,
     paxWeekly,
+    meta,
     paxEvents
   ] = await Promise.all([
     loadJSON('/data/team_cumulative.json'),
     loadJSON('/data/team_weekly.json'),
     loadJSON('/data/pax_weekly.json'),
+    loadJSON('/data/meta.json'),
     loadJSON('/data/pax_events.json')
   ]);
+
+  const generatedAt = document.getElementById('generated-at');
+  if (generatedAt) {
+    generatedAt.textContent = `Data generated: ${formatGeneratedAt(meta?.generatedAt)}`;
+  }
 
   // sort teams by cumulative DESC
   teamCumulative.sort((a,b) => b.AvgScore - a.AvgScore);
