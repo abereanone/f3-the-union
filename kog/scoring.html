@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>KoG Scoring</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+    h1 {
+      margin-bottom: 1rem;
+    }
+    details {
+      margin: 0.25rem 0;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .team {
+      border: 1px solid #ccc;
+      padding: 0.5rem;
+      margin-bottom: 0.5rem;
+      border-radius: 4px;
+    }
+    .week {
+      margin-left: 1rem;
+    }
+    .pax {
+      margin-left: 2rem;
+    }
+    .events {
+      margin-left: 3rem;
+      font-size: 0.9rem;
+    }
+    .excluded {
+      color: #999;
+      text-decoration: line-through;
+    }
+    .score {
+      float: right;
+      font-weight: 700;
+    }
+    .clear {
+      clear: both;
+    }
+  </style>
+</head>
+<body>
+
+<h1>King of the Grit — Scoring</h1>
+
+<div id="app">Loading…</div>
+
+<script>
+async function loadJSON(path) {
+  const res = await fetch(path);
+  return res.json();
+}
+
+function groupBy(arr, keyFn) {
+  return arr.reduce((m, o) => {
+    const k = keyFn(o);
+    (m[k] ||= []).push(o);
+    return m;
+  }, {});
+}
+
+(async function init() {
+  const [
+    teamCumulative,
+    teamWeekly,
+    paxWeekly,
+    paxEvents
+  ] = await Promise.all([
+    loadJSON('/data/team_cumulative.json'),
+    loadJSON('/data/team_weekly.json'),
+    loadJSON('/data/pax_weekly.json'),
+    loadJSON('/data/pax_events.json')
+  ]);
+
+  // sort teams by cumulative DESC
+  teamCumulative.sort((a,b) => b.AvgScore - a.AvgScore);
+
+  const weeklyByTeam = groupBy(teamWeekly, r => r.Team);
+  const paxByTeamWeek = groupBy(
+    paxWeekly,
+    r => `${r.Team}|${r.WeekStart}`
+  );
+  const eventsByPaxWeek = groupBy(
+    paxEvents,
+    r => `${r.Pax}|${r.WeekStart}`
+  );
+
+  const app = document.getElementById('app');
+  app.innerHTML = '';
+
+  teamCumulative.forEach(teamRow => {
+    const team = teamRow.Team;
+    const teamScore = teamRow.AvgScore;
+
+    const teamDetails = document.createElement('details');
+    teamDetails.className = 'team';
+
+    const teamSummary = document.createElement('summary');
+    teamSummary.innerHTML = `${team} <span class="score">${teamScore}</span>`;
+    teamDetails.appendChild(teamSummary);
+
+    (weeklyByTeam[team] || [])
+      .sort((a,b) => a.WeekStart.localeCompare(b.WeekStart))
+      .forEach(weekRow => {
+        const weekKey = `${team}|${weekRow.WeekStart}`;
+        const weekDetails = document.createElement('details');
+        weekDetails.className = 'week';
+
+        const weekSummary = document.createElement('summary');
+        weekSummary.innerHTML =
+          `Week of ${weekRow.WeekStart} <span class="score">${weekRow.AvgScore}</span>`;
+        weekDetails.appendChild(weekSummary);
+
+        (paxByTeamWeek[weekKey] || [])
+          .sort((a,b) => b.Score - a.Score)
+          .forEach(paxRow => {
+            const paxDetails = document.createElement('details');
+            paxDetails.className = 'pax';
+
+            const paxSummary = document.createElement('summary');
+            paxSummary.innerHTML =
+              `${paxRow.Pax} <span class="score">${paxRow.Score}</span>`;
+            paxDetails.appendChild(paxSummary);
+
+            const evKey = `${paxRow.Pax}|${weekRow.WeekStart}`;
+            const evList = document.createElement('div');
+            evList.className = 'events';
+
+            (eventsByPaxWeek[evKey] || [])
+              .sort((a,b) => new Date(a.Date) - new Date(b.Date))
+              .forEach(ev => {
+                const line = document.createElement('div');
+                line.textContent =
+                  `${ev.Date} — ${ev.AO}` +
+                  (ev.Counted ? '' : ` (${ev.Reason})`);
+                if (!ev.Counted) line.className = 'excluded';
+                evList.appendChild(line);
+              });
+
+            paxDetails.appendChild(evList);
+            weekDetails.appendChild(paxDetails);
+          });
+
+        teamDetails.appendChild(weekDetails);
+      });
+
+    app.appendChild(teamDetails);
+  });
+})();
+</script>
+
+</body>
+</html>
