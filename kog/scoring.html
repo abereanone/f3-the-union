@@ -9,7 +9,7 @@
     body {
       font-family: system-ui, -apple-system, sans-serif;
       max-width: 900px;
-      margin: 0 auto;
+      margin: 0;
       padding: 1rem;
     }
     h1 {
@@ -19,6 +19,10 @@
       color: #555;
       font-size: 0.9rem;
       margin-bottom: 1rem;
+    }
+    .note {
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
     }
     details {
       margin: 0.25rem 0;
@@ -76,6 +80,9 @@
 
 <div id="top-nav"></div>
 <h1>KOG Score</h1>
+<div class="note">
+  Due to PAXMiner and Q delays some beatdowns may be missing. The page refreshes nightly.
+</div>
 <div id="generated-at" class="meta"></div>
 
 <div id="app">Loading…</div>
@@ -158,7 +165,7 @@ function groupBy(arr, keyFn) {
 
   const generatedAt = document.getElementById('generated-at');
   if (generatedAt) {
-    generatedAt.textContent = `Data generated: ${formatGeneratedAt(meta?.generatedAt)}`;
+    generatedAt.textContent = `Last Refreshed: ${formatGeneratedAt(meta?.generatedAt)}`;
   }
 
   // sort teams by cumulative DESC
