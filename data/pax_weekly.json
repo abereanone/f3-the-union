@@ -1,20 +1,6 @@
 [
   {
     "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Dufresne",
-    "Team": "Farm",
-    "Raw": 5,
-    "Score": 166
-  },
-  {
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "FogHorn",
-    "Team": "Redzone",
-    "Raw": 4,
-    "Score": 133
-  },
-  {
-    "WeekStart": "2026-01-05T05:00:00.000Z",
     "Pax": "Charlotte",
     "Team": "Factory",
     "Raw": 5,
@@ -66,8 +52,8 @@
     "WeekStart": "2026-01-05T05:00:00.000Z",
     "Pax": "Alice",
     "Team": "Clocktower",
-    "Raw": 4,
-    "Score": 133
+    "Raw": 3,
+    "Score": 100
   },
   {
     "WeekStart": "2026-01-05T05:00:00.000Z",
@@ -86,6 +72,13 @@
   {
     "WeekStart": "2026-01-05T05:00:00.000Z",
     "Pax": "Goosebumps",
+    "Team": "Extras",
+    "Raw": 5,
+    "Score": 166
+  },
+  {
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Uniball",
     "Team": "Extras",
     "Raw": 5,
     "Score": 166
@@ -113,13 +106,6 @@
   },
   {
     "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Uniball",
-    "Team": "Extras",
-    "Raw": 5,
-    "Score": 166
-  },
-  {
-    "WeekStart": "2026-01-05T05:00:00.000Z",
     "Pax": "Bluey",
     "Team": "Factory",
     "Raw": 5,
@@ -138,20 +124,6 @@
     "Team": "Factory",
     "Raw": 3,
     "Score": 100
-  },
-  {
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Popup",
-    "Team": "Farm",
-    "Raw": 3,
-    "Score": 100
-  },
-  {
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Village People",
-    "Team": "Clocktower",
-    "Raw": 5,
-    "Score": 166
   },
   {
     "WeekStart": "2026-01-05T05:00:00.000Z",
@@ -183,13 +155,6 @@
   },
   {
     "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Jelly Roll",
-    "Team": "Richwood",
-    "Raw": 4,
-    "Score": 133
-  },
-  {
-    "WeekStart": "2026-01-05T05:00:00.000Z",
     "Pax": "Hobo",
     "Team": "Fountain",
     "Raw": 4,
@@ -206,8 +171,8 @@
     "WeekStart": "2026-01-05T05:00:00.000Z",
     "Pax": "Ricky Bobby",
     "Team": "Richwood",
-    "Raw": 4,
-    "Score": 133
+    "Raw": 5,
+    "Score": 166
   },
   {
     "WeekStart": "2026-01-05T05:00:00.000Z",
@@ -215,20 +180,6 @@
     "Team": "Fountain",
     "Raw": 3,
     "Score": 100
-  },
-  {
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Big Rig",
-    "Team": "Fountain",
-    "Raw": 4,
-    "Score": 133
-  },
-  {
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Puppy Mill",
-    "Team": "Fountain",
-    "Raw": 4,
-    "Score": 133
   },
   {
     "WeekStart": "2026-01-05T05:00:00.000Z",
@@ -241,13 +192,6 @@
     "WeekStart": "2026-01-05T05:00:00.000Z",
     "Pax": "Kinevil",
     "Team": "Farm",
-    "Raw": 1,
-    "Score": 33
-  },
-  {
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Playdate",
-    "Team": "Redzone",
     "Raw": 1,
     "Score": 33
   },
@@ -281,8 +225,36 @@
   },
   {
     "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Dufresne",
+    "Team": "Farm",
+    "Raw": 0,
+    "Score": 0
+  },
+  {
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Popup",
+    "Team": "Farm",
+    "Raw": 0,
+    "Score": 0
+  },
+  {
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Village People",
+    "Team": "Clocktower",
+    "Raw": 0,
+    "Score": 0
+  },
+  {
+    "WeekStart": "2026-01-05T05:00:00.000Z",
     "Pax": "BodyPump",
     "Team": "Clocktower",
+    "Raw": 0,
+    "Score": 0
+  },
+  {
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Playdate",
+    "Team": "Redzone",
     "Raw": 0,
     "Score": 0
   },
@@ -295,8 +267,36 @@
   },
   {
     "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "FogHorn",
+    "Team": "Redzone",
+    "Raw": 0,
+    "Score": 0
+  },
+  {
+    "WeekStart": "2026-01-05T05:00:00.000Z",
     "Pax": "Coffin",
     "Team": "Richwood",
+    "Raw": 0,
+    "Score": 0
+  },
+  {
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Jelly Roll",
+    "Team": "Richwood",
+    "Raw": 0,
+    "Score": 0
+  },
+  {
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Big Rig",
+    "Team": "Fountain",
+    "Raw": 0,
+    "Score": 0
+  },
+  {
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Puppy Mill",
+    "Team": "Fountain",
     "Raw": 0,
     "Score": 0
   }
