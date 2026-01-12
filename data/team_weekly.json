@@ -6,23 +6,23 @@
   },
   {
     "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Team": "Redzone",
+    "AvgScore": 94
+  },
+  {
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Team": "Factory",
+    "AvgScore": 139
+  },
+  {
+    "WeekStart": "2026-01-05T05:00:00.000Z",
     "Team": "Clocktower",
     "AvgScore": 137
   },
   {
     "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Team": "Factory",
-    "AvgScore": 119
-  },
-  {
-    "WeekStart": "2026-01-05T05:00:00.000Z",
     "Team": "Extras",
-    "AvgScore": 113
-  },
-  {
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Team": "Redzone",
-    "AvgScore": 94
+    "AvgScore": 118
   },
   {
     "WeekStart": "2026-01-05T05:00:00.000Z",
