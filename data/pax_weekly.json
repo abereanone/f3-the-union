@@ -155,6 +155,13 @@
   },
   {
     "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "JellyRoll",
+    "Team": "Richwood",
+    "Raw": 3,
+    "Score": 100
+  },
+  {
+    "WeekStart": "2026-01-05T05:00:00.000Z",
     "Pax": "Hobo",
     "Team": "Fountain",
     "Raw": 4,
@@ -275,13 +282,6 @@
   {
     "WeekStart": "2026-01-05T05:00:00.000Z",
     "Pax": "Coffin",
-    "Team": "Richwood",
-    "Raw": 0,
-    "Score": 0
-  },
-  {
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Jelly Roll",
     "Team": "Richwood",
     "Raw": 0,
     "Score": 0
