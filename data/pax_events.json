@@ -2,114 +2,6 @@
   {
     "Date": "2026-01-10T05:00:00.000Z",
     "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Dufresne",
-    "Team": "Farm",
-    "AO": "the_plant",
-    "Counted": false,
-    "Reason": "Beatdowns capped at 3"
-  },
-  {
-    "Date": "2026-01-10T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "FogHorn",
-    "Team": "Redzone",
-    "AO": "the_plant",
-    "Counted": false,
-    "Reason": "Beatdowns capped at 3"
-  },
-  {
-    "Date": "2026-01-09T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Dufresne",
-    "Team": "Farm",
-    "AO": "the_yard",
-    "Counted": false,
-    "Reason": "Beatdowns capped at 3"
-  },
-  {
-    "Date": "2026-01-09T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "FogHorn",
-    "Team": "Redzone",
-    "AO": "the_yard",
-    "Counted": false,
-    "Reason": "Beatdowns capped at 3"
-  },
-  {
-    "Date": "2026-01-08T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Dufresne",
-    "Team": "Farm",
-    "AO": "the_redzone",
-    "Counted": false,
-    "Reason": "Beatdowns capped at 3"
-  },
-  {
-    "Date": "2026-01-08T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "FogHorn",
-    "Team": "Redzone",
-    "AO": "the_redzone",
-    "Counted": false,
-    "Reason": "Beatdowns capped at 3"
-  },
-  {
-    "Date": "2026-01-07T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Dufresne",
-    "Team": "Farm",
-    "AO": "the_farm",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-07T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "FogHorn",
-    "Team": "Redzone",
-    "AO": "the_farm",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-06T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Dufresne",
-    "Team": "Farm",
-    "AO": "the_factory",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-06T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "FogHorn",
-    "Team": "Redzone",
-    "AO": "the_redzone",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-05T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "FogHorn",
-    "Team": "Redzone",
-    "AO": "the_dock",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-05T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Dufresne",
-    "Team": "Farm",
-    "AO": "the_farm",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-10T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
     "Pax": "Charlotte",
     "Team": "Factory",
     "AO": "the_plant",
@@ -203,8 +95,8 @@
     "Pax": "Peach",
     "Team": "Clocktower",
     "AO": "the_clocktower",
-    "Counted": true,
-    "Reason": ""
+    "Counted": false,
+    "Reason": "Beatdowns capped at 3"
   },
   {
     "Date": "2026-01-08T05:00:00.000Z",
@@ -491,8 +383,8 @@
     "Pax": "Heidi",
     "Team": "Clocktower",
     "AO": "the_clocktower",
-    "Counted": true,
-    "Reason": ""
+    "Counted": false,
+    "Reason": "Beatdowns capped at 3"
   },
   {
     "Date": "2026-01-08T05:00:00.000Z",
@@ -500,8 +392,8 @@
     "Pax": "Poindexter",
     "Team": "Clocktower",
     "AO": "the_clocktower",
-    "Counted": true,
-    "Reason": ""
+    "Counted": false,
+    "Reason": "Beatdowns capped at 3"
   },
   {
     "Date": "2026-01-08T05:00:00.000Z",
@@ -509,8 +401,8 @@
     "Pax": "Rugrat",
     "Team": "Clocktower",
     "AO": "the_clocktower",
-    "Counted": true,
-    "Reason": ""
+    "Counted": false,
+    "Reason": "Beatdowns capped at 3"
   },
   {
     "Date": "2026-01-08T05:00:00.000Z",
@@ -680,24 +572,6 @@
     "Pax": "Shrink",
     "Team": "Factory",
     "AO": "the_plant",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-09T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Popup",
-    "Team": "Farm",
-    "AO": "the_yard",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-08T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Village People",
-    "Team": "Clocktower",
-    "AO": "the_clocktower",
     "Counted": true,
     "Reason": ""
   },
@@ -741,15 +615,6 @@
     "Date": "2026-01-08T05:00:00.000Z",
     "WeekStart": "2026-01-05T05:00:00.000Z",
     "Pax": "Hermey",
-    "Team": "Richwood",
-    "AO": "the_show",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-08T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Jelly Roll",
     "Team": "Richwood",
     "AO": "the_show",
     "Counted": true,
@@ -794,24 +659,6 @@
   {
     "Date": "2026-01-06T05:00:00.000Z",
     "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Jelly Roll",
-    "Team": "Richwood",
-    "AO": "the_clocktower",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-06T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Village People",
-    "Team": "Clocktower",
-    "AO": "the_clocktower",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-06T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
     "Pax": "Biden",
     "Team": "Factory",
     "AO": "the_factory",
@@ -851,33 +698,6 @@
     "Pax": "Hermey",
     "Team": "Richwood",
     "AO": "the_show",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-05T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Jelly Roll",
-    "Team": "Richwood",
-    "AO": "the_dock",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-05T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Popup",
-    "Team": "Farm",
-    "AO": "the_farm",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-05T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Village People",
-    "Team": "Clocktower",
-    "AO": "the_farm",
     "Counted": true,
     "Reason": ""
   },
@@ -912,24 +732,6 @@
     "Date": "2026-01-07T05:00:00.000Z",
     "WeekStart": "2026-01-05T05:00:00.000Z",
     "Pax": "After Market",
-    "Team": "Fountain",
-    "AO": "the_fountain",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-07T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Big Rig",
-    "Team": "Fountain",
-    "AO": "the_fountain",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-07T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Puppy Mill",
     "Team": "Fountain",
     "AO": "the_fountain",
     "Counted": true,
@@ -963,15 +765,6 @@
     "Reason": ""
   },
   {
-    "Date": "2026-01-06T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Playdate",
-    "Team": "Redzone",
-    "AO": "the_redzone",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
     "Date": "2026-01-05T05:00:00.000Z",
     "WeekStart": "2026-01-05T05:00:00.000Z",
     "Pax": "Ricky Bobby",
@@ -992,25 +785,7 @@
   {
     "Date": "2026-01-05T05:00:00.000Z",
     "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Big Rig",
-    "Team": "Fountain",
-    "AO": "the_fountain",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-05T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
     "Pax": "House Arrest",
-    "Team": "Fountain",
-    "AO": "the_fountain",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-05T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Puppy Mill",
     "Team": "Fountain",
     "AO": "the_fountain",
     "Counted": true,
@@ -1046,15 +821,6 @@
   {
     "Date": "2026-01-05T05:00:00.000Z",
     "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Popup",
-    "Team": "Farm",
-    "AO": "PreWork",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-05T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
     "Pax": "Hobo",
     "Team": "Fountain",
     "AO": "PreWork",
@@ -1065,24 +831,6 @@
     "Date": "2026-01-05T05:00:00.000Z",
     "WeekStart": "2026-01-05T05:00:00.000Z",
     "Pax": "House Arrest",
-    "Team": "Fountain",
-    "AO": "PreWork",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-05T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Big Rig",
-    "Team": "Fountain",
-    "AO": "PreWork",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-05T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Puppy Mill",
     "Team": "Fountain",
     "AO": "PreWork",
     "Counted": true,
@@ -1136,15 +884,6 @@
   {
     "Date": "2026-01-05T05:00:00.000Z",
     "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Popup",
-    "Team": "Farm",
-    "AO": "PreWork",
-    "Counted": false,
-    "Reason": "Duplicate same-day"
-  },
-  {
-    "Date": "2026-01-05T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
     "Pax": "Charlotte",
     "Team": "Factory",
     "AO": "PreWork",
@@ -1183,15 +922,6 @@
     "WeekStart": "2026-01-05T05:00:00.000Z",
     "Pax": "Goosebumps",
     "Team": "Extras",
-    "AO": "PreWork",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-05T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Village People",
-    "Team": "Clocktower",
     "AO": "PreWork",
     "Counted": true,
     "Reason": ""
@@ -1254,15 +984,6 @@
     "Date": "2026-01-06T05:00:00.000Z",
     "WeekStart": "2026-01-05T05:00:00.000Z",
     "Pax": "Peach",
-    "Team": "Clocktower",
-    "AO": "PreWork",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-06T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Village People",
     "Team": "Clocktower",
     "AO": "PreWork",
     "Counted": true,
@@ -1454,8 +1175,8 @@
     "Pax": "Alice",
     "Team": "Clocktower",
     "AO": "BlackOps",
-    "Counted": true,
-    "Reason": ""
+    "Counted": false,
+    "Reason": "Beatdowns capped at 3"
   },
   {
     "Date": "2026-01-07T05:00:00.000Z",
@@ -1487,15 +1208,6 @@
   {
     "Date": "2026-01-07T05:00:00.000Z",
     "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Dufresne",
-    "Team": "Farm",
-    "AO": "PreWork",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-07T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
     "Pax": "After Market",
     "Team": "Fountain",
     "AO": "PreWork",
@@ -1506,24 +1218,6 @@
     "Date": "2026-01-07T05:00:00.000Z",
     "WeekStart": "2026-01-05T05:00:00.000Z",
     "Pax": "Hobo",
-    "Team": "Fountain",
-    "AO": "PreWork",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-07T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Big Rig",
-    "Team": "Fountain",
-    "AO": "PreWork",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-07T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Puppy Mill",
     "Team": "Fountain",
     "AO": "PreWork",
     "Counted": true,
@@ -1557,10 +1251,10 @@
     "Reason": "Extra Credit Capped at 2"
   },
   {
-    "Date": "2026-01-07T05:00:00.000Z",
+    "Date": "2026-01-08T05:00:00.000Z",
     "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "FogHorn",
-    "Team": "Redzone",
+    "Pax": "Peach",
+    "Team": "Clocktower",
     "AO": "PreWork",
     "Counted": true,
     "Reason": ""
@@ -1568,29 +1262,11 @@
   {
     "Date": "2026-01-08T05:00:00.000Z",
     "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Peach",
-    "Team": "Clocktower",
-    "AO": "PreWork",
-    "Counted": false,
-    "Reason": "Extra Credit Capped at 2"
-  },
-  {
-    "Date": "2026-01-08T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Village People",
-    "Team": "Clocktower",
-    "AO": "PreWork",
-    "Counted": false,
-    "Reason": "Extra Credit Capped at 2"
-  },
-  {
-    "Date": "2026-01-08T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
     "Pax": "Rugrat",
     "Team": "Clocktower",
     "AO": "PreWork",
-    "Counted": false,
-    "Reason": "Extra Credit Capped at 2"
+    "Counted": true,
+    "Reason": ""
   },
   {
     "Date": "2026-01-08T05:00:00.000Z",
@@ -1598,8 +1274,8 @@
     "Pax": "Poindexter",
     "Team": "Clocktower",
     "AO": "PreWork",
-    "Counted": false,
-    "Reason": "Extra Credit Capped at 2"
+    "Counted": true,
+    "Reason": ""
   },
   {
     "Date": "2026-01-08T05:00:00.000Z",
@@ -1607,8 +1283,8 @@
     "Pax": "Heidi",
     "Team": "Clocktower",
     "AO": "PreWork",
-    "Counted": false,
-    "Reason": "Extra Credit Capped at 2"
+    "Counted": true,
+    "Reason": ""
   },
   {
     "Date": "2026-01-08T05:00:00.000Z",
@@ -1688,33 +1364,6 @@
     "Pax": "Ricky Bobby",
     "Team": "Richwood",
     "AO": "BlackOps",
-    "Counted": false,
-    "Reason": "Extra Credit Capped at 2"
-  },
-  {
-    "Date": "2026-01-09T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Jelly Roll",
-    "Team": "Richwood",
-    "AO": "BlackOps",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-09T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Big Rig",
-    "Team": "Fountain",
-    "AO": "BlackOps",
-    "Counted": false,
-    "Reason": "Extra Credit Capped at 2"
-  },
-  {
-    "Date": "2026-01-09T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Dufresne",
-    "Team": "Farm",
-    "AO": "PreWork",
     "Counted": true,
     "Reason": ""
   },
@@ -1726,15 +1375,6 @@
     "AO": "PreWork",
     "Counted": true,
     "Reason": ""
-  },
-  {
-    "Date": "2026-01-10T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Dufresne",
-    "Team": "Farm",
-    "AO": "PreWork",
-    "Counted": false,
-    "Reason": "Extra Credit Capped at 2"
   },
   {
     "Date": "2026-01-05T05:00:00.000Z",
@@ -1753,14 +1393,5 @@
     "AO": "PreWork",
     "Counted": true,
     "Reason": ""
-  },
-  {
-    "Date": "2026-01-10T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Puppy Mill",
-    "Team": "Fountain",
-    "AO": "BlackOps",
-    "Counted": false,
-    "Reason": "Extra Credit Capped at 2"
   }
 ]
