@@ -621,6 +621,15 @@
     "Reason": ""
   },
   {
+    "Date": "2026-01-08T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "JellyRoll",
+    "Team": "Richwood",
+    "AO": "the_show",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
     "Date": "2026-01-07T05:00:00.000Z",
     "WeekStart": "2026-01-05T05:00:00.000Z",
     "Pax": "Bumblebee",
@@ -653,6 +662,15 @@
     "Pax": "Hobo",
     "Team": "Fountain",
     "AO": "the_fountain",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-06T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "JellyRoll",
+    "Team": "Richwood",
+    "AO": "the_clocktower",
     "Counted": true,
     "Reason": ""
   },
@@ -698,6 +716,15 @@
     "Pax": "Hermey",
     "Team": "Richwood",
     "AO": "the_show",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-05T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "JellyRoll",
+    "Team": "Richwood",
+    "AO": "the_dock",
     "Counted": true,
     "Reason": ""
   },
@@ -1366,6 +1393,15 @@
     "AO": "BlackOps",
     "Counted": true,
     "Reason": ""
+  },
+  {
+    "Date": "2026-01-09T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "JellyRoll",
+    "Team": "Richwood",
+    "AO": "BlackOps",
+    "Counted": false,
+    "Reason": "Beatdowns capped at 3"
   },
   {
     "Date": "2026-01-10T05:00:00.000Z",
