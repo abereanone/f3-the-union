@@ -1,6 +1,16 @@
 [
   {
     "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Team": "Redzone",
+    "AvgScore": 72
+  },
+  {
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Team": "Redzone",
+    "AvgScore": 106
+  },
+  {
+    "WeekStart": "2026-01-12T05:00:00.000Z",
     "Team": "Farm",
     "AvgScore": 67
   },
@@ -11,28 +21,8 @@
   },
   {
     "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Team": "Redzone",
-    "AvgScore": 67
-  },
-  {
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Team": "Redzone",
-    "AvgScore": 106
-  },
-  {
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Team": "Factory",
-    "AvgScore": 60
-  },
-  {
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Team": "Factory",
-    "AvgScore": 140
-  },
-  {
-    "WeekStart": "2026-01-12T05:00:00.000Z",
     "Team": "Richwood",
-    "AvgScore": 89
+    "AvgScore": 122
   },
   {
     "WeekStart": "2026-01-05T05:00:00.000Z",
@@ -41,8 +31,18 @@
   },
   {
     "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Team": "Factory",
+    "AvgScore": 73
+  },
+  {
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Team": "Factory",
+    "AvgScore": 140
+  },
+  {
+    "WeekStart": "2026-01-12T05:00:00.000Z",
     "Team": "Extras",
-    "AvgScore": 33
+    "AvgScore": 38
   },
   {
     "WeekStart": "2026-01-05T05:00:00.000Z",
@@ -52,7 +52,7 @@
   {
     "WeekStart": "2026-01-12T05:00:00.000Z",
     "Team": "Clocktower",
-    "AvgScore": 62
+    "AvgScore": 86
   },
   {
     "WeekStart": "2026-01-05T05:00:00.000Z",
