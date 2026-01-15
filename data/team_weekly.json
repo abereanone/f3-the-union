@@ -51,6 +51,16 @@
   },
   {
     "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Team": "Fountain",
+    "AvgScore": 128
+  },
+  {
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Team": "Fountain",
+    "AvgScore": 134
+  },
+  {
+    "WeekStart": "2026-01-12T05:00:00.000Z",
     "Team": "Clocktower",
     "AvgScore": 86
   },
@@ -58,15 +68,5 @@
     "WeekStart": "2026-01-05T05:00:00.000Z",
     "Team": "Clocktower",
     "AvgScore": 138
-  },
-  {
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Team": "Fountain",
-    "AvgScore": 95
-  },
-  {
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Team": "Fountain",
-    "AvgScore": 134
   }
 ]

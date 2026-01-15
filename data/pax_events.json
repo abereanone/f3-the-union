@@ -459,6 +459,51 @@
     "Reason": ""
   },
   {
+    "Date": "2026-01-14T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Hobo",
+    "Team": "Fountain",
+    "AO": "the_fountain",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-12T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Hobo",
+    "Team": "Fountain",
+    "AO": "the_fountain",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-09T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Hobo",
+    "Team": "Fountain",
+    "AO": "the_floor",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-07T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Hobo",
+    "Team": "Fountain",
+    "AO": "the_fountain",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-05T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Hobo",
+    "Team": "Fountain",
+    "AO": "the_fountain",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
     "Date": "2026-01-13T05:00:00.000Z",
     "WeekStart": "2026-01-12T05:00:00.000Z",
     "Pax": "Midriff",
@@ -846,42 +891,6 @@
     "Reason": ""
   },
   {
-    "Date": "2026-01-12T05:00:00.000Z",
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Hobo",
-    "Team": "Fountain",
-    "AO": "the_fountain",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-09T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Hobo",
-    "Team": "Fountain",
-    "AO": "the_floor",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-07T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Hobo",
-    "Team": "Fountain",
-    "AO": "the_fountain",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-05T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Hobo",
-    "Team": "Fountain",
-    "AO": "the_fountain",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
     "Date": "2026-01-13T05:00:00.000Z",
     "WeekStart": "2026-01-12T05:00:00.000Z",
     "Pax": "Iceberg",
@@ -1022,6 +1031,42 @@
     "Pax": "Uniball",
     "Team": "Extras",
     "AO": "the_farm",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-14T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "After Market",
+    "Team": "Fountain",
+    "AO": "the_fountain",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-12T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "After Market",
+    "Team": "Fountain",
+    "AO": "the_fountain",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-07T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "After Market",
+    "Team": "Fountain",
+    "AO": "the_fountain",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-05T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "After Market",
+    "Team": "Fountain",
+    "AO": "the_fountain",
     "Counted": true,
     "Reason": ""
   },
@@ -1080,6 +1125,33 @@
     "Reason": ""
   },
   {
+    "Date": "2026-01-14T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "House Arrest",
+    "Team": "Fountain",
+    "AO": "the_fountain",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-12T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "House Arrest",
+    "Team": "Fountain",
+    "AO": "the_fountain",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-05T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "House Arrest",
+    "Team": "Fountain",
+    "AO": "the_fountain",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
     "Date": "2026-01-12T05:00:00.000Z",
     "WeekStart": "2026-01-12T05:00:00.000Z",
     "Pax": "JellyRoll",
@@ -1199,6 +1271,42 @@
   {
     "Date": "2026-01-14T05:00:00.000Z",
     "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Puppy mill",
+    "Team": "Fountain",
+    "AO": "the_fountain",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-12T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Puppy mill",
+    "Team": "Fountain",
+    "AO": "the_fountain",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-07T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Puppy mill",
+    "Team": "Fountain",
+    "AO": "the_fountain",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-05T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Puppy mill",
+    "Team": "Fountain",
+    "AO": "the_fountain",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-14T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
     "Pax": "Ricky Bobby",
     "Team": "Richwood",
     "AO": "the_dock",
@@ -1296,6 +1404,42 @@
     "Reason": ""
   },
   {
+    "Date": "2026-01-14T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Sprocket",
+    "Team": "Fountain",
+    "AO": "the_fountain",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-12T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Sprocket",
+    "Team": "Fountain",
+    "AO": "the_fountain",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-07T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Sprocket",
+    "Team": "Fountain",
+    "AO": "the_fountain",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-05T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Sprocket",
+    "Team": "Fountain",
+    "AO": "the_fountain",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
     "Date": "2026-01-12T05:00:00.000Z",
     "WeekStart": "2026-01-12T05:00:00.000Z",
     "Pax": "Village people",
@@ -1328,33 +1472,6 @@
     "Pax": "Village people",
     "Team": "Clocktower",
     "AO": "the_farm",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-12T05:00:00.000Z",
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "After Market",
-    "Team": "Fountain",
-    "AO": "the_fountain",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-07T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "After Market",
-    "Team": "Fountain",
-    "AO": "the_fountain",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-05T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "After Market",
-    "Team": "Fountain",
-    "AO": "the_fountain",
     "Counted": true,
     "Reason": ""
   },
@@ -1388,6 +1505,33 @@
   {
     "Date": "2026-01-14T05:00:00.000Z",
     "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "BigRig",
+    "Team": "Fountain",
+    "AO": "the_fountain",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-07T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "BigRig",
+    "Team": "Fountain",
+    "AO": "the_fountain",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-05T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "BigRig",
+    "Team": "Fountain",
+    "AO": "the_fountain",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-14T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
     "Pax": "Coffin",
     "Team": "Richwood",
     "AO": "the_dock",
@@ -1409,96 +1553,6 @@
     "Pax": "Coffin",
     "Team": "Richwood",
     "AO": "the_dock",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-12T05:00:00.000Z",
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "House Arrest",
-    "Team": "Fountain",
-    "AO": "the_fountain",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-05T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "House Arrest",
-    "Team": "Fountain",
-    "AO": "the_fountain",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-12T05:00:00.000Z",
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Puppy mill",
-    "Team": "Fountain",
-    "AO": "the_fountain",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-07T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Puppy mill",
-    "Team": "Fountain",
-    "AO": "the_fountain",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-05T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Puppy mill",
-    "Team": "Fountain",
-    "AO": "the_fountain",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-12T05:00:00.000Z",
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Sprocket",
-    "Team": "Fountain",
-    "AO": "the_fountain",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-07T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Sprocket",
-    "Team": "Fountain",
-    "AO": "the_fountain",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-05T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Sprocket",
-    "Team": "Fountain",
-    "AO": "the_fountain",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-07T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "BigRig",
-    "Team": "Fountain",
-    "AO": "the_fountain",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-05T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "BigRig",
-    "Team": "Fountain",
-    "AO": "the_fountain",
     "Counted": true,
     "Reason": ""
   },
@@ -2743,5 +2797,14 @@
     "AO": "PreWork",
     "Counted": true,
     "Reason": ""
+  },
+  {
+    "Date": "2026-01-14T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Ocho",
+    "Team": "Redzone",
+    "AO": "PreWork",
+    "Counted": false,
+    "Reason": "Extra Credit Capped at 2"
   }
 ]
