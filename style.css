@@ -1,0 +1,96 @@
+body {
+  font-family: sans-serif;
+  margin: 2rem;
+  max-width: 600px;
+}
+
+label {
+  display: block;
+  margin-top: 1rem;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.output {
+  margin-top: 2rem;
+  white-space: pre-wrap;
+  background: #f0f0f0;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.hidden {
+  display: none;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+.radio-group {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+
+/* Stack vertically on mobile */
+@media (max-width: 600px) {
+  .radio-group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.warning {
+  color: red;
+  font-weight: bold;
+  margin-top: 1rem;
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+}
+
+.warning.visible {
+  opacity: 1;
+}
+
+.button-row {
+  display: flex;
+  gap: 1rem;          /* space between buttons */
+  align-items: center;
+  margin-top: 1rem;   /* match your other button spacing */
+}
+
+/* style.css */
+.form-row {
+  display: flex;
+  gap: 1rem;           /* space between columns */
+  align-items: center; /* vertical-center labels and inputs */
+  flex-wrap: wrap;     /* wrap on narrow screens */
+}
+
+.form-group {
+  flex: 1;             /* each takes equal space */
+  min-width: 150px;    /* but won’t shrink below this */
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.25rem;
+}
