@@ -1,6 +1,21 @@
 [
   {
     "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Team": "Redzone",
+    "AvgScore": 95
+  },
+  {
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Team": "Redzone",
+    "AvgScore": 128
+  },
+  {
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Team": "Redzone",
+    "AvgScore": 106
+  },
+  {
+    "WeekStart": "2026-01-19T05:00:00.000Z",
     "Team": "Farm",
     "AvgScore": 60
   },
@@ -16,23 +31,8 @@
   },
   {
     "WeekStart": "2026-01-19T05:00:00.000Z",
-    "Team": "Redzone",
-    "AvgScore": 78
-  },
-  {
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Team": "Redzone",
-    "AvgScore": 128
-  },
-  {
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Team": "Redzone",
-    "AvgScore": 106
-  },
-  {
-    "WeekStart": "2026-01-19T05:00:00.000Z",
     "Team": "Factory",
-    "AvgScore": 80
+    "AvgScore": 100
   },
   {
     "WeekStart": "2026-01-12T05:00:00.000Z",
@@ -47,7 +47,7 @@
   {
     "WeekStart": "2026-01-19T05:00:00.000Z",
     "Team": "Richwood",
-    "AvgScore": 111
+    "AvgScore": 145
   },
   {
     "WeekStart": "2026-01-12T05:00:00.000Z",
@@ -62,7 +62,7 @@
   {
     "WeekStart": "2026-01-19T05:00:00.000Z",
     "Team": "Extras",
-    "AvgScore": 14
+    "AvgScore": 38
   },
   {
     "WeekStart": "2026-01-12T05:00:00.000Z",
@@ -76,23 +76,8 @@
   },
   {
     "WeekStart": "2026-01-19T05:00:00.000Z",
-    "Team": "Fountain",
-    "AvgScore": 128
-  },
-  {
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Team": "Fountain",
-    "AvgScore": 161
-  },
-  {
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Team": "Fountain",
-    "AvgScore": 134
-  },
-  {
-    "WeekStart": "2026-01-19T05:00:00.000Z",
     "Team": "Clocktower",
-    "AvgScore": 95
+    "AvgScore": 148
   },
   {
     "WeekStart": "2026-01-12T05:00:00.000Z",
@@ -103,5 +88,20 @@
     "WeekStart": "2026-01-05T05:00:00.000Z",
     "Team": "Clocktower",
     "AvgScore": 138
+  },
+  {
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Team": "Fountain",
+    "AvgScore": 133
+  },
+  {
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Team": "Fountain",
+    "AvgScore": 161
+  },
+  {
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Team": "Fountain",
+    "AvgScore": 134
   }
 ]

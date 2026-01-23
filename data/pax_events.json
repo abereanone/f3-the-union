@@ -1,129 +1,12 @@
 [
   {
-    "Date": "2026-01-21T05:00:00.000Z",
+    "Date": "2026-01-22T05:00:00.000Z",
     "WeekStart": "2026-01-19T05:00:00.000Z",
-    "Pax": "DUFRESNE",
-    "Team": "Farm",
-    "AO": "the_farm",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-20T05:00:00.000Z",
-    "WeekStart": "2026-01-19T05:00:00.000Z",
-    "Pax": "DUFRESNE",
-    "Team": "Farm",
-    "AO": "the_factory",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-19T05:00:00.000Z",
-    "WeekStart": "2026-01-19T05:00:00.000Z",
-    "Pax": "DUFRESNE",
-    "Team": "Farm",
-    "AO": "the_farm",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-17T05:00:00.000Z",
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "DUFRESNE",
-    "Team": "Farm",
-    "AO": "the_plant",
-    "Counted": false,
-    "Reason": "Beatdowns capped at 3"
-  },
-  {
-    "Date": "2026-01-15T05:00:00.000Z",
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "DUFRESNE",
-    "Team": "Farm",
-    "AO": "the_factory",
-    "Counted": false,
-    "Reason": "Beatdowns capped at 3"
-  },
-  {
-    "Date": "2026-01-14T05:00:00.000Z",
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "DUFRESNE",
-    "Team": "Farm",
-    "AO": "the_farm",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-13T05:00:00.000Z",
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "DUFRESNE",
-    "Team": "Farm",
-    "AO": "the_redzone",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-12T05:00:00.000Z",
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "DUFRESNE",
-    "Team": "Farm",
-    "AO": "the_farm",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-10T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "DUFRESNE",
-    "Team": "Farm",
-    "AO": "the_plant",
-    "Counted": false,
-    "Reason": "Beatdowns capped at 3"
-  },
-  {
-    "Date": "2026-01-09T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "DUFRESNE",
-    "Team": "Farm",
-    "AO": "the_yard",
-    "Counted": false,
-    "Reason": "Beatdowns capped at 3"
-  },
-  {
-    "Date": "2026-01-08T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "DUFRESNE",
-    "Team": "Farm",
+    "Pax": "Foghorn",
+    "Team": "Redzone",
     "AO": "the_redzone",
     "Counted": false,
     "Reason": "Beatdowns capped at 3"
-  },
-  {
-    "Date": "2026-01-07T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "DUFRESNE",
-    "Team": "Farm",
-    "AO": "the_farm",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-06T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "DUFRESNE",
-    "Team": "Farm",
-    "AO": "the_factory",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-05T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "DUFRESNE",
-    "Team": "Farm",
-    "AO": "the_farm",
-    "Counted": true,
-    "Reason": ""
   },
   {
     "Date": "2026-01-21T05:00:00.000Z",
@@ -250,6 +133,15 @@
     "AO": "the_dock",
     "Counted": true,
     "Reason": ""
+  },
+  {
+    "Date": "2026-01-22T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Ocho",
+    "Team": "Redzone",
+    "AO": "the_redzone",
+    "Counted": false,
+    "Reason": "Beatdowns capped at 3"
   },
   {
     "Date": "2026-01-21T05:00:00.000Z",
@@ -371,6 +263,132 @@
   {
     "Date": "2026-01-21T05:00:00.000Z",
     "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "DUFRESNE",
+    "Team": "Farm",
+    "AO": "the_farm",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-20T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "DUFRESNE",
+    "Team": "Farm",
+    "AO": "the_factory",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-19T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "DUFRESNE",
+    "Team": "Farm",
+    "AO": "the_farm",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-17T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "DUFRESNE",
+    "Team": "Farm",
+    "AO": "the_plant",
+    "Counted": false,
+    "Reason": "Beatdowns capped at 3"
+  },
+  {
+    "Date": "2026-01-15T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "DUFRESNE",
+    "Team": "Farm",
+    "AO": "the_factory",
+    "Counted": false,
+    "Reason": "Beatdowns capped at 3"
+  },
+  {
+    "Date": "2026-01-14T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "DUFRESNE",
+    "Team": "Farm",
+    "AO": "the_farm",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-13T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "DUFRESNE",
+    "Team": "Farm",
+    "AO": "the_redzone",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-12T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "DUFRESNE",
+    "Team": "Farm",
+    "AO": "the_farm",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-10T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "DUFRESNE",
+    "Team": "Farm",
+    "AO": "the_plant",
+    "Counted": false,
+    "Reason": "Beatdowns capped at 3"
+  },
+  {
+    "Date": "2026-01-09T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "DUFRESNE",
+    "Team": "Farm",
+    "AO": "the_yard",
+    "Counted": false,
+    "Reason": "Beatdowns capped at 3"
+  },
+  {
+    "Date": "2026-01-08T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "DUFRESNE",
+    "Team": "Farm",
+    "AO": "the_redzone",
+    "Counted": false,
+    "Reason": "Beatdowns capped at 3"
+  },
+  {
+    "Date": "2026-01-07T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "DUFRESNE",
+    "Team": "Farm",
+    "AO": "the_farm",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-06T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "DUFRESNE",
+    "Team": "Farm",
+    "AO": "the_factory",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-05T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "DUFRESNE",
+    "Team": "Farm",
+    "AO": "the_farm",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-21T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
     "Pax": "Charlotte",
     "Team": "Factory",
     "AO": "the_farm",
@@ -558,235 +576,10 @@
     "Reason": ""
   },
   {
-    "Date": "2026-01-21T05:00:00.000Z",
+    "Date": "2026-01-22T05:00:00.000Z",
     "WeekStart": "2026-01-19T05:00:00.000Z",
     "Pax": "Barf",
     "Team": "Extras",
-    "AO": "the_dock",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-19T05:00:00.000Z",
-    "WeekStart": "2026-01-19T05:00:00.000Z",
-    "Pax": "Barf",
-    "Team": "Extras",
-    "AO": "the_dock",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-16T05:00:00.000Z",
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Barf",
-    "Team": "Extras",
-    "AO": "the_yard",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-15T05:00:00.000Z",
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Barf",
-    "Team": "Extras",
-    "AO": "the_show",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-14T05:00:00.000Z",
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Barf",
-    "Team": "Extras",
-    "AO": "the_dock",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-09T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Barf",
-    "Team": "Extras",
-    "AO": "the_yard",
-    "Counted": false,
-    "Reason": "Beatdowns capped at 3"
-  },
-  {
-    "Date": "2026-01-08T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Barf",
-    "Team": "Extras",
-    "AO": "the_show",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-07T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Barf",
-    "Team": "Extras",
-    "AO": "the_dock",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-06T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Barf",
-    "Team": "Extras",
-    "AO": "the_show",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-20T05:00:00.000Z",
-    "WeekStart": "2026-01-19T05:00:00.000Z",
-    "Pax": "Cabana Boy",
-    "Team": "Factory",
-    "AO": "the_factory",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-19T05:00:00.000Z",
-    "WeekStart": "2026-01-19T05:00:00.000Z",
-    "Pax": "Cabana Boy",
-    "Team": "Factory",
-    "AO": "the_farm",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-16T05:00:00.000Z",
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Cabana Boy",
-    "Team": "Factory",
-    "AO": "the_yard",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-15T05:00:00.000Z",
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Cabana Boy",
-    "Team": "Factory",
-    "AO": "the_factory",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-13T05:00:00.000Z",
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Cabana Boy",
-    "Team": "Factory",
-    "AO": "the_factory",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-10T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Cabana Boy",
-    "Team": "Factory",
-    "AO": "the_plant",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-08T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Cabana Boy",
-    "Team": "Factory",
-    "AO": "the_factory",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-06T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Cabana Boy",
-    "Team": "Factory",
-    "AO": "the_factory",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-20T05:00:00.000Z",
-    "WeekStart": "2026-01-19T05:00:00.000Z",
-    "Pax": "Bumblebee",
-    "Team": "Richwood",
-    "AO": "the_show",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-19T05:00:00.000Z",
-    "WeekStart": "2026-01-19T05:00:00.000Z",
-    "Pax": "Bumblebee",
-    "Team": "Richwood",
-    "AO": "the_dock",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-17T05:00:00.000Z",
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Bumblebee",
-    "Team": "Richwood",
-    "AO": "the_plant",
-    "Counted": false,
-    "Reason": "Beatdowns capped at 3"
-  },
-  {
-    "Date": "2026-01-15T05:00:00.000Z",
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Bumblebee",
-    "Team": "Richwood",
-    "AO": "the_show",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-13T05:00:00.000Z",
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Bumblebee",
-    "Team": "Richwood",
-    "AO": "the_show",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-12T05:00:00.000Z",
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Bumblebee",
-    "Team": "Richwood",
-    "AO": "the_dock",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-08T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Bumblebee",
-    "Team": "Richwood",
-    "AO": "the_show",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-07T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Bumblebee",
-    "Team": "Richwood",
-    "AO": "the_dock",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-06T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Bumblebee",
-    "Team": "Richwood",
     "AO": "the_show",
     "Counted": true,
     "Reason": ""
@@ -794,6 +587,402 @@
   {
     "Date": "2026-01-21T05:00:00.000Z",
     "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Barf",
+    "Team": "Extras",
+    "AO": "the_dock",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-19T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Barf",
+    "Team": "Extras",
+    "AO": "the_dock",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-16T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Barf",
+    "Team": "Extras",
+    "AO": "the_yard",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-15T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Barf",
+    "Team": "Extras",
+    "AO": "the_show",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-14T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Barf",
+    "Team": "Extras",
+    "AO": "the_dock",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-09T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Barf",
+    "Team": "Extras",
+    "AO": "the_yard",
+    "Counted": false,
+    "Reason": "Beatdowns capped at 3"
+  },
+  {
+    "Date": "2026-01-08T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Barf",
+    "Team": "Extras",
+    "AO": "the_show",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-07T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Barf",
+    "Team": "Extras",
+    "AO": "the_dock",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-06T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Barf",
+    "Team": "Extras",
+    "AO": "the_show",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-22T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Bumblebee",
+    "Team": "Richwood",
+    "AO": "the_show",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-20T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Bumblebee",
+    "Team": "Richwood",
+    "AO": "the_show",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-19T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Bumblebee",
+    "Team": "Richwood",
+    "AO": "the_dock",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-17T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Bumblebee",
+    "Team": "Richwood",
+    "AO": "the_plant",
+    "Counted": false,
+    "Reason": "Beatdowns capped at 3"
+  },
+  {
+    "Date": "2026-01-15T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Bumblebee",
+    "Team": "Richwood",
+    "AO": "the_show",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-13T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Bumblebee",
+    "Team": "Richwood",
+    "AO": "the_show",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-12T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Bumblebee",
+    "Team": "Richwood",
+    "AO": "the_dock",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-08T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Bumblebee",
+    "Team": "Richwood",
+    "AO": "the_show",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-07T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Bumblebee",
+    "Team": "Richwood",
+    "AO": "the_dock",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-06T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Bumblebee",
+    "Team": "Richwood",
+    "AO": "the_show",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-20T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Cabana Boy",
+    "Team": "Factory",
+    "AO": "the_factory",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-19T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Cabana Boy",
+    "Team": "Factory",
+    "AO": "the_farm",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-16T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Cabana Boy",
+    "Team": "Factory",
+    "AO": "the_yard",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-15T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Cabana Boy",
+    "Team": "Factory",
+    "AO": "the_factory",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-13T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Cabana Boy",
+    "Team": "Factory",
+    "AO": "the_factory",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-10T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Cabana Boy",
+    "Team": "Factory",
+    "AO": "the_plant",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-08T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Cabana Boy",
+    "Team": "Factory",
+    "AO": "the_factory",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-06T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Cabana Boy",
+    "Team": "Factory",
+    "AO": "the_factory",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-22T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Peach",
+    "Team": "Clocktower",
+    "AO": "the_clocktower",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-20T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Peach",
+    "Team": "Clocktower",
+    "AO": "the_clocktower",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-16T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Peach",
+    "Team": "Clocktower",
+    "AO": "the_yard",
+    "Counted": false,
+    "Reason": "Beatdowns capped at 3"
+  },
+  {
+    "Date": "2026-01-15T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Peach",
+    "Team": "Clocktower",
+    "AO": "the_clocktower",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-13T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Peach",
+    "Team": "Clocktower",
+    "AO": "the_clocktower",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-09T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Peach",
+    "Team": "Clocktower",
+    "AO": "the_yard",
+    "Counted": false,
+    "Reason": "Beatdowns capped at 3"
+  },
+  {
+    "Date": "2026-01-08T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Peach",
+    "Team": "Clocktower",
+    "AO": "the_clocktower",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-06T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Peach",
+    "Team": "Clocktower",
+    "AO": "the_clocktower",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-22T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Hermey",
+    "Team": "Richwood",
+    "AO": "the_show",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-21T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Hermey",
+    "Team": "Richwood",
+    "AO": "the_dock",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-20T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Hermey",
+    "Team": "Richwood",
+    "AO": "the_show",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-15T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Hermey",
+    "Team": "Richwood",
+    "AO": "the_show",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-14T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Hermey",
+    "Team": "Richwood",
+    "AO": "the_dock",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-13T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Hermey",
+    "Team": "Richwood",
+    "AO": "the_show",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-08T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Hermey",
+    "Team": "Richwood",
+    "AO": "the_show",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-07T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Hermey",
+    "Team": "Richwood",
+    "AO": "the_dock",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-06T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Hermey",
+    "Team": "Richwood",
+    "AO": "the_show",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-21T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
     "Pax": "Hobo",
     "Team": "Fountain",
     "AO": "the_fountain",
@@ -938,69 +1127,6 @@
   {
     "Date": "2026-01-20T05:00:00.000Z",
     "WeekStart": "2026-01-19T05:00:00.000Z",
-    "Pax": "Peach",
-    "Team": "Clocktower",
-    "AO": "the_clocktower",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-16T05:00:00.000Z",
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Peach",
-    "Team": "Clocktower",
-    "AO": "the_yard",
-    "Counted": false,
-    "Reason": "Beatdowns capped at 3"
-  },
-  {
-    "Date": "2026-01-15T05:00:00.000Z",
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Peach",
-    "Team": "Clocktower",
-    "AO": "the_clocktower",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-13T05:00:00.000Z",
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Peach",
-    "Team": "Clocktower",
-    "AO": "the_clocktower",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-09T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Peach",
-    "Team": "Clocktower",
-    "AO": "the_yard",
-    "Counted": false,
-    "Reason": "Beatdowns capped at 3"
-  },
-  {
-    "Date": "2026-01-08T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Peach",
-    "Team": "Clocktower",
-    "AO": "the_clocktower",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-06T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Peach",
-    "Team": "Clocktower",
-    "AO": "the_clocktower",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-20T05:00:00.000Z",
-    "WeekStart": "2026-01-19T05:00:00.000Z",
     "Pax": "Pitch Perfect",
     "Team": "Redzone",
     "AO": "the_redzone",
@@ -1065,6 +1191,78 @@
     "Date": "2026-01-06T05:00:00.000Z",
     "WeekStart": "2026-01-05T05:00:00.000Z",
     "Pax": "Pitch Perfect",
+    "Team": "Redzone",
+    "AO": "the_redzone",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-22T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Play Date",
+    "Team": "Redzone",
+    "AO": "the_redzone",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-20T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Play Date",
+    "Team": "Redzone",
+    "AO": "the_redzone",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-19T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Play Date",
+    "Team": "Redzone",
+    "AO": "the_farm",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-15T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Play Date",
+    "Team": "Redzone",
+    "AO": "the_redzone",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-14T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Play Date",
+    "Team": "Redzone",
+    "AO": "the_farm",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-12T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Play Date",
+    "Team": "Redzone",
+    "AO": "the_farm",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-09T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Play Date",
+    "Team": "Redzone",
+    "AO": "the_floor",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-06T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Play Date",
     "Team": "Redzone",
     "AO": "the_redzone",
     "Counted": true,
@@ -1138,6 +1336,78 @@
     "WeekStart": "2026-01-05T05:00:00.000Z",
     "Pax": "Vagabond",
     "Team": "Extras",
+    "AO": "the_farm",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-22T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Alice",
+    "Team": "Clocktower",
+    "AO": "the_clocktower",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-19T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Alice",
+    "Team": "Clocktower",
+    "AO": "the_farm",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-16T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Alice",
+    "Team": "Clocktower",
+    "AO": "the_yard",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-13T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Alice",
+    "Team": "Clocktower",
+    "AO": "the_clocktower",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-09T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Alice",
+    "Team": "Clocktower",
+    "AO": "the_yard",
+    "Counted": false,
+    "Reason": "Beatdowns capped at 3"
+  },
+  {
+    "Date": "2026-01-08T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Alice",
+    "Team": "Clocktower",
+    "AO": "the_factory",
+    "Counted": false,
+    "Reason": "Beatdowns capped at 3"
+  },
+  {
+    "Date": "2026-01-06T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Alice",
+    "Team": "Clocktower",
+    "AO": "the_clocktower",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-05T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Alice",
+    "Team": "Clocktower",
     "AO": "the_farm",
     "Counted": true,
     "Reason": ""
@@ -1350,78 +1620,6 @@
     "Reason": ""
   },
   {
-    "Date": "2026-01-21T05:00:00.000Z",
-    "WeekStart": "2026-01-19T05:00:00.000Z",
-    "Pax": "Hermey",
-    "Team": "Richwood",
-    "AO": "the_dock",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-20T05:00:00.000Z",
-    "WeekStart": "2026-01-19T05:00:00.000Z",
-    "Pax": "Hermey",
-    "Team": "Richwood",
-    "AO": "the_show",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-15T05:00:00.000Z",
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Hermey",
-    "Team": "Richwood",
-    "AO": "the_show",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-14T05:00:00.000Z",
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Hermey",
-    "Team": "Richwood",
-    "AO": "the_dock",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-13T05:00:00.000Z",
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Hermey",
-    "Team": "Richwood",
-    "AO": "the_show",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-08T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Hermey",
-    "Team": "Richwood",
-    "AO": "the_show",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-07T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Hermey",
-    "Team": "Richwood",
-    "AO": "the_dock",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-06T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Hermey",
-    "Team": "Richwood",
-    "AO": "the_show",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
     "Date": "2026-01-19T05:00:00.000Z",
     "WeekStart": "2026-01-19T05:00:00.000Z",
     "Pax": "Iceberg",
@@ -1485,117 +1683,135 @@
     "Reason": ""
   },
   {
+    "Date": "2026-01-22T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "JellyRoll",
+    "Team": "Richwood",
+    "AO": "the_show",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
     "Date": "2026-01-20T05:00:00.000Z",
     "WeekStart": "2026-01-19T05:00:00.000Z",
-    "Pax": "Play Date",
-    "Team": "Redzone",
-    "AO": "the_redzone",
+    "Pax": "JellyRoll",
+    "Team": "Richwood",
+    "AO": "the_show",
     "Counted": true,
     "Reason": ""
   },
   {
     "Date": "2026-01-19T05:00:00.000Z",
     "WeekStart": "2026-01-19T05:00:00.000Z",
-    "Pax": "Play Date",
-    "Team": "Redzone",
-    "AO": "the_farm",
+    "Pax": "JellyRoll",
+    "Team": "Richwood",
+    "AO": "the_dock",
     "Counted": true,
     "Reason": ""
   },
   {
     "Date": "2026-01-15T05:00:00.000Z",
     "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Play Date",
-    "Team": "Redzone",
-    "AO": "the_redzone",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-14T05:00:00.000Z",
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Play Date",
-    "Team": "Redzone",
-    "AO": "the_farm",
+    "Pax": "JellyRoll",
+    "Team": "Richwood",
+    "AO": "the_show",
     "Counted": true,
     "Reason": ""
   },
   {
     "Date": "2026-01-12T05:00:00.000Z",
     "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Play Date",
-    "Team": "Redzone",
-    "AO": "the_farm",
+    "Pax": "JellyRoll",
+    "Team": "Richwood",
+    "AO": "the_dock",
     "Counted": true,
     "Reason": ""
   },
   {
-    "Date": "2026-01-09T05:00:00.000Z",
+    "Date": "2026-01-08T05:00:00.000Z",
     "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Play Date",
-    "Team": "Redzone",
-    "AO": "the_floor",
+    "Pax": "JellyRoll",
+    "Team": "Richwood",
+    "AO": "the_show",
     "Counted": true,
     "Reason": ""
   },
   {
     "Date": "2026-01-06T05:00:00.000Z",
     "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Play Date",
-    "Team": "Redzone",
-    "AO": "the_redzone",
+    "Pax": "JellyRoll",
+    "Team": "Richwood",
+    "AO": "the_clocktower",
     "Counted": true,
     "Reason": ""
   },
   {
-    "Date": "2026-01-19T05:00:00.000Z",
+    "Date": "2026-01-05T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "JellyRoll",
+    "Team": "Richwood",
+    "AO": "the_dock",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-22T05:00:00.000Z",
     "WeekStart": "2026-01-19T05:00:00.000Z",
-    "Pax": "Alice",
-    "Team": "Clocktower",
-    "AO": "the_farm",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-16T05:00:00.000Z",
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Alice",
-    "Team": "Clocktower",
-    "AO": "the_yard",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-13T05:00:00.000Z",
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Alice",
+    "Pax": "Village people",
     "Team": "Clocktower",
     "AO": "the_clocktower",
     "Counted": true,
     "Reason": ""
   },
   {
-    "Date": "2026-01-09T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Alice",
+    "Date": "2026-01-20T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Village people",
     "Team": "Clocktower",
-    "AO": "the_yard",
-    "Counted": false,
-    "Reason": "Beatdowns capped at 3"
+    "AO": "the_clocktower",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-16T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Village people",
+    "Team": "Clocktower",
+    "AO": "the_floor",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-15T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Village people",
+    "Team": "Clocktower",
+    "AO": "the_clocktower",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-12T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Village people",
+    "Team": "Clocktower",
+    "AO": "the_farm",
+    "Counted": true,
+    "Reason": ""
   },
   {
     "Date": "2026-01-08T05:00:00.000Z",
     "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Alice",
+    "Pax": "Village people",
     "Team": "Clocktower",
-    "AO": "the_factory",
-    "Counted": false,
-    "Reason": "Beatdowns capped at 3"
+    "AO": "the_clocktower",
+    "Counted": true,
+    "Reason": ""
   },
   {
     "Date": "2026-01-06T05:00:00.000Z",
     "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Alice",
+    "Pax": "Village people",
     "Team": "Clocktower",
     "AO": "the_clocktower",
     "Counted": true,
@@ -1604,9 +1820,63 @@
   {
     "Date": "2026-01-05T05:00:00.000Z",
     "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Alice",
+    "Pax": "Village people",
     "Team": "Clocktower",
     "AO": "the_farm",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-22T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Heidi",
+    "Team": "Clocktower",
+    "AO": "the_clocktower",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-20T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Heidi",
+    "Team": "Clocktower",
+    "AO": "the_clocktower",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-15T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Heidi",
+    "Team": "Clocktower",
+    "AO": "the_clocktower",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-13T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Heidi",
+    "Team": "Clocktower",
+    "AO": "the_clocktower",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-08T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Heidi",
+    "Team": "Clocktower",
+    "AO": "the_clocktower",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-06T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Heidi",
+    "Team": "Clocktower",
+    "AO": "the_clocktower",
     "Counted": true,
     "Reason": ""
   },
@@ -1667,69 +1937,6 @@
   {
     "Date": "2026-01-20T05:00:00.000Z",
     "WeekStart": "2026-01-19T05:00:00.000Z",
-    "Pax": "JellyRoll",
-    "Team": "Richwood",
-    "AO": "the_show",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-19T05:00:00.000Z",
-    "WeekStart": "2026-01-19T05:00:00.000Z",
-    "Pax": "JellyRoll",
-    "Team": "Richwood",
-    "AO": "the_dock",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-15T05:00:00.000Z",
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "JellyRoll",
-    "Team": "Richwood",
-    "AO": "the_show",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-12T05:00:00.000Z",
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "JellyRoll",
-    "Team": "Richwood",
-    "AO": "the_dock",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-08T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "JellyRoll",
-    "Team": "Richwood",
-    "AO": "the_show",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-06T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "JellyRoll",
-    "Team": "Richwood",
-    "AO": "the_clocktower",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-05T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "JellyRoll",
-    "Team": "Richwood",
-    "AO": "the_dock",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-20T05:00:00.000Z",
-    "WeekStart": "2026-01-19T05:00:00.000Z",
     "Pax": "Kinevil",
     "Team": "Farm",
     "AO": "the_factory",
@@ -1778,6 +1985,60 @@
     "Pax": "Kinevil",
     "Team": "Farm",
     "AO": "the_factory",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-22T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Poindexter",
+    "Team": "Clocktower",
+    "AO": "the_clocktower",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-20T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Poindexter",
+    "Team": "Clocktower",
+    "AO": "the_clocktower",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-15T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Poindexter",
+    "Team": "Clocktower",
+    "AO": "the_clocktower",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-13T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Poindexter",
+    "Team": "Clocktower",
+    "AO": "the_clocktower",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-08T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Poindexter",
+    "Team": "Clocktower",
+    "AO": "the_clocktower",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-06T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Poindexter",
+    "Team": "Clocktower",
+    "AO": "the_clocktower",
     "Counted": true,
     "Reason": ""
   },
@@ -1895,6 +2156,60 @@
     "Pax": "Puppy mill",
     "Team": "Fountain",
     "AO": "the_fountain",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-22T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Rugrat",
+    "Team": "Clocktower",
+    "AO": "the_clocktower",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-20T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Rugrat",
+    "Team": "Clocktower",
+    "AO": "the_clocktower",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-15T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Rugrat",
+    "Team": "Clocktower",
+    "AO": "the_clocktower",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-13T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Rugrat",
+    "Team": "Clocktower",
+    "AO": "the_clocktower",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-08T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Rugrat",
+    "Team": "Clocktower",
+    "AO": "the_clocktower",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-06T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Rugrat",
+    "Team": "Clocktower",
+    "AO": "the_clocktower",
     "Counted": true,
     "Reason": ""
   },
@@ -1962,69 +2277,6 @@
     "Reason": ""
   },
   {
-    "Date": "2026-01-20T05:00:00.000Z",
-    "WeekStart": "2026-01-19T05:00:00.000Z",
-    "Pax": "Village people",
-    "Team": "Clocktower",
-    "AO": "the_clocktower",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-16T05:00:00.000Z",
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Village people",
-    "Team": "Clocktower",
-    "AO": "the_floor",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-15T05:00:00.000Z",
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Village people",
-    "Team": "Clocktower",
-    "AO": "the_clocktower",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-12T05:00:00.000Z",
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Village people",
-    "Team": "Clocktower",
-    "AO": "the_farm",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-08T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Village people",
-    "Team": "Clocktower",
-    "AO": "the_clocktower",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-06T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Village people",
-    "Team": "Clocktower",
-    "AO": "the_clocktower",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-05T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Village people",
-    "Team": "Clocktower",
-    "AO": "the_farm",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
     "Date": "2026-01-21T05:00:00.000Z",
     "WeekStart": "2026-01-19T05:00:00.000Z",
     "Pax": "After Market",
@@ -2079,335 +2331,11 @@
     "Reason": ""
   },
   {
-    "Date": "2026-01-16T05:00:00.000Z",
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Goosebumps",
-    "Team": "Extras",
-    "AO": "the_yard",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-13T05:00:00.000Z",
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Goosebumps",
-    "Team": "Extras",
+    "Date": "2026-01-22T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Beaker",
+    "Team": "Redzone",
     "AO": "the_redzone",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-10T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Goosebumps",
-    "Team": "Extras",
-    "AO": "the_plant",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-06T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Goosebumps",
-    "Team": "Extras",
-    "AO": "the_factory",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-05T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Goosebumps",
-    "Team": "Extras",
-    "AO": "the_farm",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-20T05:00:00.000Z",
-    "WeekStart": "2026-01-19T05:00:00.000Z",
-    "Pax": "Heidi",
-    "Team": "Clocktower",
-    "AO": "the_clocktower",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-15T05:00:00.000Z",
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Heidi",
-    "Team": "Clocktower",
-    "AO": "the_clocktower",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-13T05:00:00.000Z",
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Heidi",
-    "Team": "Clocktower",
-    "AO": "the_clocktower",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-08T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Heidi",
-    "Team": "Clocktower",
-    "AO": "the_clocktower",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-06T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Heidi",
-    "Team": "Clocktower",
-    "AO": "the_clocktower",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-20T05:00:00.000Z",
-    "WeekStart": "2026-01-19T05:00:00.000Z",
-    "Pax": "Poindexter",
-    "Team": "Clocktower",
-    "AO": "the_clocktower",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-15T05:00:00.000Z",
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Poindexter",
-    "Team": "Clocktower",
-    "AO": "the_clocktower",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-13T05:00:00.000Z",
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Poindexter",
-    "Team": "Clocktower",
-    "AO": "the_clocktower",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-08T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Poindexter",
-    "Team": "Clocktower",
-    "AO": "the_clocktower",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-06T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Poindexter",
-    "Team": "Clocktower",
-    "AO": "the_clocktower",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-10T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Quaker",
-    "Team": "Farm",
-    "AO": "the_plant",
-    "Counted": false,
-    "Reason": "Beatdowns capped at 3"
-  },
-  {
-    "Date": "2026-01-08T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Quaker",
-    "Team": "Farm",
-    "AO": "the_redzone",
-    "Counted": false,
-    "Reason": "Beatdowns capped at 3"
-  },
-  {
-    "Date": "2026-01-07T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Quaker",
-    "Team": "Farm",
-    "AO": "the_farm",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-06T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Quaker",
-    "Team": "Farm",
-    "AO": "the_factory",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-05T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Quaker",
-    "Team": "Farm",
-    "AO": "the_farm",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-21T05:00:00.000Z",
-    "WeekStart": "2026-01-19T05:00:00.000Z",
-    "Pax": "Ricky Bobby",
-    "Team": "Richwood",
-    "AO": "the_dock",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-19T05:00:00.000Z",
-    "WeekStart": "2026-01-19T05:00:00.000Z",
-    "Pax": "Ricky Bobby",
-    "Team": "Richwood",
-    "AO": "the_dock",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-14T05:00:00.000Z",
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Ricky Bobby",
-    "Team": "Richwood",
-    "AO": "the_dock",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-12T05:00:00.000Z",
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Ricky Bobby",
-    "Team": "Richwood",
-    "AO": "the_dock",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-07T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Ricky Bobby",
-    "Team": "Richwood",
-    "AO": "the_dock",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-05T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Ricky Bobby",
-    "Team": "Richwood",
-    "AO": "the_dock",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-20T05:00:00.000Z",
-    "WeekStart": "2026-01-19T05:00:00.000Z",
-    "Pax": "Rugrat",
-    "Team": "Clocktower",
-    "AO": "the_clocktower",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-15T05:00:00.000Z",
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Rugrat",
-    "Team": "Clocktower",
-    "AO": "the_clocktower",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-13T05:00:00.000Z",
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Rugrat",
-    "Team": "Clocktower",
-    "AO": "the_clocktower",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-08T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Rugrat",
-    "Team": "Clocktower",
-    "AO": "the_clocktower",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-06T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Rugrat",
-    "Team": "Clocktower",
-    "AO": "the_clocktower",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-21T05:00:00.000Z",
-    "WeekStart": "2026-01-19T05:00:00.000Z",
-    "Pax": "Sprocket",
-    "Team": "Fountain",
-    "AO": "the_fountain",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-16T05:00:00.000Z",
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Sprocket",
-    "Team": "Fountain",
-    "AO": "the_yard",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-14T05:00:00.000Z",
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Sprocket",
-    "Team": "Fountain",
-    "AO": "the_fountain",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-12T05:00:00.000Z",
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Sprocket",
-    "Team": "Fountain",
-    "AO": "the_fountain",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-07T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Sprocket",
-    "Team": "Fountain",
-    "AO": "the_fountain",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-05T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Sprocket",
-    "Team": "Fountain",
-    "AO": "the_fountain",
     "Counted": true,
     "Reason": ""
   },
@@ -2457,47 +2385,11 @@
     "Reason": ""
   },
   {
-    "Date": "2026-01-21T05:00:00.000Z",
+    "Date": "2026-01-22T05:00:00.000Z",
     "WeekStart": "2026-01-19T05:00:00.000Z",
-    "Pax": "BigRig",
-    "Team": "Fountain",
-    "AO": "the_fountain",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-19T05:00:00.000Z",
-    "WeekStart": "2026-01-19T05:00:00.000Z",
-    "Pax": "BigRig",
-    "Team": "Fountain",
-    "AO": "the_fountain",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-14T05:00:00.000Z",
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "BigRig",
-    "Team": "Fountain",
-    "AO": "the_fountain",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-07T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "BigRig",
-    "Team": "Fountain",
-    "AO": "the_fountain",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-05T05:00:00.000Z",
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "BigRig",
-    "Team": "Fountain",
-    "AO": "the_fountain",
+    "Pax": "Coffin",
+    "Team": "Richwood",
+    "AO": "the_show",
     "Counted": true,
     "Reason": ""
   },
@@ -2543,6 +2435,213 @@
     "Pax": "Coffin",
     "Team": "Richwood",
     "AO": "the_dock",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-16T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Goosebumps",
+    "Team": "Extras",
+    "AO": "the_yard",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-13T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Goosebumps",
+    "Team": "Extras",
+    "AO": "the_redzone",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-10T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Goosebumps",
+    "Team": "Extras",
+    "AO": "the_plant",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-06T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Goosebumps",
+    "Team": "Extras",
+    "AO": "the_factory",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-05T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Goosebumps",
+    "Team": "Extras",
+    "AO": "the_farm",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-10T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Quaker",
+    "Team": "Farm",
+    "AO": "the_plant",
+    "Counted": false,
+    "Reason": "Beatdowns capped at 3"
+  },
+  {
+    "Date": "2026-01-08T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Quaker",
+    "Team": "Farm",
+    "AO": "the_redzone",
+    "Counted": false,
+    "Reason": "Beatdowns capped at 3"
+  },
+  {
+    "Date": "2026-01-07T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Quaker",
+    "Team": "Farm",
+    "AO": "the_farm",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-06T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Quaker",
+    "Team": "Farm",
+    "AO": "the_factory",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-05T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Quaker",
+    "Team": "Farm",
+    "AO": "the_farm",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-21T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Ricky Bobby",
+    "Team": "Richwood",
+    "AO": "the_dock",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-19T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Ricky Bobby",
+    "Team": "Richwood",
+    "AO": "the_dock",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-14T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Ricky Bobby",
+    "Team": "Richwood",
+    "AO": "the_dock",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-12T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Ricky Bobby",
+    "Team": "Richwood",
+    "AO": "the_dock",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-07T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Ricky Bobby",
+    "Team": "Richwood",
+    "AO": "the_dock",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-05T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Ricky Bobby",
+    "Team": "Richwood",
+    "AO": "the_dock",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-21T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Sprocket",
+    "Team": "Fountain",
+    "AO": "the_fountain",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-16T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Sprocket",
+    "Team": "Fountain",
+    "AO": "the_yard",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-14T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Sprocket",
+    "Team": "Fountain",
+    "AO": "the_fountain",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-12T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Sprocket",
+    "Team": "Fountain",
+    "AO": "the_fountain",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-07T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Sprocket",
+    "Team": "Fountain",
+    "AO": "the_fountain",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-05T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Sprocket",
+    "Team": "Fountain",
+    "AO": "the_fountain",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-22T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Uniball",
+    "Team": "Extras",
+    "AO": "the_show",
     "Counted": true,
     "Reason": ""
   },
@@ -2579,6 +2678,60 @@
     "Pax": "Uniball",
     "Team": "Extras",
     "AO": "the_farm",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-21T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "BigRig",
+    "Team": "Fountain",
+    "AO": "the_fountain",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-19T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "BigRig",
+    "Team": "Fountain",
+    "AO": "the_fountain",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-14T05:00:00.000Z",
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "BigRig",
+    "Team": "Fountain",
+    "AO": "the_fountain",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-07T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "BigRig",
+    "Team": "Fountain",
+    "AO": "the_fountain",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-05T05:00:00.000Z",
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "BigRig",
+    "Team": "Fountain",
+    "AO": "the_fountain",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-22T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Dewey",
+    "Team": "Extras",
+    "AO": "the_redzone",
     "Counted": true,
     "Reason": ""
   },
@@ -4588,5 +4741,149 @@
     "AO": "BlackOps",
     "Counted": false,
     "Reason": "Duplicate same-day"
+  },
+  {
+    "Date": "2026-01-20T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Village people",
+    "Team": "Clocktower",
+    "AO": "PreWork",
+    "Counted": false,
+    "Reason": "Duplicate same-day"
+  },
+  {
+    "Date": "2026-01-22T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Cabana Boy",
+    "Team": "Factory",
+    "AO": "PreWork",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-22T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Biden",
+    "Team": "Factory",
+    "AO": "PreWork",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-22T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Bluey",
+    "Team": "Factory",
+    "AO": "PreWork",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-22T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Peach",
+    "Team": "Clocktower",
+    "AO": "PreWork",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-22T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Village people",
+    "Team": "Clocktower",
+    "AO": "PreWork",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-22T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Rugrat",
+    "Team": "Clocktower",
+    "AO": "PreWork",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-22T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Poindexter",
+    "Team": "Clocktower",
+    "AO": "PreWork",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-22T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Heidi",
+    "Team": "Clocktower",
+    "AO": "PreWork",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-22T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "BigRig",
+    "Team": "Fountain",
+    "AO": "BlackOps",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-22T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Ocho",
+    "Team": "Redzone",
+    "AO": "PreWork",
+    "Counted": false,
+    "Reason": "Extra Credit Capped at 2"
+  },
+  {
+    "Date": "2026-01-22T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Beaker",
+    "Team": "Redzone",
+    "AO": "PreWork",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-22T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Bumblebee",
+    "Team": "Richwood",
+    "AO": "PreWork",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-22T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "JellyRoll",
+    "Team": "Richwood",
+    "AO": "PreWork",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-22T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Barf",
+    "Team": "Extras",
+    "AO": "PreWork",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-22T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Uniball",
+    "Team": "Extras",
+    "AO": "PreWork",
+    "Counted": true,
+    "Reason": ""
   }
 ]
