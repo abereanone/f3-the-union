@@ -5083,5 +5083,32 @@
     "AO": "BlackOps",
     "Counted": true,
     "Reason": ""
+  },
+  {
+    "Date": "2026-01-24T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Puppy mill",
+    "Team": "Fountain",
+    "AO": "BlackOps",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-24T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Iceberg",
+    "Team": "Farm",
+    "AO": "PreWork",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-24T05:00:00.000Z",
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "DUFRESNE",
+    "Team": "Farm",
+    "AO": "PreWork",
+    "Counted": false,
+    "Reason": "Extra Credit Capped at 2"
   }
 ]
