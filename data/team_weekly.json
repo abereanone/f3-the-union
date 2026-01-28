@@ -1,18 +1,8 @@
 [
   {
-    "WeekStart": "2026-01-19T05:00:00.000Z",
-    "Team": "Farm",
-    "AvgScore": 100
-  },
-  {
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Team": "Farm",
-    "AvgScore": 120
-  },
-  {
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Team": "Farm",
-    "AvgScore": 134
+    "WeekStart": "2026-01-26T05:00:00.000Z",
+    "Team": "Redzone",
+    "AvgScore": 28
   },
   {
     "WeekStart": "2026-01-19T05:00:00.000Z",
@@ -28,6 +18,21 @@
     "WeekStart": "2026-01-05T05:00:00.000Z",
     "Team": "Redzone",
     "AvgScore": 106
+  },
+  {
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Team": "Farm",
+    "AvgScore": 100
+  },
+  {
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Team": "Farm",
+    "AvgScore": 120
+  },
+  {
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Team": "Farm",
+    "AvgScore": 134
   },
   {
     "WeekStart": "2026-01-19T05:00:00.000Z",
@@ -60,19 +65,9 @@
     "AvgScore": 124
   },
   {
-    "WeekStart": "2026-01-19T05:00:00.000Z",
-    "Team": "Richwood",
-    "AvgScore": 150
-  },
-  {
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Team": "Richwood",
-    "AvgScore": 150
-  },
-  {
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Team": "Richwood",
-    "AvgScore": 122
+    "WeekStart": "2026-01-26T05:00:00.000Z",
+    "Team": "Clocktower",
+    "AvgScore": 43
   },
   {
     "WeekStart": "2026-01-19T05:00:00.000Z",
@@ -91,6 +86,21 @@
   },
   {
     "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Team": "Richwood",
+    "AvgScore": 150
+  },
+  {
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Team": "Richwood",
+    "AvgScore": 150
+  },
+  {
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Team": "Richwood",
+    "AvgScore": 122
+  },
+  {
+    "WeekStart": "2026-01-19T05:00:00.000Z",
     "Team": "Fountain",
     "AvgScore": 161
   },
@@ -103,5 +113,30 @@
     "WeekStart": "2026-01-05T05:00:00.000Z",
     "Team": "Fountain",
     "AvgScore": 134
+  },
+  {
+    "WeekStart": "2026-01-26T05:00:00.000Z",
+    "Team": "Fountain",
+    "AvgScore": 28
+  },
+  {
+    "WeekStart": "2026-01-26T05:00:00.000Z",
+    "Team": "Richwood",
+    "AvgScore": 11
+  },
+  {
+    "WeekStart": "2026-01-26T05:00:00.000Z",
+    "Team": "Extras",
+    "AvgScore": 5
+  },
+  {
+    "WeekStart": "2026-01-26T05:00:00.000Z",
+    "Team": "Factory",
+    "AvgScore": 13
+  },
+  {
+    "WeekStart": "2026-01-26T05:00:00.000Z",
+    "Team": "Farm",
+    "AvgScore": 0
   }
 ]
