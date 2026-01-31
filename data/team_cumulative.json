@@ -13,7 +13,7 @@
   },
   {
     "Team": "Clocktower",
-    "AvgScore": 147
+    "AvgScore": 149
   },
   {
     "Team": "Extras",
@@ -26,9 +26,5 @@
   {
     "Team": "Richwood",
     "AvgScore": 125
-  },
-  {
-    "Team": "",
-    "AvgScore": 67
   }
 ]
