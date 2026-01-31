@@ -797,8 +797,8 @@
     "Pax": "Peach",
     "Team": "Clocktower",
     "AO": "the_clocktower",
-    "Counted": true,
-    "Reason": ""
+    "Counted": false,
+    "Reason": "Beatdowns capped at 3"
   },
   {
     "Date": "2026-01-27T05:00:00.000Z",
@@ -1319,8 +1319,8 @@
     "Pax": "Hobo",
     "Team": "Fountain",
     "AO": "the_floor",
-    "Counted": true,
-    "Reason": ""
+    "Counted": false,
+    "Reason": "Beatdowns capped at 3"
   },
   {
     "Date": "2026-01-28T05:00:00.000Z",
@@ -2174,8 +2174,8 @@
     "Pax": "House Arrest",
     "Team": "Fountain",
     "AO": "the_yard",
-    "Counted": true,
-    "Reason": ""
+    "Counted": false,
+    "Reason": "Beatdowns capped at 3"
   },
   {
     "Date": "2026-01-28T05:00:00.000Z",
@@ -2336,8 +2336,8 @@
     "Pax": "Rugrat",
     "Team": "Clocktower",
     "AO": "the_yard",
-    "Counted": true,
-    "Reason": ""
+    "Counted": false,
+    "Reason": "Beatdowns capped at 3"
   },
   {
     "Date": "2026-01-29T05:00:00.000Z",
@@ -6260,8 +6260,8 @@
     "Pax": "BigRig",
     "Team": "Fountain",
     "AO": "BlackOps",
-    "Counted": true,
-    "Reason": ""
+    "Counted": false,
+    "Reason": "Beatdowns capped at 3"
   },
   {
     "Date": "2026-01-29T05:00:00.000Z",
@@ -6269,8 +6269,8 @@
     "Pax": "Sprocket",
     "Team": "Fountain",
     "AO": "BlackOps",
-    "Counted": true,
-    "Reason": ""
+    "Counted": false,
+    "Reason": "Beatdowns capped at 3"
   },
   {
     "Date": "2026-01-30T05:00:00.000Z",
@@ -6296,6 +6296,96 @@
     "Pax": "Village people",
     "Team": "Clocktower",
     "AO": "PreWork",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-25T05:00:00.000Z",
+    "WeekStart": "2026-01-26T05:00:00.000Z",
+    "Pax": "House Arrest",
+    "Team": "Fountain",
+    "AO": "KOG_BONUS",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-25T05:00:00.000Z",
+    "WeekStart": "2026-01-26T05:00:00.000Z",
+    "Pax": "Rugrat",
+    "Team": "Clocktower",
+    "AO": "KOG_BONUS",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-25T05:00:00.000Z",
+    "WeekStart": "2026-01-26T05:00:00.000Z",
+    "Pax": "Peach",
+    "Team": "Clocktower",
+    "AO": "KOG_BONUS",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-25T05:00:00.000Z",
+    "WeekStart": "2026-01-26T05:00:00.000Z",
+    "Pax": "Sprocket",
+    "Team": "Fountain",
+    "AO": "KOG_BONUS",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-25T05:00:00.000Z",
+    "WeekStart": "2026-01-26T05:00:00.000Z",
+    "Pax": "Barf",
+    "Team": "Extras",
+    "AO": "KOG_BONUS",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-25T05:00:00.000Z",
+    "WeekStart": "2026-01-26T05:00:00.000Z",
+    "Pax": "Shrink",
+    "Team": "Factory",
+    "AO": "KOG_BONUS",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-25T05:00:00.000Z",
+    "WeekStart": "2026-01-26T05:00:00.000Z",
+    "Pax": "BigRig",
+    "Team": "Fountain",
+    "AO": "KOG_BONUS",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-25T05:00:00.000Z",
+    "WeekStart": "2026-01-26T05:00:00.000Z",
+    "Pax": "Hobo",
+    "Team": "Fountain",
+    "AO": "KOG_BONUS",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-25T05:00:00.000Z",
+    "WeekStart": "2026-01-26T05:00:00.000Z",
+    "Pax": "Puppy mill",
+    "Team": "Fountain",
+    "AO": "KOG_BONUS",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-25T05:00:00.000Z",
+    "WeekStart": "2026-01-26T05:00:00.000Z",
+    "Pax": "Biden",
+    "Team": "Factory",
+    "AO": "KOG_BONUS",
     "Counted": true,
     "Reason": ""
   }
