@@ -229,9 +229,9 @@ function groupBy(arr, keyFn) {
               .sort((a,b) => new Date(a.Date) - new Date(b.Date))
               .forEach(ev => {
                 const line = document.createElement('div');
+                const reason = ev.Reason ? ` (${ev.Reason})` : '';
                 line.textContent =
-                  `${formatMonthDay(ev.Date)} — ${ev.AO}` +
-                  (ev.Counted ? '' : ` (${ev.Reason})`);
+                  `${formatMonthDay(ev.Date)} - ${ev.AO}${reason}`;
                 if (!ev.Counted) line.className = 'excluded';
                 evList.appendChild(line);
               });
