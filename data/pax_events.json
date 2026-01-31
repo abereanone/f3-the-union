@@ -1319,8 +1319,8 @@
     "Pax": "Hobo",
     "Team": "Fountain",
     "AO": "the_floor",
-    "Counted": false,
-    "Reason": "Beatdowns capped at 3"
+    "Counted": true,
+    "Reason": ""
   },
   {
     "Date": "2026-01-28T05:00:00.000Z",
@@ -6357,15 +6357,6 @@
     "Date": "2026-01-25T05:00:00.000Z",
     "WeekStart": "2026-01-26T05:00:00.000Z",
     "Pax": "BigRig",
-    "Team": "Fountain",
-    "AO": "KOG_BONUS",
-    "Counted": true,
-    "Reason": ""
-  },
-  {
-    "Date": "2026-01-25T05:00:00.000Z",
-    "WeekStart": "2026-01-26T05:00:00.000Z",
-    "Pax": "Hobo",
     "Team": "Fountain",
     "AO": "KOG_BONUS",
     "Counted": true,
