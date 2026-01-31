@@ -84,6 +84,13 @@
     "Score": 167
   },
   {
+    "WeekStart": "2026-01-26T05:00:00.000Z",
+    "Pax": "Charlotte",
+    "Team": "Factory",
+    "Raw": 3,
+    "Score": 100
+  },
+  {
     "WeekStart": "2026-01-19T05:00:00.000Z",
     "Pax": "Charlotte",
     "Team": "Factory",
@@ -100,6 +107,34 @@
   {
     "WeekStart": "2026-01-05T05:00:00.000Z",
     "Pax": "Charlotte",
+    "Team": "Factory",
+    "Raw": 5,
+    "Score": 167
+  },
+  {
+    "WeekStart": "2026-01-26T05:00:00.000Z",
+    "Pax": "Cabana Boy",
+    "Team": "Factory",
+    "Raw": 5,
+    "Score": 167
+  },
+  {
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Cabana Boy",
+    "Team": "Factory",
+    "Raw": 5,
+    "Score": 167
+  },
+  {
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Cabana Boy",
+    "Team": "Factory",
+    "Raw": 5,
+    "Score": 167
+  },
+  {
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Cabana Boy",
     "Team": "Factory",
     "Raw": 5,
     "Score": 167
@@ -131,6 +166,13 @@
     "Team": "Clocktower",
     "Raw": 5,
     "Score": 167
+  },
+  {
+    "WeekStart": "2026-01-26T05:00:00.000Z",
+    "Pax": "Barf",
+    "Team": "Extras",
+    "Raw": 2,
+    "Score": 67
   },
   {
     "WeekStart": "2026-01-19T05:00:00.000Z",
@@ -206,83 +248,6 @@
     "WeekStart": "2026-01-05T05:00:00.000Z",
     "Pax": "Bluey",
     "Team": "Factory",
-    "Raw": 5,
-    "Score": 167
-  },
-  {
-    "WeekStart": "2026-01-26T05:00:00.000Z",
-    "Pax": "Cabana Boy",
-    "Team": "Factory",
-    "Raw": 2,
-    "Score": 67
-  },
-  {
-    "WeekStart": "2026-01-19T05:00:00.000Z",
-    "Pax": "Cabana Boy",
-    "Team": "Factory",
-    "Raw": 5,
-    "Score": 167
-  },
-  {
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Cabana Boy",
-    "Team": "Factory",
-    "Raw": 5,
-    "Score": 167
-  },
-  {
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Cabana Boy",
-    "Team": "Factory",
-    "Raw": 5,
-    "Score": 167
-  },
-  {
-    "WeekStart": "2026-01-26T05:00:00.000Z",
-    "Pax": "Pitch Perfect",
-    "Team": "Redzone",
-    "Raw": 3,
-    "Score": 100
-  },
-  {
-    "WeekStart": "2026-01-19T05:00:00.000Z",
-    "Pax": "Pitch Perfect",
-    "Team": "Redzone",
-    "Raw": 5,
-    "Score": 167
-  },
-  {
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Pitch Perfect",
-    "Team": "Redzone",
-    "Raw": 5,
-    "Score": 167
-  },
-  {
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Pitch Perfect",
-    "Team": "Redzone",
-    "Raw": 5,
-    "Score": 167
-  },
-  {
-    "WeekStart": "2026-01-19T05:00:00.000Z",
-    "Pax": "Ball Valve",
-    "Team": "Richwood",
-    "Raw": 4,
-    "Score": 133
-  },
-  {
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Ball Valve",
-    "Team": "Richwood",
-    "Raw": 5,
-    "Score": 167
-  },
-  {
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Ball Valve",
-    "Team": "Richwood",
     "Raw": 5,
     "Score": 167
   },
@@ -290,48 +255,181 @@
     "WeekStart": "2026-01-26T05:00:00.000Z",
     "Pax": "BodyPump",
     "Team": "Clocktower",
+    "Raw": 2,
+    "Score": 67
+  },
+  {
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "BodyPump",
+    "Team": "Clocktower",
+    "Raw": 3,
+    "Score": 100
+  },
+  {
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "BodyPump",
+    "Team": "Clocktower",
+    "Raw": 3,
+    "Score": 100
+  },
+  {
+    "WeekStart": "2026-01-26T05:00:00.000Z",
+    "Pax": "Hobo",
+    "Team": "Fountain",
+    "Raw": 5,
+    "Score": 167
+  },
+  {
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Hobo",
+    "Team": "Fountain",
+    "Raw": 5,
+    "Score": 167
+  },
+  {
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Hobo",
+    "Team": "Fountain",
+    "Raw": 5,
+    "Score": 167
+  },
+  {
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Hobo",
+    "Team": "Fountain",
+    "Raw": 5,
+    "Score": 167
+  },
+  {
+    "WeekStart": "2026-01-26T05:00:00.000Z",
+    "Pax": "Pitch Perfect",
+    "Team": "Redzone",
+    "Raw": 3,
+    "Score": 100
+  },
+  {
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Pitch Perfect",
+    "Team": "Redzone",
+    "Raw": 5,
+    "Score": 167
+  },
+  {
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Pitch Perfect",
+    "Team": "Redzone",
+    "Raw": 5,
+    "Score": 167
+  },
+  {
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Pitch Perfect",
+    "Team": "Redzone",
+    "Raw": 5,
+    "Score": 167
+  },
+  {
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Ball Valve",
+    "Team": "Richwood",
+    "Raw": 4,
+    "Score": 133
+  },
+  {
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Ball Valve",
+    "Team": "Richwood",
+    "Raw": 5,
+    "Score": 167
+  },
+  {
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Ball Valve",
+    "Team": "Richwood",
+    "Raw": 5,
+    "Score": 167
+  },
+  {
+    "WeekStart": "2026-01-26T05:00:00.000Z",
+    "Pax": "Bumblebee",
+    "Team": "Richwood",
+    "Raw": 3,
+    "Score": 100
+  },
+  {
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Bumblebee",
+    "Team": "Richwood",
+    "Raw": 5,
+    "Score": 167
+  },
+  {
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Bumblebee",
+    "Team": "Richwood",
+    "Raw": 5,
+    "Score": 167
+  },
+  {
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Bumblebee",
+    "Team": "Richwood",
+    "Raw": 4,
+    "Score": 133
+  },
+  {
+    "WeekStart": "2026-01-26T05:00:00.000Z",
+    "Pax": "Hermey",
+    "Team": "Richwood",
+    "Raw": 4,
+    "Score": 133
+  },
+  {
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Hermey",
+    "Team": "Richwood",
+    "Raw": 5,
+    "Score": 167
+  },
+  {
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Hermey",
+    "Team": "Richwood",
+    "Raw": 5,
+    "Score": 167
+  },
+  {
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Hermey",
+    "Team": "Richwood",
+    "Raw": 5,
+    "Score": 167
+  },
+  {
+    "WeekStart": "2026-01-26T05:00:00.000Z",
+    "Pax": "Iceberg",
+    "Team": "Farm",
     "Raw": 1,
     "Score": 33
   },
   {
     "WeekStart": "2026-01-19T05:00:00.000Z",
-    "Pax": "BodyPump",
-    "Team": "Clocktower",
-    "Raw": 3,
-    "Score": 100
-  },
-  {
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "BodyPump",
-    "Team": "Clocktower",
-    "Raw": 3,
-    "Score": 100
-  },
-  {
-    "WeekStart": "2026-01-26T05:00:00.000Z",
-    "Pax": "Hobo",
-    "Team": "Fountain",
-    "Raw": 3,
-    "Score": 100
-  },
-  {
-    "WeekStart": "2026-01-19T05:00:00.000Z",
-    "Pax": "Hobo",
-    "Team": "Fountain",
+    "Pax": "Iceberg",
+    "Team": "Farm",
     "Raw": 5,
     "Score": 167
   },
   {
     "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Hobo",
-    "Team": "Fountain",
+    "Pax": "Iceberg",
+    "Team": "Farm",
     "Raw": 5,
     "Score": 167
   },
   {
     "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Hobo",
-    "Team": "Fountain",
+    "Pax": "Iceberg",
+    "Team": "Farm",
     "Raw": 5,
     "Score": 167
   },
@@ -385,74 +483,60 @@
     "Score": 167
   },
   {
-    "WeekStart": "2026-01-19T05:00:00.000Z",
-    "Pax": "Bumblebee",
-    "Team": "Richwood",
-    "Raw": 5,
-    "Score": 167
-  },
-  {
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Bumblebee",
-    "Team": "Richwood",
-    "Raw": 5,
-    "Score": 167
-  },
-  {
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Bumblebee",
-    "Team": "Richwood",
-    "Raw": 4,
-    "Score": 133
-  },
-  {
     "WeekStart": "2026-01-26T05:00:00.000Z",
-    "Pax": "Hermey",
-    "Team": "Richwood",
+    "Pax": "Village people",
+    "Team": "Clocktower",
     "Raw": 3,
     "Score": 100
   },
   {
     "WeekStart": "2026-01-19T05:00:00.000Z",
-    "Pax": "Hermey",
-    "Team": "Richwood",
+    "Pax": "Village people",
+    "Team": "Clocktower",
     "Raw": 5,
     "Score": 167
   },
   {
     "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Hermey",
-    "Team": "Richwood",
+    "Pax": "Village people",
+    "Team": "Clocktower",
     "Raw": 5,
     "Score": 167
   },
   {
     "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Hermey",
-    "Team": "Richwood",
+    "Pax": "Village people",
+    "Team": "Clocktower",
+    "Raw": 5,
+    "Score": 167
+  },
+  {
+    "WeekStart": "2026-01-26T05:00:00.000Z",
+    "Pax": "House Arrest",
+    "Team": "Fountain",
     "Raw": 5,
     "Score": 167
   },
   {
     "WeekStart": "2026-01-19T05:00:00.000Z",
-    "Pax": "Iceberg",
-    "Team": "Farm",
+    "Pax": "House Arrest",
+    "Team": "Fountain",
     "Raw": 5,
     "Score": 167
   },
   {
     "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Iceberg",
-    "Team": "Farm",
+    "Pax": "House Arrest",
+    "Team": "Fountain",
     "Raw": 5,
     "Score": 167
   },
   {
     "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Iceberg",
-    "Team": "Farm",
-    "Raw": 5,
-    "Score": 167
+    "Pax": "House Arrest",
+    "Team": "Fountain",
+    "Raw": 2,
+    "Score": 67
   },
   {
     "WeekStart": "2026-01-19T05:00:00.000Z",
@@ -477,28 +561,28 @@
   },
   {
     "WeekStart": "2026-01-26T05:00:00.000Z",
-    "Pax": "Village people",
+    "Pax": "Rugrat",
     "Team": "Clocktower",
-    "Raw": 2,
-    "Score": 67
+    "Raw": 5,
+    "Score": 167
   },
   {
     "WeekStart": "2026-01-19T05:00:00.000Z",
-    "Pax": "Village people",
+    "Pax": "Rugrat",
     "Team": "Clocktower",
     "Raw": 5,
     "Score": 167
   },
   {
     "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Village people",
+    "Pax": "Rugrat",
     "Team": "Clocktower",
     "Raw": 5,
     "Score": 167
   },
   {
     "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Village people",
+    "Pax": "Rugrat",
     "Team": "Clocktower",
     "Raw": 5,
     "Score": 167
@@ -554,87 +638,10 @@
   },
   {
     "WeekStart": "2026-01-26T05:00:00.000Z",
-    "Pax": "House Arrest",
-    "Team": "Fountain",
-    "Raw": 2,
-    "Score": 67
-  },
-  {
-    "WeekStart": "2026-01-19T05:00:00.000Z",
-    "Pax": "House Arrest",
-    "Team": "Fountain",
-    "Raw": 5,
-    "Score": 167
-  },
-  {
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "House Arrest",
-    "Team": "Fountain",
-    "Raw": 5,
-    "Score": 167
-  },
-  {
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "House Arrest",
-    "Team": "Fountain",
-    "Raw": 2,
-    "Score": 67
-  },
-  {
-    "WeekStart": "2026-01-26T05:00:00.000Z",
-    "Pax": "Poindexter",
-    "Team": "Clocktower",
-    "Raw": 5,
-    "Score": 167
-  },
-  {
-    "WeekStart": "2026-01-19T05:00:00.000Z",
-    "Pax": "Poindexter",
-    "Team": "Clocktower",
-    "Raw": 5,
-    "Score": 167
-  },
-  {
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Poindexter",
-    "Team": "Clocktower",
-    "Raw": 5,
-    "Score": 167
-  },
-  {
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Poindexter",
-    "Team": "Clocktower",
-    "Raw": 5,
-    "Score": 167
-  },
-  {
-    "WeekStart": "2026-01-26T05:00:00.000Z",
-    "Pax": "Rugrat",
-    "Team": "Clocktower",
+    "Pax": "JellyRoll",
+    "Team": "Richwood",
     "Raw": 4,
     "Score": 133
-  },
-  {
-    "WeekStart": "2026-01-19T05:00:00.000Z",
-    "Pax": "Rugrat",
-    "Team": "Clocktower",
-    "Raw": 5,
-    "Score": 167
-  },
-  {
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Rugrat",
-    "Team": "Clocktower",
-    "Raw": 5,
-    "Score": 167
-  },
-  {
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Rugrat",
-    "Team": "Clocktower",
-    "Raw": 5,
-    "Score": 167
   },
   {
     "WeekStart": "2026-01-19T05:00:00.000Z",
@@ -658,6 +665,34 @@
     "Score": 100
   },
   {
+    "WeekStart": "2026-01-26T05:00:00.000Z",
+    "Pax": "Poindexter",
+    "Team": "Clocktower",
+    "Raw": 5,
+    "Score": 167
+  },
+  {
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Poindexter",
+    "Team": "Clocktower",
+    "Raw": 5,
+    "Score": 167
+  },
+  {
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Poindexter",
+    "Team": "Clocktower",
+    "Raw": 5,
+    "Score": 167
+  },
+  {
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Poindexter",
+    "Team": "Clocktower",
+    "Raw": 5,
+    "Score": 167
+  },
+  {
     "WeekStart": "2026-01-19T05:00:00.000Z",
     "Pax": "Pop Up",
     "Team": "Farm",
@@ -705,13 +740,41 @@
     "Team": "Fountain",
     "Raw": 5,
     "Score": 167
+  },
+  {
+    "WeekStart": "2026-01-26T05:00:00.000Z",
+    "Pax": "Shrink",
+    "Team": "Factory",
+    "Raw": 1,
+    "Score": 33
+  },
+  {
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Shrink",
+    "Team": "Factory",
+    "Raw": 1,
+    "Score": 33
+  },
+  {
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Shrink",
+    "Team": "Factory",
+    "Raw": 3,
+    "Score": 100
+  },
+  {
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Shrink",
+    "Team": "Factory",
+    "Raw": 3,
+    "Score": 100
   },
   {
     "WeekStart": "2026-01-26T05:00:00.000Z",
     "Pax": "Sprocket",
     "Team": "Fountain",
-    "Raw": 3,
-    "Score": 100
+    "Raw": 4,
+    "Score": 133
   },
   {
     "WeekStart": "2026-01-19T05:00:00.000Z",
@@ -738,8 +801,8 @@
     "WeekStart": "2026-01-26T05:00:00.000Z",
     "Pax": "After Market",
     "Team": "Fountain",
-    "Raw": 4,
-    "Score": 133
+    "Raw": 5,
+    "Score": 167
   },
   {
     "WeekStart": "2026-01-19T05:00:00.000Z",
@@ -829,8 +892,8 @@
     "WeekStart": "2026-01-26T05:00:00.000Z",
     "Pax": "Ricky Bobby",
     "Team": "Richwood",
-    "Raw": 1,
-    "Score": 33
+    "Raw": 2,
+    "Score": 67
   },
   {
     "WeekStart": "2026-01-19T05:00:00.000Z",
@@ -852,34 +915,13 @@
     "Team": "Richwood",
     "Raw": 5,
     "Score": 167
-  },
-  {
-    "WeekStart": "2026-01-19T05:00:00.000Z",
-    "Pax": "Shrink",
-    "Team": "Factory",
-    "Raw": 1,
-    "Score": 33
-  },
-  {
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Shrink",
-    "Team": "Factory",
-    "Raw": 3,
-    "Score": 100
-  },
-  {
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Shrink",
-    "Team": "Factory",
-    "Raw": 3,
-    "Score": 100
   },
   {
     "WeekStart": "2026-01-26T05:00:00.000Z",
     "Pax": "BigRig",
     "Team": "Fountain",
-    "Raw": 3,
-    "Score": 100
+    "Raw": 4,
+    "Score": 133
   },
   {
     "WeekStart": "2026-01-19T05:00:00.000Z",
@@ -901,6 +943,34 @@
     "Team": "Fountain",
     "Raw": 5,
     "Score": 167
+  },
+  {
+    "WeekStart": "2026-01-26T05:00:00.000Z",
+    "Pax": "Dewey",
+    "Team": "Extras",
+    "Raw": 2,
+    "Score": 67
+  },
+  {
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "Dewey",
+    "Team": "Extras",
+    "Raw": 2,
+    "Score": 67
+  },
+  {
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "Dewey",
+    "Team": "Extras",
+    "Raw": 2,
+    "Score": 67
+  },
+  {
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "Dewey",
+    "Team": "Extras",
+    "Raw": 1,
+    "Score": 33
   },
   {
     "WeekStart": "2026-01-12T05:00:00.000Z",
@@ -945,27 +1015,6 @@
     "Score": 167
   },
   {
-    "WeekStart": "2026-01-19T05:00:00.000Z",
-    "Pax": "Dewey",
-    "Team": "Extras",
-    "Raw": 2,
-    "Score": 67
-  },
-  {
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "Dewey",
-    "Team": "Extras",
-    "Raw": 2,
-    "Score": 67
-  },
-  {
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Dewey",
-    "Team": "Extras",
-    "Raw": 1,
-    "Score": 33
-  },
-  {
     "WeekStart": "2026-01-26T05:00:00.000Z",
     "Pax": "Dodo",
     "Team": "Redzone",
@@ -985,34 +1034,6 @@
     "Team": "Redzone",
     "Raw": 2,
     "Score": 67
-  },
-  {
-    "WeekStart": "2026-01-26T05:00:00.000Z",
-    "Pax": "Bumblebee",
-    "Team": "Richwood",
-    "Raw": 2,
-    "Score": 67
-  },
-  {
-    "WeekStart": "2026-01-26T05:00:00.000Z",
-    "Pax": "JellyRoll",
-    "Team": "Richwood",
-    "Raw": 2,
-    "Score": 67
-  },
-  {
-    "WeekStart": "2026-01-26T05:00:00.000Z",
-    "Pax": "Barf",
-    "Team": "Extras",
-    "Raw": 1,
-    "Score": 33
-  },
-  {
-    "WeekStart": "2026-01-26T05:00:00.000Z",
-    "Pax": "Charlotte",
-    "Team": "Factory",
-    "Raw": 1,
-    "Score": 33
   },
   {
     "WeekStart": "2026-01-26T05:00:00.000Z",
@@ -1051,21 +1072,7 @@
   },
   {
     "WeekStart": "2026-01-26T05:00:00.000Z",
-    "Pax": "Dewey",
-    "Team": "Extras",
-    "Raw": 0,
-    "Score": 0
-  },
-  {
-    "WeekStart": "2026-01-26T05:00:00.000Z",
     "Pax": "Quaker",
-    "Team": "Farm",
-    "Raw": 0,
-    "Score": 0
-  },
-  {
-    "WeekStart": "2026-01-26T05:00:00.000Z",
-    "Pax": "Iceberg",
     "Team": "Farm",
     "Raw": 0,
     "Score": 0
@@ -1081,13 +1088,6 @@
     "WeekStart": "2026-01-26T05:00:00.000Z",
     "Pax": "Pop Up",
     "Team": "Farm",
-    "Raw": 0,
-    "Score": 0
-  },
-  {
-    "WeekStart": "2026-01-26T05:00:00.000Z",
-    "Pax": "Shrink",
-    "Team": "Factory",
     "Raw": 0,
     "Score": 0
   },
