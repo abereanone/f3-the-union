@@ -57,22 +57,12 @@
   {
     "WeekStart": "2026-01-26T05:00:00.000Z",
     "Team": "Fountain",
-    "AvgScore": 100
-  },
-  {
-    "WeekStart": "2026-01-19T05:00:00.000Z",
-    "Team": "Fountain",
-    "AvgScore": 39
+    "AvgScore": 106
   },
   {
     "WeekStart": "2026-01-12T05:00:00.000Z",
     "Team": "Fountain",
     "AvgScore": 39
-  },
-  {
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Team": "Fountain",
-    "AvgScore": 67
   },
   {
     "WeekStart": "2026-01-05T05:00:00.000Z",
@@ -130,9 +120,19 @@
     "AvgScore": 20
   },
   {
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Team": "Fountain",
+    "AvgScore": 39
+  },
+  {
     "WeekStart": "2026-01-05T05:00:00.000Z",
     "Team": "Farm",
     "AvgScore": 53
+  },
+  {
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Team": "Fountain",
+    "AvgScore": 61
   },
   {
     "WeekStart": "2026-01-12T05:00:00.000Z",

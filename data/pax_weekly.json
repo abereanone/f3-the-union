@@ -150,29 +150,15 @@
     "WeekStart": "2026-01-26T05:00:00.000Z",
     "Pax": "Hobo",
     "Team": "Fountain",
-    "Raw": 6,
-    "Score": 200
-  },
-  {
-    "WeekStart": "2026-01-19T05:00:00.000Z",
-    "Pax": "Hobo",
-    "Team": "Fountain",
-    "Raw": 5,
-    "Score": 167
+    "Raw": 4,
+    "Score": 133
   },
   {
     "WeekStart": "2026-01-12T05:00:00.000Z",
     "Pax": "Hobo",
     "Team": "Fountain",
-    "Raw": 5,
-    "Score": 167
-  },
-  {
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "Hobo",
-    "Team": "Fountain",
-    "Raw": 5,
-    "Score": 167
+    "Raw": 1,
+    "Score": 33
   },
   {
     "WeekStart": "2026-01-26T05:00:00.000Z",
@@ -514,8 +500,29 @@
     "WeekStart": "2026-01-26T05:00:00.000Z",
     "Pax": "BigRig",
     "Team": "Fountain",
-    "Raw": 2,
-    "Score": 67
+    "Raw": 5,
+    "Score": 167
+  },
+  {
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Pax": "BigRig",
+    "Team": "Fountain",
+    "Raw": 5,
+    "Score": 167
+  },
+  {
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Pax": "BigRig",
+    "Team": "Fountain",
+    "Raw": 4,
+    "Score": 133
+  },
+  {
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Pax": "BigRig",
+    "Team": "Fountain",
+    "Raw": 5,
+    "Score": 167
   },
   {
     "WeekStart": "2026-01-26T05:00:00.000Z",
@@ -596,17 +603,17 @@
   },
   {
     "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "House Arrest",
+    "Pax": "Hobo",
     "Team": "Fountain",
     "Raw": 1,
     "Score": 33
   },
   {
     "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Pax": "BigRig",
+    "Pax": "House Arrest",
     "Team": "Fountain",
-    "Raw": 2,
-    "Score": 67
+    "Raw": 1,
+    "Score": 33
   },
   {
     "WeekStart": "2026-01-05T05:00:00.000Z",
@@ -932,14 +939,14 @@
   },
   {
     "WeekStart": "2026-01-19T05:00:00.000Z",
-    "Pax": "House Arrest",
+    "Pax": "Hobo",
     "Team": "Fountain",
     "Raw": 0,
     "Score": 0
   },
   {
     "WeekStart": "2026-01-19T05:00:00.000Z",
-    "Pax": "BigRig",
+    "Pax": "House Arrest",
     "Team": "Fountain",
     "Raw": 0,
     "Score": 0
@@ -1115,13 +1122,6 @@
   {
     "WeekStart": "2026-01-12T05:00:00.000Z",
     "Pax": "House Arrest",
-    "Team": "Fountain",
-    "Raw": 0,
-    "Score": 0
-  },
-  {
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Pax": "BigRig",
     "Team": "Fountain",
     "Raw": 0,
     "Score": 0
