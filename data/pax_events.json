@@ -6311,6 +6311,15 @@
   {
     "Date": "2026-01-26T05:00:00.000Z",
     "WeekStart": "2026-01-26T05:00:00.000Z",
+    "Pax": "Biden",
+    "Team": "Factory",
+    "AO": "KOG_BONUS",
+    "Counted": true,
+    "Reason": "M Convo +2 bonus"
+  },
+  {
+    "Date": "2026-01-26T05:00:00.000Z",
+    "WeekStart": "2026-01-26T05:00:00.000Z",
     "Pax": "Rugrat",
     "Team": "Clocktower",
     "AO": "KOG_BONUS",
@@ -6383,8 +6392,17 @@
   {
     "Date": "2026-01-26T05:00:00.000Z",
     "WeekStart": "2026-01-26T05:00:00.000Z",
-    "Pax": "Biden",
+    "Pax": "Charlotte",
     "Team": "Factory",
+    "AO": "KOG_BONUS",
+    "Counted": true,
+    "Reason": "M Convo +2 bonus"
+  },
+  {
+    "Date": "2026-01-26T05:00:00.000Z",
+    "WeekStart": "2026-01-26T05:00:00.000Z",
+    "Pax": "Village People",
+    "Team": "",
     "AO": "KOG_BONUS",
     "Counted": true,
     "Reason": "M Convo +2 bonus"

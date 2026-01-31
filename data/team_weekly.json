@@ -42,7 +42,7 @@
   {
     "WeekStart": "2026-01-26T05:00:00.000Z",
     "Team": "Factory",
-    "AvgScore": 133
+    "AvgScore": 147
   },
   {
     "WeekStart": "2026-01-19T05:00:00.000Z",
@@ -138,5 +138,10 @@
     "WeekStart": "2026-01-26T05:00:00.000Z",
     "Team": "Richwood",
     "AvgScore": 78
+  },
+  {
+    "WeekStart": "2026-01-26T05:00:00.000Z",
+    "Team": "",
+    "AvgScore": 67
   }
 ]

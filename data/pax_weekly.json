@@ -87,8 +87,8 @@
     "WeekStart": "2026-01-26T05:00:00.000Z",
     "Pax": "Charlotte",
     "Team": "Factory",
-    "Raw": 4,
-    "Score": 133
+    "Raw": 6,
+    "Score": 200
   },
   {
     "WeekStart": "2026-01-19T05:00:00.000Z",
@@ -1032,6 +1032,13 @@
     "WeekStart": "2026-01-12T05:00:00.000Z",
     "Pax": "Dodo",
     "Team": "Redzone",
+    "Raw": 2,
+    "Score": 67
+  },
+  {
+    "WeekStart": "2026-01-26T05:00:00.000Z",
+    "Pax": "Village People",
+    "Team": "",
     "Raw": 2,
     "Score": 67
   },
