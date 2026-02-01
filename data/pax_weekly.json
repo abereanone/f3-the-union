@@ -115,8 +115,8 @@
     "WeekStart": "2026-01-26T05:00:00.000Z",
     "Pax": "Cabana Boy",
     "Team": "Factory",
-    "Raw": 5,
-    "Score": 167
+    "Raw": 7,
+    "Score": 233
   },
   {
     "WeekStart": "2026-01-19T05:00:00.000Z",
@@ -626,8 +626,8 @@
     "WeekStart": "2026-01-26T05:00:00.000Z",
     "Pax": "Heidi",
     "Team": "Clocktower",
-    "Raw": 5,
-    "Score": 167
+    "Raw": 7,
+    "Score": 233
   },
   {
     "WeekStart": "2026-01-19T05:00:00.000Z",
@@ -682,8 +682,8 @@
     "WeekStart": "2026-01-26T05:00:00.000Z",
     "Pax": "Poindexter",
     "Team": "Clocktower",
-    "Raw": 5,
-    "Score": 167
+    "Raw": 7,
+    "Score": 233
   },
   {
     "WeekStart": "2026-01-19T05:00:00.000Z",
@@ -815,8 +815,8 @@
     "WeekStart": "2026-01-26T05:00:00.000Z",
     "Pax": "After Market",
     "Team": "Fountain",
-    "Raw": 5,
-    "Score": 167
+    "Raw": 7,
+    "Score": 233
   },
   {
     "WeekStart": "2026-01-19T05:00:00.000Z",
@@ -906,8 +906,8 @@
     "WeekStart": "2026-01-26T05:00:00.000Z",
     "Pax": "Ricky Bobby",
     "Team": "Richwood",
-    "Raw": 2,
-    "Score": 67
+    "Raw": 4,
+    "Score": 133
   },
   {
     "WeekStart": "2026-01-19T05:00:00.000Z",
@@ -1046,6 +1046,13 @@
     "WeekStart": "2026-01-12T05:00:00.000Z",
     "Pax": "Dodo",
     "Team": "Redzone",
+    "Raw": 2,
+    "Score": 67
+  },
+  {
+    "WeekStart": "2026-01-26T05:00:00.000Z",
+    "Pax": "Alice",
+    "Team": "Clocktower",
     "Raw": 2,
     "Score": 67
   },
@@ -1095,13 +1102,6 @@
     "WeekStart": "2026-01-26T05:00:00.000Z",
     "Pax": "Pop Up",
     "Team": "Farm",
-    "Raw": 0,
-    "Score": 0
-  },
-  {
-    "WeekStart": "2026-01-26T05:00:00.000Z",
-    "Pax": "Alice",
-    "Team": "Clocktower",
     "Raw": 0,
     "Score": 0
   },

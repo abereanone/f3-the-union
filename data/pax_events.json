@@ -6505,5 +6505,59 @@
     "AO": "KOG_BONUS",
     "Counted": true,
     "Reason": "M Convo +2 bonus"
+  },
+  {
+    "Date": "2026-01-26T05:00:00.000Z",
+    "WeekStart": "2026-01-26T05:00:00.000Z",
+    "Pax": "Poindexter",
+    "Team": "Clocktower",
+    "AO": "KOG_BONUS",
+    "Counted": true,
+    "Reason": "M Convo +2 bonus"
+  },
+  {
+    "Date": "2026-01-26T05:00:00.000Z",
+    "WeekStart": "2026-01-26T05:00:00.000Z",
+    "Pax": "Heidi",
+    "Team": "Clocktower",
+    "AO": "KOG_BONUS",
+    "Counted": true,
+    "Reason": "M Convo +2 bonus"
+  },
+  {
+    "Date": "2026-01-26T05:00:00.000Z",
+    "WeekStart": "2026-01-26T05:00:00.000Z",
+    "Pax": "Ricky Bobby",
+    "Team": "Richwood",
+    "AO": "KOG_BONUS",
+    "Counted": true,
+    "Reason": "M Convo +2 bonus"
+  },
+  {
+    "Date": "2026-01-26T05:00:00.000Z",
+    "WeekStart": "2026-01-26T05:00:00.000Z",
+    "Pax": "After Market",
+    "Team": "Fountain",
+    "AO": "KOG_BONUS",
+    "Counted": true,
+    "Reason": "M Convo +2 bonus"
+  },
+  {
+    "Date": "2026-01-26T05:00:00.000Z",
+    "WeekStart": "2026-01-26T05:00:00.000Z",
+    "Pax": "Cabana Boy",
+    "Team": "Factory",
+    "AO": "KOG_BONUS",
+    "Counted": true,
+    "Reason": "M Convo +2 bonus"
+  },
+  {
+    "Date": "2026-01-26T05:00:00.000Z",
+    "WeekStart": "2026-01-26T05:00:00.000Z",
+    "Pax": "Alice",
+    "Team": "Clocktower",
+    "AO": "KOG_BONUS",
+    "Counted": true,
+    "Reason": "M Convo +2 bonus"
   }
 ]
