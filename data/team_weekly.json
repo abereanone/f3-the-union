@@ -2,7 +2,7 @@
   {
     "WeekStart": "2026-01-26T05:00:00.000Z",
     "Team": "Farm",
-    "AvgScore": 33
+    "AvgScore": 40
   },
   {
     "WeekStart": "2026-01-19T05:00:00.000Z",
@@ -22,7 +22,7 @@
   {
     "WeekStart": "2026-01-26T05:00:00.000Z",
     "Team": "Redzone",
-    "AvgScore": 89
+    "AvgScore": 100
   },
   {
     "WeekStart": "2026-01-19T05:00:00.000Z",
@@ -42,7 +42,7 @@
   {
     "WeekStart": "2026-01-26T05:00:00.000Z",
     "Team": "Factory",
-    "AvgScore": 147
+    "AvgScore": 160
   },
   {
     "WeekStart": "2026-01-19T05:00:00.000Z",
@@ -62,7 +62,7 @@
   {
     "WeekStart": "2026-01-26T05:00:00.000Z",
     "Team": "Clocktower",
-    "AvgScore": 152
+    "AvgScore": 157
   },
   {
     "WeekStart": "2026-01-19T05:00:00.000Z",
@@ -82,7 +82,7 @@
   {
     "WeekStart": "2026-01-26T05:00:00.000Z",
     "Team": "Extras",
-    "AvgScore": 29
+    "AvgScore": 33
   },
   {
     "WeekStart": "2026-01-19T05:00:00.000Z",
@@ -98,6 +98,26 @@
     "WeekStart": "2026-01-05T05:00:00.000Z",
     "Team": "Extras",
     "AvgScore": 124
+  },
+  {
+    "WeekStart": "2026-01-26T05:00:00.000Z",
+    "Team": "Richwood",
+    "AvgScore": 89
+  },
+  {
+    "WeekStart": "2026-01-19T05:00:00.000Z",
+    "Team": "Richwood",
+    "AvgScore": 150
+  },
+  {
+    "WeekStart": "2026-01-12T05:00:00.000Z",
+    "Team": "Richwood",
+    "AvgScore": 150
+  },
+  {
+    "WeekStart": "2026-01-05T05:00:00.000Z",
+    "Team": "Richwood",
+    "AvgScore": 122
   },
   {
     "WeekStart": "2026-01-26T05:00:00.000Z",
@@ -118,25 +138,5 @@
     "WeekStart": "2026-01-05T05:00:00.000Z",
     "Team": "Fountain",
     "AvgScore": 134
-  },
-  {
-    "WeekStart": "2026-01-19T05:00:00.000Z",
-    "Team": "Richwood",
-    "AvgScore": 150
-  },
-  {
-    "WeekStart": "2026-01-12T05:00:00.000Z",
-    "Team": "Richwood",
-    "AvgScore": 150
-  },
-  {
-    "WeekStart": "2026-01-05T05:00:00.000Z",
-    "Team": "Richwood",
-    "AvgScore": 122
-  },
-  {
-    "WeekStart": "2026-01-26T05:00:00.000Z",
-    "Team": "Richwood",
-    "AvgScore": 78
   }
 ]
