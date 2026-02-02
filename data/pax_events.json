@@ -5899,7 +5899,16 @@
     "WeekStart": "2026-01-26T05:00:00.000Z",
     "Pax": "Sprocket",
     "Team": "Fountain",
-    "AO": "PreWork, BlackOps",
+    "AO": "PreWork",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-01-26T05:00:00.000Z",
+    "WeekStart": "2026-01-26T05:00:00.000Z",
+    "Pax": "Sprocket",
+    "Team": "Fountain",
+    "AO": "BlackOps",
     "Counted": true,
     "Reason": ""
   },
@@ -6404,6 +6413,33 @@
     "Pax": "Puppy mill",
     "Team": "Fountain",
     "AO": "BlackOps",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-02-02T05:00:00.000Z",
+    "WeekStart": "2026-02-02T05:00:00.000Z",
+    "Pax": "Ricky Bobby",
+    "Team": "Richwood",
+    "AO": "PreWork",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-02-02T05:00:00.000Z",
+    "WeekStart": "2026-02-02T05:00:00.000Z",
+    "Pax": "Ball Valve",
+    "Team": "Richwood",
+    "AO": "PreWork",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-02-02T05:00:00.000Z",
+    "WeekStart": "2026-02-02T05:00:00.000Z",
+    "Pax": "JellyRoll",
+    "Team": "Richwood",
+    "AO": "PreWork",
     "Counted": true,
     "Reason": ""
   },
