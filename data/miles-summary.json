@@ -1,0 +1,77 @@
+{
+  "year": 2026,
+  "people": [
+    {
+      "name": "Floppy Disk",
+      "run": 0,
+      "walk": 0,
+      "ruck": 4.1,
+      "bike": 0,
+      "swim": 0,
+      "total": 4.1
+    },
+    {
+      "name": "harbaugh 3-5",
+      "run": 0,
+      "walk": 3.5,
+      "ruck": 0,
+      "bike": 38.2,
+      "swim": 0,
+      "total": 41.7
+    },
+    {
+      "name": "Hobo",
+      "run": 39.94,
+      "walk": 0,
+      "ruck": 5.45,
+      "bike": 100.875,
+      "swim": 2.807,
+      "total": 149.07199999999997
+    },
+    {
+      "name": "Iceberg",
+      "run": 21.869999999999997,
+      "walk": 2,
+      "ruck": 6,
+      "bike": 0,
+      "swim": 0,
+      "total": 29.869999999999997
+    },
+    {
+      "name": "Midriff",
+      "run": 12.4,
+      "walk": 2.3,
+      "ruck": 8.6,
+      "bike": 0,
+      "swim": 0,
+      "total": 23.299999999999997
+    },
+    {
+      "name": "Ocho",
+      "run": 35.83,
+      "walk": 1.8599999999999999,
+      "ruck": 61.149999999999984,
+      "bike": 0,
+      "swim": 0,
+      "total": 98.83999999999997
+    },
+    {
+      "name": "Vagabond",
+      "run": 21.2,
+      "walk": 0,
+      "ruck": 20.8,
+      "bike": 0,
+      "swim": 0,
+      "total": 42
+    },
+    {
+      "name": "Village people",
+      "run": 25.909999999999997,
+      "walk": 5.7,
+      "ruck": 20.299999999999997,
+      "bike": 0,
+      "swim": 0,
+      "total": 51.91
+    }
+  ]
+}
