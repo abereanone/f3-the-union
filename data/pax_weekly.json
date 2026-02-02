@@ -1071,6 +1071,41 @@
     "Score": 33
   },
   {
+    "WeekStart": "2026-02-02T05:00:00.000Z",
+    "Pax": "Charlotte",
+    "Team": "Factory",
+    "Raw": 1,
+    "Score": 33
+  },
+  {
+    "WeekStart": "2026-02-02T05:00:00.000Z",
+    "Pax": "Iceberg",
+    "Team": "Farm",
+    "Raw": 1,
+    "Score": 33
+  },
+  {
+    "WeekStart": "2026-02-02T05:00:00.000Z",
+    "Pax": "Kinevil",
+    "Team": "Farm",
+    "Raw": 1,
+    "Score": 33
+  },
+  {
+    "WeekStart": "2026-02-02T05:00:00.000Z",
+    "Pax": "DUFRESNE",
+    "Team": "Farm",
+    "Raw": 1,
+    "Score": 33
+  },
+  {
+    "WeekStart": "2026-02-02T05:00:00.000Z",
+    "Pax": "Ocho",
+    "Team": "Redzone",
+    "Raw": 1,
+    "Score": 33
+  },
+  {
     "WeekStart": "2026-01-26T05:00:00.000Z",
     "Pax": "Alice",
     "Team": "Clocktower",
@@ -1254,27 +1289,6 @@
   },
   {
     "WeekStart": "2026-02-02T05:00:00.000Z",
-    "Pax": "Iceberg",
-    "Team": "Farm",
-    "Raw": 0,
-    "Score": 0
-  },
-  {
-    "WeekStart": "2026-02-02T05:00:00.000Z",
-    "Pax": "Kinevil",
-    "Team": "Farm",
-    "Raw": 0,
-    "Score": 0
-  },
-  {
-    "WeekStart": "2026-02-02T05:00:00.000Z",
-    "Pax": "DUFRESNE",
-    "Team": "Farm",
-    "Raw": 0,
-    "Score": 0
-  },
-  {
-    "WeekStart": "2026-02-02T05:00:00.000Z",
     "Pax": "Pop Up",
     "Team": "Farm",
     "Raw": 0,
@@ -1283,13 +1297,6 @@
   {
     "WeekStart": "2026-02-02T05:00:00.000Z",
     "Pax": "Cabana Boy",
-    "Team": "Factory",
-    "Raw": 0,
-    "Score": 0
-  },
-  {
-    "WeekStart": "2026-02-02T05:00:00.000Z",
-    "Pax": "Charlotte",
     "Team": "Factory",
     "Raw": 0,
     "Score": 0
@@ -1361,13 +1368,6 @@
     "WeekStart": "2026-02-02T05:00:00.000Z",
     "Pax": "Alice",
     "Team": "Clocktower",
-    "Raw": 0,
-    "Score": 0
-  },
-  {
-    "WeekStart": "2026-02-02T05:00:00.000Z",
-    "Pax": "Ocho",
-    "Team": "Redzone",
     "Raw": 0,
     "Score": 0
   },
