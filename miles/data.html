@@ -259,11 +259,15 @@
 
   function formatGeneratedAt(value) {
     if (!value) return '';
-    const [datePart, timePartRaw] = value.split('T');
-    if (!timePartRaw) return datePart;
-    const timePart = timePartRaw.split(/[+-]/)[0];
-    const hm = timePart.split(':').slice(0, 2).join(':');
-    return `${datePart} ${hm}`;
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) return value;
+    return date.toLocaleString(undefined, {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit'
+    });
   }
 
   function formatMiles(value) {
