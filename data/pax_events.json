@@ -6604,5 +6604,23 @@
     "AO": "KOG_BONUS",
     "Counted": true,
     "Reason": "M Convo +2 bonus"
+  },
+  {
+    "Date": "2026-01-26T05:00:00.000Z",
+    "WeekStart": "2026-01-26T05:00:00.000Z",
+    "Pax": "Play Date",
+    "Team": "Redzone",
+    "AO": "KOG_BONUS",
+    "Counted": true,
+    "Reason": "M Convo +2 bonus"
+  },
+  {
+    "Date": "2026-01-26T05:00:00.000Z",
+    "WeekStart": "2026-01-26T05:00:00.000Z",
+    "Pax": "Ocho",
+    "Team": "Redzone",
+    "AO": "KOG_BONUS",
+    "Counted": true,
+    "Reason": "M Convo +2 bonus"
   }
 ]
