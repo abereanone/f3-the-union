@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Miles Data</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    body {
+      max-width: 980px;
+      font-size: 16.5px;
+    }
+
+    :root {
+      --table-header-bg: #d9e3f7;
+      --table-header-text: #1f3b6d;
+      --table-stripe-bg: #f0d2cc;
+    }
+
+    .top-nav {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      background: #fff;
+    }
+
+    .top-nav a {
+      color: #1f3b6d;
+      text-decoration: none;
+    }
+
+    .top-nav a:hover,
+    .top-nav a:focus {
+      text-decoration: underline;
+    }
+
+    .meta {
+      color: #555;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .section {
+      margin: 1.5rem 0;
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin: 0.75rem 0 1rem;
+    }
+
+    .controls label {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      font-size: 0.95rem;
+    }
+
+    .controls input,
+    .controls select {
+      padding: 0.35rem 0.5rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 1rem;
+    }
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 0.5rem 0.6rem;
+      text-align: left;
+    }
+
+    th {
+      background: var(--table-header-bg);
+      color: var(--table-header-text);
+      font-weight: 800;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    th button {
+      background: none;
+      border: 0;
+      padding: 0;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      color: #1f3b6d;
+    }
+
+    th button:hover,
+    th button:focus {
+      text-decoration: underline;
+    }
+
+    .table-wrap {
+      max-height: 520px;
+      overflow: auto;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    .table-wrap--auto {
+      max-height: none;
+      overflow: visible;
+    }
+
+    .striped tbody tr:nth-child(even) {
+      background: var(--table-stripe-bg);
+    }
+
+    .striped-by-name tbody tr {
+      background: transparent;
+    }
+
+    .striped-by-name tbody tr.stripe-a {
+      background: var(--table-stripe-bg);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.15rem 0.4rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      background: #ffe9d2;
+      color: #6a3b00;
+      margin-left: 0.35rem;
+    }
+
+    .muted {
+      color: #777;
+    }
+
+    .toggle-btn {
+      width: 1.2rem;
+      height: 1.2rem;
+      padding: 0;
+      border: 1px solid #cdd4e3;
+      background: #fff;
+      color: #1f3b6d;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 0.7rem;
+      line-height: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .toggle-cell {
+      text-align: center;
+      width: 2.2rem;
+    }
+
+    .toggle-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    .toggle-btn[aria-expanded="true"] .arrow {
+      transform: rotate(90deg);
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <div id="top-nav"></div>
+  <h1>Miles Data</h1>
+  <div id="generated-at" class="meta">Loading data…</div>
+
+  <div class="section" id="summary-section">
+    <h2>Leaderboard</h2>
+    <div class="table-wrap table-wrap--auto">
+      <table class="striped striped-by-name">
+        <thead>
+          <tr>
+            <th class="toggle-cell"></th>
+            <th>Name</th>
+            <th>Run</th>
+            <th>Walk</th>
+            <th>Ruck</th>
+            <th>Bike</th>
+            <th>Swim</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody id="summary-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section" id="duplicates-section">
+    <h2>Potential Duplicates</h2>
+    <div id="duplicates-content" class="muted">Loading…</div>
+    <div class="muted" style="margin-top: 0.5rem;">
+      To resolve duplicates, contact Floppy Disk to either remove the duplicate row or mark it as not a duplicate.
+    </div>
+  </div>
+
+  <div class="section" id="raw-section">
+    <h2>All Entries</h2>
+    <div class="controls">
+      <label>
+        Name
+        <input id="filter-name" type="text" placeholder="Search name" />
+      </label>
+      <label>
+        Date
+        <input id="filter-date" type="date" />
+      </label>
+      <label>
+        Category
+        <select id="filter-category">
+          <option value="">All</option>
+          <option value="run">Run</option>
+          <option value="walk">Walk</option>
+          <option value="ruck">Ruck</option>
+          <option value="bike">Bike</option>
+          <option value="swim">Swim</option>
+        </select>
+      </label>
+      <label class="muted" id="row-count"></label>
+    </div>
+    <div class="table-wrap">
+      <table class="striped">
+        <thead>
+          <tr>
+            <th><button data-sort="rowNumber" type="button">Row</button></th>
+            <th><button data-sort="timestamp" type="button">Timestamp</button></th>
+            <th><button data-sort="name" type="button">Name</button></th>
+            <th><button data-sort="date" type="button">Date</button></th>
+            <th><button data-sort="run" type="button">Run</button></th>
+            <th><button data-sort="walk" type="button">Walk</button></th>
+            <th><button data-sort="ruck" type="button">Ruck</button></th>
+            <th><button data-sort="bike" type="button">Bike</button></th>
+            <th><button data-sort="swim" type="button">Swim</button></th>
+          </tr>
+        </thead>
+        <tbody id="raw-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+  const DATA_BASE = '../data/';
+  const numberFields = ['run', 'walk', 'ruck', 'bike', 'swim'];
+  let rawRows = [];
+  let currentSort = { key: 'timestamp', dir: 'desc' };
+  let monthlyByPerson = {};
+
+  function formatGeneratedAt(value) {
+    if (!value) return '';
+    const [datePart, timePartRaw] = value.split('T');
+    if (!timePartRaw) return datePart;
+    const timePart = timePartRaw.split(/[+-]/)[0];
+    const hm = timePart.split(':').slice(0, 2).join(':');
+    return `${datePart} ${hm}`;
+  }
+
+  function formatMiles(value) {
+    if (!value) return '';
+    return Number(value).toFixed(2);
+  }
+
+  function monthKey(dateStr) {
+    if (!dateStr) return '';
+    return dateStr.slice(0, 7);
+  }
+
+  function buildMonthlyTotals(rows) {
+    const byPerson = {};
+    rows.forEach((row) => {
+      const name = row.name || '';
+      const month = monthKey(row.date);
+      if (!name || !month) return;
+      const key = `${name}||${month}`;
+      if (!byPerson[key]) {
+        byPerson[key] = {
+          name,
+          month,
+          run: 0,
+          walk: 0,
+          ruck: 0,
+          bike: 0,
+          swim: 0,
+          total: 0
+        };
+      }
+      numberFields.forEach((field) => {
+        const value = Number(row[field] || 0);
+        byPerson[key][field] += value;
+        byPerson[key].total += value;
+      });
+    });
+
+    const grouped = {};
+    Object.values(byPerson).forEach((entry) => {
+      (grouped[entry.name] ||= []).push(entry);
+    });
+    Object.values(grouped).forEach((list) => {
+      list.sort((a, b) => a.month.localeCompare(b.month));
+    });
+    return grouped;
+  }
+
+  function rowMatchesCategory(row, category) {
+    if (!category) return true;
+    return Number(row[category]) > 0;
+  }
+
+  function applyFilters(rows) {
+    const nameValue = document.getElementById('filter-name').value.trim().toLowerCase();
+    const dateValue = document.getElementById('filter-date').value;
+    const categoryValue = document.getElementById('filter-category').value;
+    return rows.filter((row) => {
+      if (nameValue && !row.name.toLowerCase().includes(nameValue)) return false;
+      if (dateValue && row.date !== dateValue) return false;
+      if (!rowMatchesCategory(row, categoryValue)) return false;
+      return true;
+    });
+  }
+
+  function compareValues(a, b, key) {
+    const av = a[key];
+    const bv = b[key];
+    if (numberFields.includes(key)) {
+      return Number(av) - Number(bv);
+    }
+    return String(av || '').localeCompare(String(bv || ''), undefined, { numeric: true });
+  }
+
+  function renderRawTable() {
+    const filtered = applyFilters(rawRows);
+    const rows = filtered.slice().sort((a, b) => {
+      const order = compareValues(a, b, currentSort.key);
+      return currentSort.dir === 'asc' ? order : -order;
+    });
+
+    const body = document.getElementById('raw-body');
+    body.innerHTML = '';
+
+    rows.forEach((row) => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>${row.rowNumber ?? ''}</td>
+        <td>${row.timestamp ?? ''}</td>
+        <td>${row.name ?? ''}</td>
+        <td>${row.date ?? ''}</td>
+        <td>${formatMiles(row.run)}</td>
+        <td>${formatMiles(row.walk)}</td>
+        <td>${formatMiles(row.ruck)}</td>
+        <td>${formatMiles(row.bike)}</td>
+        <td>${formatMiles(row.swim)}</td>
+      `;
+      body.appendChild(tr);
+    });
+
+    const count = document.getElementById('row-count');
+    count.textContent = `${rows.length} rows`;
+  }
+
+  function renderSummaryTable(summary) {
+    const body = document.getElementById('summary-body');
+    body.innerHTML = '';
+
+    summary.slice().sort((a, b) => b.total - a.total).forEach((person, index) => {
+      const tr = document.createElement('tr');
+      const hasMonthly = (monthlyByPerson[person.name] || []).length > 0;
+      const stripeClass = index % 2 === 0 ? 'stripe-a' : '';
+      if (stripeClass) tr.classList.add(stripeClass);
+      tr.innerHTML = `
+        <td class="toggle-cell">
+          <button type="button" class="toggle-btn" data-toggle="${person.name}" aria-expanded="false" ${hasMonthly ? '' : 'disabled'}>
+            <span class="arrow">▶</span>
+          </button>
+        </td>
+        <td>${person.name}</td>
+        <td>${formatMiles(person.run)}</td>
+        <td>${formatMiles(person.walk)}</td>
+        <td>${formatMiles(person.ruck)}</td>
+        <td>${formatMiles(person.bike)}</td>
+        <td>${formatMiles(person.swim)}</td>
+        <td><strong>${formatMiles(person.total)}</strong></td>
+      `;
+      body.appendChild(tr);
+
+      const detailRow = document.createElement('tr');
+      detailRow.dataset.detail = person.name;
+      detailRow.style.display = 'none';
+      if (stripeClass) detailRow.classList.add(stripeClass);
+      const details = monthlyByPerson[person.name] || [];
+      const rowsHtml = details.length
+        ? details.map((m) => `
+            <tr>
+              <td>${m.month}</td>
+              <td>${formatMiles(m.run)}</td>
+              <td>${formatMiles(m.walk)}</td>
+              <td>${formatMiles(m.ruck)}</td>
+              <td>${formatMiles(m.bike)}</td>
+              <td>${formatMiles(m.swim)}</td>
+              <td><strong>${formatMiles(m.total)}</strong></td>
+            </tr>
+          `).join('')
+        : `<tr><td colspan="7" class="muted">No monthly entries found.</td></tr>`;
+
+      detailRow.innerHTML = `
+        <td colspan="9">
+          <div class="table-wrap" style="max-height: 240px;">
+            <table class="striped">
+              <thead>
+                <tr>
+                  <th>Month</th>
+                  <th>Run</th>
+                  <th>Walk</th>
+                  <th>Ruck</th>
+                  <th>Bike</th>
+                  <th>Swim</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody>${rowsHtml}</tbody>
+            </table>
+          </div>
+        </td>
+      `;
+      body.appendChild(detailRow);
+    });
+  }
+
+  function renderDuplicates(duplicates) {
+    const container = document.getElementById('duplicates-content');
+    if (!duplicates || duplicates.length === 0) {
+      container.textContent = 'None found.';
+      return;
+    }
+
+    const list = document.createElement('div');
+    duplicates.forEach((dup) => {
+      const block = document.createElement('div');
+      block.style.marginBottom = '0.75rem';
+      const rows = dup.rows
+        .map((row) => `#${row.row}: ${formatMiles(row.miles)} mi`)
+        .join(', ');
+      block.innerHTML = `
+        <strong>${dup.name}</strong> — ${dup.date} — ${dup.category}
+        <span class="badge">${dup.rows.length} rows</span>
+        <div class="muted">${rows}</div>
+      `;
+      list.appendChild(block);
+    });
+    container.innerHTML = '';
+    container.appendChild(list);
+  }
+
+  function handleSortClick(event) {
+    const key = event.target.dataset.sort;
+    if (!key) return;
+    if (currentSort.key === key) {
+      currentSort.dir = currentSort.dir === 'asc' ? 'desc' : 'asc';
+    } else {
+      currentSort = { key, dir: 'asc' };
+    }
+    renderRawTable();
+  }
+
+  function applyQueryPrefill() {
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get('name');
+    if (!name) return;
+    const input = document.getElementById('filter-name');
+    input.value = name;
+  }
+
+  async function init() {
+    const [raw, summary, duplicates] = await Promise.all([
+      fetch(`${DATA_BASE}miles-raw.json`).then((res) => res.json()),
+      fetch(`${DATA_BASE}miles-summary.json`).then((res) => res.json()),
+      fetch(`${DATA_BASE}miles-duplicates.json`).then((res) => res.json())
+    ]);
+
+    rawRows = Array.isArray(raw.rows) ? raw.rows : [];
+    monthlyByPerson = buildMonthlyTotals(rawRows);
+    renderSummaryTable(summary.people || []);
+    renderDuplicates(duplicates.duplicates || []);
+    applyQueryPrefill();
+    renderRawTable();
+
+    const generatedAt = document.getElementById('generated-at');
+    generatedAt.textContent = `Last refreshed: ${formatGeneratedAt(raw.generatedAt) || 'unknown'}`;
+  }
+
+  document.getElementById('raw-section').addEventListener('click', handleSortClick);
+  document.getElementById('summary-section').addEventListener('click', (event) => {
+    const button = event.target.closest('button[data-toggle]');
+    if (!button) return;
+    const toggle = button.dataset.toggle;
+    if (!toggle) return;
+    const detail = document.querySelector(`tr[data-detail="${CSS.escape(toggle)}"]`);
+    if (!detail) return;
+    const isOpen = detail.style.display === '';
+    detail.style.display = isOpen ? 'none' : '';
+    button.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+  });
+  ['filter-name', 'filter-date', 'filter-category'].forEach((id) => {
+    document.getElementById(id).addEventListener('input', renderRawTable);
+    document.getElementById(id).addEventListener('change', renderRawTable);
+  });
+
+  init().catch((err) => {
+    const generatedAt = document.getElementById('generated-at');
+    generatedAt.textContent = 'Unable to load data.';
+    console.error(err);
+  });
+  </script>
+  <script src="/shared/top-nav.js"></script>
+</body>
+</html>
