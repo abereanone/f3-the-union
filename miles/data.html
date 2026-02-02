@@ -241,8 +241,8 @@
             <th><button data-sort="run" type="button">Run</button></th>
             <th><button data-sort="walk" type="button">Walk</button></th>
             <th><button data-sort="ruck" type="button">Ruck</button></th>
-            <th><button data-sort="bike" type="button">Bike (/3)</button></th>
-            <th><button data-sort="swim" type="button">Swim (X3)</button></th>
+            <th><button data-sort="bike" type="button">Bike</button></th>
+            <th><button data-sort="swim" type="button">Swim</button></th>
           </tr>
         </thead>
         <tbody id="raw-body"></tbody>
@@ -253,6 +253,8 @@
   <script>
   const DATA_BASE = 'https://raw.githubusercontent.com/abereanone/f3-the-union/miles-data/data/';
   const numberFields = ['run', 'walk', 'ruck', 'bike', 'swim'];
+  const BIKE_DIVISOR = 3;
+  const SWIM_MULTIPLIER = 4;
   let rawRows = [];
   let currentSort = { key: 'timestamp', dir: 'desc' };
   let monthlyByPerson = {};
@@ -274,6 +276,10 @@
   function formatMiles(value) {
     if (!value) return '';
     return Number(value).toFixed(2);
+  }
+
+  function round2(value) {
+    return Math.round(value * 100) / 100;
   }
 
   function monthKey(dateStr) {
@@ -309,6 +315,13 @@
 
     const grouped = {};
     Object.values(byPerson).forEach((entry) => {
+      entry.bike = entry.bike / BIKE_DIVISOR;
+      entry.swim = entry.swim * SWIM_MULTIPLIER;
+      entry.total = entry.run + entry.walk + entry.ruck + entry.bike + entry.swim;
+      numberFields.forEach((field) => {
+        entry[field] = round2(entry[field]);
+      });
+      entry.total = round2(entry.total);
       (grouped[entry.name] ||= []).push(entry);
     });
     Object.values(grouped).forEach((list) => {
@@ -428,7 +441,7 @@
                   <th>Walk</th>
                   <th>Ruck</th>
                   <th>Bike (/3)</th>
-                  <th>Swim (X3)</th>
+                  <th>Swim (X4)</th>
                   <th>Total</th>
                 </tr>
               </thead>
