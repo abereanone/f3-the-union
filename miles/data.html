@@ -175,7 +175,7 @@
 <body>
   <div id="top-nav"></div>
   <h1>Miles Data</h1>
-  <div id="generated-at" class="meta">Loading data…</div>
+  <div id="generated-at" class="meta">Last refreshed: <span id="last-refresh">Loading…</span></div>
 
   <div class="section" id="summary-section">
     <h2>Leaderboard</h2>
@@ -499,10 +499,11 @@
   }
 
   async function init() {
-    const [raw, summary, duplicates] = await Promise.all([
+    const [raw, summary, duplicates, meta] = await Promise.all([
       fetch(`${DATA_BASE}miles-raw.json`).then((res) => res.json()),
       fetch(`${DATA_BASE}miles-summary.json`).then((res) => res.json()),
-      fetch(`${DATA_BASE}miles-duplicates.json`).then((res) => res.json())
+      fetch(`${DATA_BASE}miles-duplicates.json`).then((res) => res.json()),
+      fetch(`${DATA_BASE}miles-meta.json`).then((res) => res.json())
     ]);
 
     rawRows = Array.isArray(raw.rows) ? raw.rows : [];
@@ -512,8 +513,8 @@
     applyQueryPrefill();
     renderRawTable();
 
-    const generatedAt = document.getElementById('generated-at');
-    generatedAt.textContent = `Last refreshed: ${formatGeneratedAt(raw.generatedAt) || 'unknown'}`;
+    const lastRefresh = document.getElementById('last-refresh');
+    lastRefresh.textContent = formatGeneratedAt(meta?.lastRefresh || raw.generatedAt) || 'unknown';
   }
 
   document.getElementById('raw-section').addEventListener('click', handleSortClick);
