@@ -262,8 +262,8 @@
     "WeekStart": "2026-02-02T05:00:00.000Z",
     "Pax": "Bluey",
     "Team": "Factory",
-    "Raw": 1,
-    "Score": 33
+    "Raw": 2,
+    "Score": 67
   },
   {
     "WeekStart": "2026-01-26T05:00:00.000Z",
@@ -353,8 +353,8 @@
     "WeekStart": "2026-01-26T05:00:00.000Z",
     "Pax": "BodyPump",
     "Team": "Clocktower",
-    "Raw": 2,
-    "Score": 67
+    "Raw": 4,
+    "Score": 133
   },
   {
     "WeekStart": "2026-01-19T05:00:00.000Z",
@@ -808,8 +808,8 @@
     "WeekStart": "2026-02-02T05:00:00.000Z",
     "Pax": "Puppy mill",
     "Team": "Fountain",
-    "Raw": 1,
-    "Score": 33
+    "Raw": 2,
+    "Score": 67
   },
   {
     "WeekStart": "2026-01-26T05:00:00.000Z",
@@ -843,8 +843,8 @@
     "WeekStart": "2026-02-02T05:00:00.000Z",
     "Pax": "Sprocket",
     "Team": "Fountain",
-    "Raw": 1,
-    "Score": 33
+    "Raw": 2,
+    "Score": 67
   },
   {
     "WeekStart": "2026-01-26T05:00:00.000Z",
@@ -878,8 +878,8 @@
     "WeekStart": "2026-02-02T05:00:00.000Z",
     "Pax": "After Market",
     "Team": "Fountain",
-    "Raw": 1,
-    "Score": 33
+    "Raw": 2,
+    "Score": 67
   },
   {
     "WeekStart": "2026-01-26T05:00:00.000Z",
@@ -1053,8 +1053,8 @@
     "WeekStart": "2026-02-02T05:00:00.000Z",
     "Pax": "BigRig",
     "Team": "Fountain",
-    "Raw": 1,
-    "Score": 33
+    "Raw": 3,
+    "Score": 100
   },
   {
     "WeekStart": "2026-01-26T05:00:00.000Z",
@@ -1181,6 +1181,55 @@
     "Team": "Redzone",
     "Raw": 2,
     "Score": 67
+  },
+  {
+    "WeekStart": "2026-02-02T05:00:00.000Z",
+    "Pax": "House Arrest",
+    "Team": "Fountain",
+    "Raw": 1,
+    "Score": 33
+  },
+  {
+    "WeekStart": "2026-02-02T05:00:00.000Z",
+    "Pax": "Hobo",
+    "Team": "Fountain",
+    "Raw": 1,
+    "Score": 33
+  },
+  {
+    "WeekStart": "2026-02-02T05:00:00.000Z",
+    "Pax": "Peach",
+    "Team": "Clocktower",
+    "Raw": 1,
+    "Score": 33
+  },
+  {
+    "WeekStart": "2026-02-02T05:00:00.000Z",
+    "Pax": "Village people",
+    "Team": "Clocktower",
+    "Raw": 1,
+    "Score": 33
+  },
+  {
+    "WeekStart": "2026-02-02T05:00:00.000Z",
+    "Pax": "Rugrat",
+    "Team": "Clocktower",
+    "Raw": 1,
+    "Score": 33
+  },
+  {
+    "WeekStart": "2026-02-02T05:00:00.000Z",
+    "Pax": "Poindexter",
+    "Team": "Clocktower",
+    "Raw": 1,
+    "Score": 33
+  },
+  {
+    "WeekStart": "2026-02-02T05:00:00.000Z",
+    "Pax": "Heidi",
+    "Team": "Clocktower",
+    "Raw": 1,
+    "Score": 33
   },
   {
     "WeekStart": "2026-01-26T05:00:00.000Z",
@@ -1261,41 +1310,6 @@
   },
   {
     "WeekStart": "2026-02-02T05:00:00.000Z",
-    "Pax": "Peach",
-    "Team": "Clocktower",
-    "Raw": 0,
-    "Score": 0
-  },
-  {
-    "WeekStart": "2026-02-02T05:00:00.000Z",
-    "Pax": "Village people",
-    "Team": "Clocktower",
-    "Raw": 0,
-    "Score": 0
-  },
-  {
-    "WeekStart": "2026-02-02T05:00:00.000Z",
-    "Pax": "Rugrat",
-    "Team": "Clocktower",
-    "Raw": 0,
-    "Score": 0
-  },
-  {
-    "WeekStart": "2026-02-02T05:00:00.000Z",
-    "Pax": "Poindexter",
-    "Team": "Clocktower",
-    "Raw": 0,
-    "Score": 0
-  },
-  {
-    "WeekStart": "2026-02-02T05:00:00.000Z",
-    "Pax": "Heidi",
-    "Team": "Clocktower",
-    "Raw": 0,
-    "Score": 0
-  },
-  {
-    "WeekStart": "2026-02-02T05:00:00.000Z",
     "Pax": "BodyPump",
     "Team": "Clocktower",
     "Raw": 0,
@@ -1333,20 +1347,6 @@
     "WeekStart": "2026-02-02T05:00:00.000Z",
     "Pax": "Hermey",
     "Team": "Richwood",
-    "Raw": 0,
-    "Score": 0
-  },
-  {
-    "WeekStart": "2026-02-02T05:00:00.000Z",
-    "Pax": "Hobo",
-    "Team": "Fountain",
-    "Raw": 0,
-    "Score": 0
-  },
-  {
-    "WeekStart": "2026-02-02T05:00:00.000Z",
-    "Pax": "House Arrest",
-    "Team": "Fountain",
     "Raw": 0,
     "Score": 0
   },

@@ -6687,6 +6687,123 @@
     "Reason": "Duplicate same-day"
   },
   {
+    "Date": "2026-02-02T05:00:00.000Z",
+    "WeekStart": "2026-02-02T05:00:00.000Z",
+    "Pax": "After Market",
+    "Team": "Fountain",
+    "AO": "PreWork",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-02-02T05:00:00.000Z",
+    "WeekStart": "2026-02-02T05:00:00.000Z",
+    "Pax": "House Arrest",
+    "Team": "Fountain",
+    "AO": "PreWork",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-02-02T05:00:00.000Z",
+    "WeekStart": "2026-02-02T05:00:00.000Z",
+    "Pax": "BigRig",
+    "Team": "Fountain",
+    "AO": "PreWork",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-02-02T05:00:00.000Z",
+    "WeekStart": "2026-02-02T05:00:00.000Z",
+    "Pax": "Puppy mill",
+    "Team": "Fountain",
+    "AO": "PreWork",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-02-02T05:00:00.000Z",
+    "WeekStart": "2026-02-02T05:00:00.000Z",
+    "Pax": "Sprocket",
+    "Team": "Fountain",
+    "AO": "PreWork",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-02-03T05:00:00.000Z",
+    "WeekStart": "2026-02-02T05:00:00.000Z",
+    "Pax": "Bluey",
+    "Team": "Factory",
+    "AO": "PreWork",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-02-03T05:00:00.000Z",
+    "WeekStart": "2026-02-02T05:00:00.000Z",
+    "Pax": "Hobo",
+    "Team": "Fountain",
+    "AO": "BlackOps",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-02-03T05:00:00.000Z",
+    "WeekStart": "2026-02-02T05:00:00.000Z",
+    "Pax": "BigRig",
+    "Team": "Fountain",
+    "AO": "BlackOps",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-02-03T05:00:00.000Z",
+    "WeekStart": "2026-02-02T05:00:00.000Z",
+    "Pax": "Peach",
+    "Team": "Clocktower",
+    "AO": "FNG",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-02-03T05:00:00.000Z",
+    "WeekStart": "2026-02-02T05:00:00.000Z",
+    "Pax": "Village people",
+    "Team": "Clocktower",
+    "AO": "PreWork",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-02-03T05:00:00.000Z",
+    "WeekStart": "2026-02-02T05:00:00.000Z",
+    "Pax": "Rugrat",
+    "Team": "Clocktower",
+    "AO": "PreWork",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-02-03T05:00:00.000Z",
+    "WeekStart": "2026-02-02T05:00:00.000Z",
+    "Pax": "Poindexter",
+    "Team": "Clocktower",
+    "AO": "PreWork",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-02-03T05:00:00.000Z",
+    "WeekStart": "2026-02-02T05:00:00.000Z",
+    "Pax": "Heidi",
+    "Team": "Clocktower",
+    "AO": "PreWork",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
     "Date": "2026-01-26T05:00:00.000Z",
     "WeekStart": "2026-01-26T05:00:00.000Z",
     "Pax": "House Arrest",
@@ -6862,6 +6979,15 @@
     "WeekStart": "2026-01-26T05:00:00.000Z",
     "Pax": "Ocho",
     "Team": "Redzone",
+    "AO": "KOG_BONUS",
+    "Counted": true,
+    "Reason": "M Convo +2 bonus"
+  },
+  {
+    "Date": "2026-01-26T05:00:00.000Z",
+    "WeekStart": "2026-01-26T05:00:00.000Z",
+    "Pax": "BodyPump",
+    "Team": "Clocktower",
     "AO": "KOG_BONUS",
     "Counted": true,
     "Reason": "M Convo +2 bonus"
