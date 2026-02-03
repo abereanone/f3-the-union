@@ -1,30 +1,30 @@
 [
   {
     "Team": "Farm",
-    "AvgScore": 83
+    "AvgScore": 88
   },
   {
     "Team": "Redzone",
-    "AvgScore": 96
+    "AvgScore": 99
   },
   {
     "Team": "Factory",
-    "AvgScore": 121
+    "AvgScore": 124
   },
   {
     "Team": "Clocktower",
     "AvgScore": 126
   },
   {
-    "Team": "Extras",
-    "AvgScore": 62
+    "Team": "Richwood",
+    "AvgScore": 113
   },
   {
-    "Team": "Richwood",
-    "AvgScore": 108
+    "Team": "Extras",
+    "AvgScore": 63
   },
   {
     "Team": "Fountain",
-    "AvgScore": 135
+    "AvgScore": 139
   }
 ]
