@@ -15,36 +15,36 @@
       "run": 0,
       "walk": 3.5,
       "ruck": 0,
-      "bike": 12.73,
+      "bike": 13.4,
       "swim": 0,
-      "total": 16.23
+      "total": 16.9
     },
     {
       "name": "Hobo",
-      "run": 39.94,
+      "run": 47.01,
       "walk": 0,
       "ruck": 5.45,
-      "bike": 33.63,
+      "bike": 39.46,
       "swim": 11.23,
-      "total": 90.24
+      "total": 103.14
     },
     {
       "name": "Iceberg",
-      "run": 21.87,
+      "run": 25.75,
       "walk": 2,
-      "ruck": 6,
+      "ruck": 7.5,
       "bike": 0,
       "swim": 0,
-      "total": 29.87
+      "total": 35.25
     },
     {
       "name": "Midriff",
       "run": 12.4,
-      "walk": 2.3,
+      "walk": 13.7,
       "ruck": 8.6,
       "bike": 0,
       "swim": 0,
-      "total": 23.3
+      "total": 34.7
     },
     {
       "name": "Ocho",
@@ -66,12 +66,12 @@
     },
     {
       "name": "Village people",
-      "run": 25.91,
-      "walk": 5.7,
+      "run": 30.51,
+      "walk": 7.7,
       "ruck": 20.3,
       "bike": 0,
       "swim": 0,
-      "total": 51.91
+      "total": 58.51
     }
   ]
 }
