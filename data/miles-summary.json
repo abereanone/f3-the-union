@@ -30,12 +30,12 @@
     },
     {
       "name": "Iceberg",
-      "run": 25.75,
-      "walk": 2,
+      "run": 28.25,
+      "walk": 3,
       "ruck": 7.5,
       "bike": 0,
       "swim": 0,
-      "total": 35.25
+      "total": 38.75
     },
     {
       "name": "Midriff",

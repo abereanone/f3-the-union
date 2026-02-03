@@ -1165,6 +1165,17 @@
       "ruck": 0,
       "bike": 0,
       "swim": 0
+    },
+    {
+      "rowNumber": 108,
+      "timestamp": "2026-02-03T14:20:32.910Z",
+      "name": "Iceberg",
+      "date": "2026-02-03",
+      "run": 2.5,
+      "walk": 1,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0
     }
   ]
 }
