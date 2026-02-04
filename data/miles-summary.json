@@ -48,21 +48,21 @@
     },
     {
       "name": "Ocho",
-      "run": 29.16,
+      "run": 35.66,
       "walk": 1.86,
       "ruck": 61.15,
       "bike": 0,
       "swim": 0,
-      "total": 92.17
+      "total": 98.67
     },
     {
       "name": "Vagabond",
-      "run": 21.2,
+      "run": 31.9,
       "walk": 0,
-      "ruck": 20.8,
+      "ruck": 16.5,
       "bike": 0,
       "swim": 0,
-      "total": 42
+      "total": 48.4
     },
     {
       "name": "Village people",
