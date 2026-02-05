@@ -1220,6 +1220,17 @@
       "ruck": 2.2,
       "bike": 0,
       "swim": 0
+    },
+    {
+      "rowNumber": 113,
+      "timestamp": "2026-02-05T14:01:00.591Z",
+      "name": "Ocho",
+      "date": "2026-02-05",
+      "run": 0,
+      "walk": 0,
+      "ruck": 3.4,
+      "bike": 0,
+      "swim": 0
     }
   ]
 }
