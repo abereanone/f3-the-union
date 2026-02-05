@@ -455,12 +455,14 @@
   }
 
   function renderDuplicates(duplicates) {
+    const section = document.getElementById('duplicates-section');
     const container = document.getElementById('duplicates-content');
     if (!duplicates || duplicates.length === 0) {
-      container.textContent = 'None found.';
+      section.style.display = 'none';
       return;
     }
 
+    section.style.display = '';
     const list = document.createElement('div');
     duplicates.forEach((dup) => {
       const block = document.createElement('div');
