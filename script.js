@@ -11,17 +11,17 @@ const aoDayNames = {
 };
 
 const aoInfo = {
-  '#the_breakroom':  { time: '0600-0645', days: ['M', 'W'] },
+  '#the_breakroom':  { time: '0600-0645', days: ['F'] },
   '#the_cafeteria':  { time: '0530-0615', days: ['F'] },
   '#the_clocktower': { time: '0515-0600', days: ['Tu', 'Th'] },
   '#the_dock':       { time: '0530-0615', days: ['M', 'W'] },
-  '#the_factory':    { time: '0530-0615', days: ['M', 'W', 'F'] },
-  '#the_farm':       { time: '0530-0615', days: ['M'] },
+  '#the_factory':    { time: '0530-0615', days: ['Tu', 'Th'] },
+  '#the_farm':       { time: '0530-0615', days: ['M', 'W'] },
   '#the_floor':      { time: '0500-0545', days: ['F'] },
   '#the_forge':      { time: '0530-0615', days: ['F'] },
-  '#the_fountain':   { time: '0530-0615', days: ['W'] },
+  '#the_fountain':   { time: '0530-0615', days: ['M', 'W'] },
   '#the_plant':      { time: '0630-0730', days: ['Sa'] },
-  '#the_redzone':    { time: '0515-0600', days: ['Tu'] },
+  '#the_redzone':    { time: '0515-0600', days: ['Tu', 'Th'] },
   '#the_show':       { time: '0515-0600', days: ['Tu', 'Th'] },
   '#the_yard':       { time: '0500-0545', days: ['F'] }
 };
