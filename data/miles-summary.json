@@ -68,10 +68,10 @@
       "name": "Village people",
       "run": 30.51,
       "walk": 8.7,
-      "ruck": 22.5,
+      "ruck": 24.5,
       "bike": 0,
       "swim": 0,
-      "total": 61.71
+      "total": 63.71
     }
   ]
 }
