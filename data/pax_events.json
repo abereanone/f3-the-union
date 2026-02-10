@@ -8244,6 +8244,78 @@
     "Reason": ""
   },
   {
+    "Date": "2026-02-10T05:00:00.000Z",
+    "WeekStart": "2026-02-09T05:00:00.000Z",
+    "Pax": "Cabana Boy",
+    "Team": "Factory",
+    "AO": "PreWork",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-02-10T05:00:00.000Z",
+    "WeekStart": "2026-02-09T05:00:00.000Z",
+    "Pax": "Charlotte",
+    "Team": "Factory",
+    "AO": "PreWork",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-02-10T05:00:00.000Z",
+    "WeekStart": "2026-02-09T05:00:00.000Z",
+    "Pax": "Midriff",
+    "Team": "Extras",
+    "AO": "PreWork",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-02-10T05:00:00.000Z",
+    "WeekStart": "2026-02-09T05:00:00.000Z",
+    "Pax": "Peach",
+    "Team": "Clocktower",
+    "AO": "PreWork",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-02-10T05:00:00.000Z",
+    "WeekStart": "2026-02-09T05:00:00.000Z",
+    "Pax": "Village people",
+    "Team": "Clocktower",
+    "AO": "PreWork",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-02-10T05:00:00.000Z",
+    "WeekStart": "2026-02-09T05:00:00.000Z",
+    "Pax": "Rugrat",
+    "Team": "Clocktower",
+    "AO": "PreWork",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-02-10T05:00:00.000Z",
+    "WeekStart": "2026-02-09T05:00:00.000Z",
+    "Pax": "Poindexter",
+    "Team": "Clocktower",
+    "AO": "PreWork",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-02-10T05:00:00.000Z",
+    "WeekStart": "2026-02-09T05:00:00.000Z",
+    "Pax": "Heidi",
+    "Team": "Clocktower",
+    "AO": "PreWork",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
     "Date": "2026-01-26T05:00:00.000Z",
     "WeekStart": "2026-01-26T05:00:00.000Z",
     "Pax": "House Arrest",
@@ -8449,5 +8521,23 @@
     "AO": "KOG_BONUS",
     "Counted": true,
     "Reason": "+1 kotter bonus"
+  },
+  {
+    "Date": "2026-02-09T05:00:00.000Z",
+    "WeekStart": "2026-02-09T05:00:00.000Z",
+    "Pax": "Village People",
+    "Team": "",
+    "AO": "KOG_BONUS",
+    "Counted": true,
+    "Reason": "+1 kotter bonus"
+  },
+  {
+    "Date": "2026-02-10T05:00:00.000Z",
+    "WeekStart": "2026-02-10T05:00:00.000Z",
+    "Pax": "Village People",
+    "Team": "",
+    "AO": "KOG_BONUS",
+    "Counted": true,
+    "Reason": "+3 kotter bonus"
   }
 ]
