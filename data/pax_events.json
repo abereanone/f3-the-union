@@ -8529,15 +8529,6 @@
     "Team": "",
     "AO": "KOG_BONUS",
     "Counted": true,
-    "Reason": "+1 kotter bonus"
-  },
-  {
-    "Date": "2026-02-10T05:00:00.000Z",
-    "WeekStart": "2026-02-10T05:00:00.000Z",
-    "Pax": "Village People",
-    "Team": "",
-    "AO": "KOG_BONUS",
-    "Counted": true,
-    "Reason": "+3 kotter bonus"
+    "Reason": "+4 kotter bonus"
   }
 ]
