@@ -8525,8 +8525,8 @@
   {
     "Date": "2026-02-09T05:00:00.000Z",
     "WeekStart": "2026-02-09T05:00:00.000Z",
-    "Pax": "Village People",
-    "Team": "",
+    "Pax": "Village people",
+    "Team": "Clocktower",
     "AO": "KOG_BONUS",
     "Counted": true,
     "Reason": "+4 kotter bonus"

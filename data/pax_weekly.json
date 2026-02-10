@@ -1396,8 +1396,8 @@
     "WeekStart": "2026-02-09T05:00:00.000Z",
     "Pax": "Village people",
     "Team": "Clocktower",
-    "Raw": 1,
-    "Score": 33
+    "Raw": 5,
+    "Score": 167
   },
   {
     "WeekStart": "2026-02-09T05:00:00.000Z",
@@ -1426,13 +1426,6 @@
     "Team": "Clocktower",
     "Raw": 2,
     "Score": 67
-  },
-  {
-    "WeekStart": "2026-02-09T05:00:00.000Z",
-    "Pax": "Village People",
-    "Team": "",
-    "Raw": 4,
-    "Score": 133
   },
   {
     "WeekStart": "2026-02-09T05:00:00.000Z",
