@@ -4,11 +4,11 @@
     {
       "name": "Floppy Disk",
       "run": 0,
-      "walk": 0,
+      "walk": 2,
       "ruck": 4.1,
       "bike": 0,
       "swim": 0,
-      "total": 4.1
+      "total": 6.1
     },
     {
       "name": "harbaugh 3-5",
@@ -50,10 +50,10 @@
       "name": "Ocho",
       "run": 44.79,
       "walk": 1.86,
-      "ruck": 69.68,
+      "ruck": 73.8,
       "bike": 0,
       "swim": 0,
-      "total": 116.33
+      "total": 120.45
     },
     {
       "name": "Vagabond",
@@ -72,6 +72,15 @@
       "bike": 0,
       "swim": 0,
       "total": 67.11
+    },
+    {
+      "name": "Sprocket",
+      "run": 0,
+      "walk": 0,
+      "ruck": 1,
+      "bike": 0,
+      "swim": 0,
+      "total": 1
     }
   ]
 }
