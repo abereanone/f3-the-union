@@ -1,3 +1,19 @@
 {
-  "duplicates": []
+  "duplicates": [
+    {
+      "name": "Ocho",
+      "date": "2026-02-10",
+      "category": "ruck",
+      "rows": [
+        {
+          "row": 125,
+          "miles": 4.12
+        },
+        {
+          "row": 129,
+          "miles": 2.07
+        }
+      ]
+    }
+  ]
 }

@@ -1385,6 +1385,39 @@
       "ruck": 0,
       "bike": 0,
       "swim": 0
+    },
+    {
+      "rowNumber": 128,
+      "timestamp": "2026-02-10T23:07:46.348Z",
+      "name": "Vagabond",
+      "date": "2026-02-10",
+      "run": 0,
+      "walk": 0,
+      "ruck": 4.2,
+      "bike": 0,
+      "swim": 0
+    },
+    {
+      "rowNumber": 129,
+      "timestamp": "2026-02-11T00:26:18.104Z",
+      "name": "Ocho",
+      "date": "2026-02-10",
+      "run": 0,
+      "walk": 0,
+      "ruck": 2.07,
+      "bike": 0,
+      "swim": 0
+    },
+    {
+      "rowNumber": 130,
+      "timestamp": "2026-02-11T00:30:58.331Z",
+      "name": "harbaugh 3-5",
+      "date": "2026-02-09",
+      "run": 0,
+      "walk": 1.5,
+      "ruck": 0,
+      "bike": 4,
+      "swim": 0
     }
   ]
 }
