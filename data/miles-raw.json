@@ -1451,6 +1451,17 @@
       "ruck": 2.03,
       "bike": 0,
       "swim": 0
+    },
+    {
+      "rowNumber": 134,
+      "timestamp": "2026-02-12T02:13:31.735Z",
+      "name": "Sprocket",
+      "date": "2026-02-11",
+      "run": 0,
+      "walk": 0,
+      "ruck": 3.5,
+      "bike": 0,
+      "swim": 0
     }
   ]
 }
