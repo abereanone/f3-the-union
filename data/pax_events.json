@@ -8955,6 +8955,33 @@
     "Reason": "Duplicate same-day"
   },
   {
+    "Date": "2026-02-11T05:00:00.000Z",
+    "WeekStart": "2026-02-09T05:00:00.000Z",
+    "Pax": "Kinevil",
+    "Team": "Farm",
+    "AO": "PreWork",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-02-13T05:00:00.000Z",
+    "WeekStart": "2026-02-09T05:00:00.000Z",
+    "Pax": "Village people",
+    "Team": "Clocktower",
+    "AO": "FNG",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-02-13T05:00:00.000Z",
+    "WeekStart": "2026-02-09T05:00:00.000Z",
+    "Pax": "Ocho",
+    "Team": "Redzone",
+    "AO": "PreWork",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
     "Date": "2026-01-26T05:00:00.000Z",
     "WeekStart": "2026-01-26T05:00:00.000Z",
     "Pax": "House Arrest",
@@ -9191,15 +9218,6 @@
   {
     "Date": "2026-02-09T05:00:00.000Z",
     "WeekStart": "2026-02-09T05:00:00.000Z",
-    "Pax": "House Arrest",
-    "Team": "Fountain",
-    "AO": "KOG_BONUS",
-    "Counted": true,
-    "Reason": "+1 OOT AO the_farm 2/11"
-  },
-  {
-    "Date": "2026-02-09T05:00:00.000Z",
-    "WeekStart": "2026-02-09T05:00:00.000Z",
     "Pax": "Sprocket",
     "Team": "Fountain",
     "AO": "KOG_BONUS",
@@ -9263,6 +9281,105 @@
   {
     "Date": "2026-02-09T05:00:00.000Z",
     "WeekStart": "2026-02-09T05:00:00.000Z",
+    "Pax": "Village people",
+    "Team": "Clocktower",
+    "AO": "KOG_BONUS",
+    "Counted": true,
+    "Reason": "+1 kotter Jigglypuff"
+  },
+  {
+    "Date": "2026-02-09T05:00:00.000Z",
+    "WeekStart": "2026-02-09T05:00:00.000Z",
+    "Pax": "Village people",
+    "Team": "Clocktower",
+    "AO": "KOG_BONUS",
+    "Counted": true,
+    "Reason": "+1 kotter Vixen"
+  },
+  {
+    "Date": "2026-02-09T05:00:00.000Z",
+    "WeekStart": "2026-02-09T05:00:00.000Z",
+    "Pax": "Village people",
+    "Team": "Clocktower",
+    "AO": "KOG_BONUS",
+    "Counted": true,
+    "Reason": "+1 kotter Basketcase"
+  },
+  {
+    "Date": "2026-02-09T05:00:00.000Z",
+    "WeekStart": "2026-02-09T05:00:00.000Z",
+    "Pax": "Village people",
+    "Team": "Clocktower",
+    "AO": "KOG_BONUS",
+    "Counted": true,
+    "Reason": "+1 kotter Pucker"
+  },
+  {
+    "Date": "2026-02-09T05:00:00.000Z",
+    "WeekStart": "2026-02-09T05:00:00.000Z",
+    "Pax": "Village people",
+    "Team": "Clocktower",
+    "AO": "KOG_BONUS",
+    "Counted": true,
+    "Reason": "+1 kotter Turtle dove"
+  },
+  {
+    "Date": "2026-02-09T05:00:00.000Z",
+    "WeekStart": "2026-02-09T05:00:00.000Z",
+    "Pax": "Village people",
+    "Team": "Clocktower",
+    "AO": "KOG_BONUS",
+    "Counted": true,
+    "Reason": "+1 kotter Cousin Eddy"
+  },
+  {
+    "Date": "2026-02-09T05:00:00.000Z",
+    "WeekStart": "2026-02-09T05:00:00.000Z",
+    "Pax": "Village people",
+    "Team": "Clocktower",
+    "AO": "KOG_BONUS",
+    "Counted": true,
+    "Reason": "+1 kotter Kit Kat"
+  },
+  {
+    "Date": "2026-02-09T05:00:00.000Z",
+    "WeekStart": "2026-02-09T05:00:00.000Z",
+    "Pax": "Peach",
+    "Team": "Clocktower",
+    "AO": "KOG_BONUS",
+    "Counted": true,
+    "Reason": "+1 kotter Eleanor"
+  },
+  {
+    "Date": "2026-02-09T05:00:00.000Z",
+    "WeekStart": "2026-02-09T05:00:00.000Z",
+    "Pax": "House Arrest",
+    "Team": "Fountain",
+    "AO": "KOG_BONUS",
+    "Counted": true,
+    "Reason": "+1 OOT AO the_farm 2/11"
+  },
+  {
+    "Date": "2026-02-09T05:00:00.000Z",
+    "WeekStart": "2026-02-09T05:00:00.000Z",
+    "Pax": "Sprocket",
+    "Team": "Fountain",
+    "AO": "KOG_BONUS",
+    "Counted": true,
+    "Reason": "+1 OOT AO the_yard 2/13"
+  },
+  {
+    "Date": "2026-02-09T05:00:00.000Z",
+    "WeekStart": "2026-02-09T05:00:00.000Z",
+    "Pax": "Foghorn",
+    "Team": "Redzone",
+    "AO": "KOG_BONUS",
+    "Counted": true,
+    "Reason": "+1 OOT AO the_show 2/10"
+  },
+  {
+    "Date": "2026-02-09T05:00:00.000Z",
+    "WeekStart": "2026-02-09T05:00:00.000Z",
     "Pax": "Hobo",
     "Team": "Fountain",
     "AO": "KOG_BONUS",
@@ -9295,5 +9412,14 @@
     "AO": "KOG_BONUS",
     "Counted": true,
     "Reason": "+1 OOT AO 2/11"
+  },
+  {
+    "Date": "2026-02-09T05:00:00.000Z",
+    "WeekStart": "2026-02-09T05:00:00.000Z",
+    "Pax": "BodyPump",
+    "Team": "Clocktower",
+    "AO": "KOG_BONUS",
+    "Counted": true,
+    "Reason": "+1 OOT AO #the_rock"
   }
 ]
