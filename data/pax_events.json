@@ -9189,6 +9189,24 @@
     "Reason": ""
   },
   {
+    "Date": "2026-02-14T05:00:00.000Z",
+    "WeekStart": "2026-02-09T05:00:00.000Z",
+    "Pax": "Hobo",
+    "Team": "Fountain",
+    "AO": "FNG",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
+    "Date": "2026-02-14T05:00:00.000Z",
+    "WeekStart": "2026-02-09T05:00:00.000Z",
+    "Pax": "BigRig",
+    "Team": "Fountain",
+    "AO": "FNG",
+    "Counted": true,
+    "Reason": ""
+  },
+  {
     "Date": "2026-01-26T05:00:00.000Z",
     "WeekStart": "2026-01-26T05:00:00.000Z",
     "Pax": "House Arrest",
@@ -9551,6 +9569,51 @@
   {
     "Date": "2026-02-09T05:00:00.000Z",
     "WeekStart": "2026-02-09T05:00:00.000Z",
+    "Pax": "Village people",
+    "Team": "Clocktower",
+    "AO": "KOG_BONUS",
+    "Counted": true,
+    "Reason": "+1 kotter Bernie"
+  },
+  {
+    "Date": "2026-02-09T05:00:00.000Z",
+    "WeekStart": "2026-02-09T05:00:00.000Z",
+    "Pax": "Village people",
+    "Team": "Clocktower",
+    "AO": "KOG_BONUS",
+    "Counted": true,
+    "Reason": "+1 kotter Deuce"
+  },
+  {
+    "Date": "2026-02-09T05:00:00.000Z",
+    "WeekStart": "2026-02-09T05:00:00.000Z",
+    "Pax": "Village people",
+    "Team": "Clocktower",
+    "AO": "KOG_BONUS",
+    "Counted": true,
+    "Reason": "+1 kotter Soft tissue"
+  },
+  {
+    "Date": "2026-02-09T05:00:00.000Z",
+    "WeekStart": "2026-02-09T05:00:00.000Z",
+    "Pax": "Village people",
+    "Team": "Clocktower",
+    "AO": "KOG_BONUS",
+    "Counted": true,
+    "Reason": "+1 kotter JenAy"
+  },
+  {
+    "Date": "2026-02-09T05:00:00.000Z",
+    "WeekStart": "2026-02-09T05:00:00.000Z",
+    "Pax": "Village people",
+    "Team": "Clocktower",
+    "AO": "KOG_BONUS",
+    "Counted": true,
+    "Reason": "+1 kotter Deep dish"
+  },
+  {
+    "Date": "2026-02-09T05:00:00.000Z",
+    "WeekStart": "2026-02-09T05:00:00.000Z",
     "Pax": "Peach",
     "Team": "Clocktower",
     "AO": "KOG_BONUS",
@@ -9610,6 +9673,42 @@
     "AO": "KOG_BONUS",
     "Counted": true,
     "Reason": "+1 OOT AO the_show 2/10"
+  },
+  {
+    "Date": "2026-02-09T05:00:00.000Z",
+    "WeekStart": "2026-02-09T05:00:00.000Z",
+    "Pax": "BigRig",
+    "Team": "Fountain",
+    "AO": "KOG_BONUS",
+    "Counted": true,
+    "Reason": "+1 OOT AO the_plant 2/14"
+  },
+  {
+    "Date": "2026-02-09T05:00:00.000Z",
+    "WeekStart": "2026-02-09T05:00:00.000Z",
+    "Pax": "Heidi",
+    "Team": "Clocktower",
+    "AO": "KOG_BONUS",
+    "Counted": true,
+    "Reason": "+1 OOT AO the_plant 2/14"
+  },
+  {
+    "Date": "2026-02-09T05:00:00.000Z",
+    "WeekStart": "2026-02-09T05:00:00.000Z",
+    "Pax": "Rugrat",
+    "Team": "Clocktower",
+    "AO": "KOG_BONUS",
+    "Counted": true,
+    "Reason": "+1 OOT AO the_plant 2/14"
+  },
+  {
+    "Date": "2026-02-09T05:00:00.000Z",
+    "WeekStart": "2026-02-09T05:00:00.000Z",
+    "Pax": "Poindexter",
+    "Team": "Clocktower",
+    "AO": "KOG_BONUS",
+    "Counted": true,
+    "Reason": "+1 OOT AO the_plant 2/14"
   },
   {
     "Date": "2026-02-09T05:00:00.000Z",
