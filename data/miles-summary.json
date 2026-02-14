@@ -77,10 +77,10 @@
       "name": "Sprocket",
       "run": 0,
       "walk": 0,
-      "ruck": 4.5,
+      "ruck": 6.5,
       "bike": 0,
       "swim": 0,
-      "total": 4.5
+      "total": 6.5
     }
   ]
 }
