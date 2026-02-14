@@ -1561,6 +1561,17 @@
       "ruck": 0,
       "bike": 0,
       "swim": 0
+    },
+    {
+      "rowNumber": 144,
+      "timestamp": "2026-02-14T20:20:37.100Z",
+      "name": "Village people",
+      "date": "2026-02-14",
+      "run": 0,
+      "walk": 0,
+      "ruck": 1.2,
+      "bike": 0,
+      "swim": 0
     }
   ]
 }
