@@ -1605,6 +1605,39 @@
       "ruck": 0,
       "bike": 0,
       "swim": 0
+    },
+    {
+      "rowNumber": 148,
+      "timestamp": "2026-02-16T15:05:34.810Z",
+      "name": "harbaugh 3-5",
+      "date": "2026-02-16",
+      "run": 0,
+      "walk": 2.2,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0
+    },
+    {
+      "rowNumber": 149,
+      "timestamp": "2026-02-16T15:10:51.294Z",
+      "name": "Ocho",
+      "date": "2026-02-16",
+      "run": 4.07,
+      "walk": 0,
+      "ruck": 3.32,
+      "bike": 0,
+      "swim": 0
+    },
+    {
+      "rowNumber": 150,
+      "timestamp": "2026-02-16T16:23:59.074Z",
+      "name": "Sprocket",
+      "date": "2026-02-16",
+      "run": 1.1,
+      "walk": 0,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0
     }
   ]
 }
