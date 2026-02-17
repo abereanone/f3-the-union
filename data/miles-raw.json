@@ -1638,6 +1638,28 @@
       "ruck": 0,
       "bike": 0,
       "swim": 0
+    },
+    {
+      "rowNumber": 151,
+      "timestamp": "2026-02-17T12:17:04.360Z",
+      "name": "Hobo",
+      "date": "2026-02-17",
+      "run": 0,
+      "walk": 0,
+      "ruck": 0,
+      "bike": 18,
+      "swim": 0
+    },
+    {
+      "rowNumber": 152,
+      "timestamp": "2026-02-17T12:58:28.466Z",
+      "name": "Ocho",
+      "date": "2026-02-17",
+      "run": 0,
+      "walk": 0,
+      "ruck": 6.25,
+      "bike": 0,
+      "swim": 0
     }
   ]
 }
