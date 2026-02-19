@@ -1486,7 +1486,7 @@
       "ruck": 4.12,
       "bike": 0,
       "swim": 0,
-      "ignoreDupe": false
+      "ignoreDupe": true
     },
     {
       "rowNumber": 126,
@@ -1534,7 +1534,7 @@
       "ruck": 2.07,
       "bike": 0,
       "swim": 0,
-      "ignoreDupe": false
+      "ignoreDupe": true
     },
     {
       "rowNumber": 130,
