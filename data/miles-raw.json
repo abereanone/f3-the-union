@@ -9,7 +9,8 @@
       "walk": 0,
       "ruck": 1.75,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 3,
@@ -20,7 +21,8 @@
       "walk": 0,
       "ruck": 2.35,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 4,
@@ -31,7 +33,8 @@
       "walk": 1,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 5,
@@ -42,7 +45,8 @@
       "walk": 1,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 6,
@@ -53,7 +57,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 2.5,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 7,
@@ -64,7 +69,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 5.7,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 8,
@@ -75,7 +81,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 6,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 9,
@@ -86,7 +93,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 6,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 10,
@@ -97,7 +105,8 @@
       "walk": 0.5,
       "ruck": 0,
       "bike": 6,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 11,
@@ -108,7 +117,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 1.5,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 12,
@@ -119,7 +129,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 7.5,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 13,
@@ -130,7 +141,8 @@
       "walk": 1,
       "ruck": 0,
       "bike": 3,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 14,
@@ -141,7 +153,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 15,
@@ -152,7 +165,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 16,
@@ -163,7 +177,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 17,
@@ -174,7 +189,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0.568
+      "swim": 0.568,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 18,
@@ -185,7 +201,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 17.5,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 19,
@@ -196,7 +213,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 20,
@@ -207,7 +225,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 21,
@@ -218,7 +237,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 9,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 22,
@@ -229,7 +249,8 @@
       "walk": 0,
       "ruck": 2,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 23,
@@ -240,7 +261,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 35,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 24,
@@ -251,7 +273,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0.68
+      "swim": 0.68,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 25,
@@ -262,7 +285,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0.539
+      "swim": 0.539,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 26,
@@ -273,7 +297,8 @@
       "walk": 0,
       "ruck": 1.41,
       "bike": 8.75,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 27,
@@ -284,7 +309,8 @@
       "walk": 0,
       "ruck": 2.04,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 28,
@@ -295,7 +321,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 17.5,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 29,
@@ -306,7 +333,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 1.02
+      "swim": 1.02,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 30,
@@ -317,7 +345,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 31,
@@ -328,7 +357,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 13.125,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 32,
@@ -339,7 +369,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 33,
@@ -350,7 +381,8 @@
       "walk": 0,
       "ruck": 1.5,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 34,
@@ -361,7 +393,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 35,
@@ -372,7 +405,8 @@
       "walk": 0,
       "ruck": 1,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 36,
@@ -383,7 +417,8 @@
       "walk": 1,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 37,
@@ -394,7 +429,8 @@
       "walk": 0,
       "ruck": 3.5,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 38,
@@ -405,7 +441,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 39,
@@ -416,7 +453,8 @@
       "walk": 1,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 40,
@@ -427,7 +465,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 41,
@@ -438,7 +477,8 @@
       "walk": 2.3,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 42,
@@ -449,7 +489,8 @@
       "walk": 0,
       "ruck": 2,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 43,
@@ -460,7 +501,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 44,
@@ -471,7 +513,8 @@
       "walk": 0,
       "ruck": 2.6,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 45,
@@ -482,7 +525,8 @@
       "walk": 0,
       "ruck": 2,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 46,
@@ -493,7 +537,8 @@
       "walk": 0,
       "ruck": 2,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 47,
@@ -504,7 +549,8 @@
       "walk": 0,
       "ruck": 4.72,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 48,
@@ -515,7 +561,8 @@
       "walk": 0,
       "ruck": 3.02,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 49,
@@ -526,7 +573,8 @@
       "walk": 0,
       "ruck": 1.51,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 50,
@@ -537,7 +585,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 51,
@@ -548,7 +597,8 @@
       "walk": 0,
       "ruck": 1.53,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 52,
@@ -559,7 +609,8 @@
       "walk": 0,
       "ruck": 4.02,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 53,
@@ -570,7 +621,8 @@
       "walk": 0,
       "ruck": 1.51,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 54,
@@ -581,7 +633,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 55,
@@ -592,7 +645,8 @@
       "walk": 0,
       "ruck": 1.5,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 56,
@@ -603,7 +657,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 57,
@@ -614,7 +669,8 @@
       "walk": 0,
       "ruck": 1.51,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 58,
@@ -625,7 +681,8 @@
       "walk": 0,
       "ruck": 4.33,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 59,
@@ -636,7 +693,8 @@
       "walk": 1.26,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 60,
@@ -647,7 +705,8 @@
       "walk": 0,
       "ruck": 1.48,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 61,
@@ -658,7 +717,8 @@
       "walk": 0.6,
       "ruck": 1.5,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 62,
@@ -669,7 +729,8 @@
       "walk": 0,
       "ruck": 2.7,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 63,
@@ -680,7 +741,8 @@
       "walk": 0,
       "ruck": 4.8,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 64,
@@ -691,7 +753,8 @@
       "walk": 0,
       "ruck": 1.58,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 65,
@@ -702,7 +765,8 @@
       "walk": 0,
       "ruck": 1.57,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 66,
@@ -713,7 +777,8 @@
       "walk": 0,
       "ruck": 3.4,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 67,
@@ -724,7 +789,8 @@
       "walk": 0,
       "ruck": 4.5,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 68,
@@ -735,7 +801,8 @@
       "walk": 0,
       "ruck": 3.9,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 69,
@@ -746,7 +813,8 @@
       "walk": 0,
       "ruck": 4.73,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 70,
@@ -757,7 +825,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 71,
@@ -768,7 +837,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 72,
@@ -779,7 +849,8 @@
       "walk": 0,
       "ruck": 3.72,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 73,
@@ -790,7 +861,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 74,
@@ -801,7 +873,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 75,
@@ -812,7 +885,8 @@
       "walk": 0,
       "ruck": 3,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 76,
@@ -823,7 +897,8 @@
       "walk": 0,
       "ruck": 5,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 77,
@@ -834,7 +909,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 78,
@@ -845,7 +921,8 @@
       "walk": 0,
       "ruck": 1.5,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 79,
@@ -856,7 +933,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 80,
@@ -867,7 +945,8 @@
       "walk": 0,
       "ruck": 3.5,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 81,
@@ -878,7 +957,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 82,
@@ -889,7 +969,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 83,
@@ -900,7 +981,8 @@
       "walk": 0,
       "ruck": 3.5,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 84,
@@ -911,7 +993,8 @@
       "walk": 0,
       "ruck": 3,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 85,
@@ -922,7 +1005,8 @@
       "walk": 0,
       "ruck": 1.5,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 86,
@@ -933,7 +1017,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 87,
@@ -944,7 +1029,8 @@
       "walk": 0,
       "ruck": 1.4,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 88,
@@ -955,7 +1041,8 @@
       "walk": 0,
       "ruck": 1.5,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 89,
@@ -966,7 +1053,8 @@
       "walk": 0,
       "ruck": 2,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 90,
@@ -977,7 +1065,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 91,
@@ -988,7 +1077,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 92,
@@ -999,7 +1089,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 93,
@@ -1010,7 +1101,8 @@
       "walk": 0,
       "ruck": 1.5,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 94,
@@ -1021,7 +1113,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 95,
@@ -1032,7 +1125,8 @@
       "walk": 5.7,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 96,
@@ -1043,7 +1137,8 @@
       "walk": 0,
       "ruck": 2.3,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 97,
@@ -1054,7 +1149,8 @@
       "walk": 0,
       "ruck": 2.1,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 98,
@@ -1065,7 +1161,8 @@
       "walk": 0,
       "ruck": 5,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 99,
@@ -1076,7 +1173,8 @@
       "walk": 0,
       "ruck": 3.62,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 100,
@@ -1087,7 +1185,8 @@
       "walk": 2,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 101,
@@ -1098,7 +1197,8 @@
       "walk": 0,
       "ruck": 1.5,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 102,
@@ -1109,7 +1209,8 @@
       "walk": 8.15,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 103,
@@ -1120,7 +1221,8 @@
       "walk": 3.25,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 104,
@@ -1131,7 +1233,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 17.49,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 105,
@@ -1142,7 +1245,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 2,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 106,
@@ -1153,7 +1257,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 107,
@@ -1164,7 +1269,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 108,
@@ -1175,7 +1281,8 @@
       "walk": 1,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 109,
@@ -1186,7 +1293,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 110,
@@ -1197,7 +1305,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 111,
@@ -1208,7 +1317,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 112,
@@ -1219,7 +1329,8 @@
       "walk": 0,
       "ruck": 2.2,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 113,
@@ -1230,7 +1341,8 @@
       "walk": 0,
       "ruck": 3.4,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 114,
@@ -1241,7 +1353,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 115,
@@ -1252,7 +1365,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 116,
@@ -1263,7 +1377,8 @@
       "walk": 1,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 117,
@@ -1274,7 +1389,8 @@
       "walk": 0,
       "ruck": 2,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 118,
@@ -1285,7 +1401,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 119,
@@ -1296,7 +1413,8 @@
       "walk": 0,
       "ruck": 2,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 120,
@@ -1307,7 +1425,8 @@
       "walk": 0,
       "ruck": 5.13,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 121,
@@ -1318,7 +1437,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 10.2,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 122,
@@ -1329,7 +1449,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 123,
@@ -1340,7 +1461,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 124,
@@ -1351,7 +1473,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 125,
@@ -1362,7 +1485,8 @@
       "walk": 0,
       "ruck": 4.12,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 126,
@@ -1373,18 +1497,20 @@
       "walk": 0,
       "ruck": 1,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 127,
       "timestamp": "2026-02-10T15:27:30.647Z",
       "name": "Floppy Disk",
-      "date": "2026-02-10",
+      "date": "2026-02-19",
       "run": 0,
-      "walk": 2,
-      "ruck": 0,
+      "walk": 0,
+      "ruck": 2.21,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 128,
@@ -1395,7 +1521,8 @@
       "walk": 0,
       "ruck": 4.2,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 129,
@@ -1406,7 +1533,8 @@
       "walk": 0,
       "ruck": 2.07,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 130,
@@ -1417,7 +1545,8 @@
       "walk": 1.5,
       "ruck": 0,
       "bike": 4,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 131,
@@ -1428,7 +1557,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 132,
@@ -1439,7 +1569,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 133,
@@ -1450,7 +1581,8 @@
       "walk": 0,
       "ruck": 2.03,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 134,
@@ -1461,7 +1593,8 @@
       "walk": 0,
       "ruck": 3.5,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 135,
@@ -1472,7 +1605,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 19,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 136,
@@ -1483,7 +1617,8 @@
       "walk": 0,
       "ruck": 2.5,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 137,
@@ -1494,7 +1629,8 @@
       "walk": 0,
       "ruck": 3.32,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 138,
@@ -1505,7 +1641,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 139,
@@ -1516,7 +1653,8 @@
       "walk": 0,
       "ruck": 2,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 140,
@@ -1527,7 +1665,8 @@
       "walk": 2,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 141,
@@ -1538,7 +1677,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 1.5,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 142,
@@ -1549,7 +1689,8 @@
       "walk": 0,
       "ruck": 2,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 143,
@@ -1560,7 +1701,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 144,
@@ -1571,7 +1713,8 @@
       "walk": 0,
       "ruck": 1.2,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 145,
@@ -1582,7 +1725,8 @@
       "walk": 1,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 146,
@@ -1593,7 +1737,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 147,
@@ -1604,7 +1749,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 148,
@@ -1615,7 +1761,8 @@
       "walk": 2.2,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 149,
@@ -1626,7 +1773,8 @@
       "walk": 0,
       "ruck": 3.32,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 150,
@@ -1637,7 +1785,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 151,
@@ -1648,7 +1797,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 18,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 152,
@@ -1659,7 +1809,8 @@
       "walk": 0,
       "ruck": 6.25,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": true
     },
     {
       "rowNumber": 153,
@@ -1670,7 +1821,8 @@
       "walk": 0,
       "ruck": 2.25,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": true
     },
     {
       "rowNumber": 154,
@@ -1681,7 +1833,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 155,
@@ -1692,7 +1845,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 156,
@@ -1703,7 +1857,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 157,
@@ -1714,7 +1869,8 @@
       "walk": 0,
       "ruck": 1.6,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     },
     {
       "rowNumber": 158,
@@ -1725,7 +1881,8 @@
       "walk": 0,
       "ruck": 0,
       "bike": 0,
-      "swim": 0
+      "swim": 0,
+      "ignoreDupe": false
     }
   ]
 }
