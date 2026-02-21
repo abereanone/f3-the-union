@@ -1883,6 +1883,66 @@
       "bike": 0,
       "swim": 0,
       "ignoreDupe": false
+    },
+    {
+      "rowNumber": 159,
+      "timestamp": "2026-02-20T12:27:05.057Z",
+      "name": "Vagabond",
+      "date": "2026-02-20",
+      "run": 4,
+      "walk": 0,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 160,
+      "timestamp": "2026-02-20T12:27:18.780Z",
+      "name": "Hobo",
+      "date": "2026-02-20",
+      "run": 6.19,
+      "walk": 0,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0.426,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 161,
+      "timestamp": "2026-02-20T12:27:33.040Z",
+      "name": "Vagabond",
+      "date": "2026-02-19",
+      "run": 2,
+      "walk": 0,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 162,
+      "timestamp": "2026-02-20T12:55:07.954Z",
+      "name": "Ocho",
+      "date": "2026-02-20",
+      "run": 0,
+      "walk": 0,
+      "ruck": 3.69,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 163,
+      "timestamp": "2026-02-21T11:29:08.729Z",
+      "name": "Hobo",
+      "date": "2026-02-21",
+      "run": 0,
+      "walk": 0,
+      "ruck": 0,
+      "bike": 9,
+      "swim": 0,
+      "ignoreDupe": false
     }
   ]
 }
