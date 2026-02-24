@@ -24,9 +24,9 @@
       "run": 85.38,
       "walk": 0,
       "ruck": 7.48,
-      "bike": 58.19,
+      "bike": 64.19,
       "swim": 16.34,
-      "total": 167.39
+      "total": 173.39
     },
     {
       "name": "Iceberg",
@@ -50,10 +50,10 @@
       "name": "Ocho",
       "run": 63.95,
       "walk": 1.86,
-      "ruck": 98.45,
+      "ruck": 101.16,
       "bike": 0,
       "swim": 0,
-      "total": 164.26
+      "total": 166.97
     },
     {
       "name": "Vagabond",

@@ -2027,6 +2027,30 @@
       "bike": 0,
       "swim": 0,
       "ignoreDupe": false
+    },
+    {
+      "rowNumber": 171,
+      "timestamp": "2026-02-24T00:12:48.846Z",
+      "name": "Ocho",
+      "date": "2026-02-23",
+      "run": 0,
+      "walk": 0,
+      "ruck": 2.71,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 172,
+      "timestamp": "2026-02-24T11:37:08.553Z",
+      "name": "Hobo",
+      "date": "2026-02-24",
+      "run": 0,
+      "walk": 0,
+      "ruck": 0,
+      "bike": 18,
+      "swim": 0,
+      "ignoreDupe": false
     }
   ]
 }
