@@ -2075,6 +2075,42 @@
       "bike": 0,
       "swim": 0,
       "ignoreDupe": false
+    },
+    {
+      "rowNumber": 175,
+      "timestamp": "2026-02-25T11:02:45.768Z",
+      "name": "BigRig",
+      "date": "2026-02-24",
+      "run": 0.8,
+      "walk": 0,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 176,
+      "timestamp": "2026-02-25T11:48:57.177Z",
+      "name": "Hobo",
+      "date": "2026-02-25",
+      "run": 3.1,
+      "walk": 0,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 177,
+      "timestamp": "2026-02-25T12:46:39.033Z",
+      "name": "Hobo",
+      "date": "2026-02-25",
+      "run": 0,
+      "walk": 0,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0.582,
+      "ignoreDupe": false
     }
   ]
 }

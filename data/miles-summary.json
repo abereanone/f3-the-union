@@ -21,12 +21,12 @@
     },
     {
       "name": "Hobo",
-      "run": 85.38,
+      "run": 88.48,
       "walk": 0,
       "ruck": 7.48,
       "bike": 64.19,
-      "swim": 16.34,
-      "total": 173.39
+      "swim": 18.67,
+      "total": 178.82
     },
     {
       "name": "Iceberg",
@@ -84,12 +84,12 @@
     },
     {
       "name": "BigRig",
-      "run": 2,
+      "run": 2.8,
       "walk": 0,
       "ruck": 0,
       "bike": 0,
       "swim": 0,
-      "total": 2
+      "total": 2.8
     }
   ]
 }
