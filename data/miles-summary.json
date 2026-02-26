@@ -5,10 +5,10 @@
       "name": "Floppy Disk",
       "run": 2,
       "walk": 0.36,
-      "ruck": 6.31,
+      "ruck": 8.49,
       "bike": 0,
       "swim": 0,
-      "total": 8.67
+      "total": 10.85
     },
     {
       "name": "harbaugh 3-5",
@@ -50,10 +50,10 @@
       "name": "Ocho",
       "run": 65.29,
       "walk": 1.86,
-      "ruck": 107.15,
+      "ruck": 111,
       "bike": 0,
       "swim": 0,
-      "total": 174.3
+      "total": 178.15
     },
     {
       "name": "Vagabond",

@@ -2159,6 +2159,30 @@
       "bike": 0,
       "swim": 0,
       "ignoreDupe": false
+    },
+    {
+      "rowNumber": 182,
+      "timestamp": "2026-02-26T12:16:50.371Z",
+      "name": "Floppy Disk",
+      "date": "2026-02-26",
+      "run": 0,
+      "walk": 0,
+      "ruck": 2.18,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 183,
+      "timestamp": "2026-02-26T12:43:27.487Z",
+      "name": "Ocho",
+      "date": "2026-02-26",
+      "run": 0,
+      "walk": 0,
+      "ruck": 3.85,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
     }
   ]
 }
