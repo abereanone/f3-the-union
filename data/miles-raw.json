@@ -2002,7 +2002,7 @@
       "ruck": 3.75,
       "bike": 0,
       "swim": 0,
-      "ignoreDupe": false
+      "ignoreDupe": true
     },
     {
       "rowNumber": 169,
@@ -2038,7 +2038,7 @@
       "ruck": 2.71,
       "bike": 0,
       "swim": 0,
-      "ignoreDupe": false
+      "ignoreDupe": true
     },
     {
       "rowNumber": 172,
@@ -2252,6 +2252,18 @@
       "run": 4,
       "walk": 0,
       "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 190,
+      "timestamp": "2026-02-28T03:59:06.416Z",
+      "name": "harbaugh 3-5",
+      "date": "2026-02-27",
+      "run": 0,
+      "walk": 3,
+      "ruck": 2,
       "bike": 0,
       "swim": 0,
       "ignoreDupe": false

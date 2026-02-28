@@ -13,11 +13,11 @@
     {
       "name": "harbaugh 3-5",
       "run": 0,
-      "walk": 15.2,
-      "ruck": 0,
+      "walk": 18.2,
+      "ruck": 2,
       "bike": 15.23,
       "swim": 0,
-      "total": 30.43
+      "total": 35.43
     },
     {
       "name": "Hobo",
