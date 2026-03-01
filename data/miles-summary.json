@@ -13,11 +13,11 @@
     {
       "name": "harbaugh 3-5",
       "run": 0,
-      "walk": 18.2,
+      "walk": 22.7,
       "ruck": 2,
       "bike": 15.23,
       "swim": 0,
-      "total": 35.43
+      "total": 39.93
     },
     {
       "name": "Hobo",
@@ -77,10 +77,10 @@
       "name": "Sprocket",
       "run": 2.1,
       "walk": 0,
-      "ruck": 6.5,
+      "ruck": 8.5,
       "bike": 0,
       "swim": 0,
-      "total": 8.6
+      "total": 10.6
     },
     {
       "name": "BigRig",
