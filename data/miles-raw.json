@@ -2351,6 +2351,18 @@
       "bike": 0,
       "swim": 0,
       "ignoreDupe": false
+    },
+    {
+      "rowNumber": 198,
+      "timestamp": "2026-03-02T15:47:33.623Z",
+      "name": "Iceberg",
+      "date": "2026-03-02",
+      "run": 3,
+      "walk": 0,
+      "ruck": 1.5,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
     }
   ]
 }
