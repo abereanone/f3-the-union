@@ -2363,6 +2363,18 @@
       "bike": 0,
       "swim": 0,
       "ignoreDupe": false
+    },
+    {
+      "rowNumber": 199,
+      "timestamp": "2026-03-02T17:23:17.201Z",
+      "name": "Ocho",
+      "date": "2026-03-02",
+      "run": 3.5,
+      "walk": 0,
+      "ruck": 3,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
     }
   ]
 }
