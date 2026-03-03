@@ -66,12 +66,12 @@
     },
     {
       "name": "Village people",
-      "run": 59.61,
+      "run": 60.81,
       "walk": 12.2,
       "ruck": 31.8,
       "bike": 0,
       "swim": 0,
-      "total": 103.61
+      "total": 104.81
     },
     {
       "name": "Sprocket",
