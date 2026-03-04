@@ -2399,6 +2399,18 @@
       "bike": 0,
       "swim": 0,
       "ignoreDupe": false
+    },
+    {
+      "rowNumber": 202,
+      "timestamp": "2026-03-04T11:50:13.031Z",
+      "name": "BigRig",
+      "date": "2026-03-04",
+      "run": 2.36,
+      "walk": 0,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
     }
   ]
 }
