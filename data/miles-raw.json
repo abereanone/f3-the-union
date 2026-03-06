@@ -2483,6 +2483,30 @@
       "bike": 0,
       "swim": 0,
       "ignoreDupe": false
+    },
+    {
+      "rowNumber": 209,
+      "timestamp": "2026-03-06T17:15:03.673Z",
+      "name": "Floppy Disk",
+      "date": "2026-03-06",
+      "run": 2,
+      "walk": 0.5,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 210,
+      "timestamp": "2026-03-06T18:45:18.631Z",
+      "name": "Sprocket",
+      "date": "2026-03-06",
+      "run": 0,
+      "walk": 0,
+      "ruck": 1.9,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
     }
   ]
 }

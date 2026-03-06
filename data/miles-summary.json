@@ -3,12 +3,12 @@
   "people": [
     {
       "name": "Floppy Disk",
-      "run": 4.2,
-      "walk": 1.16,
+      "run": 6.2,
+      "walk": 1.66,
       "ruck": 8.49,
       "bike": 0,
       "swim": 0,
-      "total": 13.85
+      "total": 16.35
     },
     {
       "name": "harbaugh 3-5",
@@ -77,10 +77,10 @@
       "name": "Sprocket",
       "run": 2.1,
       "walk": 0,
-      "ruck": 8.5,
+      "ruck": 10.4,
       "bike": 0,
       "swim": 0,
-      "total": 10.6
+      "total": 12.5
     },
     {
       "name": "BigRig",
