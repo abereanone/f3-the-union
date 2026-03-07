@@ -2531,6 +2531,18 @@
       "bike": 0,
       "swim": 0,
       "ignoreDupe": false
+    },
+    {
+      "rowNumber": 213,
+      "timestamp": "2026-03-07T12:15:42.458Z",
+      "name": "Hobo",
+      "date": "2026-03-07",
+      "run": 6.48,
+      "walk": 0,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
     }
   ]
 }
