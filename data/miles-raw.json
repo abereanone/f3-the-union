@@ -2507,6 +2507,30 @@
       "bike": 0,
       "swim": 0,
       "ignoreDupe": false
+    },
+    {
+      "rowNumber": 211,
+      "timestamp": "2026-03-06T21:47:15.297Z",
+      "name": "harbaugh 3-5",
+      "date": "2026-03-06",
+      "run": 0,
+      "walk": 0,
+      "ruck": 2,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 212,
+      "timestamp": "2026-03-06T21:48:04.699Z",
+      "name": "harbaugh 3-5",
+      "date": "2026-02-27",
+      "run": 0,
+      "walk": 0,
+      "ruck": 2,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
     }
   ]
 }
