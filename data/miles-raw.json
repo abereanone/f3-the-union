@@ -2675,6 +2675,30 @@
       "bike": 0,
       "swim": 0,
       "ignoreDupe": false
+    },
+    {
+      "rowNumber": 225,
+      "timestamp": "2026-03-11T12:53:34.585Z",
+      "name": "Hobo",
+      "date": "2026-03-11",
+      "run": 2.97,
+      "walk": 0,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 226,
+      "timestamp": "2026-03-11T14:28:41.573Z",
+      "name": "Ocho",
+      "date": "2026-03-11",
+      "run": 0,
+      "walk": 3.41,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
     }
   ]
 }
