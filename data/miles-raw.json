@@ -2522,18 +2522,6 @@
     },
     {
       "rowNumber": 212,
-      "timestamp": "2026-03-06T21:48:04.699Z",
-      "name": "harbaugh 3-5",
-      "date": "2026-02-27",
-      "run": 0,
-      "walk": 0,
-      "ruck": 2,
-      "bike": 0,
-      "swim": 0,
-      "ignoreDupe": false
-    },
-    {
-      "rowNumber": 213,
       "timestamp": "2026-03-07T12:15:42.458Z",
       "name": "Hobo",
       "date": "2026-03-07",
@@ -2545,7 +2533,7 @@
       "ignoreDupe": false
     },
     {
-      "rowNumber": 214,
+      "rowNumber": 213,
       "timestamp": "2026-03-07T13:56:46.813Z",
       "name": "Ocho",
       "date": "2026-03-06",
@@ -2557,7 +2545,7 @@
       "ignoreDupe": false
     },
     {
-      "rowNumber": 215,
+      "rowNumber": 214,
       "timestamp": "2026-03-08T14:02:47.103Z",
       "name": "Ocho",
       "date": "2026-03-08",
@@ -2569,7 +2557,7 @@
       "ignoreDupe": false
     },
     {
-      "rowNumber": 216,
+      "rowNumber": 215,
       "timestamp": "2026-03-09T15:27:54.146Z",
       "name": "Village people",
       "date": "2026-03-09",
@@ -2581,7 +2569,7 @@
       "ignoreDupe": false
     },
     {
-      "rowNumber": 217,
+      "rowNumber": 216,
       "timestamp": "2026-03-09T16:27:27.899Z",
       "name": "Ocho",
       "date": "2026-03-09",
@@ -2593,7 +2581,7 @@
       "ignoreDupe": false
     },
     {
-      "rowNumber": 218,
+      "rowNumber": 217,
       "timestamp": "2026-03-10T02:53:22.488Z",
       "name": "Hobo",
       "date": "2026-03-08",
@@ -2605,7 +2593,7 @@
       "ignoreDupe": false
     },
     {
-      "rowNumber": 219,
+      "rowNumber": 218,
       "timestamp": "2026-03-10T02:53:43.287Z",
       "name": "Hobo",
       "date": "2026-03-09",
@@ -2617,7 +2605,7 @@
       "ignoreDupe": false
     },
     {
-      "rowNumber": 220,
+      "rowNumber": 219,
       "timestamp": "2026-03-10T11:24:38.416Z",
       "name": "Village people",
       "date": "2026-03-10",
@@ -2629,7 +2617,7 @@
       "ignoreDupe": false
     },
     {
-      "rowNumber": 221,
+      "rowNumber": 220,
       "timestamp": "2026-03-10T11:50:13.773Z",
       "name": "Ocho",
       "date": "2026-03-10",
@@ -2641,7 +2629,7 @@
       "ignoreDupe": false
     },
     {
-      "rowNumber": 222,
+      "rowNumber": 221,
       "timestamp": "2026-03-10T18:41:28.869Z",
       "name": "Floppy Disk",
       "date": "2026-03-09",
@@ -2653,7 +2641,7 @@
       "ignoreDupe": false
     },
     {
-      "rowNumber": 223,
+      "rowNumber": 222,
       "timestamp": "2026-03-10T18:41:43.625Z",
       "name": "Floppy Disk",
       "date": "2026-03-10",
@@ -2665,7 +2653,7 @@
       "ignoreDupe": false
     },
     {
-      "rowNumber": 224,
+      "rowNumber": 223,
       "timestamp": "2026-03-11T11:14:24.258Z",
       "name": "Village people",
       "date": "2026-03-11",
@@ -2677,7 +2665,7 @@
       "ignoreDupe": false
     },
     {
-      "rowNumber": 225,
+      "rowNumber": 224,
       "timestamp": "2026-03-11T12:53:34.585Z",
       "name": "Hobo",
       "date": "2026-03-11",
@@ -2689,7 +2677,7 @@
       "ignoreDupe": false
     },
     {
-      "rowNumber": 226,
+      "rowNumber": 225,
       "timestamp": "2026-03-11T14:28:41.573Z",
       "name": "Ocho",
       "date": "2026-03-11",
@@ -2701,7 +2689,7 @@
       "ignoreDupe": false
     },
     {
-      "rowNumber": 227,
+      "rowNumber": 226,
       "timestamp": "2026-03-11T22:21:05.167Z",
       "name": "harbaugh 3-5",
       "date": "2026-03-11",
@@ -2713,7 +2701,7 @@
       "ignoreDupe": false
     },
     {
-      "rowNumber": 228,
+      "rowNumber": 227,
       "timestamp": "2026-03-11T22:22:09.275Z",
       "name": "harbaugh 3-5",
       "date": "2026-03-09",
@@ -2725,7 +2713,7 @@
       "ignoreDupe": false
     },
     {
-      "rowNumber": 229,
+      "rowNumber": 228,
       "timestamp": "2026-03-11T22:22:40.474Z",
       "name": "harbaugh 3-5",
       "date": "2026-03-08",
@@ -2737,7 +2725,7 @@
       "ignoreDupe": false
     },
     {
-      "rowNumber": 230,
+      "rowNumber": 229,
       "timestamp": "2026-03-12T18:46:32.749Z",
       "name": "Ocho",
       "date": "2026-03-12",
@@ -2749,7 +2737,7 @@
       "ignoreDupe": false
     },
     {
-      "rowNumber": 231,
+      "rowNumber": 230,
       "timestamp": "2026-03-12T22:58:21.421Z",
       "name": "Floppy Disk",
       "date": "2026-03-12",
@@ -2761,12 +2749,36 @@
       "ignoreDupe": false
     },
     {
-      "rowNumber": 232,
+      "rowNumber": 231,
       "timestamp": "2026-03-12T23:01:45.679Z",
       "name": "harbaugh 3-5",
       "date": "2026-03-12",
       "run": 0.75,
       "walk": 0.75,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 232,
+      "timestamp": "2026-03-13T10:03:34.809Z",
+      "name": "harbaugh 3-5",
+      "date": "2026-03-13",
+      "run": 0,
+      "walk": 0,
+      "ruck": 2.2,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 233,
+      "timestamp": "2026-03-13T11:55:15.386Z",
+      "name": "Village people",
+      "date": "2026-03-13",
+      "run": 4.8,
+      "walk": 0,
       "ruck": 0,
       "bike": 0,
       "swim": 0,
