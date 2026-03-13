@@ -2747,6 +2747,30 @@
       "bike": 0,
       "swim": 0,
       "ignoreDupe": false
+    },
+    {
+      "rowNumber": 231,
+      "timestamp": "2026-03-12T22:58:21.421Z",
+      "name": "Floppy Disk",
+      "date": "2026-03-12",
+      "run": 0,
+      "walk": 0,
+      "ruck": 1.98,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 232,
+      "timestamp": "2026-03-12T23:01:45.679Z",
+      "name": "harbaugh 3-5",
+      "date": "2026-03-12",
+      "run": 0.75,
+      "walk": 0.75,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
     }
   ]
 }
