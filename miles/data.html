@@ -287,6 +287,11 @@
     return dateStr.slice(0, 7);
   }
 
+  function formatMonthLabel(value) {
+    if (!value || value.length !== 7) return value;
+    return `${value.slice(2, 4)}-${value.slice(5, 7)}`;
+  }
+
   function buildMonthlyTotals(rows) {
     const byPerson = {};
     rows.forEach((row) => {
@@ -325,7 +330,7 @@
       (grouped[entry.name] ||= []).push(entry);
     });
     Object.values(grouped).forEach((list) => {
-      list.sort((a, b) => a.month.localeCompare(b.month));
+      list.sort((a, b) => b.month.localeCompare(a.month));
     });
     return grouped;
   }
@@ -419,7 +424,7 @@
       const rowsHtml = details.length
         ? details.map((m) => `
             <tr>
-              <td>${m.month}</td>
+              <td>${formatMonthLabel(m.month)}</td>
               <td>${formatMiles(m.run)}</td>
               <td>${formatMiles(m.walk)}</td>
               <td>${formatMiles(m.ruck)}</td>
