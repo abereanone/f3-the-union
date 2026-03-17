@@ -493,6 +493,20 @@
       detailRow.style.display = 'none';
       if (stripeClass) detailRow.classList.add(stripeClass);
       const details = monthlyByPerson[person.name] || [];
+      const detailTotals = details.reduce((totals, entry) => {
+        numberFields.forEach((field) => {
+          totals[field] += Number(entry[field] || 0);
+        });
+        totals.total += Number(entry.total || 0);
+        return totals;
+      }, {
+        run: 0,
+        walk: 0,
+        ruck: 0,
+        bike: 0,
+        swim: 0,
+        total: 0
+      });
       const rowsHtml = details.length
         ? details.map((m) => `
             <tr>
@@ -523,6 +537,17 @@
                 </tr>
               </thead>
               <tbody>${rowsHtml}</tbody>
+              <tfoot>
+                <tr>
+                  <th>Total</th>
+                  <th>${formatMiles(detailTotals.run)}</th>
+                  <th>${formatMiles(detailTotals.walk)}</th>
+                  <th>${formatMiles(detailTotals.ruck)}</th>
+                  <th>${formatMiles(detailTotals.bike)}</th>
+                  <th>${formatMiles(detailTotals.swim)}</th>
+                  <th>${formatMiles(detailTotals.total)}</th>
+                </tr>
+              </tfoot>
             </table>
           </div>
         </td>
