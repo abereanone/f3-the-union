@@ -2843,6 +2843,30 @@
       "bike": 0,
       "swim": 0,
       "ignoreDupe": false
+    },
+    {
+      "rowNumber": 239,
+      "timestamp": "2026-03-17T13:15:24.769Z",
+      "name": "Ocho",
+      "date": "2026-03-17",
+      "run": 0,
+      "walk": 0,
+      "ruck": 4.65,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 240,
+      "timestamp": "2026-03-17T14:24:55.636Z",
+      "name": "Village people",
+      "date": "2026-03-17",
+      "run": 2,
+      "walk": 0,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
     }
   ]
 }
