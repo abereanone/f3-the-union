@@ -15,6 +15,8 @@
       --table-header-bg: #d9e3f7;
       --table-header-text: #1f3b6d;
       --table-stripe-bg: #f0d2cc;
+      --detail-stripe-light: #f7ebe7;
+      --detail-stripe-dark: #e8c1b8;
     }
 
     .top-nav {
@@ -76,6 +78,7 @@
       border: 1px solid #ddd;
       padding: 0.5rem 0.6rem;
       text-align: left;
+      vertical-align: middle;
     }
 
     th {
@@ -126,6 +129,56 @@
       background: var(--table-stripe-bg);
     }
 
+    .detail-panel {
+      background: #fff;
+      border: 2px solid rgba(31, 59, 109, 0.12);
+      border-radius: 4px;
+      margin: 0.15rem 0;
+    }
+
+    .stripe-a .detail-panel {
+      background: var(--table-stripe-bg);
+    }
+
+    .detail-row td {
+      padding-top: 0.3rem;
+      padding-bottom: 0.3rem;
+    }
+
+    .striped-by-name tbody tr.detail-row {
+      background: #fff;
+    }
+
+    .striped-by-name tbody tr.detail-row.stripe-a {
+      background: var(--table-stripe-bg);
+    }
+
+    .detail-table th,
+    .detail-table td {
+      background: transparent;
+    }
+
+    .detail-table th {
+      background: var(--detail-stripe-light);
+    }
+
+    .stripe-a .detail-table th {
+      background: var(--detail-stripe-dark);
+    }
+
+    .detail-table tbody tr:nth-child(even),
+    .detail-table tbody tr:nth-child(odd) {
+      background: transparent;
+    }
+
+    .detail-table tbody tr:nth-child(even) {
+      background: var(--detail-stripe-light);
+    }
+
+    .stripe-a .detail-table tbody tr:nth-child(even) {
+      background: var(--detail-stripe-dark);
+    }
+
     .badge {
       display: inline-block;
       padding: 0.15rem 0.4rem;
@@ -140,6 +193,10 @@
       color: #777;
     }
 
+    .person-name {
+      font-weight: 800;
+    }
+
     .toggle-btn {
       width: 1.2rem;
       height: 1.2rem;
@@ -150,15 +207,18 @@
       border-radius: 3px;
       cursor: pointer;
       font-size: 0.7rem;
-      line-height: 1;
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      vertical-align: middle;
     }
 
     .toggle-cell {
       text-align: center;
       width: 2.2rem;
+      vertical-align: middle;
+      padding-top: 0.25rem;
+      padding-bottom: 0.25rem;
     }
 
     .toggle-btn:disabled {
@@ -168,7 +228,18 @@
 
     .toggle-btn[aria-expanded="true"] .arrow {
       transform: rotate(90deg);
-      display: inline-block;
+    }
+
+    .arrow {
+      display: block;
+      width: 0;
+      height: 0;
+      font-size: 0;
+      line-height: 0;
+      border-top: 0.22rem solid transparent;
+      border-bottom: 0.22rem solid transparent;
+      border-left: 0.32rem solid #1f3b6d;
+      transform-origin: 45% 50%;
     }
   </style>
 </head>
@@ -406,7 +477,7 @@
             <span class="arrow">▶</span>
           </button>
         </td>
-        <td>${person.name}</td>
+        <td class="person-name">${person.name}</td>
         <td>${formatMiles(person.run)}</td>
         <td>${formatMiles(person.walk)}</td>
         <td>${formatMiles(person.ruck)}</td>
@@ -418,6 +489,7 @@
 
       const detailRow = document.createElement('tr');
       detailRow.dataset.detail = person.name;
+      detailRow.classList.add('detail-row');
       detailRow.style.display = 'none';
       if (stripeClass) detailRow.classList.add(stripeClass);
       const details = monthlyByPerson[person.name] || [];
@@ -437,8 +509,8 @@
 
       detailRow.innerHTML = `
         <td colspan="9">
-          <div class="table-wrap" style="max-height: 240px;">
-            <table class="striped">
+          <div class="table-wrap detail-panel" style="max-height: 240px;">
+            <table class="detail-table">
               <thead>
                 <tr>
                   <th>Month</th>
