@@ -2903,6 +2903,54 @@
       "bike": 0,
       "swim": 0,
       "ignoreDupe": false
+    },
+    {
+      "rowNumber": 244,
+      "timestamp": "2026-03-20T16:34:09.427Z",
+      "name": "harbaugh 3-5",
+      "date": "2026-03-17",
+      "run": 0,
+      "walk": 9,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 245,
+      "timestamp": "2026-03-20T16:34:28.911Z",
+      "name": "harbaugh 3-5",
+      "date": "2026-03-18",
+      "run": 0,
+      "walk": 5,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 246,
+      "timestamp": "2026-03-20T16:34:51.479Z",
+      "name": "harbaugh 3-5",
+      "date": "2026-03-19",
+      "run": 0,
+      "walk": 2,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 247,
+      "timestamp": "2026-03-20T16:35:11.235Z",
+      "name": "harbaugh 3-5",
+      "date": "2026-03-20",
+      "run": 0,
+      "walk": 1,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
     }
   ]
 }
