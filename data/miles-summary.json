@@ -30,12 +30,12 @@
     },
     {
       "name": "Iceberg",
-      "run": 43.95,
+      "run": 46.75,
       "walk": 3,
-      "ruck": 9,
+      "ruck": 10.5,
       "bike": 0,
       "swim": 0,
-      "total": 55.95
+      "total": 60.25
     },
     {
       "name": "Midriff",
@@ -66,12 +66,12 @@
     },
     {
       "name": "Village people",
-      "run": 85.01,
+      "run": 88.31,
       "walk": 19.7,
-      "ruck": 37.8,
+      "ruck": 39.4,
       "bike": 0,
       "swim": 0,
-      "total": 142.51
+      "total": 147.41
     },
     {
       "name": "Sprocket",
