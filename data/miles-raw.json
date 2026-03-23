@@ -3011,6 +3011,54 @@
       "bike": 0,
       "swim": 0,
       "ignoreDupe": false
+    },
+    {
+      "rowNumber": 253,
+      "timestamp": "2026-03-23T14:00:58.075Z",
+      "name": "Hobo",
+      "date": "2026-03-16",
+      "run": 2.57,
+      "walk": 0,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 254,
+      "timestamp": "2026-03-23T14:01:25.947Z",
+      "name": "Hobo",
+      "date": "2026-03-20",
+      "run": 0,
+      "walk": 0,
+      "ruck": 3,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 255,
+      "timestamp": "2026-03-23T14:01:42.351Z",
+      "name": "Hobo",
+      "date": "2026-03-21",
+      "run": 0,
+      "walk": 0,
+      "ruck": 0,
+      "bike": 9,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 256,
+      "timestamp": "2026-03-23T14:02:01.070Z",
+      "name": "Hobo",
+      "date": "2026-03-23",
+      "run": 2.55,
+      "walk": 0,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
     }
   ]
 }
