@@ -3167,6 +3167,42 @@
       "bike": 0,
       "swim": 0,
       "ignoreDupe": false
+    },
+    {
+      "rowNumber": 266,
+      "timestamp": "2026-03-24T22:54:35.835Z",
+      "name": "Vagabond",
+      "date": "2026-03-19",
+      "run": 0,
+      "walk": 4,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 267,
+      "timestamp": "2026-03-24T22:55:06.344Z",
+      "name": "Vagabond",
+      "date": "2026-03-17",
+      "run": 0,
+      "walk": 2,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 268,
+      "timestamp": "2026-03-24T22:55:44.506Z",
+      "name": "Vagabond",
+      "date": "2026-03-20",
+      "run": 0,
+      "walk": 2,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
     }
   ]
 }
