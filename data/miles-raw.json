@@ -3311,6 +3311,42 @@
       "bike": 0,
       "swim": 0.568,
       "ignoreDupe": false
+    },
+    {
+      "rowNumber": 278,
+      "timestamp": "2026-03-27T20:01:31.405Z",
+      "name": "harbaugh 3-5",
+      "date": "2026-03-27",
+      "run": 0,
+      "walk": 0,
+      "ruck": 2.6,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 279,
+      "timestamp": "2026-03-27T20:03:18.377Z",
+      "name": "harbaugh 3-5",
+      "date": "2026-03-26",
+      "run": 1.5,
+      "walk": 1,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 280,
+      "timestamp": "2026-03-27T20:30:42.665Z",
+      "name": "Floppy Disk",
+      "date": "2026-03-27",
+      "run": 0,
+      "walk": 0.53,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
     }
   ]
 }
