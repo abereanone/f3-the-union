@@ -3443,6 +3443,30 @@
       "bike": 0,
       "swim": 0,
       "ignoreDupe": false
+    },
+    {
+      "rowNumber": 289,
+      "timestamp": "2026-03-30T10:39:05.857Z",
+      "name": "Iceberg",
+      "date": "2026-03-30",
+      "run": 3.5,
+      "walk": 0,
+      "ruck": 1.5,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 290,
+      "timestamp": "2026-03-30T10:47:15.620Z",
+      "name": "Village people",
+      "date": "2026-03-30",
+      "run": 4.5,
+      "walk": 0,
+      "ruck": 1.5,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
     }
   ]
 }
