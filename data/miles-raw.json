@@ -3479,6 +3479,30 @@
       "bike": 0,
       "swim": 0,
       "ignoreDupe": false
+    },
+    {
+      "rowNumber": 292,
+      "timestamp": "2026-03-30T17:22:32.809Z",
+      "name": "Sprocket",
+      "date": "2026-03-27",
+      "run": 0,
+      "walk": 0,
+      "ruck": 2.5,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 293,
+      "timestamp": "2026-03-30T18:58:45.675Z",
+      "name": "harbaugh 3-5",
+      "date": "2026-03-30",
+      "run": 0,
+      "walk": 0,
+      "ruck": 1,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
     }
   ]
 }
