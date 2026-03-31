@@ -58,11 +58,11 @@
     {
       "name": "Vagabond",
       "run": 50.8,
-      "walk": 11.5,
+      "walk": 17.2,
       "ruck": 24.7,
       "bike": 0,
       "swim": 0,
-      "total": 87
+      "total": 92.7
     },
     {
       "name": "Village people",
