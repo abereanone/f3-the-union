@@ -14,6 +14,21 @@
           "miles": 2.5
         }
       ]
+    },
+    {
+      "name": "Ocho",
+      "date": "2026-04-01",
+      "category": "ruck",
+      "rows": [
+        {
+          "row": 304,
+          "miles": 1.5
+        },
+        {
+          "row": 305,
+          "miles": 1.7
+        }
+      ]
     }
   ]
 }
