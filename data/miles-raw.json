@@ -3683,6 +3683,54 @@
       "bike": 0,
       "swim": 0,
       "ignoreDupe": false
+    },
+    {
+      "rowNumber": 309,
+      "timestamp": "2026-04-04T12:22:27.382Z",
+      "name": "Vagabond",
+      "date": "2026-04-04",
+      "run": 5.2,
+      "walk": 0,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 310,
+      "timestamp": "2026-04-04T15:29:28.708Z",
+      "name": "Floppy Disk",
+      "date": "2026-04-04",
+      "run": 0,
+      "walk": 0,
+      "ruck": 1.48,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 311,
+      "timestamp": "2026-04-04T15:54:03.292Z",
+      "name": "harbaugh 3-5",
+      "date": "2026-04-04",
+      "run": 1,
+      "walk": 0.2,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 312,
+      "timestamp": "2026-04-04T15:54:41.809Z",
+      "name": "harbaugh 3-5",
+      "date": "2026-04-03",
+      "run": 2.3,
+      "walk": 0.8,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
     }
   ]
 }
