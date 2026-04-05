@@ -67,20 +67,20 @@
     {
       "name": "Village people",
       "run": 111.21,
-      "walk": 22.7,
+      "walk": 26.7,
       "ruck": 44,
       "bike": 0,
       "swim": 0,
-      "total": 177.91
+      "total": 181.91
     },
     {
       "name": "Sprocket",
       "run": 2.1,
       "walk": 0,
-      "ruck": 12.9,
+      "ruck": 14.4,
       "bike": 0,
       "swim": 0,
-      "total": 15
+      "total": 16.5
     },
     {
       "name": "BigRig",
