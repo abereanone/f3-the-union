@@ -77,10 +77,10 @@
       "name": "Sprocket",
       "run": 2.1,
       "walk": 0,
-      "ruck": 14.4,
+      "ruck": 16.5,
       "bike": 0,
       "swim": 0,
-      "total": 16.5
+      "total": 18.6
     },
     {
       "name": "BigRig",

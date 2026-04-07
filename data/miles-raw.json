@@ -1486,7 +1486,7 @@
       "ruck": 4.12,
       "bike": 0,
       "swim": 0,
-      "ignoreDupe": false
+      "ignoreDupe": true
     },
     {
       "rowNumber": 126,
@@ -1534,7 +1534,7 @@
       "ruck": 2.07,
       "bike": 0,
       "swim": 0,
-      "ignoreDupe": false
+      "ignoreDupe": true
     },
     {
       "rowNumber": 130,
@@ -1810,7 +1810,7 @@
       "ruck": 6.25,
       "bike": 0,
       "swim": 0,
-      "ignoreDupe": false
+      "ignoreDupe": true
     },
     {
       "rowNumber": 153,
@@ -1822,7 +1822,7 @@
       "ruck": 2.25,
       "bike": 0,
       "swim": 0,
-      "ignoreDupe": false
+      "ignoreDupe": true
     },
     {
       "rowNumber": 154,
@@ -2002,7 +2002,7 @@
       "ruck": 3.75,
       "bike": 0,
       "swim": 0,
-      "ignoreDupe": false
+      "ignoreDupe": true
     },
     {
       "rowNumber": 169,
@@ -2038,7 +2038,7 @@
       "ruck": 2.71,
       "bike": 0,
       "swim": 0,
-      "ignoreDupe": false
+      "ignoreDupe": true
     },
     {
       "rowNumber": 172,
@@ -3106,7 +3106,7 @@
       "ruck": 1.51,
       "bike": 0,
       "swim": 0,
-      "ignoreDupe": false
+      "ignoreDupe": true
     },
     {
       "rowNumber": 261,
@@ -3812,6 +3812,18 @@
       "run": 0,
       "walk": 0,
       "ruck": 5.11,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 320,
+      "timestamp": "2026-04-07T17:54:28.476Z",
+      "name": "Sprocket",
+      "date": "2026-03-20",
+      "run": 0,
+      "walk": 0,
+      "ruck": 2.1,
       "bike": 0,
       "swim": 0,
       "ignoreDupe": false
