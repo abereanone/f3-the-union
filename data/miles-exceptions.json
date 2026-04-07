@@ -1,3 +1,10 @@
 {
-  "exceptions": []
+  "exceptions": [
+    {
+      "type": "future date entered",
+      "name": "Floppy Disk",
+      "date": "2026-05-06",
+      "row": 316
+    }
+  ]
 }
