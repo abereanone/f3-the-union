@@ -1,32 +1,62 @@
 {
   "duplicates": [
     {
-      "name": "Sprocket",
-      "date": "2026-03-27",
+      "name": "Ocho",
+      "date": "2026-02-10",
       "category": "ruck",
       "rows": [
         {
-          "row": 195,
-          "miles": 2
+          "row": 125,
+          "miles": 4.12
         },
         {
-          "row": 292,
-          "miles": 2.5
+          "row": 129,
+          "miles": 2.07
         }
       ]
     },
     {
       "name": "Ocho",
-      "date": "2026-04-01",
+      "date": "2026-02-17",
       "category": "ruck",
       "rows": [
         {
-          "row": 304,
-          "miles": 1.5
+          "row": 152,
+          "miles": 6.25
         },
         {
-          "row": 305,
-          "miles": 1.7
+          "row": 153,
+          "miles": 2.25
+        }
+      ]
+    },
+    {
+      "name": "Ocho",
+      "date": "2026-02-23",
+      "category": "ruck",
+      "rows": [
+        {
+          "row": 168,
+          "miles": 3.75
+        },
+        {
+          "row": 171,
+          "miles": 2.71
+        }
+      ]
+    },
+    {
+      "name": "Ocho",
+      "date": "2026-03-20",
+      "category": "ruck",
+      "rows": [
+        {
+          "row": 236,
+          "miles": 2
+        },
+        {
+          "row": 260,
+          "miles": 1.51
         }
       ]
     }
