@@ -3775,7 +3775,7 @@
       "date": "2026-04-06",
       "run": 0,
       "walk": 0,
-      "ruck": 0.5,
+      "ruck": 0.6,
       "bike": 0,
       "swim": 0,
       "ignoreDupe": false
@@ -3824,6 +3824,18 @@
       "run": 0,
       "walk": 0,
       "ruck": 2.1,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 321,
+      "timestamp": "2026-04-07T17:58:21.675Z",
+      "name": "Sprocket",
+      "date": "2026-03-13",
+      "run": 0,
+      "walk": 0,
+      "ruck": 2,
       "bike": 0,
       "swim": 0,
       "ignoreDupe": false

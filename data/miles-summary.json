@@ -5,10 +5,10 @@
       "name": "Floppy Disk",
       "run": 10.85,
       "walk": 3.69,
-      "ruck": 22.44,
+      "ruck": 22.54,
       "bike": 0,
       "swim": 0,
-      "total": 36.98
+      "total": 37.08
     },
     {
       "name": "harbaugh 3-5",
@@ -77,10 +77,10 @@
       "name": "Sprocket",
       "run": 2.1,
       "walk": 0,
-      "ruck": 16.5,
+      "ruck": 18.5,
       "bike": 0,
       "swim": 0,
-      "total": 18.6
+      "total": 20.6
     },
     {
       "name": "BigRig",
