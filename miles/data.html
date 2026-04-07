@@ -269,11 +269,11 @@
     </div>
   </div>
 
-  <div class="section" id="duplicates-section">
-    <h2>Potential Duplicates</h2>
-    <div id="duplicates-content" class="muted">Loading…</div>
+  <div class="section" id="exceptions-section">
+    <h2>Potential Exceptions</h2>
+    <div id="exceptions-content" class="muted">Loading…</div>
     <div class="muted" style="margin-top: 0.5rem;">
-      To resolve duplicates, contact Floppy Disk to either remove the duplicate row or mark it as not a duplicate.
+      To resolve duplicate entries, contact Floppy Disk to either remove the duplicate row or mark it as not a duplicate.
     </div>
   </div>
 
@@ -555,34 +555,43 @@
       body.appendChild(detailRow);
     });
   }
-
-  function renderDuplicates(duplicates) {
-    const section = document.getElementById('duplicates-section');
-    const container = document.getElementById('duplicates-content');
-    if (!duplicates || duplicates.length === 0) {
+  function renderExceptions(exceptions) {
+    const section = document.getElementById('exceptions-section');
+    const container = document.getElementById('exceptions-content');
+    if (!exceptions || exceptions.length === 0) {
       section.style.display = 'none';
       return;
     }
 
     section.style.display = '';
     const list = document.createElement('div');
-    duplicates.forEach((dup) => {
+    exceptions.forEach((entry) => {
       const block = document.createElement('div');
       block.style.marginBottom = '0.75rem';
-      const rows = dup.rows
-        .map((row) => `#${row.row}: ${formatMiles(row.miles)} mi`)
-        .join(', ');
-      block.innerHTML = `
-        <strong>${dup.name}</strong> — ${dup.date} — ${dup.category}
-        <span class="badge">${dup.rows.length} rows</span>
-        <div class="muted">${rows}</div>
-      `;
+      if (entry.type === 'future date entered') {
+        block.innerHTML = `
+          <strong>${entry.name || ''}</strong> — ${entry.date || ''} — future date entered
+          <span class="badge">row #${entry.row ?? ''}</span>
+        `;
+      } else if (entry.type === 'duplicate entry') {
+        const rows = (entry.rows || [])
+          .map((row) => `#${row.row}: ${formatMiles(row.miles)} mi`)
+          .join(', ');
+        block.innerHTML = `
+          <strong>${entry.name || ''}</strong> — ${entry.date || ''} — ${entry.category || ''}
+          <span class="badge">${(entry.rows || []).length} rows</span>
+          <div class="muted">${rows}</div>
+        `;
+      } else {
+        block.innerHTML = `
+          <strong>${entry.name || ''}</strong> — ${entry.date || ''} — ${entry.type || 'unknown exception'}
+        `;
+      }
       list.appendChild(block);
     });
     container.innerHTML = '';
     container.appendChild(list);
   }
-
   function handleSortClick(event) {
     const key = event.target.dataset.sort;
     if (!key) return;
@@ -603,17 +612,17 @@
   }
 
   async function init() {
-    const [raw, summary, duplicates, meta] = await Promise.all([
+    const [raw, summary, exceptions, meta] = await Promise.all([
       fetch(`${DATA_BASE}miles-raw.json`).then((res) => res.json()),
       fetch(`${DATA_BASE}miles-summary.json`).then((res) => res.json()),
-      fetch(`${DATA_BASE}miles-duplicates.json`).then((res) => res.json()),
+      fetch(`${DATA_BASE}miles-exceptions.json`).then((res) => res.json()),
       fetch(`${DATA_BASE}miles-meta.json`).then((res) => res.json())
     ]);
 
     rawRows = Array.isArray(raw.rows) ? raw.rows : [];
     monthlyByPerson = buildMonthlyTotals(rawRows);
     renderSummaryTable(summary.people || []);
-    renderDuplicates(duplicates.duplicates || []);
+    renderExceptions(exceptions.exceptions || []);
     applyQueryPrefill();
     renderRawTable();
 
