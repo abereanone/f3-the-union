@@ -59,19 +59,19 @@
       "name": "Vagabond",
       "run": 63.3,
       "walk": 18.9,
-      "ruck": 24.7,
+      "ruck": 26.3,
       "bike": 0,
       "swim": 0,
-      "total": 106.9
+      "total": 108.5
     },
     {
       "name": "Village people",
       "run": 116.21,
       "walk": 28.7,
-      "ruck": 44,
+      "ruck": 45.6,
       "bike": 0,
       "swim": 0,
-      "total": 188.91
+      "total": 190.51
     },
     {
       "name": "Sprocket",
