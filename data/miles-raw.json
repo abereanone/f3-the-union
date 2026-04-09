@@ -3863,6 +3863,30 @@
       "bike": 0,
       "swim": 0,
       "ignoreDupe": false
+    },
+    {
+      "rowNumber": 324,
+      "timestamp": "2026-04-09T10:15:31.541Z",
+      "name": "Floppy Disk",
+      "date": "2026-04-09",
+      "run": 0,
+      "walk": 0,
+      "ruck": 2.5,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 325,
+      "timestamp": "2026-04-09T10:45:42.213Z",
+      "name": "Village people",
+      "date": "2026-04-09",
+      "run": 0,
+      "walk": 0,
+      "ruck": 1.5,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
     }
   ]
 }
