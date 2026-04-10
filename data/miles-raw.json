@@ -3899,6 +3899,42 @@
       "bike": 0,
       "swim": 0,
       "ignoreDupe": false
+    },
+    {
+      "rowNumber": 327,
+      "timestamp": "2026-04-10T02:06:43.717Z",
+      "name": "harbaugh 3-5",
+      "date": "2026-04-08",
+      "run": 2.3,
+      "walk": 2,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 328,
+      "timestamp": "2026-04-10T02:07:15.931Z",
+      "name": "harbaugh 3-5",
+      "date": "2026-04-09",
+      "run": 3,
+      "walk": 1,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 329,
+      "timestamp": "2026-04-10T02:15:33.423Z",
+      "name": "Vagabond",
+      "date": "2026-04-09",
+      "run": 1,
+      "walk": 3,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
     }
   ]
 }
