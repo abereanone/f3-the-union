@@ -2,17 +2,17 @@
   "exceptions": [
     {
       "type": "duplicate entry",
-      "name": "Village people",
-      "date": "2026-04-09",
-      "category": "ruck",
+      "name": "harbaugh 3-5",
+      "date": "2026-04-11",
+      "category": "walk",
       "rows": [
         {
-          "row": 325,
-          "miles": 1.5
+          "row": 333,
+          "miles": 0.5
         },
         {
-          "row": 326,
-          "miles": 1
+          "row": 339,
+          "miles": 1.25
         }
       ]
     }

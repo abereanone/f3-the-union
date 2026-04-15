@@ -5,28 +5,28 @@
       "name": "Floppy Disk",
       "run": 10.85,
       "walk": 3.69,
-      "ruck": 25.04,
+      "ruck": 26.04,
       "bike": 0,
       "swim": 0,
-      "total": 39.58
+      "total": 40.58
     },
     {
       "name": "harbaugh 3-5",
-      "run": 17.1,
-      "walk": 53.05,
+      "run": 22.25,
+      "walk": 54.8,
       "ruck": 11.2,
       "bike": 17.07,
       "swim": 0,
-      "total": 98.42
+      "total": 105.32
     },
     {
       "name": "Hobo",
-      "run": 139.14,
+      "run": 157.63,
       "walk": 0,
       "ruck": 10.48,
-      "bike": 73.19,
-      "swim": 23.9,
-      "total": 246.7
+      "bike": 78.65,
+      "swim": 28.44,
+      "total": 275.2
     },
     {
       "name": "Iceberg",
@@ -48,12 +48,12 @@
     },
     {
       "name": "Ocho",
-      "run": 113.09,
+      "run": 121.65,
       "walk": 8.95,
-      "ruck": 183.94,
+      "ruck": 188.81,
       "bike": 0,
       "swim": 0,
-      "total": 305.98
+      "total": 319.41
     },
     {
       "name": "Vagabond",
@@ -66,12 +66,12 @@
     },
     {
       "name": "Village people",
-      "run": 116.21,
-      "walk": 28.7,
-      "ruck": 48.1,
+      "run": 124.21,
+      "walk": 32.15,
+      "ruck": 51.93,
       "bike": 0,
       "swim": 0,
-      "total": 193.01
+      "total": 208.29
     },
     {
       "name": "Sprocket",
