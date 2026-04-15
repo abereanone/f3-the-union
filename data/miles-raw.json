@@ -3898,7 +3898,7 @@
       "ruck": 1,
       "bike": 0,
       "swim": 0,
-      "ignoreDupe": false
+      "ignoreDupe": true
     },
     {
       "rowNumber": 327,
