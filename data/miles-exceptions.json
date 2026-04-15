@@ -1,20 +1,3 @@
 {
-  "exceptions": [
-    {
-      "type": "duplicate entry",
-      "name": "harbaugh 3-5",
-      "date": "2026-04-11",
-      "category": "walk",
-      "rows": [
-        {
-          "row": 333,
-          "miles": 0.5
-        },
-        {
-          "row": 339,
-          "miles": 1.25
-        }
-      ]
-    }
-  ]
+  "exceptions": []
 }
