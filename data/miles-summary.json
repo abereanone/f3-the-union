@@ -12,12 +12,12 @@
     },
     {
       "name": "harbaugh 3-5",
-      "run": 22.25,
-      "walk": 54.8,
-      "ruck": 11.2,
+      "run": 25.51,
+      "walk": 56.3,
+      "ruck": 13.2,
       "bike": 17.07,
       "swim": 0,
-      "total": 105.32
+      "total": 112.08
     },
     {
       "name": "Hobo",
@@ -30,12 +30,12 @@
     },
     {
       "name": "Iceberg",
-      "run": 50.25,
+      "run": 54.25,
       "walk": 3,
       "ruck": 12,
       "bike": 0,
       "swim": 0,
-      "total": 65.25
+      "total": 69.25
     },
     {
       "name": "Midriff",

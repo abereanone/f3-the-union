@@ -4283,6 +4283,42 @@
       "bike": 0,
       "swim": 0,
       "ignoreDupe": false
+    },
+    {
+      "rowNumber": 359,
+      "timestamp": "2026-04-17T10:06:06.692Z",
+      "name": "Iceberg",
+      "date": "2026-04-17",
+      "run": 4,
+      "walk": 0,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 360,
+      "timestamp": "2026-04-17T10:46:11.679Z",
+      "name": "harbaugh 3-5",
+      "date": "2026-04-16",
+      "run": 2,
+      "walk": 1.5,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 361,
+      "timestamp": "2026-04-17T10:46:38.737Z",
+      "name": "harbaugh 3-5",
+      "date": "2026-04-17",
+      "run": 1.26,
+      "walk": 0,
+      "ruck": 2,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
     }
   ]
 }
