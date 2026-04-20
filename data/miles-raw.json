@@ -4367,6 +4367,66 @@
       "bike": 0,
       "swim": 0,
       "ignoreDupe": false
+    },
+    {
+      "rowNumber": 366,
+      "timestamp": "2026-04-19T20:53:41.259Z",
+      "name": "Ocho",
+      "date": "2026-04-14",
+      "run": 1,
+      "walk": 0,
+      "ruck": 1.45,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 367,
+      "timestamp": "2026-04-19T20:54:22.699Z",
+      "name": "Ocho",
+      "date": "2026-04-15",
+      "run": 2.62,
+      "walk": 1,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 368,
+      "timestamp": "2026-04-19T20:54:52.914Z",
+      "name": "Ocho",
+      "date": "2026-04-16",
+      "run": 2.38,
+      "walk": 0,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 369,
+      "timestamp": "2026-04-19T20:55:34.407Z",
+      "name": "Ocho",
+      "date": "2026-04-17",
+      "run": 5.88,
+      "walk": 0,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 370,
+      "timestamp": "2026-04-19T20:55:55.851Z",
+      "name": "Ocho",
+      "date": "2026-04-19",
+      "run": 0,
+      "walk": 3.25,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
     }
   ]
 }
