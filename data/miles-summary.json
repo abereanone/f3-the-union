@@ -48,12 +48,12 @@
     },
     {
       "name": "Ocho",
-      "run": 133.53,
+      "run": 136.53,
       "walk": 13.2,
-      "ruck": 190.26,
+      "ruck": 193.26,
       "bike": 0,
       "swim": 0,
-      "total": 336.99
+      "total": 342.99
     },
     {
       "name": "Vagabond",
