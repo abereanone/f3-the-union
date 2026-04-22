@@ -48,12 +48,12 @@
     },
     {
       "name": "Ocho",
-      "run": 136.53,
+      "run": 140.08,
       "walk": 13.2,
       "ruck": 195.26,
       "bike": 0,
       "swim": 0,
-      "total": 344.99
+      "total": 348.54
     },
     {
       "name": "Vagabond",
@@ -66,12 +66,12 @@
     },
     {
       "name": "Village people",
-      "run": 135.51,
+      "run": 139.06,
       "walk": 34.15,
       "ruck": 54.93,
       "bike": 0,
       "swim": 0,
-      "total": 224.59
+      "total": 228.14
     },
     {
       "name": "Sprocket",
@@ -90,6 +90,15 @@
       "bike": 0,
       "swim": 0,
       "total": 6.78
+    },
+    {
+      "name": "Precious",
+      "run": 0,
+      "walk": 24.07,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "total": 24.07
     }
   ]
 }
