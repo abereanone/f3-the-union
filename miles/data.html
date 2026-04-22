@@ -241,11 +241,56 @@
       border-left: 0.32rem solid #1f3b6d;
       transform-origin: 45% 50%;
     }
+
+    .challenge-grid {
+      display: grid;
+      grid-template-columns: minmax(180px, 240px) minmax(0, 1fr);
+      gap: 1rem;
+      align-items: start;
+    }
+
+    .challenge-image {
+      width: 100%;
+      border-radius: 6px;
+      border: 1px solid #d8d8d8;
+      display: block;
+    }
+
+    #challenge-meta {
+      margin-bottom: 0.7rem;
+    }
+
+    @media (max-width: 760px) {
+      .challenge-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
   <div id="top-nav"></div>
   <h1>Miles Data</h1>
+  <div class="section" id="challenge-section">
+    <h2>July 4th 250 Mile Challenge</h2>
+    <div class="challenge-grid">
+      <img class="challenge-image" src="../2fitty.jpg" alt="JPB 2fitty challenge graphic" />
+      <div>
+        <div id="challenge-meta" class="meta">Loading...</div>
+        <div class="table-wrap table-wrap--auto">
+          <table class="striped">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Miles (4/17 - 7/4)</th>
+                <th>Projected by 7/4</th>
+              </tr>
+            </thead>
+            <tbody id="challenge-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
   <div id="generated-at" class="meta">Last refreshed: <span id="last-refresh">Loading…</span></div>
 
   <div class="section" id="summary-section">
@@ -326,6 +371,8 @@
   const numberFields = ['run', 'walk', 'ruck', 'bike', 'swim'];
   const BIKE_DIVISOR = 3;
   const SWIM_MULTIPLIER = 4;
+  const CHALLENGE_START = { month: 4, day: 17 };
+  const CHALLENGE_END = { month: 7, day: 4 };
   let rawRows = [];
   let currentSort = { key: 'timestamp', dir: 'desc' };
   let monthlyByPerson = {};
@@ -351,6 +398,51 @@
 
   function round2(value) {
     return Math.round(value * 100) / 100;
+  }
+
+  function dateToYmd(date) {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  }
+
+  function ymdToUtcMs(value) {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(value || '')) return Number.NaN;
+    const [year, month, day] = value.split('-').map(Number);
+    return Date.UTC(year, month - 1, day);
+  }
+
+  function daysInclusive(startYmd, endYmd) {
+    const startMs = ymdToUtcMs(startYmd);
+    const endMs = ymdToUtcMs(endYmd);
+    if (!Number.isFinite(startMs) || !Number.isFinite(endMs) || endMs < startMs) return 0;
+    const dayMs = 24 * 60 * 60 * 1000;
+    return Math.floor((endMs - startMs) / dayMs) + 1;
+  }
+
+  function formatMilesFixed(value) {
+    return Number(value || 0).toFixed(2);
+  }
+
+  function formatDateForMeta(ymd) {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(ymd || '')) return ymd;
+    const [year, month, day] = ymd.split('-').map(Number);
+    return `${month}/${day}/${year}`;
+  }
+
+  function buildChallengeWindow(year) {
+    const start = `${year}-${String(CHALLENGE_START.month).padStart(2, '0')}-${String(CHALLENGE_START.day).padStart(2, '0')}`;
+    const end = `${year}-${String(CHALLENGE_END.month).padStart(2, '0')}-${String(CHALLENGE_END.day).padStart(2, '0')}`;
+    return { start, end };
+  }
+
+  function rowEarnedMiles(row) {
+    return Number(row.run || 0)
+      + Number(row.walk || 0)
+      + Number(row.ruck || 0)
+      + (Number(row.bike || 0) / BIKE_DIVISOR)
+      + (Number(row.swim || 0) * SWIM_MULTIPLIER);
   }
 
   function monthKey(dateStr) {
@@ -555,6 +647,68 @@
       body.appendChild(detailRow);
     });
   }
+
+  function renderChallengeTable(summaryPeople, rows, challengeYear) {
+    const body = document.getElementById('challenge-body');
+    const meta = document.getElementById('challenge-meta');
+    body.innerHTML = '';
+
+    const { start, end } = buildChallengeWindow(challengeYear);
+    const today = dateToYmd(new Date());
+    const asOf = today < start ? start : (today > end ? end : today);
+    const elapsedDays = daysInclusive(start, asOf);
+    const challengeDays = daysInclusive(start, end);
+    const projectionFactor = elapsedDays > 0 ? challengeDays / elapsedDays : 0;
+
+    const totalsByName = {};
+    const allNames = new Set();
+
+    (summaryPeople || []).forEach((person) => {
+      const name = (person && person.name ? String(person.name) : '').trim();
+      if (!name) return;
+      allNames.add(name);
+      totalsByName[name] = 0;
+    });
+
+    (rows || []).forEach((row) => {
+      const name = (row && row.name ? String(row.name) : '').trim();
+      const date = row && row.date ? String(row.date) : '';
+      if (!name || !date) return;
+      allNames.add(name);
+      if (totalsByName[name] === undefined) totalsByName[name] = 0;
+      if (date < start || date > end) return;
+      totalsByName[name] += rowEarnedMiles(row);
+    });
+
+    const challengeRows = Array.from(allNames).map((name) => {
+      const earned = round2(totalsByName[name] || 0);
+      const projected = round2(earned * projectionFactor);
+      return { name, earned, projected };
+    }).sort((a, b) => {
+      if (b.projected !== a.projected) return b.projected - a.projected;
+      if (b.earned !== a.earned) return b.earned - a.earned;
+      return a.name.localeCompare(b.name);
+    });
+
+    if (challengeRows.length === 0) {
+      body.innerHTML = '<tr><td colspan="3" class="muted">No PAX data available.</td></tr>';
+      meta.textContent = `Window: ${formatDateForMeta(start)} through ${formatDateForMeta(end)}.`;
+      return;
+    }
+
+    challengeRows.forEach((entry) => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td class="person-name">${entry.name}</td>
+        <td>${formatMilesFixed(entry.earned)}</td>
+        <td><strong>${formatMilesFixed(entry.projected)}</strong></td>
+      `;
+      body.appendChild(tr);
+    });
+
+    meta.textContent = `Window: ${formatDateForMeta(start)} through ${formatDateForMeta(end)} (inclusive). Projection uses average miles/day from ${formatDateForMeta(start)} to ${formatDateForMeta(asOf)}.`;
+  }
+
   function renderExceptions(exceptions) {
     const section = document.getElementById('exceptions-section');
     const container = document.getElementById('exceptions-content');
@@ -621,6 +775,7 @@
 
     rawRows = Array.isArray(raw.rows) ? raw.rows : [];
     monthlyByPerson = buildMonthlyTotals(rawRows);
+    renderChallengeTable(summary.people || [], rawRows, Number(summary.year) || new Date().getFullYear());
     renderSummaryTable(summary.people || []);
     renderExceptions(exceptions.exceptions || []);
     applyQueryPrefill();

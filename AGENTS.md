@@ -75,3 +75,4 @@ This project uses **three generated JSON data files** for the static website. Th
 - Use `miles-summary.json` for charts.
 - Use `miles-raw.json` for sortable/filterable tables.
 - Use `miles-duplicates.json` to flag potential issues.
+- Do not start doing unspecified things, but ask me what to do. I like to go back and forth a bit.
