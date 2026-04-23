@@ -282,6 +282,7 @@
               <tr>
                 <th>Name</th>
                 <th>Miles (4/17 - 7/4)</th>
+                <th>Miles to Goal</th>
                 <th>Avg/Day</th>
                 <th>Projected by 7/4</th>
               </tr>
@@ -683,9 +684,10 @@
 
     const challengeRows = Array.from(allNames).map((name) => {
       const earned = round2(totalsByName[name] || 0);
+      const milesToGoal = round2(250 - earned);
       const avgPerDay = round2(elapsedDays > 0 ? earned / elapsedDays : 0);
       const projected = round2(earned * projectionFactor);
-      return { name, avgPerDay, earned, projected };
+      return { name, avgPerDay, earned, milesToGoal, projected };
     }).sort((a, b) => {
       if (b.projected !== a.projected) return b.projected - a.projected;
       if (b.earned !== a.earned) return b.earned - a.earned;
@@ -693,7 +695,7 @@
     });
 
     if (challengeRows.length === 0) {
-      body.innerHTML = '<tr><td colspan="4" class="muted">No PAX data available.</td></tr>';
+      body.innerHTML = '<tr><td colspan="5" class="muted">No PAX data available.</td></tr>';
       meta.textContent = `Window: ${formatDateForMeta(start)} through ${formatDateForMeta(end)}.`;
       return;
     }
@@ -703,6 +705,7 @@
       tr.innerHTML = `
         <td class="person-name">${entry.name}</td>
         <td>${formatMilesFixed(entry.earned)}</td>
+        <td>${formatMilesFixed(entry.milesToGoal)}</td>
         <td>${formatMilesFixed(entry.avgPerDay)}</td>
         <td><strong>${formatMilesFixed(entry.projected)}</strong></td>
       `;
