@@ -4655,6 +4655,30 @@
       "bike": 0,
       "swim": 0,
       "ignoreDupe": false
+    },
+    {
+      "rowNumber": 390,
+      "timestamp": "2026-04-24T11:41:40.258Z",
+      "name": "Hobo",
+      "date": "2026-04-22",
+      "run": 3.15,
+      "walk": 0,
+      "ruck": 2,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 391,
+      "timestamp": "2026-04-24T11:42:09.907Z",
+      "name": "Hobo",
+      "date": "2026-04-24",
+      "run": 8.29,
+      "walk": 0,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
     }
   ]
 }
