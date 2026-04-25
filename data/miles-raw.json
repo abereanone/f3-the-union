@@ -4727,6 +4727,18 @@
       "bike": 0,
       "swim": 0,
       "ignoreDupe": false
+    },
+    {
+      "rowNumber": 396,
+      "timestamp": "2026-04-24T20:37:31.457Z",
+      "name": "Village people",
+      "date": "2026-04-24",
+      "run": 0,
+      "walk": 0,
+      "ruck": 1,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
     }
   ]
 }
