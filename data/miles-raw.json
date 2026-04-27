@@ -4811,6 +4811,18 @@
       "bike": 0,
       "swim": 0,
       "ignoreDupe": false
+    },
+    {
+      "rowNumber": 403,
+      "timestamp": "2026-04-27T00:14:18.661Z",
+      "name": "Precious",
+      "date": "2026-04-26",
+      "run": 8.57,
+      "walk": 0.31,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
     }
   ]
 }
