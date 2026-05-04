@@ -5075,6 +5075,90 @@
       "bike": 0,
       "swim": 0,
       "ignoreDupe": false
+    },
+    {
+      "rowNumber": 425,
+      "timestamp": "2026-05-04T13:14:40.758Z",
+      "name": "Hobo",
+      "date": "2026-04-25",
+      "run": 3.89,
+      "walk": 0,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 426,
+      "timestamp": "2026-05-04T13:15:04.908Z",
+      "name": "Hobo",
+      "date": "2026-04-29",
+      "run": 2.98,
+      "walk": 0,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 427,
+      "timestamp": "2026-05-04T13:15:27.109Z",
+      "name": "Hobo",
+      "date": "2026-04-30",
+      "run": 7.94,
+      "walk": 0,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 428,
+      "timestamp": "2026-05-04T13:15:44.196Z",
+      "name": "Hobo",
+      "date": "2026-05-03",
+      "run": 0,
+      "walk": 0,
+      "ruck": 0,
+      "bike": 6.1,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 429,
+      "timestamp": "2026-05-04T13:16:00.228Z",
+      "name": "Hobo",
+      "date": "2026-05-04",
+      "run": 3.01,
+      "walk": 0,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 430,
+      "timestamp": "2026-05-04T13:49:07.523Z",
+      "name": "Precious",
+      "date": "2026-05-03",
+      "run": 0,
+      "walk": 2.2,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 431,
+      "timestamp": "2026-05-04T15:16:49.053Z",
+      "name": "Ocho",
+      "date": "2026-05-04",
+      "run": 3.03,
+      "walk": 0,
+      "ruck": 3.02,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
     }
   ]
 }

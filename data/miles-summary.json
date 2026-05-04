@@ -21,12 +21,12 @@
     },
     {
       "name": "Hobo",
-      "run": 187.03,
+      "run": 204.85,
       "walk": 0,
       "ruck": 12.48,
-      "bike": 78.65,
+      "bike": 80.68,
       "swim": 28.44,
-      "total": 306.6
+      "total": 326.45
     },
     {
       "name": "Iceberg",
@@ -48,12 +48,12 @@
     },
     {
       "name": "Ocho",
-      "run": 150.44,
+      "run": 153.47,
       "walk": 15.34,
-      "ruck": 216.09,
+      "ruck": 219.11,
       "bike": 0,
       "swim": 0,
-      "total": 381.87
+      "total": 387.92
     },
     {
       "name": "Vagabond",
@@ -94,11 +94,11 @@
     {
       "name": "Precious",
       "run": 19.4,
-      "walk": 42.55,
+      "walk": 44.75,
       "ruck": 7.98,
       "bike": 0,
       "swim": 0,
-      "total": 69.93
+      "total": 72.13
     }
   ]
 }
