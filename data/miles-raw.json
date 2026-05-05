@@ -5171,6 +5171,30 @@
       "bike": 0,
       "swim": 0,
       "ignoreDupe": false
+    },
+    {
+      "rowNumber": 433,
+      "timestamp": "2026-05-05T10:47:02.883Z",
+      "name": "Village people",
+      "date": "2026-05-05",
+      "run": 5,
+      "walk": 0,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 434,
+      "timestamp": "2026-05-05T11:39:41.484Z",
+      "name": "Ocho",
+      "date": "2026-05-05",
+      "run": 0,
+      "walk": 0,
+      "ruck": 4.58,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
     }
   ]
 }
