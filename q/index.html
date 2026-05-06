@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Q Report</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    body {
+      max-width: 980px;
+      font-size: 16.5px;
+    }
+
+    .top-nav {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      background: #fff;
+      flex-wrap: wrap;
+    }
+
+    .top-nav a {
+      color: #1f3b6d;
+      text-decoration: none;
+    }
+
+    .top-nav a:hover,
+    .top-nav a:focus {
+      text-decoration: underline;
+    }
+
+    .meta {
+      color: #555;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 1rem;
+      min-width: 720px;
+    }
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 0.55rem 0.65rem;
+      text-align: left;
+      vertical-align: middle;
+    }
+
+    th {
+      background: #d9e3f7;
+      color: #1f3b6d;
+      font-weight: 800;
+    }
+
+    th button {
+      background: none;
+      border: 0;
+      color: inherit;
+      cursor: pointer;
+      font: inherit;
+      font-weight: inherit;
+      margin: 0;
+      padding: 0;
+      text-align: inherit;
+      width: 100%;
+    }
+
+    th button:hover,
+    th button:focus {
+      text-decoration: underline;
+    }
+
+    tbody tr:nth-child(even) {
+      background: #f7ebe7;
+    }
+
+    .filter-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 0 0 1rem;
+    }
+
+    .filter-pills button {
+      border: 1px solid #cdd4e3;
+      border-radius: 999px;
+      background: #fff;
+      color: #1f3b6d;
+      cursor: pointer;
+      font: inherit;
+      font-weight: 700;
+      margin: 0;
+      padding: 0.35rem 0.7rem;
+    }
+
+    .filter-pills button:hover,
+    .filter-pills button:focus {
+      border-color: #1f3b6d;
+    }
+
+    .filter-pills button[aria-pressed="true"] {
+      background: #1f3b6d;
+      border-color: #1f3b6d;
+      color: #fff;
+    }
+
+    .number {
+      text-align: right;
+    }
+
+    .person-name {
+      font-weight: 800;
+    }
+
+    .status {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 0.15rem 0.45rem;
+      background: #edf2fb;
+      color: #1f3b6d;
+      font-size: 0.85rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .status--never {
+      background: #ffe9d2;
+      color: #6a3b00;
+    }
+
+    .muted {
+      color: #777;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        margin: 1rem;
+        font-size: 14px;
+      }
+
+      .top-nav {
+        gap: 0.85rem;
+        font-size: 0.9rem;
+      }
+
+      h1 {
+        font-size: 1.7rem;
+      }
+
+      .meta {
+        font-size: 0.8rem;
+      }
+
+      .filter-pills {
+        gap: 0.4rem;
+      }
+
+      .filter-pills button {
+        font-size: 0.82rem;
+        padding: 0.3rem 0.55rem;
+      }
+
+      table {
+        font-size: 0.78rem;
+        min-width: 560px;
+      }
+
+      th,
+      td {
+        padding: 0.4rem 0.35rem;
+      }
+
+      .status {
+        font-size: 0.72rem;
+        padding: 0.12rem 0.35rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="top-nav"></div>
+  <h1>Q Report</h1>
+  <div id="report-meta" class="meta">Loading...</div>
+  <div class="filter-pills" aria-label="Filter by Q status">
+    <button type="button" data-status-filter="Has Q" aria-pressed="false">Has Q</button>
+    <button type="button" data-status-filter="Never Q" aria-pressed="false">Never Q</button>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th><button type="button" data-sort="pax">PAX</button></th>
+          <th><button type="button" data-sort="q_status">Q Status</button></th>
+          <th><button type="button" data-sort="last_q_date">Last Q Date</button></th>
+          <th><button type="button" data-sort="last_q_ao">Last Q AO</button></th>
+          <th class="number"><button type="button" data-sort="attended_since_last_q">Attended Since Last Q</button></th>
+        </tr>
+      </thead>
+      <tbody id="report-body">
+        <tr>
+          <td colspan="5" class="muted">Loading...</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    const REPORT_URL = '/data/q_report_rolling_90.json';
+    let reportRows = [];
+    let currentSort = { key: 'attended_since_last_q', dir: 'desc' };
+    let currentStatusFilter = '';
+    let reportInfo = { generatedAt: '', windowDays: 90 };
+
+    function formatGeneratedAt(value) {
+      if (!value) return 'unknown';
+      const date = new Date(value);
+      if (Number.isNaN(date.getTime())) return value;
+      return date.toLocaleString(undefined, {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true
+      });
+    }
+
+    function formatDate(value) {
+      if (!value) return 'Never';
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return value;
+      const [year, month, day] = value.split('-').map(Number);
+      return `${month}/${day}/${year}`;
+    }
+
+    function setText(cell, value) {
+      cell.textContent = value ?? '';
+    }
+
+    function compareRows(a, b, key) {
+      if (key === 'attended_since_last_q') {
+        return Number(a[key] || 0) - Number(b[key] || 0);
+      }
+
+      if (key === 'last_q_date') {
+        return String(a[key] || '').localeCompare(String(b[key] || ''));
+      }
+
+      return String(a[key] || '').localeCompare(String(b[key] || ''), undefined, {
+        numeric: true,
+        sensitivity: 'base'
+      });
+    }
+
+    function filteredRows() {
+      if (!currentStatusFilter) return reportRows.slice();
+      return reportRows.filter((row) => row.q_status === currentStatusFilter);
+    }
+
+    function sortedRows(rows) {
+      return rows.slice().sort((a, b) => {
+        const order = compareRows(a, b, currentSort.key);
+        if (order !== 0) return currentSort.dir === 'asc' ? order : -order;
+        return String(a.pax || '').localeCompare(String(b.pax || ''), undefined, { sensitivity: 'base' });
+      });
+    }
+
+    function updateSortLabels() {
+      document.querySelectorAll('button[data-sort]').forEach((button) => {
+        const label = button.dataset.label || button.textContent.replace(/\s\((asc|desc)\)$/u, '');
+        button.dataset.label = label;
+        button.textContent = button.dataset.sort === currentSort.key
+          ? `${label} (${currentSort.dir})`
+          : label;
+      });
+    }
+
+    function updateFilterPills() {
+      document.querySelectorAll('button[data-status-filter]').forEach((button) => {
+        const isActive = button.dataset.statusFilter === currentStatusFilter;
+        button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      });
+    }
+
+    function updateMeta(visibleCount) {
+      const meta = document.getElementById('report-meta');
+      const filterText = currentStatusFilter ? ` Showing ${visibleCount} ${currentStatusFilter} PAX.` : '';
+      meta.textContent = `${reportRows.length} PAX over the last ${reportInfo.windowDays} days.${filterText} Last refreshed: ${formatGeneratedAt(reportInfo.generatedAt)}.`;
+    }
+
+    function renderReport() {
+      const rows = sortedRows(filteredRows());
+      updateSortLabels();
+      updateFilterPills();
+      renderRows(rows);
+      updateMeta(rows.length);
+    }
+
+    function renderRows(rows) {
+      const body = document.getElementById('report-body');
+      body.innerHTML = '';
+
+      if (!rows.length) {
+        const tr = document.createElement('tr');
+        const td = document.createElement('td');
+        td.colSpan = 5;
+        td.className = 'muted';
+        td.textContent = 'No Q report data found.';
+        tr.appendChild(td);
+        body.appendChild(tr);
+        return;
+      }
+
+      rows.forEach((entry) => {
+        const tr = document.createElement('tr');
+        const pax = document.createElement('td');
+        const status = document.createElement('td');
+        const lastQDate = document.createElement('td');
+        const lastQAo = document.createElement('td');
+        const attended = document.createElement('td');
+        const statusBadge = document.createElement('span');
+
+        pax.className = 'person-name';
+        attended.className = 'number';
+        statusBadge.className = entry.q_status === 'Never Q' ? 'status status--never' : 'status';
+
+        setText(pax, entry.pax);
+        setText(statusBadge, entry.q_status || 'Unknown');
+        setText(lastQDate, formatDate(entry.last_q_date));
+        setText(lastQAo, entry.last_q_ao || '');
+        setText(attended, Number(entry.attended_since_last_q || 0).toLocaleString());
+
+        status.appendChild(statusBadge);
+        tr.append(pax, status, lastQDate, lastQAo, attended);
+        body.appendChild(tr);
+      });
+    }
+
+    async function init() {
+      const response = await fetch(REPORT_URL);
+      if (!response.ok) throw new Error(`Unable to load Q report: ${response.status}`);
+      const report = await response.json();
+      reportRows = Array.isArray(report.data) ? report.data.slice() : [];
+      reportInfo = {
+        generatedAt: report.generated_at,
+        windowDays: report.window_days || 90
+      };
+      renderReport();
+    }
+
+    document.querySelector('thead').addEventListener('click', (event) => {
+      const button = event.target.closest('button[data-sort]');
+      if (!button) return;
+      const key = button.dataset.sort;
+      if (currentSort.key === key) {
+        currentSort.dir = currentSort.dir === 'asc' ? 'desc' : 'asc';
+      } else {
+        currentSort = {
+          key,
+          dir: key === 'attended_since_last_q' || key === 'last_q_date' ? 'desc' : 'asc'
+        };
+      }
+      renderReport();
+    });
+
+    document.querySelector('.filter-pills').addEventListener('click', (event) => {
+      const button = event.target.closest('button[data-status-filter]');
+      if (!button) return;
+      const status = button.dataset.statusFilter;
+      currentStatusFilter = currentStatusFilter === status ? '' : status;
+      renderReport();
+    });
+
+    init().catch((err) => {
+      document.getElementById('report-meta').textContent = 'Unable to load Q report data.';
+      document.getElementById('report-body').innerHTML = '<tr><td colspan="5" class="muted">Unable to load data.</td></tr>';
+      console.error(err);
+    });
+  </script>
+  <script src="/shared/top-nav.js"></script>
+</body>
+</html>

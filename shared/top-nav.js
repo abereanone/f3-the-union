@@ -14,6 +14,7 @@
         '<a href="/kog/">KoG</a>' +
         '<a href="/kog/scoring.html">KoG Scoring</a>' +
         '<a href="/miles/">Miles</a>' +
+        '<a href="/q/">Q Report</a>' +
         '</nav>';
     });
 })();
