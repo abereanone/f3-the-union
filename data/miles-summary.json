@@ -93,12 +93,12 @@
     },
     {
       "name": "Precious",
-      "run": 19.4,
-      "walk": 47.92,
+      "run": 20.93,
+      "walk": 54.67,
       "ruck": 7.98,
       "bike": 0,
       "swim": 0,
-      "total": 75.3
+      "total": 83.58
     }
   ]
 }
