@@ -1,0 +1,121 @@
+{
+  "generated_at": "2026-05-06T20:59:47.322Z",
+  "window_days": 90,
+  "region_org_id": 38363,
+  "report": "never_q",
+  "count": 16,
+  "data": [
+    {
+      "pax": "Salty",
+      "bds_attended_last_90": 4,
+      "last_attended_date": "2026-05-05",
+      "last_attended_ao": "The Redzone",
+      "q_status": "Never Q"
+    },
+    {
+      "pax": "Raz Gaz",
+      "bds_attended_last_90": 4,
+      "last_attended_date": "2026-04-22",
+      "last_attended_ao": "The Dock",
+      "q_status": "Never Q"
+    },
+    {
+      "pax": "Adam Callander",
+      "bds_attended_last_90": 3,
+      "last_attended_date": "2026-05-06",
+      "last_attended_ao": "The Farm",
+      "q_status": "Never Q"
+    },
+    {
+      "pax": "Uncle Ben",
+      "bds_attended_last_90": 3,
+      "last_attended_date": "2026-03-04",
+      "last_attended_ao": "The Farm",
+      "q_status": "Never Q"
+    },
+    {
+      "pax": "Brucie",
+      "bds_attended_last_90": 2,
+      "last_attended_date": "2026-04-07",
+      "last_attended_ao": "The Show",
+      "q_status": "Never Q"
+    },
+    {
+      "pax": "Spladle",
+      "bds_attended_last_90": 1,
+      "last_attended_date": "2026-04-24",
+      "last_attended_ao": "The Floor",
+      "q_status": "Never Q"
+    },
+    {
+      "pax": "Sky miles",
+      "bds_attended_last_90": 1,
+      "last_attended_date": "2026-04-21",
+      "last_attended_ao": "The Clocktower",
+      "q_status": "Never Q"
+    },
+    {
+      "pax": "Crash",
+      "bds_attended_last_90": 1,
+      "last_attended_date": "2026-04-14",
+      "last_attended_ao": "The Redzone",
+      "q_status": "Never Q"
+    },
+    {
+      "pax": "Danny (Linus) Stokes",
+      "bds_attended_last_90": 1,
+      "last_attended_date": "2026-04-14",
+      "last_attended_ao": "The Redzone",
+      "q_status": "Never Q"
+    },
+    {
+      "pax": "Ginny",
+      "bds_attended_last_90": 1,
+      "last_attended_date": "2026-03-18",
+      "last_attended_ao": "The Fountain",
+      "q_status": "Never Q"
+    },
+    {
+      "pax": "Pucker",
+      "bds_attended_last_90": 1,
+      "last_attended_date": "2026-02-13",
+      "last_attended_ao": "The Yard",
+      "q_status": "Never Q"
+    },
+    {
+      "pax": "MouseRat",
+      "bds_attended_last_90": 1,
+      "last_attended_date": "2026-02-12",
+      "last_attended_ao": "The Clocktower",
+      "q_status": "Never Q"
+    },
+    {
+      "pax": "Oakland",
+      "bds_attended_last_90": 1,
+      "last_attended_date": "2026-02-12",
+      "last_attended_ao": "The Clocktower",
+      "q_status": "Never Q"
+    },
+    {
+      "pax": "Scrappy",
+      "bds_attended_last_90": 1,
+      "last_attended_date": "2026-02-10",
+      "last_attended_ao": "The Clocktower",
+      "q_status": "Never Q"
+    },
+    {
+      "pax": "Haymaze",
+      "bds_attended_last_90": 1,
+      "last_attended_date": "2026-02-09",
+      "last_attended_ao": "The Fountain",
+      "q_status": "Never Q"
+    },
+    {
+      "pax": "JazzyJeff",
+      "bds_attended_last_90": 1,
+      "last_attended_date": "2026-02-06",
+      "last_attended_ao": "The Yard",
+      "q_status": "Never Q"
+    }
+  ]
+}
