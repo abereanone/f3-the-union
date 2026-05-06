@@ -8,11 +8,12 @@
       container.innerHTML = html;
     })
     .catch(() => {
-      container.innerHTML =
-        '<nav class="top-nav">' +
-        '<a href="/miles/">Miles</a>' +
-        '<a href="/miles/data.html">Miles Data</a>' +
-        '<a href="/q/">Q Report</a>' +
-        '</nav>';
+        container.innerHTML =
+          '<nav class="top-nav">' +
+          '<a href="/miles/">Miles</a>' +
+          '<a href="/miles/data.html">Miles Data</a>' +
+          '<a href="/q/">Q Report</a>' +
+          '<a href="/never-q/">Need VQ</a>' +
+          '</nav>';
     });
 })();
