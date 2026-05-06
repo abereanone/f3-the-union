@@ -116,8 +116,10 @@
       color: #fff;
     }
 
-    .number {
-      text-align: right;
+    .bds-count {
+      font-size: 0.9em;
+      text-align: left;
+      width: 7rem;
     }
 
     .person-name {
@@ -206,7 +208,7 @@
           <th><button type="button" data-sort="q_status">Q Status</button></th>
           <th><button type="button" data-sort="last_q_date">Last Q Date</button></th>
           <th><button type="button" data-sort="last_q_ao">Last Q AO</button></th>
-          <th class="number"><button type="button" data-sort="attended_since_last_q">Attended Since Last Q</button></th>
+          <th class="bds-count"><button type="button" data-sort="attended_since_last_q">BDs since Q</button></th>
         </tr>
       </thead>
       <tbody id="report-body">
@@ -333,7 +335,7 @@
         const statusBadge = document.createElement('span');
 
         pax.className = 'person-name';
-        attended.className = 'number';
+        attended.className = 'bds-count';
         statusBadge.className = entry.q_status === 'Never Q' ? 'status status--never' : 'status';
 
         setText(pax, entry.pax);
