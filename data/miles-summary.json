@@ -3,12 +3,12 @@
   "people": [
     {
       "name": "Floppy Disk",
-      "run": 10.85,
+      "run": 11.75,
       "walk": 3.69,
       "ruck": 36.89,
       "bike": 0,
       "swim": 0,
-      "total": 51.43
+      "total": 52.33
     },
     {
       "name": "harbaugh 3-5",
