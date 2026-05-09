@@ -5375,6 +5375,30 @@
       "bike": 0,
       "swim": 0,
       "ignoreDupe": false
+    },
+    {
+      "rowNumber": 450,
+      "timestamp": "2026-05-09T21:48:17.580Z",
+      "name": "Vagabond",
+      "date": "2026-05-08",
+      "run": 0,
+      "walk": 0,
+      "ruck": 8,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 451,
+      "timestamp": "2026-05-09T21:48:41.859Z",
+      "name": "Vagabond",
+      "date": "2026-05-09",
+      "run": 0,
+      "walk": 3,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
     }
   ]
 }
