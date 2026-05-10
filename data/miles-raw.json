@@ -5423,6 +5423,18 @@
       "bike": 0,
       "swim": 0,
       "ignoreDupe": false
+    },
+    {
+      "rowNumber": 454,
+      "timestamp": "2026-05-10T04:52:02.324Z",
+      "name": "Village people",
+      "date": "2026-05-09",
+      "run": 0,
+      "walk": 0,
+      "ruck": 6.7,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
     }
   ]
 }
