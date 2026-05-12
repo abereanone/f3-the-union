@@ -23,10 +23,10 @@
       "name": "Hobo",
       "run": 221.73,
       "walk": 0,
-      "ruck": 16.78,
+      "ruck": 21.08,
       "bike": 94.68,
-      "swim": 28.44,
-      "total": 361.63
+      "swim": 31.85,
+      "total": 369.34
     },
     {
       "name": "Iceberg",
