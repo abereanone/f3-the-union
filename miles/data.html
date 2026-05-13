@@ -260,6 +260,10 @@
       margin-bottom: 0.7rem;
     }
 
+    .challenge-miles-col {
+      width: 5.5rem;
+    }
+
     @media (max-width: 760px) {
       .challenge-grid {
         grid-template-columns: 1fr;
@@ -281,10 +285,11 @@
             <thead>
               <tr>
                 <th>Name</th>
-                <th>Miles (4/17 - 7/4)</th>
-                <th>Miles to Goal</th>
-                <th>Avg/Day</th>
-                <th>Projected by 7/4</th>
+                <th>Actual Miles</th>
+                <th>Miles to 250</th>
+                <th>Needed Avg/day</th>
+                <th>Actual Avg/Day</th>
+                <th>Projected</th>
               </tr>
             </thead>
             <tbody id="challenge-body"></tbody>
@@ -375,6 +380,7 @@
   const SWIM_MULTIPLIER = 4;
   const CHALLENGE_START = { month: 4, day: 17 };
   const CHALLENGE_END = { month: 7, day: 4 };
+  const CHALLENGE_VISIBLE_LIMIT = 4;
   let rawRows = [];
   let currentSort = { key: 'timestamp', dir: 'desc' };
   let monthlyByPerson = {};
@@ -660,6 +666,7 @@
     const asOf = today < start ? start : (today > end ? end : today);
     const elapsedDays = daysInclusive(start, asOf);
     const challengeDays = daysInclusive(start, end);
+    const remainingDays = daysInclusive(asOf, end);
     const projectionFactor = elapsedDays > 0 ? challengeDays / elapsedDays : 0;
 
     const totalsByName = {};
@@ -685,17 +692,18 @@
     const challengeRows = Array.from(allNames).map((name) => {
       const earned = round2(totalsByName[name] || 0);
       const milesToGoal = round2(250 - earned);
+      const neededAvg = round2(remainingDays > 0 ? Math.max(0, milesToGoal) / remainingDays : 0);
       const avgPerDay = round2(elapsedDays > 0 ? earned / elapsedDays : 0);
       const projected = round2(earned * projectionFactor);
-      return { name, avgPerDay, earned, milesToGoal, projected };
+      return { name, avgPerDay, earned, milesToGoal, neededAvg, projected };
     }).sort((a, b) => {
       if (b.projected !== a.projected) return b.projected - a.projected;
       if (b.earned !== a.earned) return b.earned - a.earned;
       return a.name.localeCompare(b.name);
-    });
+    }).slice(0, CHALLENGE_VISIBLE_LIMIT);
 
     if (challengeRows.length === 0) {
-      body.innerHTML = '<tr><td colspan="5" class="muted">No PAX data available.</td></tr>';
+      body.innerHTML = '<tr><td colspan="6" class="muted">No PAX data available.</td></tr>';
       meta.textContent = `Window: ${formatDateForMeta(start)} through ${formatDateForMeta(end)}.`;
       return;
     }
@@ -706,6 +714,7 @@
         <td class="person-name">${entry.name}</td>
         <td>${formatMilesFixed(entry.earned)}</td>
         <td>${formatMilesFixed(entry.milesToGoal)}</td>
+        <td>${formatMilesFixed(entry.neededAvg)}</td>
         <td>${formatMilesFixed(entry.avgPerDay)}</td>
         <td><strong>${formatMilesFixed(entry.projected)}</strong></td>
       `;
