@@ -21,12 +21,12 @@
     },
     {
       "name": "Hobo",
-      "run": 221.73,
+      "run": 224.73,
       "walk": 0,
       "ruck": 21.08,
       "bike": 94.68,
       "swim": 31.85,
-      "total": 369.34
+      "total": 372.34
     },
     {
       "name": "Iceberg",
