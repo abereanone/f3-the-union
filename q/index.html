@@ -47,7 +47,7 @@
       width: 100%;
       border-collapse: collapse;
       font-size: 1rem;
-      min-width: 720px;
+      min-width: 820px;
     }
 
     th,
@@ -116,7 +116,8 @@
       color: #fff;
     }
 
-    .bds-count {
+    .bds-count,
+    .days-count {
       font-size: 0.9em;
       text-align: left;
       width: 7rem;
@@ -208,13 +209,14 @@
           <th><button type="button" data-sort="pax">PAX</button></th>
           <th><button type="button" data-sort="q_status">Q Status</button></th>
           <th><button type="button" data-sort="last_q_date">Last Q Date</button></th>
+          <th class="days-count"><button type="button" data-sort="days_since_last_q">Days Since Last Q</button></th>
           <th><button type="button" data-sort="last_q_ao">Last Q AO</button></th>
           <th class="bds-count"><button type="button" data-sort="attended_since_last_q">BDs since Q</button></th>
         </tr>
       </thead>
       <tbody id="report-body">
         <tr>
-          <td colspan="5" class="muted">Loading...</td>
+          <td colspan="6" class="muted">Loading...</td>
         </tr>
       </tbody>
     </table>
@@ -248,13 +250,34 @@
       return `${month}/${day}/${year}`;
     }
 
+    function parseReportDate(value) {
+      if (!value || !/^\d{4}-\d{2}-\d{2}$/.test(value)) return null;
+      const [year, month, day] = value.split('-').map(Number);
+      return Date.UTC(year, month - 1, day);
+    }
+
+    function reportAsOfDate() {
+      const generated = new Date(reportInfo.generatedAt);
+      if (Number.isNaN(generated.getTime())) return Date.now();
+      return Date.UTC(generated.getUTCFullYear(), generated.getUTCMonth(), generated.getUTCDate());
+    }
+
+    function daysSinceLastQ(entry) {
+      if (entry.q_status !== 'Has Q') return null;
+      const lastQ = parseReportDate(entry.last_q_date);
+      if (lastQ === null) return null;
+      return Math.max(0, Math.floor((reportAsOfDate() - lastQ) / 86400000));
+    }
+
     function setText(cell, value) {
       cell.textContent = value ?? '';
     }
 
     function compareRows(a, b, key) {
-      if (key === 'attended_since_last_q') {
-        return Number(a[key] || 0) - Number(b[key] || 0);
+      if (key === 'attended_since_last_q' || key === 'days_since_last_q') {
+        const aValue = key === 'days_since_last_q' ? daysSinceLastQ(a) : Number(a[key] || 0);
+        const bValue = key === 'days_since_last_q' ? daysSinceLastQ(b) : Number(b[key] || 0);
+        return Number(aValue ?? -1) - Number(bValue ?? -1);
       }
 
       if (key === 'last_q_date') {
@@ -336,22 +359,25 @@
         const pax = document.createElement('td');
         const status = document.createElement('td');
         const lastQDate = document.createElement('td');
+        const daysSince = document.createElement('td');
         const lastQAo = document.createElement('td');
         const attended = document.createElement('td');
         const statusBadge = document.createElement('span');
 
         pax.className = 'person-name';
+        daysSince.className = 'days-count';
         attended.className = 'bds-count';
         statusBadge.className = entry.q_status === 'Never Q' ? 'status status--never' : 'status';
 
         setText(pax, entry.pax);
         setText(statusBadge, entry.q_status || 'Unknown');
         setText(lastQDate, formatDate(entry.last_q_date));
+        setText(daysSince, daysSinceLastQ(entry)?.toLocaleString() || '');
         setText(lastQAo, entry.last_q_ao || '');
         setText(attended, Number(entry.attended_since_last_q || 0).toLocaleString());
 
         status.appendChild(statusBadge);
-        tr.append(pax, status, lastQDate, lastQAo, attended);
+        tr.append(pax, status, lastQDate, daysSince, lastQAo, attended);
         body.appendChild(tr);
       });
     }
@@ -378,7 +404,7 @@
       } else {
         currentSort = {
           key,
-          dir: key === 'attended_since_last_q' || key === 'last_q_date' ? 'desc' : 'asc'
+          dir: key === 'attended_since_last_q' || key === 'days_since_last_q' || key === 'last_q_date' ? 'desc' : 'asc'
         };
       }
       renderReport();
@@ -394,7 +420,7 @@
 
     init().catch((err) => {
       document.getElementById('report-meta').textContent = 'Unable to load Q report data.';
-      document.getElementById('report-body').innerHTML = '<tr><td colspan="5" class="muted">Unable to load data.</td></tr>';
+      document.getElementById('report-body').innerHTML = '<tr><td colspan="6" class="muted">Unable to load data.</td></tr>';
       console.error(err);
     });
   </script>
