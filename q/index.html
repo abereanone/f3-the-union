@@ -194,7 +194,7 @@
 <body>
   <div id="top-nav"></div>
   <h1>Q Report</h1>
-  <p>Note: On this page, "NEVER Q" means the PAX has not q'ed in the last 90 days.</p>
+  <p id="report-note">Loading report window...</p>
   <div id="report-meta" class="meta">Loading...</div>
   <div class="filter-pills" aria-label="Filter by Q status">
     <button type="button" data-status-filter="Has Q" aria-pressed="false">Has Q</button>
@@ -221,11 +221,11 @@
   </div>
 
   <script>
-    const REPORT_URL = '/data/q_report_rolling_90.json';
+    const REPORT_URL = '/data/q_report_rolling.json';
     let reportRows = [];
     let currentSort = { key: 'attended_since_last_q', dir: 'desc' };
     let currentStatusFilter = '';
-    let reportInfo = { generatedAt: '', windowDays: 90 };
+    let reportInfo = { generatedAt: '', windowDays: null };
 
     function formatGeneratedAt(value) {
       if (!value) return 'unknown';
@@ -303,6 +303,11 @@
       meta.textContent = `${reportRows.length} PAX over the last ${reportInfo.windowDays} days.${filterText} Last refreshed: ${formatGeneratedAt(reportInfo.generatedAt)}.`;
     }
 
+    function updateReportNote() {
+      const note = document.getElementById('report-note');
+      note.textContent = `Note: On this page, "NEVER Q" means the PAX has not q'ed during this report's rolling ${reportInfo.windowDays}-day window.`;
+    }
+
     function renderReport() {
       const rows = sortedRows(filteredRows());
       updateSortLabels();
@@ -358,8 +363,9 @@
       reportRows = Array.isArray(report.data) ? report.data.slice() : [];
       reportInfo = {
         generatedAt: report.generated_at,
-        windowDays: report.window_days || 90
+        windowDays: report.window_days
       };
+      updateReportNote();
       renderReport();
     }
 

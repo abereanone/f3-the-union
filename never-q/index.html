@@ -156,7 +156,7 @@
       <thead>
         <tr>
           <th><button type="button" data-sort="pax">PAX</button></th>
-          <th class="bds-count"><button type="button" data-sort="bds_attended_last_90">BDs Last 90</button></th>
+          <th class="bds-count"><button type="button" data-sort="bds_attended">BDs</button></th>
           <th><button type="button" data-sort="last_attended_date">Last Attended Date</button></th>
           <th><button type="button" data-sort="last_attended_ao">Last AO</button></th>
           <th><button type="button" data-sort="q_status">Q Status</button></th>
@@ -174,7 +174,7 @@
     const REPORT_URL = '/data/never-q.json';
 
     let reportRows = [];
-    let currentSort = { key: 'bds_attended_last_90', dir: 'desc' };
+    let currentSort = { key: 'bds_attended', dir: 'desc' };
     let reportInfo = { generatedAt: '', windowDays: 90 };
 
     function formatGeneratedAt(value) {
@@ -207,7 +207,7 @@
     }
 
     function compareRows(a, b, key) {
-      if (key === 'bds_attended_last_90') {
+      if (key === 'bds_attended') {
         return Number(a[key] || 0) - Number(b[key] || 0);
       }
 
@@ -294,7 +294,7 @@
         statusBadge.className = 'status';
 
         setText(pax, entry.pax);
-        setText(bds, Number(entry.bds_attended_last_90 || 0).toLocaleString());
+        setText(bds, Number(entry.bds_attended || 0).toLocaleString());
         setText(lastDate, formatDate(entry.last_attended_date));
         setText(lastAo, entry.last_attended_ao || '');
         setText(statusBadge, entry.q_status || 'Never Q');
@@ -336,7 +336,7 @@
       } else {
         currentSort = {
           key,
-          dir: key === 'bds_attended_last_90' || key === 'last_attended_date' ? 'desc' : 'asc'
+          dir: key === 'bds_attended' || key === 'last_attended_date' ? 'desc' : 'asc'
         };
       }
 
