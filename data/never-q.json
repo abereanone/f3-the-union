@@ -1,61 +1,52 @@
 {
-  "generated_at": "2026-05-11T01:35:48.733Z",
-  "window_days": 90,
+  "generated_at": "2026-05-15T15:06:53.642Z",
+  "window_days": 60,
   "region_org_id": 38363,
   "report": "never_q",
   "identity_key": "user_id",
-  "count": 14,
+  "count": 10,
   "data": [
     {
       "pax": "Adam Callander",
       "user_id": "123830",
       "home_region_id": "38363",
-      "bds_attended": 5,
-      "last_attended_date": "2026-05-08",
-      "last_attended_ao": "The Floor",
+      "bds_attended_last_60": "8",
+      "last_attended_date": "2026-05-14",
+      "last_attended_ao": "The Clocktower",
       "q_status": "Never Q"
     },
     {
       "pax": "Salty",
       "user_id": "123577",
       "home_region_id": "38363",
-      "bds_attended": 5,
-      "last_attended_date": "2026-05-08",
+      "bds_attended_last_60": "7",
+      "last_attended_date": "2026-05-15",
       "last_attended_ao": "The Yard",
       "q_status": "Never Q"
     },
     {
-      "pax": "Raz Gaz",
+      "pax": "Guano",
       "user_id": "119134",
       "home_region_id": "38363",
-      "bds_attended": 4,
-      "last_attended_date": "2026-04-22",
+      "bds_attended_last_60": "5",
+      "last_attended_date": "2026-05-13",
       "last_attended_ao": "The Dock",
       "q_status": "Never Q"
     },
     {
-      "pax": "Uncle Ben",
-      "user_id": "99913",
+      "pax": "Zach Roush",
+      "user_id": "124773",
       "home_region_id": "38363",
-      "bds_attended": 3,
-      "last_attended_date": "2026-03-04",
-      "last_attended_ao": "The Farm",
-      "q_status": "Never Q"
-    },
-    {
-      "pax": "Brucie",
-      "user_id": "99771",
-      "home_region_id": "38363",
-      "bds_attended": 2,
-      "last_attended_date": "2026-04-07",
-      "last_attended_ao": "The Show",
+      "bds_attended_last_60": "1",
+      "last_attended_date": "2026-05-14",
+      "last_attended_ao": "The Factory",
       "q_status": "Never Q"
     },
     {
       "pax": "Spladle",
       "user_id": "123517",
       "home_region_id": "38363",
-      "bds_attended": 1,
+      "bds_attended_last_60": "1",
       "last_attended_date": "2026-04-24",
       "last_attended_ao": "The Floor",
       "q_status": "Never Q"
@@ -64,7 +55,7 @@
       "pax": "Sky miles",
       "user_id": "99917",
       "home_region_id": "38363",
-      "bds_attended": 1,
+      "bds_attended_last_60": "1",
       "last_attended_date": "2026-04-21",
       "last_attended_ao": "The Clocktower",
       "q_status": "Never Q"
@@ -73,7 +64,7 @@
       "pax": "Crash",
       "user_id": "7510",
       "home_region_id": "25157",
-      "bds_attended": 1,
+      "bds_attended_last_60": "1",
       "last_attended_date": "2026-04-14",
       "last_attended_ao": "The Redzone",
       "q_status": "Never Q"
@@ -82,54 +73,27 @@
       "pax": "Danny (Linus) Stokes",
       "user_id": "19243",
       "home_region_id": "25221",
-      "bds_attended": 1,
+      "bds_attended_last_60": "1",
       "last_attended_date": "2026-04-14",
       "last_attended_ao": "The Redzone",
+      "q_status": "Never Q"
+    },
+    {
+      "pax": "Brucie",
+      "user_id": "99771",
+      "home_region_id": "38363",
+      "bds_attended_last_60": "1",
+      "last_attended_date": "2026-04-07",
+      "last_attended_ao": "The Show",
       "q_status": "Never Q"
     },
     {
       "pax": "Ginny",
       "user_id": "99906",
       "home_region_id": "38363",
-      "bds_attended": 1,
+      "bds_attended_last_60": "1",
       "last_attended_date": "2026-03-18",
       "last_attended_ao": "The Fountain",
-      "q_status": "Never Q"
-    },
-    {
-      "pax": "Pucker",
-      "user_id": "99684",
-      "home_region_id": "38363",
-      "bds_attended": 1,
-      "last_attended_date": "2026-02-13",
-      "last_attended_ao": "The Yard",
-      "q_status": "Never Q"
-    },
-    {
-      "pax": "MouseRat",
-      "user_id": "8308",
-      "home_region_id": "25157",
-      "bds_attended": 1,
-      "last_attended_date": "2026-02-12",
-      "last_attended_ao": "The Clocktower",
-      "q_status": "Never Q"
-    },
-    {
-      "pax": "Oakland",
-      "user_id": "13137",
-      "home_region_id": "25157",
-      "bds_attended": 1,
-      "last_attended_date": "2026-02-12",
-      "last_attended_ao": "The Clocktower",
-      "q_status": "Never Q"
-    },
-    {
-      "pax": "Scrappy",
-      "user_id": "7767",
-      "home_region_id": "25157",
-      "bds_attended": 1,
-      "last_attended_date": "2026-02-10",
-      "last_attended_ao": "The Clocktower",
       "q_status": "Never Q"
     }
   ]
