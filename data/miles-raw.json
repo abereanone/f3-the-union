@@ -5771,6 +5771,18 @@
       "bike": 0,
       "swim": 0,
       "ignoreDupe": false
+    },
+    {
+      "rowNumber": 483,
+      "timestamp": "2026-05-16T22:22:36.380Z",
+      "name": "Floppy Disk",
+      "date": "2026-05-16",
+      "run": 0,
+      "walk": 0,
+      "ruck": 0.59,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
     }
   ]
 }
