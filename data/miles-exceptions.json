@@ -1,20 +1,3 @@
 {
-  "exceptions": [
-    {
-      "type": "duplicate entry",
-      "name": "Hobo",
-      "date": "2026-05-11",
-      "category": "ruck",
-      "rows": [
-        {
-          "row": 460,
-          "miles": 4.3
-        },
-        {
-          "row": 464,
-          "miles": 4.3
-        }
-      ]
-    }
-  ]
+  "exceptions": []
 }
