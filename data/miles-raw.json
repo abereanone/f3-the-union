@@ -4906,7 +4906,7 @@
       "ruck": 0,
       "bike": 0,
       "swim": 0,
-      "ignoreDupe": false
+      "ignoreDupe": true
     },
     {
       "rowNumber": 411,
@@ -5732,6 +5732,30 @@
       "run": 0,
       "walk": 0,
       "ruck": 12.6,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 480,
+      "timestamp": "2026-05-16T21:04:24.813Z",
+      "name": "Hobo",
+      "date": "2026-05-15",
+      "run": 6.7,
+      "walk": 0,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 481,
+      "timestamp": "2026-05-16T21:04:45.676Z",
+      "name": "Hobo",
+      "date": "2026-05-16",
+      "run": 5.15,
+      "walk": 0,
+      "ruck": 0,
       "bike": 0,
       "swim": 0,
       "ignoreDupe": false

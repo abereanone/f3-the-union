@@ -2,22 +2,6 @@
   "exceptions": [
     {
       "type": "duplicate entry",
-      "name": "Village people",
-      "date": "2026-04-28",
-      "category": "run",
-      "rows": [
-        {
-          "row": 406,
-          "miles": 1
-        },
-        {
-          "row": 410,
-          "miles": 1
-        }
-      ]
-    },
-    {
-      "type": "duplicate entry",
       "name": "Hobo",
       "date": "2026-05-11",
       "category": "ruck",
