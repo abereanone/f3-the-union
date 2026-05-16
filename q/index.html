@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -143,6 +144,11 @@
       color: #6a3b00;
     }
 
+    .status--future {
+      background: #e5f7e8;
+      color: #1f6b2d;
+    }
+
     .muted {
       color: #777;
     }
@@ -192,14 +198,19 @@
     }
   </style>
 </head>
+
 <body>
   <div id="top-nav"></div>
+
   <h1>Q Report</h1>
+
   <p id="report-note">Loading report window...</p>
   <div id="report-meta" class="meta">Loading...</div>
+
   <div class="filter-pills" aria-label="Filter by Q status">
     <button type="button" data-status-filter="Has Q" aria-pressed="false">Has Q</button>
     <button type="button" data-status-filter="Never Q" aria-pressed="false">Never Q</button>
+    <button type="button" data-status-filter="Future Q Scheduled" aria-pressed="false">Future Q Scheduled</button>
   </div>
 
   <div class="table-wrap">
@@ -208,9 +219,9 @@
         <tr>
           <th><button type="button" data-sort="pax">PAX</button></th>
           <th><button type="button" data-sort="q_status">Q Status</button></th>
-          <th><button type="button" data-sort="last_q_date">Last Q Date</button></th>
-          <th class="days-count"><button type="button" data-sort="days_since_last_q">Days Since Last Q</button></th>
-          <th><button type="button" data-sort="last_q_ao">Last Q AO</button></th>
+          <th><button type="button" data-sort="last_q_date">Last / Planned Q Date</button></th>
+          <th class="days-count"><button type="button" data-sort="days_since_last_q">Days Since / Until Q</button></th>
+          <th><button type="button" data-sort="last_q_ao">Last / Planned Q AO</button></th>
           <th class="bds-count"><button type="button" data-sort="attended_since_last_q">BDs since Q</button></th>
         </tr>
       </thead>
@@ -224,6 +235,7 @@
 
   <script>
     const REPORT_URL = '/data/q_report_rolling.json';
+
     let reportRows = [];
     let currentSort = { key: 'attended_since_last_q', dir: 'desc' };
     let currentStatusFilter = '';
@@ -231,8 +243,10 @@
 
     function formatGeneratedAt(value) {
       if (!value) return 'unknown';
+
       const date = new Date(value);
       if (Number.isNaN(date.getTime())) return value;
+
       return date.toLocaleString(undefined, {
         year: 'numeric',
         month: '2-digit',
@@ -246,27 +260,68 @@
     function formatDate(value) {
       if (!value) return 'Never';
       if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return value;
+
       const [year, month, day] = value.split('-').map(Number);
       return `${month}/${day}/${year}`;
     }
 
     function parseReportDate(value) {
       if (!value || !/^\d{4}-\d{2}-\d{2}$/.test(value)) return null;
+
       const [year, month, day] = value.split('-').map(Number);
       return Date.UTC(year, month - 1, day);
     }
 
     function reportAsOfDate() {
       const generated = new Date(reportInfo.generatedAt);
-      if (Number.isNaN(generated.getTime())) return Date.now();
-      return Date.UTC(generated.getUTCFullYear(), generated.getUTCMonth(), generated.getUTCDate());
+
+      if (Number.isNaN(generated.getTime())) {
+        const now = new Date();
+        return Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
+      }
+
+      return Date.UTC(
+        generated.getUTCFullYear(),
+        generated.getUTCMonth(),
+        generated.getUTCDate()
+      );
     }
 
     function daysSinceLastQ(entry) {
+      if (entry.q_status === 'Future Q Scheduled') {
+        return Number(entry.attended_since_last_q || 0);
+      }
+
       if (entry.q_status !== 'Has Q') return null;
+
       const lastQ = parseReportDate(entry.last_q_date);
       if (lastQ === null) return null;
+
       return Math.max(0, Math.floor((reportAsOfDate() - lastQ) / 86400000));
+    }
+
+    function displayQDate(entry) {
+      if (entry.q_status === 'Future Q Scheduled') {
+        return formatDate(entry.planned_q_date);
+      }
+
+      return formatDate(entry.last_q_date);
+    }
+
+    function displayQAo(entry) {
+      if (entry.q_status === 'Future Q Scheduled') {
+        return entry.planned_q_ao || '';
+      }
+
+      return entry.last_q_ao || '';
+    }
+
+    function qDateSortValue(entry) {
+      if (entry.q_status === 'Future Q Scheduled') {
+        return String(entry.planned_q_date || '');
+      }
+
+      return String(entry.last_q_date || '');
     }
 
     function setText(cell, value) {
@@ -275,13 +330,26 @@
 
     function compareRows(a, b, key) {
       if (key === 'attended_since_last_q' || key === 'days_since_last_q') {
-        const aValue = key === 'days_since_last_q' ? daysSinceLastQ(a) : Number(a[key] || 0);
-        const bValue = key === 'days_since_last_q' ? daysSinceLastQ(b) : Number(b[key] || 0);
+        const aValue = key === 'days_since_last_q'
+          ? daysSinceLastQ(a)
+          : Number(a[key] || 0);
+
+        const bValue = key === 'days_since_last_q'
+          ? daysSinceLastQ(b)
+          : Number(b[key] || 0);
+
         return Number(aValue ?? -1) - Number(bValue ?? -1);
       }
 
       if (key === 'last_q_date') {
-        return String(a[key] || '').localeCompare(String(b[key] || ''));
+        return qDateSortValue(a).localeCompare(qDateSortValue(b));
+      }
+
+      if (key === 'last_q_ao') {
+        return displayQAo(a).localeCompare(displayQAo(b), undefined, {
+          numeric: true,
+          sensitivity: 'base'
+        });
       }
 
       return String(a[key] || '').localeCompare(String(b[key] || ''), undefined, {
@@ -292,14 +360,21 @@
 
     function filteredRows() {
       if (!currentStatusFilter) return reportRows.slice();
+
       return reportRows.filter((row) => row.q_status === currentStatusFilter);
     }
 
     function sortedRows(rows) {
       return rows.slice().sort((a, b) => {
         const order = compareRows(a, b, currentSort.key);
-        if (order !== 0) return currentSort.dir === 'asc' ? order : -order;
-        return String(a.pax || '').localeCompare(String(b.pax || ''), undefined, { sensitivity: 'base' });
+
+        if (order !== 0) {
+          return currentSort.dir === 'asc' ? order : -order;
+        }
+
+        return String(a.pax || '').localeCompare(String(b.pax || ''), undefined, {
+          sensitivity: 'base'
+        });
       });
     }
 
@@ -307,6 +382,7 @@
       document.querySelectorAll('button[data-sort]').forEach((button) => {
         const label = button.dataset.label || button.textContent.replace(/\s\((asc|desc)\)$/u, '');
         button.dataset.label = label;
+
         button.textContent = button.dataset.sort === currentSort.key
           ? `${label} (${currentSort.dir})`
           : label;
@@ -322,17 +398,22 @@
 
     function updateMeta(visibleCount) {
       const meta = document.getElementById('report-meta');
-      const filterText = currentStatusFilter ? ` Showing ${visibleCount} ${currentStatusFilter} PAX.` : '';
+      const filterText = currentStatusFilter
+        ? ` Showing ${visibleCount} ${currentStatusFilter} PAX.`
+        : '';
+
       meta.textContent = `${reportRows.length} PAX over the last ${reportInfo.windowDays} days.${filterText} Last refreshed: ${formatGeneratedAt(reportInfo.generatedAt)}.`;
     }
 
     function updateReportNote() {
       const note = document.getElementById('report-note');
-      note.textContent = `Note: On this page, "NEVER Q" means the PAX has not q'ed during this report's rolling ${reportInfo.windowDays}-day window.`;
+
+      note.textContent = `Note: On this page, "NEVER Q" means the PAX has not q'ed during this report's rolling ${reportInfo.windowDays}-day window. PAX with a future Q scheduled are shown separately and use a negative day count for days until their planned Q.`;
     }
 
     function renderReport() {
       const rows = sortedRows(filteredRows());
+
       updateSortLabels();
       updateFilterPills();
       renderRows(rows);
@@ -346,9 +427,11 @@
       if (!rows.length) {
         const tr = document.createElement('tr');
         const td = document.createElement('td');
-        td.colSpan = 5;
+
+        td.colSpan = 6;
         td.className = 'muted';
         td.textContent = 'No Q report data found.';
+
         tr.appendChild(td);
         body.appendChild(tr);
         return;
@@ -358,39 +441,55 @@
         const tr = document.createElement('tr');
         const pax = document.createElement('td');
         const status = document.createElement('td');
-        const lastQDate = document.createElement('td');
+        const qDate = document.createElement('td');
         const daysSince = document.createElement('td');
-        const lastQAo = document.createElement('td');
+        const qAo = document.createElement('td');
         const attended = document.createElement('td');
         const statusBadge = document.createElement('span');
 
         pax.className = 'person-name';
         daysSince.className = 'days-count';
         attended.className = 'bds-count';
-        statusBadge.className = entry.q_status === 'Never Q' ? 'status status--never' : 'status';
+
+        statusBadge.className = 'status';
+
+        if (entry.q_status === 'Never Q') {
+          statusBadge.classList.add('status--never');
+        }
+
+        if (entry.q_status === 'Future Q Scheduled') {
+          statusBadge.classList.add('status--future');
+        }
 
         setText(pax, entry.pax);
         setText(statusBadge, entry.q_status || 'Unknown');
-        setText(lastQDate, formatDate(entry.last_q_date));
+        setText(qDate, displayQDate(entry));
         setText(daysSince, daysSinceLastQ(entry)?.toLocaleString() || '');
-        setText(lastQAo, entry.last_q_ao || '');
+        setText(qAo, displayQAo(entry));
         setText(attended, Number(entry.attended_since_last_q || 0).toLocaleString());
 
         status.appendChild(statusBadge);
-        tr.append(pax, status, lastQDate, daysSince, lastQAo, attended);
+        tr.append(pax, status, qDate, daysSince, qAo, attended);
         body.appendChild(tr);
       });
     }
 
     async function init() {
       const response = await fetch(REPORT_URL);
-      if (!response.ok) throw new Error(`Unable to load Q report: ${response.status}`);
+
+      if (!response.ok) {
+        throw new Error(`Unable to load Q report: ${response.status}`);
+      }
+
       const report = await response.json();
+
       reportRows = Array.isArray(report.data) ? report.data.slice() : [];
+
       reportInfo = {
         generatedAt: report.generated_at,
         windowDays: report.window_days
       };
+
       updateReportNote();
       renderReport();
     }
@@ -398,23 +497,30 @@
     document.querySelector('thead').addEventListener('click', (event) => {
       const button = event.target.closest('button[data-sort]');
       if (!button) return;
+
       const key = button.dataset.sort;
+
       if (currentSort.key === key) {
         currentSort.dir = currentSort.dir === 'asc' ? 'desc' : 'asc';
       } else {
         currentSort = {
           key,
-          dir: key === 'attended_since_last_q' || key === 'days_since_last_q' || key === 'last_q_date' ? 'desc' : 'asc'
+          dir: key === 'attended_since_last_q' || key === 'days_since_last_q' || key === 'last_q_date'
+            ? 'desc'
+            : 'asc'
         };
       }
+
       renderReport();
     });
 
     document.querySelector('.filter-pills').addEventListener('click', (event) => {
       const button = event.target.closest('button[data-status-filter]');
       if (!button) return;
+
       const status = button.dataset.statusFilter;
       currentStatusFilter = currentStatusFilter === status ? '' : status;
+
       renderReport();
     });
 
@@ -424,6 +530,8 @@
       console.error(err);
     });
   </script>
+
   <script src="/shared/top-nav.js"></script>
 </body>
+
 </html>
