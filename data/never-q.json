@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-15T15:06:53.642Z",
+  "generated_at": "2026-05-16T15:55:08.685Z",
   "window_days": 60,
   "region_org_id": 38363,
   "report": "never_q",
@@ -10,7 +10,7 @@
       "pax": "Adam Callander",
       "user_id": "123830",
       "home_region_id": "38363",
-      "bds_attended_last_60": "8",
+      "bds_attended": 8,
       "last_attended_date": "2026-05-14",
       "last_attended_ao": "The Clocktower",
       "q_status": "Never Q"
@@ -19,7 +19,7 @@
       "pax": "Salty",
       "user_id": "123577",
       "home_region_id": "38363",
-      "bds_attended_last_60": "7",
+      "bds_attended": 7,
       "last_attended_date": "2026-05-15",
       "last_attended_ao": "The Yard",
       "q_status": "Never Q"
@@ -28,7 +28,7 @@
       "pax": "Guano",
       "user_id": "119134",
       "home_region_id": "38363",
-      "bds_attended_last_60": "5",
+      "bds_attended": 5,
       "last_attended_date": "2026-05-13",
       "last_attended_ao": "The Dock",
       "q_status": "Never Q"
@@ -37,16 +37,16 @@
       "pax": "Zach Roush",
       "user_id": "124773",
       "home_region_id": "38363",
-      "bds_attended_last_60": "1",
-      "last_attended_date": "2026-05-14",
-      "last_attended_ao": "The Factory",
+      "bds_attended": 2,
+      "last_attended_date": "2026-05-16",
+      "last_attended_ao": "The Plant",
       "q_status": "Never Q"
     },
     {
       "pax": "Spladle",
       "user_id": "123517",
       "home_region_id": "38363",
-      "bds_attended_last_60": "1",
+      "bds_attended": 1,
       "last_attended_date": "2026-04-24",
       "last_attended_ao": "The Floor",
       "q_status": "Never Q"
@@ -55,7 +55,7 @@
       "pax": "Sky miles",
       "user_id": "99917",
       "home_region_id": "38363",
-      "bds_attended_last_60": "1",
+      "bds_attended": 1,
       "last_attended_date": "2026-04-21",
       "last_attended_ao": "The Clocktower",
       "q_status": "Never Q"
@@ -64,7 +64,7 @@
       "pax": "Crash",
       "user_id": "7510",
       "home_region_id": "25157",
-      "bds_attended_last_60": "1",
+      "bds_attended": 1,
       "last_attended_date": "2026-04-14",
       "last_attended_ao": "The Redzone",
       "q_status": "Never Q"
@@ -73,7 +73,7 @@
       "pax": "Danny (Linus) Stokes",
       "user_id": "19243",
       "home_region_id": "25221",
-      "bds_attended_last_60": "1",
+      "bds_attended": 1,
       "last_attended_date": "2026-04-14",
       "last_attended_ao": "The Redzone",
       "q_status": "Never Q"
@@ -82,7 +82,7 @@
       "pax": "Brucie",
       "user_id": "99771",
       "home_region_id": "38363",
-      "bds_attended_last_60": "1",
+      "bds_attended": 1,
       "last_attended_date": "2026-04-07",
       "last_attended_ao": "The Show",
       "q_status": "Never Q"
@@ -91,7 +91,7 @@
       "pax": "Ginny",
       "user_id": "99906",
       "home_region_id": "38363",
-      "bds_attended_last_60": "1",
+      "bds_attended": 1,
       "last_attended_date": "2026-03-18",
       "last_attended_ao": "The Fountain",
       "q_status": "Never Q"
