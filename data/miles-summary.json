@@ -15,9 +15,9 @@
       "run": 39.46,
       "walk": 59.8,
       "ruck": 22.7,
-      "bike": 17.07,
+      "bike": 18.23,
       "swim": 0,
-      "total": 139.03
+      "total": 140.19
     },
     {
       "name": "Hobo",
@@ -94,11 +94,11 @@
     {
       "name": "Precious",
       "run": 26.77,
-      "walk": 72.18,
+      "walk": 78.26,
       "ruck": 11.39,
       "bike": 0,
       "swim": 0,
-      "total": 110.34
+      "total": 116.42
     }
   ]
 }

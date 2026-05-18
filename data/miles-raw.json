@@ -5807,6 +5807,54 @@
       "bike": 0,
       "swim": 0,
       "ignoreDupe": false
+    },
+    {
+      "rowNumber": 486,
+      "timestamp": "2026-05-18T02:09:39.456Z",
+      "name": "Precious",
+      "date": "2026-05-15",
+      "run": 0,
+      "walk": 3.5,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 487,
+      "timestamp": "2026-05-18T02:10:22.172Z",
+      "name": "Precious",
+      "date": "2026-05-17",
+      "run": 0,
+      "walk": 1.16,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 488,
+      "timestamp": "2026-05-18T02:23:28.867Z",
+      "name": "harbaugh 3-5",
+      "date": "2026-05-17",
+      "run": 0,
+      "walk": 0,
+      "ruck": 0,
+      "bike": 3.5,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 489,
+      "timestamp": "2026-05-18T02:59:17.525Z",
+      "name": "Precious",
+      "date": "2026-05-17",
+      "run": 0,
+      "walk": 1.42,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
     }
   ]
 }
