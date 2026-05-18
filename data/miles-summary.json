@@ -12,12 +12,12 @@
     },
     {
       "name": "harbaugh 3-5",
-      "run": 39.46,
+      "run": 40.86,
       "walk": 59.8,
       "ruck": 22.7,
       "bike": 18.23,
       "swim": 0,
-      "total": 140.19
+      "total": 141.59
     },
     {
       "name": "Hobo",
@@ -58,11 +58,11 @@
     {
       "name": "Vagabond",
       "run": 90.2,
-      "walk": 27.1,
+      "walk": 30.3,
       "ruck": 34.3,
       "bike": 0,
       "swim": 0,
-      "total": 151.6
+      "total": 154.8
     },
     {
       "name": "Village people",
