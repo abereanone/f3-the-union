@@ -5987,6 +5987,30 @@
       "bike": 0,
       "swim": 0,
       "ignoreDupe": false
+    },
+    {
+      "rowNumber": 501,
+      "timestamp": "2026-05-20T11:23:16.156Z",
+      "name": "Hobo",
+      "date": "2026-05-20",
+      "run": 3,
+      "walk": 0,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
+    },
+    {
+      "rowNumber": 502,
+      "timestamp": "2026-05-20T11:47:21.933Z",
+      "name": "Floppy Disk",
+      "date": "2026-05-20",
+      "run": 0,
+      "walk": 1.06,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
     }
   ]
 }

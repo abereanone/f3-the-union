@@ -4,11 +4,11 @@
     {
       "name": "Floppy Disk",
       "run": 11.75,
-      "walk": 4.69,
+      "walk": 5.75,
       "ruck": 48.51,
       "bike": 0,
       "swim": 0,
-      "total": 64.95
+      "total": 66.01
     },
     {
       "name": "harbaugh 3-5",
@@ -21,12 +21,12 @@
     },
     {
       "name": "Hobo",
-      "run": 239.55,
+      "run": 242.55,
       "walk": 0,
       "ruck": 16.78,
       "bike": 94.68,
       "swim": 31.85,
-      "total": 382.86
+      "total": 385.86
     },
     {
       "name": "Iceberg",
