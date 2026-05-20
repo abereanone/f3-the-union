@@ -99,6 +99,15 @@
       "bike": 0,
       "swim": 0,
       "total": 127.15
+    },
+    {
+      "name": "Pididle",
+      "run": 90,
+      "walk": 0,
+      "ruck": 70.7,
+      "bike": 0,
+      "swim": 0,
+      "total": 160.7
     }
   ]
 }
