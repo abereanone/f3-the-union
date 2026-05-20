@@ -1,20 +1,3 @@
 {
-  "exceptions": [
-    {
-      "type": "duplicate entry",
-      "name": "Precious",
-      "date": "2026-05-17",
-      "category": "walk",
-      "rows": [
-        {
-          "row": 487,
-          "miles": 1.16
-        },
-        {
-          "row": 489,
-          "miles": 1.42
-        }
-      ]
-    }
-  ]
+  "exceptions": []
 }
