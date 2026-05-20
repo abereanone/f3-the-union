@@ -1,3 +1,20 @@
 {
-  "exceptions": []
+  "exceptions": [
+    {
+      "type": "duplicate entry",
+      "name": "Floppy Disk",
+      "date": "2026-05-20",
+      "category": "walk",
+      "rows": [
+        {
+          "row": 502,
+          "miles": 1.06
+        },
+        {
+          "row": 504,
+          "miles": 0.49
+        }
+      ]
+    }
+  ]
 }
