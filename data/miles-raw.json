@@ -6047,6 +6047,18 @@
       "bike": 0,
       "swim": 0,
       "ignoreDupe": false
+    },
+    {
+      "rowNumber": 506,
+      "timestamp": "2026-05-21T11:47:35.587Z",
+      "name": "Pididle",
+      "date": "2026-05-20",
+      "run": 0,
+      "walk": 4.1,
+      "ruck": 0,
+      "bike": 0,
+      "swim": 0,
+      "ignoreDupe": false
     }
   ]
 }
