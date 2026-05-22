@@ -1,0 +1,1 @@
+ALTER TABLE miles_entries RENAME COLUMN duplicate_confirmed TO same_day_activity_confirmed;

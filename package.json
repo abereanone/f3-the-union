@@ -1,0 +1,17 @@
+{
+  "name": "f3-the-union",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/wrangler.mjs pages dev . --d1 DB=f3_the_union --port 4321",
+    "db:migrate": "node scripts/wrangler.mjs d1 migrations apply f3_the_union --local",
+    "db:migrate:remote": "node scripts/wrangler.mjs d1 migrations apply f3_the_union --remote",
+    "people:sql": "node scripts/people-csv-to-sql.mjs",
+    "miles:sql": "node scripts/miles-json-to-sql.mjs",
+    "miles:sheet:sql": "node scripts/miles-sheet-csv-to-sql.mjs"
+  },
+  "devDependencies": {
+    "wrangler": "^4.93.0"
+  }
+}

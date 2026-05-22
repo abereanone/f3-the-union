@@ -193,6 +193,16 @@
       color: #777;
     }
 
+    .notice {
+      background: #eef7ed;
+      border: 1px solid #bdd9b8;
+      border-radius: 4px;
+      color: #234f25;
+      font-weight: 700;
+      margin: 0 0 1rem;
+      padding: 0.65rem 0.75rem;
+    }
+
     .person-name {
       font-weight: 800;
     }
@@ -269,39 +279,43 @@
         grid-template-columns: 1fr;
       }
     }
+
+    .year-pills {
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.75rem;
+    }
+
+    .pill {
+      padding: 0.2rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid #cdd4e3;
+      background: #fff;
+      color: #1f3b6d;
+      font: inherit;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .pill--active {
+      background: #1f3b6d;
+      color: #fff;
+      border-color: #1f3b6d;
+    }
   </style>
 </head>
 <body>
   <div id="top-nav"></div>
   <h1>Miles Data</h1>
-  <div class="section" id="challenge-section">
-    <h2>July 4th 250 Mile Challenge</h2>
-    <div class="challenge-grid">
-      <img class="challenge-image" src="../2fitty.jpg" alt="JPB 2fitty challenge graphic" />
-      <div>
-        <div id="challenge-meta" class="meta">Loading...</div>
-        <div class="table-wrap table-wrap--auto">
-          <table class="striped">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Actual Miles</th>
-                <th>Miles to 250</th>
-                <th>Needed Avg/day</th>
-                <th>Actual Avg/Day</th>
-                <th>Projected</th>
-              </tr>
-            </thead>
-            <tbody id="challenge-body"></tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
+  <div id="submission-notice" class="notice" hidden></div>
+  <div id="challenges-container"></div>
   <div id="generated-at" class="meta">Last refreshed: <span id="last-refresh">Loading…</span></div>
 
   <div class="section" id="summary-section">
     <h2>Leaderboard</h2>
+    <div id="leaderboard-year-pills" class="year-pills"></div>
     <div class="table-wrap table-wrap--auto">
       <table class="striped striped-by-name">
         <thead>
@@ -331,6 +345,7 @@
 
   <div class="section" id="raw-section">
     <h2>All Entries</h2>
+    <div id="year-pills" class="year-pills"></div>
     <div class="controls">
       <label>
         Name
@@ -374,16 +389,16 @@
   </div>
 
   <script>
-  const DATA_BASE = '/data/';
+  const DATA_BASE = '/api/miles/';
   const numberFields = ['run', 'walk', 'ruck', 'bike', 'swim'];
   const BIKE_DIVISOR = 3;
   const SWIM_MULTIPLIER = 4;
-  const CHALLENGE_START = { month: 4, day: 17 };
-  const CHALLENGE_END = { month: 7, day: 4 };
-  const CHALLENGE_VISIBLE_LIMIT = 5;
   let rawRows = [];
   let currentSort = { key: 'timestamp', dir: 'desc' };
   let monthlyByPerson = {};
+  const currentYear = String(new Date().getFullYear());
+  let filterYear = currentYear;
+  let leaderboardYear = currentYear;
 
   function formatGeneratedAt(value) {
     if (!value) return '';
@@ -437,12 +452,6 @@
     if (!/^\d{4}-\d{2}-\d{2}$/.test(ymd || '')) return ymd;
     const [year, month, day] = ymd.split('-').map(Number);
     return `${month}/${day}/${year}`;
-  }
-
-  function buildChallengeWindow(year) {
-    const start = `${year}-${String(CHALLENGE_START.month).padStart(2, '0')}-${String(CHALLENGE_START.day).padStart(2, '0')}`;
-    const end = `${year}-${String(CHALLENGE_END.month).padStart(2, '0')}-${String(CHALLENGE_END.day).padStart(2, '0')}`;
-    return { start, end };
   }
 
   function rowEarnedMiles(row) {
@@ -511,11 +520,73 @@
     return Number(row[category]) > 0;
   }
 
+  function buildSummaryFromRaw(rows, year) {
+    const byPerson = {};
+    rows.forEach((row) => {
+      if (year && !(row.date || '').startsWith(year)) return;
+      const name = row.name || '';
+      if (!name) return;
+      if (!byPerson[name]) byPerson[name] = { name, run: 0, walk: 0, ruck: 0, bike: 0, swim: 0 };
+      numberFields.forEach((field) => { byPerson[name][field] += Number(row[field] || 0); });
+    });
+    return Object.values(byPerson).map((p) => {
+      const person = {
+        name: p.name,
+        run: round2(p.run),
+        walk: round2(p.walk),
+        ruck: round2(p.ruck),
+        bike: round2(p.bike / BIKE_DIVISOR),
+        swim: round2(p.swim * SWIM_MULTIPLIER),
+      };
+      person.total = round2(person.run + person.walk + person.ruck + person.bike + person.swim);
+      return person;
+    });
+  }
+
+  function renderLeaderboardYearPills() {
+    const years = [...new Set(rawRows.map((r) => (r.date || '').slice(0, 4)).filter(Boolean))]
+      .sort((a, b) => b - a);
+    const container = document.getElementById('leaderboard-year-pills');
+    container.innerHTML = '';
+    ['', ...years].forEach((year) => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'pill' + (leaderboardYear === year ? ' pill--active' : '');
+      btn.textContent = year || 'All';
+      btn.dataset.year = year;
+      container.appendChild(btn);
+    });
+  }
+
+  function renderLeaderboard() {
+    const filteredRows = leaderboardYear
+      ? rawRows.filter((r) => (r.date || '').startsWith(leaderboardYear))
+      : rawRows;
+    monthlyByPerson = buildMonthlyTotals(filteredRows);
+    renderSummaryTable(buildSummaryFromRaw(rawRows, leaderboardYear));
+  }
+
+  function renderYearPills() {
+    const years = [...new Set(rawRows.map((r) => (r.date || '').slice(0, 4)).filter(Boolean))]
+      .sort((a, b) => b - a);
+    const container = document.getElementById('year-pills');
+    container.innerHTML = '';
+    ['', ...years].forEach((year) => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'pill' + (filterYear === year ? ' pill--active' : '');
+      btn.textContent = year || 'All';
+      btn.dataset.year = year;
+      container.appendChild(btn);
+    });
+  }
+
   function applyFilters(rows) {
     const nameValue = document.getElementById('filter-name').value.trim().toLowerCase();
     const dateValue = document.getElementById('filter-date').value;
     const categoryValue = document.getElementById('filter-category').value;
     return rows.filter((row) => {
+      if (filterYear && !(row.date || '').startsWith(filterYear)) return false;
       if (nameValue && !row.name.toLowerCase().includes(nameValue)) return false;
       if (dateValue && row.date !== dateValue) return false;
       if (!rowMatchesCategory(row, categoryValue)) return false;
@@ -656,72 +727,97 @@
     });
   }
 
-  function renderChallengeTable(summaryPeople, rows, challengeYear) {
-    const body = document.getElementById('challenge-body');
-    const meta = document.getElementById('challenge-meta');
-    body.innerHTML = '';
+  function renderChallenges(challenges, rows) {
+    const container = document.getElementById('challenges-container');
+    container.innerHTML = '';
 
-    const { start, end } = buildChallengeWindow(challengeYear);
-    const today = dateToYmd(new Date());
-    const asOf = today < start ? start : (today > end ? end : today);
-    const elapsedDays = daysInclusive(start, asOf);
-    const challengeDays = daysInclusive(start, end);
-    const remainingDays = daysInclusive(asOf, end);
-    const projectionFactor = elapsedDays > 0 ? challengeDays / elapsedDays : 0;
+    (challenges || []).forEach((challenge) => {
+      const { startDate, endDate, goalMiles, imageUrl, name, participants } = challenge;
+      const participantSet = new Set(participants || []);
 
-    const totalsByName = {};
-    const allNames = new Set();
+      const today = dateToYmd(new Date());
+      const asOf = today < startDate ? startDate : (today > endDate ? endDate : today);
+      const elapsedDays = daysInclusive(startDate, asOf);
+      const challengeDays = daysInclusive(startDate, endDate);
+      const remainingDays = daysInclusive(asOf, endDate);
+      const projectionFactor = elapsedDays > 0 ? challengeDays / elapsedDays : 0;
 
-    (summaryPeople || []).forEach((person) => {
-      const name = (person && person.name ? String(person.name) : '').trim();
-      if (!name) return;
-      allNames.add(name);
-      totalsByName[name] = 0;
-    });
+      const totalsByName = {};
+      participantSet.forEach((pName) => { totalsByName[pName] = 0; });
 
-    (rows || []).forEach((row) => {
-      const name = (row && row.name ? String(row.name) : '').trim();
-      const date = row && row.date ? String(row.date) : '';
-      if (!name || !date) return;
-      allNames.add(name);
-      if (totalsByName[name] === undefined) totalsByName[name] = 0;
-      if (date < start || date > end) return;
-      totalsByName[name] += rowEarnedMiles(row);
-    });
+      (rows || []).forEach((row) => {
+        const rName = (row && row.name ? String(row.name) : '').trim();
+        const date = row && row.date ? String(row.date) : '';
+        if (!rName || !date || !participantSet.has(rName)) return;
+        if (date < startDate || date > endDate) return;
+        totalsByName[rName] += rowEarnedMiles(row);
+      });
 
-    const challengeRows = Array.from(allNames).map((name) => {
-      const earned = round2(totalsByName[name] || 0);
-      const milesToGoal = round2(250 - earned);
-      const neededAvg = round2(remainingDays > 0 ? Math.max(0, milesToGoal) / remainingDays : 0);
-      const avgPerDay = round2(elapsedDays > 0 ? earned / elapsedDays : 0);
-      const projected = round2(earned * projectionFactor);
-      return { name, avgPerDay, earned, milesToGoal, neededAvg, projected };
-    }).sort((a, b) => {
-      if (b.projected !== a.projected) return b.projected - a.projected;
-      if (b.earned !== a.earned) return b.earned - a.earned;
-      return a.name.localeCompare(b.name);
-    }).slice(0, CHALLENGE_VISIBLE_LIMIT);
+      const challengeRows = Array.from(participantSet).map((pName) => {
+        const earned = round2(totalsByName[pName] || 0);
+        const milesToGoal = round2(goalMiles - earned);
+        const neededAvg = round2(remainingDays > 0 ? Math.max(0, milesToGoal) / remainingDays : 0);
+        const avgPerDay = round2(elapsedDays > 0 ? earned / elapsedDays : 0);
+        const projected = round2(earned * projectionFactor);
+        return { name: pName, avgPerDay, earned, milesToGoal, neededAvg, projected };
+      }).sort((a, b) => {
+        if (b.projected !== a.projected) return b.projected - a.projected;
+        if (b.earned !== a.earned) return b.earned - a.earned;
+        return a.name.localeCompare(b.name);
+      });
 
-    if (challengeRows.length === 0) {
-      body.innerHTML = '<tr><td colspan="6" class="muted">No PAX data available.</td></tr>';
-      meta.textContent = `Window: ${formatDateForMeta(start)} through ${formatDateForMeta(end)}.`;
-      return;
-    }
+      const metaText = `Window: ${formatDateForMeta(startDate)} through ${formatDateForMeta(endDate)} (inclusive). Projection uses average miles/day from ${formatDateForMeta(startDate)} to ${formatDateForMeta(asOf)}.`;
 
-    challengeRows.forEach((entry) => {
-      const tr = document.createElement('tr');
-      tr.innerHTML = `
-        <td class="person-name">${entry.name}</td>
-        <td>${formatMilesFixed(entry.earned)}</td>
-        <td>${formatMilesFixed(entry.milesToGoal)}</td>
-        <td>${formatMilesFixed(entry.neededAvg)}</td>
-        <td>${formatMilesFixed(entry.avgPerDay)}</td>
-        <td><strong>${formatMilesFixed(entry.projected)}</strong></td>
+      let bodyRows;
+      if (!challengeRows.length) {
+        bodyRows = `<tr><td colspan="6" class="muted">No PAX enrolled yet.</td></tr>`;
+      } else {
+        bodyRows = challengeRows.map((entry) => `
+          <tr>
+            <td class="person-name">${entry.name}</td>
+            <td>${formatMilesFixed(entry.earned)}</td>
+            <td>${formatMilesFixed(entry.milesToGoal)}</td>
+            <td>${formatMilesFixed(entry.neededAvg)}</td>
+            <td>${formatMilesFixed(entry.avgPerDay)}</td>
+            <td><strong>${formatMilesFixed(entry.projected)}</strong></td>
+          </tr>
+        `).join('');
+      }
+
+      const tableHtml = `
+        <div class="meta" style="margin-bottom: 0.7rem;">${metaText}</div>
+        <div class="table-wrap table-wrap--auto">
+          <table class="striped">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Actual Miles</th>
+                <th>Miles to ${goalMiles}</th>
+                <th>Needed Avg/day</th>
+                <th>Actual Avg/Day</th>
+                <th>Projected</th>
+              </tr>
+            </thead>
+            <tbody>${bodyRows}</tbody>
+          </table>
+        </div>
       `;
-      body.appendChild(tr);
-    });
 
-    meta.textContent = `Window: ${formatDateForMeta(start)} through ${formatDateForMeta(end)} (inclusive). Projection uses average miles/day from ${formatDateForMeta(start)} to ${formatDateForMeta(asOf)}.`;
+      const section = document.createElement('div');
+      section.className = 'section';
+      if (imageUrl) {
+        section.innerHTML = `
+          <h2>${name}</h2>
+          <div class="challenge-grid">
+            <img class="challenge-image" src="${imageUrl}" alt="${name} graphic" />
+            <div>${tableHtml}</div>
+          </div>
+        `;
+      } else {
+        section.innerHTML = `<h2>${name}</h2>${tableHtml}`;
+      }
+      container.appendChild(section);
+    });
   }
 
   function renderExceptions(exceptions) {
@@ -775,23 +871,36 @@
   function applyQueryPrefill() {
     const params = new URLSearchParams(window.location.search);
     const name = params.get('name');
-    if (!name) return;
-    const input = document.getElementById('filter-name');
-    input.value = name;
+    const submitted = params.get('submitted');
+    if (name) {
+      const input = document.getElementById('filter-name');
+      input.value = name;
+    }
+    if (submitted === '1') {
+      const notice = document.getElementById('submission-notice');
+      const summary = params.get('summary');
+      const date = params.get('date');
+      notice.textContent = summary
+        ? `Miles entry received: ${summary}${date ? ` for ${formatDateForMeta(date)}` : ''}. Current results are shown below.`
+        : 'Miles entry received. Current results are shown below.';
+      notice.hidden = false;
+    }
   }
 
   async function init() {
-    const [raw, summary, exceptions, meta] = await Promise.all([
-      fetch(`${DATA_BASE}miles-raw.json`).then((res) => res.json()),
-      fetch(`${DATA_BASE}miles-summary.json`).then((res) => res.json()),
-      fetch(`${DATA_BASE}miles-exceptions.json`).then((res) => res.json()),
-      fetch(`${DATA_BASE}miles-meta.json`).then((res) => res.json())
+    const [raw, summary, exceptions, meta, challengeData] = await Promise.all([
+      fetch(`${DATA_BASE}raw`).then((res) => res.json()),
+      fetch(`${DATA_BASE}summary`).then((res) => res.json()),
+      fetch(`${DATA_BASE}exceptions`).then((res) => res.json()),
+      fetch(`${DATA_BASE}meta`).then((res) => res.json()),
+      fetch('/api/challenges').then((res) => res.json()),
     ]);
 
     rawRows = Array.isArray(raw.rows) ? raw.rows : [];
-    monthlyByPerson = buildMonthlyTotals(rawRows);
-    renderChallengeTable(summary.people || [], rawRows, Number(summary.year) || new Date().getFullYear());
-    renderSummaryTable(summary.people || []);
+    renderYearPills();
+    renderLeaderboardYearPills();
+    renderLeaderboard();
+    renderChallenges(challengeData.challenges || [], rawRows);
     renderExceptions(exceptions.exceptions || []);
     applyQueryPrefill();
     renderRawTable();
@@ -799,6 +908,22 @@
     const lastRefresh = document.getElementById('last-refresh');
     lastRefresh.textContent = formatGeneratedAt(meta?.lastRefresh || raw.generatedAt) || 'unknown';
   }
+
+  document.getElementById('leaderboard-year-pills').addEventListener('click', (event) => {
+    const pill = event.target.closest('.pill');
+    if (!pill) return;
+    leaderboardYear = pill.dataset.year;
+    renderLeaderboardYearPills();
+    renderLeaderboard();
+  });
+
+  document.getElementById('year-pills').addEventListener('click', (event) => {
+    const pill = event.target.closest('.pill');
+    if (!pill) return;
+    filterYear = pill.dataset.year;
+    renderYearPills();
+    renderRawTable();
+  });
 
   document.getElementById('raw-section').addEventListener('click', handleSortClick);
   document.getElementById('summary-section').addEventListener('click', (event) => {

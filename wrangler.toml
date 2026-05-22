@@ -1,0 +1,9 @@
+name = "f3-the-union"
+compatibility_date = "2026-05-19"
+pages_build_output_dir = "."
+
+[[d1_databases]]
+binding = "DB"
+database_name = "f3_the_union"
+database_id = "f64e03bc-3ea4-47d7-9db5-a4b067b29b25"
+preview_database_id = "f3_the_union"

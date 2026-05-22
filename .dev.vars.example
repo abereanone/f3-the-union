@@ -1,0 +1,4 @@
+RESEND_API_KEY=re_replace_me
+RESEND_FROM="F3 The Union <login@f3theunion.com>"
+SLACK_BOT_TOKEN=xoxb_replace_me
+DEV_AUTH_BYPASS=0
