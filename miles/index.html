@@ -177,6 +177,9 @@
       </label>
       <button id="request-code" type="submit">Send Code</button>
     </form>
+    <div style="margin-top: 0.5rem;">
+      <button id="already-have-code" class="secondary" type="button" style="font-size: 0.88rem; padding: 0.3rem 0.6rem;">Already have a code?</button>
+    </div>
     <form id="code-form" class="form-grid hidden" style="margin-top: 0.85rem;">
       <label>
         Code
@@ -547,6 +550,16 @@
     showApp();
     await loadChallenges();
   }
+
+  document.getElementById('already-have-code').addEventListener('click', () => {
+    els.codeForm.classList.remove('hidden');
+    setStatus(els.loginStatus, 'Enter your email and the code you already received.');
+    if (els.email.value.trim()) {
+      els.code.focus();
+    } else {
+      els.email.focus();
+    }
+  });
 
   els.emailForm.addEventListener('submit', async (event) => {
     event.preventDefault();

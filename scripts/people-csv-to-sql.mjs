@@ -53,7 +53,6 @@ if (duplicateEmails.length || duplicateNames.length) {
 
 const lines = [
   'PRAGMA foreign_keys = ON;',
-  'BEGIN TRANSACTION;',
 ];
 
 for (const person of people) {
@@ -63,7 +62,6 @@ for (const person of people) {
   );
 }
 
-lines.push('COMMIT;');
 fs.writeFileSync(outputPath, `${lines.join('\n')}\n`);
 console.log(`Wrote ${path.resolve(outputPath)}`);
 

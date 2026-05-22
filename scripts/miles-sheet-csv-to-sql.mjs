@@ -46,7 +46,6 @@ if (indexes.date < 0) {
 const categories = ['run', 'walk', 'ruck', 'bike', 'swim'];
 const lines = [
   'PRAGMA foreign_keys = ON;',
-  'BEGIN TRANSACTION;',
   `DELETE FROM miles_entries WHERE source = ${sqlString(sourceName)};`,
 ];
 
@@ -77,7 +76,6 @@ for (const record of records) {
   }
 }
 
-lines.push('COMMIT;');
 fs.writeFileSync(outputPath, `${lines.join('\n')}\n`);
 console.log(`Wrote ${path.resolve(outputPath)}`);
 

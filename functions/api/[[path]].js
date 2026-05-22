@@ -198,9 +198,9 @@ async function requestLoginCode(ctx) {
   const recent = await ctx.env.DB.prepare(
     'SELECT created_at FROM auth_login_codes WHERE email = ? AND created_at > ? ORDER BY created_at DESC LIMIT 1',
   )
-    .bind(email, new Date(Date.now() - 60_000).toISOString())
+    .bind(email, new Date(Date.now() - 600_000).toISOString())
     .first();
-  if (recent) throw new ApiError('RATE_LIMITED', 'Wait a minute before requesting another code.', 429);
+  if (recent) throw new ApiError('RATE_LIMITED', 'You can only request one code every 10 minutes.', 429);
 
   const code = randomCode();
   const codeHash = await sha256(`${email}:${code}`);
