@@ -311,7 +311,6 @@
   <h1>Miles Data</h1>
   <div id="submission-notice" class="notice" hidden></div>
   <div id="challenges-container"></div>
-  <div id="generated-at" class="meta">Last refreshed: <span id="last-refresh">Loading…</span></div>
 
   <div class="section" id="summary-section">
     <h2>Leaderboard</h2>
@@ -888,11 +887,10 @@
   }
 
   async function init() {
-    const [raw, summary, exceptions, meta, challengeData] = await Promise.all([
+    const [raw, summary, exceptions, challengeData] = await Promise.all([
       fetch(`${DATA_BASE}raw`).then((res) => res.json()),
       fetch(`${DATA_BASE}summary`).then((res) => res.json()),
       fetch(`${DATA_BASE}exceptions`).then((res) => res.json()),
-      fetch(`${DATA_BASE}meta`).then((res) => res.json()),
       fetch('/api/challenges').then((res) => res.json()),
     ]);
 
@@ -905,8 +903,6 @@
     applyQueryPrefill();
     renderRawTable();
 
-    const lastRefresh = document.getElementById('last-refresh');
-    lastRefresh.textContent = formatGeneratedAt(meta?.lastRefresh || raw.generatedAt) || 'unknown';
   }
 
   document.getElementById('leaderboard-year-pills').addEventListener('click', (event) => {
