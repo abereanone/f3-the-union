@@ -21,12 +21,12 @@
     },
     {
       "name": "Hobo",
-      "run": 242.55,
+      "run": 250.54,
       "walk": 0,
       "ruck": 16.78,
       "bike": 100.68,
       "swim": 31.85,
-      "total": 391.86
+      "total": 399.85
     },
     {
       "name": "Iceberg",
@@ -66,12 +66,12 @@
     },
     {
       "name": "Village people",
-      "run": 166.59,
-      "walk": 57.75,
+      "run": 171.59,
+      "walk": 58.75,
       "ruck": 91.57,
       "bike": 0,
       "swim": 0,
-      "total": 315.91
+      "total": 321.91
     },
     {
       "name": "Sprocket",
