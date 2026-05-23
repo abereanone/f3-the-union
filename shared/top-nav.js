@@ -10,6 +10,7 @@
     .catch(() => {
         container.innerHTML =
           '<nav class="top-nav">' +
+          '<a href="/fng/">FNG</a>' +
           '<a href="/miles/">Miles</a>' +
           '<a href="/miles/data.html">Miles Data</a>' +
           '<a href="/q/">Q Report</a>' +

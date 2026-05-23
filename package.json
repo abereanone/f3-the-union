@@ -12,6 +12,7 @@
     "miles:sheet:sql": "node scripts/miles-sheet-csv-to-sql.mjs"
   },
   "devDependencies": {
-    "wrangler": "^4.93.0"
+    "wrangler": "^4.93.0",
+    "xlsx": "^0.18.5"
   }
 }

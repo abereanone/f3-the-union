@@ -6,6 +6,26 @@ const devLoginCode = '000000';
 const categories = ['run', 'walk', 'ruck', 'bike', 'swim'];
 const categorySet = new Set(categories);
 
+const SLACK_INVITE_URL = 'https://join.slack.com/t/f3theunion/shared_invite/zt-3yuik6r2e-jRhoULZd4xxTvot0AO3GAw';
+
+// Keep in sync with fng/locations.json — frontend fetches that file directly as a static asset.
+const FNG_LOCATIONS = [
+  { name: 'The Farm',       slackChannelId: 'C03SC9U3JCB' },
+  { name: 'The Yard',       slackChannelId: 'C03SCB1G343' },
+  { name: 'The Factory',    slackChannelId: 'C03SEQVDJ3E' },
+  { name: 'The Plant',      slackChannelId: 'C03SR2R5AMP' },
+  { name: 'The Redzone',    slackChannelId: 'C04D8JHJHPS' },
+  { name: 'The Dock',       slackChannelId: 'C05LTUXCSCF' },
+  { name: 'The Cafeteria',  slackChannelId: 'C04MJLJ8MJB' },
+  { name: 'The Floor',      slackChannelId: 'C04MS0UJHP0' },
+  { name: 'The Forge',      slackChannelId: 'C08CNFCKKD2' },
+  { name: 'The Clocktower', slackChannelId: 'C08PSLE3VUM' },
+  { name: 'The Fountain',   slackChannelId: 'C07E8QBMJ58' },
+  { name: 'The Show',       slackChannelId: 'C066VQJLJGL' },
+  { name: 'The Downrange',  slackChannelId: 'C06J36HGTQW' },
+];
+const FNG_LOCATION_NAMES = new Set(FNG_LOCATIONS.map((l) => l.name));
+
 export async function onRequest(ctx) {
   try {
     const url = new URL(ctx.request.url);
@@ -24,6 +44,10 @@ export async function onRequest(ctx) {
     if (method === 'GET' && path === '/miles/meta') return await milesMeta(ctx);
     if (method === 'GET' && path === '/challenges') return await listChallenges(ctx);
 
+    if (method === 'GET' && path === '/fng/locations') return json({ ok: true, locations: FNG_LOCATIONS.map((l) => l.name) });
+    if (method === 'GET' && path === '/fng/pax') return await fngPaxList(ctx);
+    if (method === 'POST' && path === '/fng/submit') return await fngSubmit(ctx);
+
     const person = await requirePerson(ctx);
 
     if (method === 'GET' && path === '/me') return json({ ok: true, person: mapPerson(person) });
@@ -38,6 +62,14 @@ export async function onRequest(ctx) {
     }
     if (segments[0] === 'challenges' && segments[1] && segments[2] === 'enroll' && method === 'POST') {
       return await setChallengeEnrollment(ctx, person, segments[1]);
+    }
+
+    if (method === 'GET' && path === '/fng/entries') return await listFngEntries(ctx, person);
+    if (segments[0] === 'fng' && segments[1] === 'entries' && segments[2] && method === 'PUT') {
+      return await updateFngEntry(ctx, person, segments[2]);
+    }
+    if (segments[0] === 'fng' && segments[1] === 'entries' && segments[2] && method === 'DELETE') {
+      return await deleteFngEntry(ctx, person, segments[2]);
     }
 
     return error('NOT_FOUND', 'Route not found.', 404);
@@ -442,6 +474,16 @@ async function sendLoginEmail(ctx, email, code) {
       to: email,
       subject: 'Your F3 The Union login code',
       text: `Your F3 The Union login code is ${code}. It expires in 10 minutes.`,
+      html: `<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width,initial-scale=1" /></head>
+<body style="font-family:Arial,sans-serif;max-width:480px;margin:0 auto;padding:24px;color:#222;">
+  <h2 style="color:#1f3b6d;margin-bottom:8px;">F3 The Union Login</h2>
+  <p style="margin-bottom:24px;">Your login code is:</p>
+  <div style="font-size:52px;font-weight:900;letter-spacing:12px;text-align:center;background:#f0f4ff;border:2px solid #1f3b6d;border-radius:10px;padding:20px 0;color:#1f3b6d;">${code}</div>
+  <p style="margin-top:24px;color:#666;font-size:0.9em;">Expires in 10 minutes. If you didn't request this, ignore it.</p>
+</body>
+</html>`,
     }),
   });
   if (!response.ok) {
@@ -763,4 +805,360 @@ async function setChallengeEnrollment(ctx, person, challengeId) {
   }
 
   return json({ ok: true, enrolled });
+}
+
+// ─── FNG ────────────────────────────────────────────────────────────────────
+
+async function fngPaxList(ctx) {
+  const result = await ctx.env.DB.prepare(
+    'SELECT f3_name AS f3Name FROM people WHERE is_active = 1 ORDER BY lower(f3_name)',
+  ).all();
+  return json({ ok: true, pax: result.results.map((r) => r.f3Name) });
+}
+
+async function fngSubmit(ctx) {
+  const input = await body(ctx);
+
+  // Honeypot — bots fill this, humans don't
+  if (input.website) return json({ ok: true });
+
+  // IP-based rate limit: 3 submissions per hour
+  const ip = ctx.request.headers.get('CF-Connecting-IP') || 'unknown';
+  const rateLimitKey = `fng:${ip}`;
+  const windowStart = new Date(Date.now() - 60 * 60 * 1000).toISOString();
+  const recentCount = await ctx.env.DB.prepare(
+    "SELECT COUNT(*) AS n FROM fng_entries WHERE json_extract(notes, '$.submitter_ip') = ? AND created_at > ?",
+  ).bind(ip, windowStart).first();
+  if ((recentCount?.n || 0) >= 3) {
+    throw new ApiError('RATE_LIMITED', 'Too many submissions. Try again later.', 429);
+  }
+
+  const legalName = requireStr(input.legalName, 'Legal name');
+  const location = requireStr(input.location, 'Location');
+  if (!FNG_LOCATION_NAMES.has(location)) {
+    throw new ApiError('VALIDATION_ERROR', 'Choose a valid location.');
+  }
+
+  const f3Name = optStr(input.f3Name);
+  const phone = optStr(input.phone);
+  const emergencyContact = optStr(input.emergencyContact);
+  const email = optEmail(input.email);
+  const ehedByRaw = optStr(input.ehedBy);
+  const joinedSlack = input.joinedSlack ? 1 : 0;
+  const secondPost = optStr(input.secondPost);
+  const notes = optStr(input.notes);
+
+  // Try to match EH'd by to a person in the DB
+  let ehedByPersonId = null;
+  if (ehedByRaw) {
+    const match = await ctx.env.DB.prepare(
+      'SELECT id FROM people WHERE lower(f3_name) = lower(?) AND is_active = 1 LIMIT 1',
+    ).bind(ehedByRaw).first();
+    ehedByPersonId = match?.id || null;
+  }
+
+  const entryId = id();
+  // Store submitter IP in notes as JSON for rate limiting — appended to any user notes
+  const notesJson = JSON.stringify({ text: notes || '', submitter_ip: ip });
+
+  await ctx.env.DB.prepare(
+    `INSERT INTO fng_entries
+       (id, legal_name, f3_name, phone, emergency_contact, email, location,
+        ehed_by_person_id, ehed_by_raw, joined_slack, second_post, notes)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+  )
+    .bind(entryId, legalName, f3Name, phone, emergencyContact, email, location,
+      ehedByPersonId, ehedByRaw, joinedSlack, secondPost, notesJson)
+    .run();
+
+  const entry = await getFngEntry(ctx, entryId);
+
+  // Fire-and-forget side effects — don't let failures break the submission response
+  ctx.waitUntil(Promise.allSettled([
+    postFngToSlack(ctx, entry),
+    sendFngWelcomeEmail(ctx, entry),
+  ]));
+
+  return json({ ok: true, entry: mapFngEntry(entry) });
+}
+
+function requireStr(value, label) {
+  if (typeof value !== 'string' || !value.trim()) {
+    throw new ApiError('VALIDATION_ERROR', `${label} is required.`);
+  }
+  return value.trim();
+}
+
+function optStr(value) {
+  if (typeof value !== 'string' || !value.trim()) return null;
+  return value.trim();
+}
+
+function optEmail(value) {
+  if (typeof value !== 'string' || !value.trim()) return null;
+  const e = value.trim().toLowerCase();
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)) return null;
+  return e;
+}
+
+async function getFngEntry(ctx, entryId) {
+  return ctx.env.DB.prepare(
+    `SELECT f.id, f.legal_name, f.f3_name, f.phone, f.emergency_contact, f.email,
+            f.location, f.ehed_by_raw, f.ehed_by_person_id,
+            p.f3_name AS ehed_by_f3_name,
+            f.joined_slack, f.second_post, f.notes,
+            f.submitted_by_person_id, s.f3_name AS submitted_by_f3_name,
+            f.slack_notified_at, f.welcome_email_sent_at,
+            f.source_timestamp, f.created_at, f.updated_at
+     FROM fng_entries f
+     LEFT JOIN people p ON p.id = f.ehed_by_person_id
+     LEFT JOIN people s ON s.id = f.submitted_by_person_id
+     WHERE f.id = ?`,
+  ).bind(entryId).first();
+}
+
+function mapFngEntry(row) {
+  const notesData = (() => { try { return JSON.parse(row.notes || '{}'); } catch { return {}; } })();
+  return {
+    id: row.id,
+    legalName: row.legal_name,
+    f3Name: row.f3_name,
+    phone: row.phone,
+    emergencyContact: row.emergency_contact,
+    email: row.email,
+    location: row.location,
+    ehedBy: row.ehed_by_f3_name || row.ehed_by_raw || null,
+    joinedSlack: Boolean(row.joined_slack),
+    secondPost: row.second_post,
+    notes: notesData.text || null,
+    submittedBy: row.submitted_by_f3_name || null,
+    sourceTimestamp: row.source_timestamp,
+    createdAt: row.created_at,
+    updatedAt: row.updated_at,
+  };
+}
+
+async function listFngEntries(ctx, person) {
+  const result = await ctx.env.DB.prepare(
+    `SELECT f.id, f.legal_name, f.f3_name, f.phone, f.emergency_contact, f.email,
+            f.location, f.ehed_by_raw, f.ehed_by_person_id,
+            p.f3_name AS ehed_by_f3_name,
+            f.joined_slack, f.second_post, f.notes,
+            f.submitted_by_person_id, s.f3_name AS submitted_by_f3_name,
+            f.slack_notified_at, f.welcome_email_sent_at,
+            f.source_timestamp, f.created_at, f.updated_at
+     FROM fng_entries f
+     LEFT JOIN people p ON p.id = f.ehed_by_person_id
+     LEFT JOIN people s ON s.id = f.submitted_by_person_id
+     ORDER BY f.created_at DESC`,
+  ).all();
+  return json({ ok: true, entries: result.results.map(mapFngEntry) });
+}
+
+async function updateFngEntry(ctx, person, entryId) {
+  if (!person.is_admin) throw new ApiError('FORBIDDEN', 'Admins only.', 403);
+  const entry = await getFngEntry(ctx, entryId);
+  if (!entry) throw new ApiError('NOT_FOUND', 'FNG entry not found.', 404);
+
+  const input = await body(ctx);
+  const legalName = requireStr(input.legalName, 'Legal name');
+  const location = requireStr(input.location, 'Location');
+  if (!FNG_LOCATION_NAMES.has(location)) throw new ApiError('VALIDATION_ERROR', 'Choose a valid location.');
+
+  const f3Name = optStr(input.f3Name);
+  const phone = optStr(input.phone);
+  const emergencyContact = optStr(input.emergencyContact);
+  const email = optEmail(input.email);
+  const ehedByRaw = optStr(input.ehedBy);
+  const joinedSlack = input.joinedSlack ? 1 : 0;
+  const secondPost = optStr(input.secondPost);
+
+  let ehedByPersonId = null;
+  if (ehedByRaw) {
+    const match = await ctx.env.DB.prepare(
+      'SELECT id FROM people WHERE lower(f3_name) = lower(?) AND is_active = 1 LIMIT 1',
+    ).bind(ehedByRaw).first();
+    ehedByPersonId = match?.id || null;
+  }
+
+  // Preserve existing notes text, update only editable fields
+  const existingNotes = (() => { try { return JSON.parse(entry.notes || '{}'); } catch { return {}; } })();
+  const newNotesText = optStr(input.notes);
+  const notesJson = JSON.stringify({ ...existingNotes, text: newNotesText || '' });
+
+  await ctx.env.DB.prepare(
+    `UPDATE fng_entries
+     SET legal_name = ?, f3_name = ?, phone = ?, emergency_contact = ?, email = ?,
+         location = ?, ehed_by_person_id = ?, ehed_by_raw = ?, joined_slack = ?,
+         second_post = ?, notes = ?, updated_at = CURRENT_TIMESTAMP
+     WHERE id = ?`,
+  )
+    .bind(legalName, f3Name, phone, emergencyContact, email, location,
+      ehedByPersonId, ehedByRaw, joinedSlack, secondPost, notesJson, entryId)
+    .run();
+
+  return json({ ok: true, entry: mapFngEntry(await getFngEntry(ctx, entryId)) });
+}
+
+async function deleteFngEntry(ctx, person, entryId) {
+  if (!person.is_admin) throw new ApiError('FORBIDDEN', 'Admins only.', 403);
+  const entry = await getFngEntry(ctx, entryId);
+  if (!entry) throw new ApiError('NOT_FOUND', 'FNG entry not found.', 404);
+  await ctx.env.DB.prepare('DELETE FROM fng_entries WHERE id = ?').bind(entryId).run();
+  return json({ ok: true });
+}
+
+async function postFngToSlack(ctx, entry) {
+  if (!ctx.env.SLACK_BOT_TOKEN) return;
+  const slackApiBase = ctx.env.SLACK_API_BASE_URL || 'https://slack.com/api';
+
+  const fields = [
+    { title: 'Legal Name', value: entry.legal_name, short: true },
+    { title: 'F3 Name', value: entry.f3_name || '—', short: true },
+    { title: 'Location', value: entry.location, short: true },
+    { title: "EH'd By", value: entry.ehed_by_f3_name || entry.ehed_by_raw || '—', short: true },
+    { title: 'Phone', value: entry.phone || '—', short: true },
+    { title: 'Email', value: entry.email || '—', short: true },
+    { title: 'Emergency Contact', value: entry.emergency_contact || '—', short: false },
+    { title: 'Joined Slack?', value: entry.joined_slack ? 'Yes' : 'No', short: true },
+    { title: '2nd Post', value: entry.second_post || '—', short: true },
+  ];
+
+  const notesData = (() => { try { return JSON.parse(entry.notes || '{}'); } catch { return {}; } })();
+  if (notesData.text) fields.push({ title: 'Notes', value: notesData.text, short: false });
+
+  const attachment = {
+    fallback: `New FNG: ${entry.legal_name} at ${entry.location}`,
+    pretext: ':new: *New FNG Notification*',
+    mrkdwn_in: ['pretext'],
+    color: '#0000DD',
+    fields,
+  };
+
+  const sendToDebugging = ['1', 'true', 'yes'].includes(String(ctx.env.SEND_POSTS_TO_DEBUGGING || '').trim().toLowerCase());
+  const channelIds = sendToDebugging
+    ? ['C03TPUJ5WSV']                      // #debugging
+    : ['C03SEV33M1A', 'C03T6Q9CPDX'];     // #leadership, #site-q
+
+  const postPromises = [...new Set(channelIds)].map((channel) =>
+    fetch(`${slackApiBase}/chat.postMessage`, {
+      method: 'POST',
+      headers: {
+        authorization: `Bearer ${ctx.env.SLACK_BOT_TOKEN}`,
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        channel,
+        username: 'FNG Form',
+        icon_emoji: ':mailbox_with_mail:',
+        link_names: 1,
+        attachments: [attachment],
+      }),
+    })
+  );
+
+  await Promise.allSettled(postPromises);
+
+  await ctx.env.DB.prepare('UPDATE fng_entries SET slack_notified_at = ? WHERE id = ?')
+    .bind(nowIso(), entry.id)
+    .run();
+}
+
+async function sendFngWelcomeEmail(ctx, entry) {
+  if (!ctx.env.RESEND_API_KEY || !entry.email) return;
+
+  const toEmail = ctx.env.DEV_EMAIL_OVERRIDE || entry.email;
+  const from = ctx.env.RESEND_FROM || 'F3 The Union <login@f3theunion.com>';
+  const resendApiBase = ctx.env.RESEND_API_BASE_URL || 'https://api.resend.com';
+
+  const f3Name = entry.f3_name || 'FNG';
+  const ehedBy = entry.ehed_by_f3_name || entry.ehed_by_raw || null;
+
+  const textBody = [
+    `${entry.legal_name},`,
+    '',
+    `Welcome to F3 The Union! We are fired up to have you join us. Getting started is simple — just keep showing up. The second post is always the hardest, but it gets easier from there.`,
+    '',
+    'Here is a recap of what you submitted:',
+    `  F3 Name:   ${f3Name}`,
+    `  Home AO:   ${entry.location}`,
+    ehedBy ? `  EH'd by:   ${ehedBy}` : null,
+    entry.phone ? `  Phone:     ${entry.phone}` : null,
+    '',
+    '─────────────────────────────────',
+    'JOIN OUR SLACK WORKSPACE',
+    '─────────────────────────────────',
+    '',
+    `Click this link to join the F3 The Union Slack:`,
+    SLACK_INVITE_URL,
+    '',
+    'When you set up your profile, please use:',
+    `  Display Name → your F3 name (${f3Name})`,
+    `  Full Name    → your legal name (${entry.legal_name})`,
+    '',
+    'This keeps our roster clean and makes it easy for the pax to find you.',
+    '',
+    '─────────────────────────────────',
+    '',
+    'F3 is free, peer-led, and always outdoors. We are glad you found us.',
+    'See you at the gloom!',
+    '',
+    '— F3 The Union',
+  ].filter((line) => line !== null).join('\n');
+
+  const htmlBody = `<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width,initial-scale=1" /></head>
+<body style="font-family:Arial,sans-serif;max-width:560px;margin:0 auto;padding:24px;color:#222;">
+  <h2 style="color:#1f3b6d;">Welcome to F3 The Union, ${f3Name}!</h2>
+  <p>We are fired up to have you join us. Getting started is simple — just keep showing up. The second post is always the hardest, but it gets easier from there.</p>
+
+  <h3 style="color:#1f3b6d;border-bottom:1px solid #ddd;padding-bottom:4px;">Your Registration</h3>
+  <table style="width:100%;border-collapse:collapse;margin-bottom:16px;">
+    <tr><td style="padding:6px 8px;font-weight:bold;width:40%;">F3 Name</td><td style="padding:6px 8px;">${f3Name}</td></tr>
+    <tr style="background:#f5f5f5;"><td style="padding:6px 8px;font-weight:bold;">Home AO</td><td style="padding:6px 8px;">${entry.location}</td></tr>
+    ${ehedBy ? `<tr><td style="padding:6px 8px;font-weight:bold;">EH'd by</td><td style="padding:6px 8px;">${ehedBy}</td></tr>` : ''}
+  </table>
+
+  <h3 style="color:#1f3b6d;border-bottom:1px solid #ddd;padding-bottom:4px;">Join Our Slack Workspace</h3>
+  <p>Slack is where the pax connect, share workouts, and stay in touch. Click the button below to join:</p>
+  <p style="text-align:center;margin:20px 0;">
+    <a href="${SLACK_INVITE_URL}"
+       style="background:#1f3b6d;color:#fff;padding:12px 24px;text-decoration:none;border-radius:6px;font-weight:bold;display:inline-block;">
+      Join F3 The Union on Slack
+    </a>
+  </p>
+  <p>When you set up your Slack profile, please use:</p>
+  <ul>
+    <li><strong>Display Name</strong> → your F3 name: <strong>${f3Name}</strong></li>
+    <li><strong>Full Name</strong> → your legal name: <strong>${entry.legal_name}</strong></li>
+  </ul>
+  <p style="color:#666;font-size:0.9em;">This keeps our roster clean and makes it easy for the pax to find you.</p>
+
+  <hr style="border:none;border-top:1px solid #ddd;margin:24px 0;" />
+  <p>F3 is free, peer-led, and always outdoors. We are glad you found us.</p>
+  <p><strong>See you at the gloom!</strong><br />— F3 The Union</p>
+</body>
+</html>`;
+
+  const response = await fetch(new URL('/emails', resendApiBase).toString(), {
+    method: 'POST',
+    headers: {
+      authorization: `Bearer ${ctx.env.RESEND_API_KEY}`,
+      'content-type': 'application/json',
+    },
+    body: JSON.stringify({
+      from,
+      to: toEmail,
+      subject: `Welcome to F3 The Union, ${f3Name}!`,
+      text: textBody,
+      html: htmlBody,
+    }),
+  });
+
+  if (response.ok) {
+    await ctx.env.DB.prepare('UPDATE fng_entries SET welcome_email_sent_at = ? WHERE id = ?')
+      .bind(nowIso(), entry.id)
+      .run();
+  }
 }

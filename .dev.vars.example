@@ -2,3 +2,10 @@ RESEND_API_KEY=re_replace_me
 RESEND_FROM="F3 The Union <login@f3theunion.com>"
 SLACK_BOT_TOKEN=xoxb_replace_me
 DEV_AUTH_BYPASS=0
+
+# Set to 1 to route all Slack posts to #debugging instead of real channels.
+# Independent of DEV_AUTH_BYPASS.
+SEND_POSTS_TO_DEBUGGING=1
+
+# FNG — send all welcome emails to this address instead of the FNG's real email (for testing)
+DEV_EMAIL_OVERRIDE=
