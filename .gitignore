@@ -8,3 +8,7 @@ node_modules/
 npm-debug.log*
 wrangler-dev.*.log
 *launchClaude.bat*
+docs/getBQMetrics.md
+docs/chartTopper.md
+docs/codeAPPSScript.md
+scripts/fng-slack-sync.mjs

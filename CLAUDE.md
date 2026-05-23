@@ -61,6 +61,14 @@ Configured in `.dev.vars` locally (see `.dev.vars.example`):
 - The API file is intentionally a single flat file. Do not split it into modules without discussion.
 - No npm build pipeline — if a change requires a bundler, reconsider the approach.
 
+## Cloudflare Auth
+
+This project uses a specific Cloudflare account that is NOT the default wrangler login. Credentials are stored in `.dev.vars` as `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`.
+
+The PowerShell profile (`$PROFILE`) defines a `wranglerF3` function that sets these env vars and calls the local wrangler binary. Always use `wranglerF3` in the terminal for remote D1 operations.
+
+For Node.js scripts that shell out to wrangler, pass the credentials via the `env` option to `execSync` — do NOT use the bash inline prefix syntax (`VAR=value cmd`) as it does not work on Windows.
+
 ## D1 SQL File Constraints
 
 - **Never use `BEGIN`/`COMMIT`/`SAVEPOINT` in `.sql` files executed via `wrangler d1 execute`.** D1 rejects transaction statements in SQL files with an error about `state.storage.transaction()`. Just write bare `INSERT`/`CREATE` etc. statements with no transaction wrapper.

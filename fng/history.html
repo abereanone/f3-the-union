@@ -506,7 +506,7 @@
       renderBarChart('chart-location', topCount(allEntries, (e) => e.location), '#3a5c9a');
       renderBarChart('chart-month', topCount(allEntries, (e) => {
         const d = new Date(e.sourceTimestamp || e.createdAt);
-        return isNaN(d) ? null : `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`;
+        return isNaN(d) ? null : d.toLocaleString('default', { month: 'long' });
       }), '#4a7ab5');
     }
 
