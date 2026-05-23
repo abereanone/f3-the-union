@@ -12,3 +12,4 @@ docs/getBQMetrics.md
 docs/chartTopper.md
 docs/codeAPPSScript.md
 scripts/fng-slack-sync.mjs
+scripts/fng-normalize-phones.mjs

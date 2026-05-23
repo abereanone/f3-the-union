@@ -172,7 +172,7 @@
         </label>
         <label>
           Phone Number
-          <input id="phone" type="tel" autocomplete="tel" placeholder="(555) 555-5555" />
+          <input id="phone" type="tel" autocomplete="tel" placeholder="555-555-5555" maxlength="12" />
         </label>
       </div>
 
@@ -300,6 +300,14 @@
         setStatus('Network error. Please check your connection and try again.', true);
         submitBtn.disabled = false;
       }
+    });
+
+    // Auto-format phone as xxx-xxx-xxxx
+    document.getElementById('phone').addEventListener('input', (e) => {
+      const digits = e.target.value.replace(/\D/g, '').slice(0, 10);
+      if (digits.length <= 3) e.target.value = digits;
+      else if (digits.length <= 6) e.target.value = `${digits.slice(0,3)}-${digits.slice(3)}`;
+      else e.target.value = `${digits.slice(0,3)}-${digits.slice(3,6)}-${digits.slice(6)}`;
     });
 
     loadLocations();
