@@ -10,11 +10,20 @@
       max-width: 860px;
     }
 
+    h1 {
+      margin-bottom: 0.65rem;
+    }
+
+    h2 {
+      margin: 0 0 0.75rem;
+      font-size: 1.35rem;
+    }
+
     .top-nav {
       display: flex;
       gap: 1.5rem;
       align-items: center;
-      margin-bottom: 1rem;
+      margin-bottom: 0.65rem;
       font-weight: 600;
       background: #fff;
     }
@@ -32,15 +41,15 @@
     .panel {
       border: 1px solid #d7dce8;
       border-radius: 6px;
-      padding: 1.1rem;
-      margin: 1.15rem 0;
+      padding: 0.85rem;
+      margin: 0.8rem 0;
       background: #fff;
     }
 
     .form-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 1rem;
+      gap: 0.7rem;
       align-items: end;
     }
 
@@ -93,26 +102,36 @@
     .actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.65rem;
+      gap: 0.45rem;
       align-items: center;
+    }
+
+    .entry-header {
+      justify-content: space-between;
+      margin-bottom: 0.7rem;
+    }
+
+    #logged-in-as {
+      min-width: 0;
+      overflow-wrap: anywhere;
     }
 
     .activity-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 0.8rem;
-      margin-top: 1rem;
+      gap: 0.6rem;
+      margin-top: 0.7rem;
     }
 
     .activity-grid label {
       background: #f8fafc;
       border: 1px solid #dfe5f0;
       border-radius: 6px;
-      padding: 0.75rem;
+      padding: 0.55rem;
     }
 
     .status {
-      min-height: 1.4rem;
+      min-height: 1.1rem;
       color: #345;
       font-weight: 700;
     }
@@ -129,13 +148,14 @@
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 0.75rem;
+      margin-top: 0;
+      table-layout: fixed;
     }
 
     th,
     td {
       border: 1px solid #ddd;
-      padding: 0.45rem 0.55rem;
+      padding: 0.38rem 0.45rem;
       text-align: left;
     }
 
@@ -148,14 +168,77 @@
       overflow-x: auto;
     }
 
+    .date-col {
+      width: 4.7rem;
+    }
+
+    .category-col,
+    .miles-col {
+      width: 4.6rem;
+    }
+
+    .entry-actions-col {
+      width: 7.5rem;
+    }
+
+    #recent-body .actions {
+      flex-wrap: nowrap;
+    }
+
+    #recent-body button {
+      padding: 0.35rem 0.5rem;
+      font-size: 0.9rem;
+    }
+
     @media (max-width: 560px) {
+      body {
+        padding: 0.75rem;
+      }
+
       .panel {
-        padding: 0.9rem;
+        padding: 0.7rem;
+        margin: 0.65rem 0;
       }
 
       .form-grid,
       .activity-grid {
         grid-template-columns: 1fr;
+      }
+
+      .activity-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      th,
+      td {
+        padding: 0.32rem 0.35rem;
+        font-size: 0.9rem;
+      }
+
+      th:nth-child(5),
+      td:nth-child(5) {
+        display: none;
+      }
+
+      .date-col {
+        width: 3.8rem;
+      }
+
+      .category-col {
+        width: 3.9rem;
+      }
+
+      .miles-col {
+        width: 3.6rem;
+      }
+
+      .entry-actions-col {
+        width: 6.6rem;
+      }
+
+      #recent-body button {
+        padding: 0.3rem 0.4rem;
+        font-size: 0.82rem;
       }
     }
   </style>
@@ -163,10 +246,6 @@
 <body>
   <div id="top-nav"></div>
   <h1>Miles</h1>
-  <p>
-    Log in with your registered email, enter miles for yourself or another PAX,
-    then review the current results on the <a href="/miles/data.html">Miles data page</a>.
-  </p>
 
   <section id="login-panel" class="panel">
     <h2>Log In</h2>
@@ -191,7 +270,7 @@
   </section>
 
   <section id="entry-panel" class="panel hidden">
-    <div class="actions">
+    <div class="actions entry-header">
       <strong id="logged-in-as"></strong>
       <button id="logout" class="secondary" type="button">Log Out</button>
     </div>
@@ -201,12 +280,10 @@
       <input id="entry-id" type="hidden" />
       <div class="form-grid">
         <label>
-          For
-          <select id="person" required></select>
+          <select id="person" aria-label="For" required></select>
         </label>
         <label>
-          Date
-          <input id="activity-date" type="date" required />
+          <input id="activity-date" aria-label="Date" type="date" required />
         </label>
       </div>
       <div class="activity-grid">
@@ -231,7 +308,7 @@
           <input id="swim-miles" data-activity="swim" type="number" min="0" max="1000" step="0.01" inputmode="decimal" />
         </label>
       </div>
-      <div class="actions" style="margin-top: 0.85rem;">
+      <div class="actions" style="margin-top: 0.65rem;">
         <button id="save-entry" type="submit">Submit Miles</button>
         <button id="cancel-edit" class="secondary hidden" type="button">Cancel Edit</button>
       </div>
@@ -239,29 +316,28 @@
     </form>
   </section>
 
-  <section id="challenge-panel" class="panel hidden">
-    <h2>Challenges</h2>
-    <div id="challenge-list"></div>
-  </section>
-
   <section id="recent-panel" class="panel hidden">
     <h2>Recent Editable Entries</h2>
-    <div class="muted">You can edit entries for you, or entries you submitted for someone else.</div>
     <div class="table-wrap">
       <table>
         <thead>
           <tr>
-            <th>Date</th>
+            <th class="date-col">Date</th>
             <th>For</th>
-            <th>Category</th>
-            <th>Miles</th>
+            <th class="category-col">Cat</th>
+            <th class="miles-col">Miles</th>
             <th>Entered By</th>
-            <th></th>
+            <th class="entry-actions-col"></th>
           </tr>
         </thead>
         <tbody id="recent-body"></tbody>
       </table>
     </div>
+  </section>
+
+  <section id="challenge-panel" class="panel hidden">
+    <h2>Challenges</h2>
+    <div id="challenge-list"></div>
   </section>
 
   <script>
@@ -386,7 +462,7 @@
     recentEntries.forEach((entry) => {
       const tr = document.createElement('tr');
       tr.innerHTML = `
-        <td>${entry.date}</td>
+        <td>${formatShortDate(entry.date)}</td>
         <td>${entry.name}</td>
         <td>${entry.category}</td>
         <td>${Number(entry.miles || 0).toFixed(2)}</td>
@@ -424,6 +500,12 @@
     if (!/^\d{4}-\d{2}-\d{2}$/.test(value || '')) return value;
     const [year, month, day] = value.split('-').map(Number);
     return `${month}/${day}/${year}`;
+  }
+
+  function formatShortDate(value) {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(value || '')) return value || '';
+    const [, month, day] = value.split('-');
+    return `${month}/${day}`;
   }
 
   function sameDayActivityPrompt(payload) {
