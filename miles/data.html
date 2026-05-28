@@ -280,6 +280,40 @@
       }
     }
 
+    #daily-snapshot {
+      margin: 0.75rem 0;
+    }
+
+    .snapshot-section {
+      background: #eef2f9;
+      border: 1px solid #d7dce8;
+      border-radius: 6px;
+      padding: 0.7rem 0.85rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .snapshot-heading {
+      font-weight: 800;
+      color: #1f3b6d;
+      margin-bottom: 0.4rem;
+      font-size: 0.97rem;
+    }
+
+    .snapshot-rows {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem 1.25rem;
+      font-size: 0.93rem;
+    }
+
+    .snapshot-entry {
+      white-space: nowrap;
+    }
+
+    .snapshot-name {
+      font-weight: 700;
+    }
+
     .year-pills {
       display: flex;
       gap: 0.4rem;
@@ -310,6 +344,7 @@
   <div id="top-nav"></div>
   <h1>Miles Data</h1>
   <div id="submission-notice" class="notice" hidden></div>
+  <div id="daily-snapshot"></div>
   <div id="challenges-container"></div>
 
   <div class="section" id="summary-section">
@@ -886,6 +921,50 @@
     }
   }
 
+  function renderDailySnapshot(rows) {
+    const container = document.getElementById('daily-snapshot');
+    container.innerHTML = '';
+
+    function ymd(offsetDays) {
+      const d = new Date();
+      d.setDate(d.getDate() + offsetDays);
+      return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+    }
+
+    const today = ymd(0);
+    const yesterday = ymd(-1);
+
+    function dayTotals(date) {
+      const byPerson = {};
+      rows.forEach((row) => {
+        if (row.date !== date) return;
+        const name = row.name || '';
+        if (!name) return;
+        if (!byPerson[name]) byPerson[name] = 0;
+        byPerson[name] += rowEarnedMiles(row);
+      });
+      return Object.entries(byPerson)
+        .map(([name, earned]) => ({ name, earned: round2(earned) }))
+        .sort((a, b) => b.earned - a.earned);
+    }
+
+    function renderBlock(label, date) {
+      const totals = dayTotals(date);
+      if (!totals.length) return null;
+      const [, month, day] = date.split('-');
+      const entries = totals.map(({ name, earned }) =>
+        `<span class="snapshot-entry"><span class="snapshot-name">${name}</span> ${earned.toFixed(2)}</span>`
+      ).join('');
+      const div = document.createElement('div');
+      div.className = 'snapshot-section';
+      div.innerHTML = `<div class="snapshot-heading">${label} ${month}/${day}</div><div class="snapshot-rows">${entries}</div>`;
+      return div;
+    }
+
+    const blocks = [renderBlock('Today', today), renderBlock('Yesterday', yesterday)].filter(Boolean);
+    blocks.forEach((b) => container.appendChild(b));
+  }
+
   async function init() {
     const [raw, summary, exceptions, challengeData] = await Promise.all([
       fetch(`${DATA_BASE}raw`).then((res) => res.json()),
@@ -895,14 +974,19 @@
     ]);
 
     rawRows = Array.isArray(raw.rows) ? raw.rows : [];
+
+    const today = dateToYmd(new Date());
+    const oneWeekAgo = dateToYmd(new Date(Date.now() - 7 * 24 * 60 * 60 * 1000));
+    const activeChallenges = (challengeData.challenges || []).filter((c) => c.endDate >= oneWeekAgo);
+
+    renderDailySnapshot(rawRows);
     renderYearPills();
     renderLeaderboardYearPills();
     renderLeaderboard();
-    renderChallenges(challengeData.challenges || [], rawRows);
+    renderChallenges(activeChallenges, rawRows);
     renderExceptions(exceptions.exceptions || []);
     applyQueryPrefill();
     renderRawTable();
-
   }
 
   document.getElementById('leaderboard-year-pills').addEventListener('click', (event) => {

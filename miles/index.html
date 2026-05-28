@@ -145,6 +145,36 @@
       display: none !important;
     }
 
+    .daily-summary {
+      background: #eef2f9;
+      font-size: 0.97rem;
+    }
+
+    .daily-summary-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem 1.5rem;
+      align-items: baseline;
+    }
+
+    .daily-summary-row + .daily-summary-row {
+      margin-top: 0.4rem;
+    }
+
+    .daily-label {
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .daily-earned {
+      font-weight: 800;
+      color: #1f3b6d;
+    }
+
+    .daily-breakdown {
+      color: #555;
+    }
+
     table {
       width: 100%;
       border-collapse: collapse;
@@ -316,6 +346,10 @@
     </form>
   </section>
 
+  <section id="daily-summary" class="panel daily-summary hidden">
+    <div id="daily-summary-content"></div>
+  </section>
+
   <section id="recent-panel" class="panel hidden">
     <h2>Recent Editable Entries</h2>
     <div class="table-wrap">
@@ -425,6 +459,7 @@
     els.loginPanel.classList.remove('hidden');
     els.entryPanel.classList.add('hidden');
     document.getElementById('challenge-panel').classList.add('hidden');
+    document.getElementById('daily-summary').classList.add('hidden');
     els.recentPanel.classList.add('hidden');
   }
 
@@ -450,6 +485,54 @@
       input.value = '';
       input.disabled = false;
     });
+  }
+
+  function renderDailySummary() {
+    const panel = document.getElementById('daily-summary');
+    const content = document.getElementById('daily-summary-content');
+
+    if (!currentPerson) { panel.classList.add('hidden'); return; }
+
+    const BIKE_DIVISOR = 3;
+    const SWIM_MULTIPLIER = 4;
+
+    function yesterdayYmd() {
+      const d = new Date();
+      d.setDate(d.getDate() - 1);
+      return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+    }
+
+    function dayData(date) {
+      const mine = recentEntries.filter((e) => e.personId === currentPerson.id && e.date === date);
+      if (!mine.length) return null;
+      const by = {};
+      mine.forEach((e) => { by[e.category] = (by[e.category] || 0) + Number(e.miles || 0); });
+      const earned = Math.round(((by.run || 0) + (by.walk || 0) + (by.ruck || 0) + (by.bike || 0) / BIKE_DIVISOR + (by.swim || 0) * SWIM_MULTIPLIER) * 100) / 100;
+      return { by, earned };
+    }
+
+    const today = todayYmd();
+    const yesterday = yesterdayYmd();
+    const rows = [
+      { label: 'Today', date: today, data: dayData(today) },
+      { label: 'Yesterday', date: yesterday, data: dayData(yesterday) },
+    ].filter((r) => r.data);
+
+    if (!rows.length) { panel.classList.add('hidden'); return; }
+
+    content.innerHTML = rows.map(({ label, date, data }) => {
+      const [, month, day] = date.split('-');
+      const parts = ['run', 'walk', 'ruck', 'bike', 'swim']
+        .filter((cat) => (data.by[cat] || 0) > 0)
+        .map((cat) => `${categoryName(cat)} ${Number(data.by[cat]).toFixed(2)}`);
+      return `<div class="daily-summary-row">
+        <span class="daily-label">${label} ${month}/${day}:</span>
+        <span class="daily-earned">${data.earned.toFixed(2)} mi</span>
+        ${parts.length ? `<span class="daily-breakdown">${parts.join(', ')}</span>` : ''}
+      </div>`;
+    }).join('');
+
+    panel.classList.remove('hidden');
   }
 
   function renderRecentEntries() {
@@ -610,7 +693,10 @@
   async function loadChallenges() {
     try {
       const data = await api.get('/api/challenges');
-      challenges = data.challenges || [];
+      const today = todayYmd();
+      const oneWeekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
+      const weekAgoYmd = `${oneWeekAgo.getFullYear()}-${String(oneWeekAgo.getMonth() + 1).padStart(2, '0')}-${String(oneWeekAgo.getDate()).padStart(2, '0')}`;
+      challenges = (data.challenges || []).filter((c) => c.endDate >= weekAgoYmd);
     } catch {
       challenges = [];
     }
@@ -628,6 +714,7 @@
     recentEntries = entriesData.entries || [];
     renderPeople();
     renderRecentEntries();
+    renderDailySummary();
     resetEntryForm();
     showApp();
     await loadChallenges();
