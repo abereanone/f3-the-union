@@ -945,7 +945,7 @@
       });
       return Object.entries(byPerson)
         .map(([name, earned]) => ({ name, earned: round2(earned) }))
-        .sort((a, b) => b.earned - a.earned);
+        .sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: 'base' }) || b.earned - a.earned);
     }
 
     function renderBlock(label, date) {
