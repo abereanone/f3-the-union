@@ -8,7 +8,11 @@ const categorySet = new Set(categories);
 
 const SLACK_INVITE_URL = 'https://join.slack.com/t/f3theunion/shared_invite/zt-3yuik6r2e-jRhoULZd4xxTvot0AO3GAw';
 
-// Keep in sync with fng/locations.json — frontend fetches that file directly as a static asset.
+const DEBUGGING_CHANNEL_ID = 'C03TPUJ5WSV';
+const SITE_Q_CHANNEL_ID = 'C03T6Q9CPDX';
+const DAY_MS = 24 * 60 * 60 * 1000;
+
+// Keep in sync with pax/fng/locations.json - frontend fetches that file directly as a static asset.
 const FNG_LOCATIONS = [
   { name: 'The Farm',       slackChannelId: 'C03SC9U3JCB' },
   { name: 'The Yard',       slackChannelId: 'C03SCB1G343' },
@@ -22,9 +26,17 @@ const FNG_LOCATIONS = [
   { name: 'The Clocktower', slackChannelId: 'C08PSLE3VUM' },
   { name: 'The Fountain',   slackChannelId: 'C07E8QBMJ58' },
   { name: 'The Show',       slackChannelId: 'C066VQJLJGL' },
-  { name: 'The Downrange',  slackChannelId: 'C06J36HGTQW' },
 ];
 const FNG_LOCATION_NAMES = new Set(FNG_LOCATIONS.map((l) => l.name));
+const DOW_LABELS = {
+  1: 'Sun',
+  2: 'Mon',
+  3: 'Tue',
+  4: 'Wed',
+  5: 'Thu',
+  6: 'Fri',
+  7: 'Sat',
+};
 
 export async function onRequest(ctx) {
   try {
@@ -37,6 +49,11 @@ export async function onRequest(ctx) {
     if (method === 'POST' && path === '/auth/request-code') return await requestLoginCode(ctx);
     if (method === 'POST' && path === '/auth/verify-code') return await verifyLoginCode(ctx);
     if (method === 'POST' && path === '/auth/logout') return await logout(ctx);
+    if (method === 'GET' && path === '/aos') return await listAos(ctx);
+    if (method === 'POST' && path === '/contact') return await contactSubmit(ctx);
+    if (method === 'POST' && path === '/reminders/run' && isReminderAutomationAuthorized(ctx, url)) {
+      return await runReminderNotifications(ctx);
+    }
 
     if (method === 'GET' && path === '/miles/raw') return await rawMiles(ctx);
     if (method === 'GET' && path === '/miles/summary') return await milesSummary(ctx, url);
@@ -62,6 +79,18 @@ export async function onRequest(ctx) {
     }
     if (segments[0] === 'challenges' && segments[1] && segments[2] === 'enroll' && method === 'POST') {
       return await setChallengeEnrollment(ctx, person, segments[1]);
+    }
+    if (method === 'GET' && path === '/reminders') return await listReminders(ctx);
+    if (method === 'POST' && path === '/reminders') return await createReminder(ctx, person);
+    if (method === 'POST' && path === '/reminders/run') {
+      assertAdmin(person);
+      return await runReminderNotifications(ctx);
+    }
+    if (segments[0] === 'reminders' && segments[1] && method === 'PUT') {
+      return await updateReminder(ctx, person, segments[1]);
+    }
+    if (segments[0] === 'reminders' && segments[1] && method === 'DELETE') {
+      return await deleteReminder(ctx, person, segments[1]);
     }
 
     if (method === 'GET' && path === '/fng/entries') return await listFngEntries(ctx, person);
@@ -144,6 +173,21 @@ function requireDate(value, label = 'Date') {
     throw new ApiError('VALIDATION_ERROR', `${label} must be a real date.`);
   }
   return value;
+}
+
+function addDaysYmd(date, days) {
+  const d = new Date(`${date}T00:00:00Z`);
+  d.setUTCDate(d.getUTCDate() + days);
+  return d.toISOString().slice(0, 10);
+}
+
+function todayYmd() {
+  return new Date().toISOString().slice(0, 10);
+}
+
+function parseYmd(value) {
+  const [year, month, day] = String(value).split('-').map(Number);
+  return { year, month, day };
 }
 
 function requireCategory(value) {
@@ -500,6 +544,317 @@ async function logout(ctx) {
       .run();
   }
   return json({ ok: true }, { headers: { 'set-cookie': clearSessionCookie() } });
+}
+
+function formatDow(value) {
+  return String(value || '')
+    .split(',')
+    .map((part) => DOW_LABELS[Number(part.trim())])
+    .filter(Boolean)
+    .join(', ');
+}
+
+async function listAos(ctx) {
+  const result = await ctx.env.DB.prepare(
+    `SELECT id, slug, name, region, site_q AS siteQ, dow, start_time AS startTime,
+            duration, address, notes
+     FROM aos
+     WHERE is_active = 1
+     ORDER BY region, lower(name)`,
+  ).all();
+
+  const regions = {};
+  result.results.forEach((ao) => {
+    (regions[ao.region] ||= []).push({
+      id: ao.id,
+      slug: ao.slug,
+      name: ao.name,
+      region: ao.region,
+      siteQ: ao.siteQ,
+      dow: ao.dow,
+      days: formatDow(ao.dow),
+      startTime: ao.startTime,
+      duration: ao.duration,
+      address: ao.address || null,
+      notes: ao.notes || null,
+    });
+  });
+
+  return json({ ok: true, regions });
+}
+
+async function contactSubmit(ctx) {
+  const input = await body(ctx);
+  if (input.website) return json({ ok: true }); // honeypot — silently discard
+  const name = requireStr(input.name, 'Name');
+  const email = normalizeEmail(input.email);
+  const message = requireStr(input.message, 'Message');
+  const regions = Array.isArray(input.regions)
+    ? input.regions.map((r) => String(r || '').trim()).filter(Boolean).slice(0, 8)
+    : [];
+
+  if (message.length > 3000) throw new ApiError('VALIDATION_ERROR', 'Message is too long.', 400);
+
+  await postContactToSlack(ctx, { name, email, regions, message });
+  return json({ ok: true });
+}
+
+async function postContactToSlack(ctx, entry) {
+  if (!ctx.env.SLACK_BOT_TOKEN) return;
+  const slackApiBase = ctx.env.SLACK_API_BASE_URL || 'https://slack.com/api';
+  const sendToDebugging = ['1', 'true', 'yes'].includes(String(ctx.env.SEND_POSTS_TO_DEBUGGING || '').trim().toLowerCase());
+  const channel = sendToDebugging
+    ? DEBUGGING_CHANNEL_ID
+    : (ctx.env.CONTACT_SLACK_CHANNEL_ID || SITE_Q_CHANNEL_ID);
+
+  const text = [
+    '*New public website contact*',
+    `*Name:* ${entry.name}`,
+    `*Email:* ${entry.email}`,
+    `*Region(s):* ${entry.regions.length ? entry.regions.join(', ') : 'Not specified'}`,
+    `*Message:* ${entry.message}`,
+  ].join('\n');
+
+  const response = await fetch(`${slackApiBase}/chat.postMessage`, {
+    method: 'POST',
+    headers: {
+      authorization: `Bearer ${ctx.env.SLACK_BOT_TOKEN}`,
+      'content-type': 'application/json',
+    },
+    body: JSON.stringify({
+      channel,
+      username: 'F3 The Union Site',
+      icon_emoji: ':mailbox_with_mail:',
+      mrkdwn: true,
+      text,
+    }),
+  });
+
+  if (!response.ok) {
+    throw new ApiError('SLACK_ERROR', 'Unable to send message.', 502);
+  }
+}
+
+function assertAdmin(person) {
+  if (!person.is_admin) throw new ApiError('FORBIDDEN', 'Admins only.', 403);
+}
+
+function requireReminderFrequency(value) {
+  const frequency = String(value || '').trim().toLowerCase();
+  if (!['once', 'annual', 'monthly'].includes(frequency)) {
+    throw new ApiError('VALIDATION_ERROR', 'Choose once, annual, or monthly.');
+  }
+  return frequency;
+}
+
+function reminderInput(input) {
+  const remindDaysBefore = Number(input.remindDaysBefore ?? 7);
+  if (!Number.isInteger(remindDaysBefore) || remindDaysBefore < 0 || remindDaysBefore > 365) {
+    throw new ApiError('VALIDATION_ERROR', 'Reminder window must be between 0 and 365 days.');
+  }
+
+  return {
+    title: requireStr(input.title, 'Title'),
+    eventDate: requireDate(input.eventDate, 'Event date'),
+    frequency: requireReminderFrequency(input.frequency),
+    remindDaysBefore,
+    slackChannelId: optStr(input.slackChannelId),
+    notes: optStr(input.notes),
+    isActive: input.isActive === false ? 0 : 1,
+  };
+}
+
+function mapReminder(row) {
+  return {
+    id: row.id,
+    title: row.title,
+    eventDate: row.eventDate,
+    frequency: row.frequency,
+    remindDaysBefore: Number(row.remindDaysBefore || 0),
+    slackChannelId: row.slackChannelId || '',
+    notes: row.notes || '',
+    isActive: Boolean(row.isActive),
+    lastNotifiedFor: row.lastNotifiedFor || null,
+    nextOccurrence: nextReminderOccurrence(row, todayYmd()),
+  };
+}
+
+async function listReminders(ctx) {
+  const result = await ctx.env.DB.prepare(
+    `SELECT id, title, event_date AS eventDate, frequency, remind_days_before AS remindDaysBefore,
+            slack_channel_id AS slackChannelId, notes, is_active AS isActive,
+            last_notified_for AS lastNotifiedFor
+     FROM calendar_reminders
+     ORDER BY is_active DESC, event_date`,
+  ).all();
+  return json({ ok: true, reminders: result.results.map(mapReminder) });
+}
+
+async function createReminder(ctx, actor) {
+  assertAdmin(actor);
+  const data = reminderInput(await body(ctx));
+  const reminderId = id();
+  await ctx.env.DB.prepare(
+    `INSERT INTO calendar_reminders
+       (id, title, event_date, frequency, remind_days_before, slack_channel_id, notes,
+        is_active, created_by_person_id, updated_by_person_id)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+  ).bind(
+    reminderId,
+    data.title,
+    data.eventDate,
+    data.frequency,
+    data.remindDaysBefore,
+    data.slackChannelId,
+    data.notes,
+    data.isActive,
+    actor.id,
+    actor.id,
+  ).run();
+  return json({ ok: true, reminder: await getReminder(ctx, reminderId) });
+}
+
+async function updateReminder(ctx, actor, reminderId) {
+  assertAdmin(actor);
+  await getReminder(ctx, reminderId);
+  const data = reminderInput(await body(ctx));
+  await ctx.env.DB.prepare(
+    `UPDATE calendar_reminders
+     SET title = ?, event_date = ?, frequency = ?, remind_days_before = ?, slack_channel_id = ?,
+         notes = ?, is_active = ?, updated_by_person_id = ?, updated_at = CURRENT_TIMESTAMP
+     WHERE id = ?`,
+  ).bind(
+    data.title,
+    data.eventDate,
+    data.frequency,
+    data.remindDaysBefore,
+    data.slackChannelId,
+    data.notes,
+    data.isActive,
+    actor.id,
+    reminderId,
+  ).run();
+  return json({ ok: true, reminder: await getReminder(ctx, reminderId) });
+}
+
+async function deleteReminder(ctx, actor, reminderId) {
+  assertAdmin(actor);
+  await ctx.env.DB.prepare('DELETE FROM calendar_reminders WHERE id = ?').bind(reminderId).run();
+  return json({ ok: true });
+}
+
+async function getReminder(ctx, reminderId) {
+  const row = await ctx.env.DB.prepare(
+    `SELECT id, title, event_date AS eventDate, frequency, remind_days_before AS remindDaysBefore,
+            slack_channel_id AS slackChannelId, notes, is_active AS isActive,
+            last_notified_for AS lastNotifiedFor
+     FROM calendar_reminders
+     WHERE id = ?`,
+  ).bind(reminderId).first();
+  if (!row) throw new ApiError('NOT_FOUND', 'Reminder not found.', 404);
+  return mapReminder(row);
+}
+
+function nextReminderOccurrence(reminder, baseDate) {
+  const frequency = reminder.frequency;
+  const eventDate = reminder.eventDate;
+  if (frequency === 'once') return eventDate >= baseDate ? eventDate : null;
+
+  const base = parseYmd(baseDate);
+  const event = parseYmd(eventDate);
+  if (frequency === 'annual') {
+    let occurrence = validYmd(base.year, event.month, event.day);
+    if (occurrence < baseDate) occurrence = validYmd(base.year + 1, event.month, event.day);
+    return occurrence;
+  }
+
+  let occurrence = validYmd(base.year, base.month, event.day);
+  if (occurrence < baseDate) {
+    const nextMonth = base.month === 12 ? 1 : base.month + 1;
+    const nextYear = base.month === 12 ? base.year + 1 : base.year;
+    occurrence = validYmd(nextYear, nextMonth, event.day);
+  }
+  return occurrence;
+}
+
+function validYmd(year, month, day) {
+  const lastDay = new Date(Date.UTC(year, month, 0)).getUTCDate();
+  const safeDay = Math.min(day, lastDay);
+  return `${year}-${String(month).padStart(2, '0')}-${String(safeDay).padStart(2, '0')}`;
+}
+
+function remindersDue(rows, baseDate) {
+  return rows
+    .map((row) => {
+      const occurrence = nextReminderOccurrence(row, baseDate);
+      if (!occurrence) return null;
+      const notifyStart = addDaysYmd(occurrence, -Number(row.remindDaysBefore || 0));
+      if (baseDate < notifyStart || baseDate > occurrence) return null;
+      if (row.lastNotifiedFor === occurrence) return null;
+      return { ...row, occurrence };
+    })
+    .filter(Boolean);
+}
+
+async function runReminderNotifications(ctx) {
+  const baseDate = todayYmd();
+  const result = await ctx.env.DB.prepare(
+    `SELECT id, title, event_date AS eventDate, frequency, remind_days_before AS remindDaysBefore,
+            slack_channel_id AS slackChannelId, notes, last_notified_for AS lastNotifiedFor
+     FROM calendar_reminders
+     WHERE is_active = 1
+     ORDER BY event_date`,
+  ).all();
+  const due = remindersDue(result.results, baseDate);
+
+  for (const reminder of due) {
+    await postReminderToSlack(ctx, reminder, baseDate);
+    await ctx.env.DB.prepare(
+      'UPDATE calendar_reminders SET last_notified_for = ?, updated_at = CURRENT_TIMESTAMP WHERE id = ?',
+    ).bind(reminder.occurrence, reminder.id).run();
+  }
+
+  return json({ ok: true, checked: result.results.length, sent: due.length });
+}
+
+async function postReminderToSlack(ctx, reminder, baseDate) {
+  if (!ctx.env.SLACK_BOT_TOKEN) return;
+  const slackApiBase = ctx.env.SLACK_API_BASE_URL || 'https://slack.com/api';
+  const sendToDebugging = ['1', 'true', 'yes'].includes(String(ctx.env.SEND_POSTS_TO_DEBUGGING || '').trim().toLowerCase());
+  const channel = sendToDebugging
+    ? DEBUGGING_CHANNEL_ID
+    : (reminder.slackChannelId || ctx.env.REMINDERS_SLACK_CHANNEL_ID || SITE_Q_CHANNEL_ID);
+  const daysUntil = Math.max(0, Math.round((new Date(`${reminder.occurrence}T00:00:00Z`) - new Date(`${baseDate}T00:00:00Z`)) / DAY_MS));
+  const when = daysUntil === 0 ? 'today' : `in ${daysUntil} day${daysUntil === 1 ? '' : 's'}`;
+  const text = [
+    `*Calendar reminder:* ${reminder.title}`,
+    `Date: ${reminder.occurrence} (${when})`,
+    reminder.notes ? `Notes: ${reminder.notes}` : null,
+  ].filter(Boolean).join('\n');
+
+  const response = await fetch(`${slackApiBase}/chat.postMessage`, {
+    method: 'POST',
+    headers: {
+      authorization: `Bearer ${ctx.env.SLACK_BOT_TOKEN}`,
+      'content-type': 'application/json',
+    },
+    body: JSON.stringify({
+      channel,
+      username: 'F3 The Union Reminders',
+      icon_emoji: ':calendar:',
+      mrkdwn: true,
+      text,
+    }),
+  });
+
+  if (!response.ok) throw new ApiError('SLACK_ERROR', 'Unable to send reminder.', 502);
+}
+
+function isReminderAutomationAuthorized(ctx, url) {
+  const secret = String(ctx.env.REMINDER_RUN_SECRET || '').trim();
+  if (!secret) return false;
+  const header = ctx.request.headers.get('x-reminder-secret') || '';
+  return header === secret || url.searchParams.get('secret') === secret;
 }
 
 async function listPeople(ctx) {
@@ -1037,8 +1392,8 @@ async function postFngToSlack(ctx, entry) {
 
   const sendToDebugging = ['1', 'true', 'yes'].includes(String(ctx.env.SEND_POSTS_TO_DEBUGGING || '').trim().toLowerCase());
   const channelIds = sendToDebugging
-    ? ['C03TPUJ5WSV']                      // #debugging
-    : ['C03SEV33M1A', 'C03T6Q9CPDX'];     // #leadership, #site-q
+    ? [DEBUGGING_CHANNEL_ID]               // #debugging
+    : ['C03SEV33M1A', SITE_Q_CHANNEL_ID];  // #leadership, #site-q
 
   const postPromises = [...new Set(channelIds)].map((channel) =>
     fetch(`${slackApiBase}/chat.postMessage`, {

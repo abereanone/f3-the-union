@@ -7,3 +7,9 @@ binding = "DB"
 database_name = "f3_the_union"
 database_id = "f64e03bc-3ea4-47d7-9db5-a4b067b29b25"
 preview_database_id = "f3_the_union"
+
+# Separate scheduled Worker entrypoint for calendar reminders:
+# node scripts/wrangler.mjs deploy workers/reminders.mjs --name f3-the-union-reminders --var PUBLIC_SITE_ORIGIN:https://f3theunion.com
+#
+# [triggers]
+# crons = [ "0 12 * * *" ]

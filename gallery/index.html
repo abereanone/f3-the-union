@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Photo Gallery - F3 The Union</title>
+  <meta name="description" content="Photos from F3 The Union workouts and events." />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="/public.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/"><img src="/media/f3-logo.webp" alt="F3" class="brand-logo" />F3 The Union</a>
+    <nav class="public-nav" aria-label="Main navigation">
+      <a href="/#workouts">Workouts</a>
+      <a href="/core-principles/">Core Principles</a>
+      <a href="/gallery/">Gallery</a>
+      <a href="/testimonials/">Testimonials</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <div class="social-links" aria-label="Social links">
+        <a href="https://www.facebook.com/f3theunion/" target="_blank" rel="noopener">Facebook</a>
+      </div>
+      <a class="nav-login" href="/login/">PAX Login</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-intro">
+      <div class="section-inner">
+        <h1>Photo the Gallery</h1>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="section-inner gallery-shell">
+        <div class="gallery-main">
+          <img id="gallery-photo" src="/media/group-large-flags.jpg" alt="The PAX of F3 The Union, flags flying at dusk." />
+        </div>
+        <p id="gallery-caption" class="gallery-caption">The PAX of F3 The Union, flags flying at dusk.</p>
+        <div class="slider-controls">
+          <button id="prev-photo" type="button">Previous</button>
+          <div id="gallery-dots" class="dots" aria-label="Gallery position"></div>
+          <button id="next-photo" type="button">Next</button>
+        </div>
+        <div id="gallery-thumbs" class="gallery-thumbs"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="section-inner">
+      <div class="footer-brand">
+        <img src="/media/f3-logo.webp" alt="F3 Nation logo" class="footer-logo" />
+        <p class="mission">The mission of F3 is to plant, grow, and serve small workout groups for men for the invigoration of male community leadership.</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="/">Home</a>
+        <a href="/core-principles/">Core Principles</a>
+        <a href="/testimonials/">Testimonials</a>
+        <a href="/login/">PAX Login</a>
+      </nav>
+    </div>
+      <div class="section-inner footer-legal">
+      The F3 logo is a trademark of F3 Nation and is used with permission. <a href="https://f3nation.com" target="_blank" rel="noopener">F3Nation.com</a>
+    </div>
+  </footer>
+
+  <script>
+    const galleryPhotos = [
+      { src: '/media/group-large-flags.jpg', caption: 'Morning workout complete!' },
+      { src: '/media/foggy-morning.jpg', caption: 'Into the gloom â€” a foggy morning post.' },
+      { src: '/media/parking-lot-post.jpg', caption: 'Exercise finished; ready to lead families and communities.' },
+      { src: '/media/playground-post.jpg', caption: 'Post at the playground.' },
+      { src: '/media/race-day-church.jpg', caption: 'Race day with the PAX.' },
+      { src: '/media/turkey-trot-flag.jpg', caption: 'Carrying the colors through the rain.' },
+      { src: '/media/service-project-yard.jpg', caption: 'Serving the community â€” a neighborhood service project at New Path.' },
+      { src: '/media/coffee-circle.jpg', caption: 'Coffee and fellowship after the workout.' },
+      { src: '/media/fellowship-dinner.jpg', caption: 'Fellowship dinner with the PAX and their wives.' },
+      { src: '/media/food-pantry-christmas.jpg', caption: 'Christmas drop at the Marysville Food Pantry.' },
+      { src: '/media/community-booth.jpg', caption: 'F3 The Union at a local community event.' },
+      { src: '/media/gallery-7.jpg', caption: 'Why we do what we do.' },
+      { src: '/media/gallery-1.jpg', caption: '' },
+      { src: '/media/gallery-2.jpg', caption: '' },
+    ];
+
+    let activePhoto = 0;
+    const photo = document.getElementById('gallery-photo');
+    const caption = document.getElementById('gallery-caption');
+    const dots = document.getElementById('gallery-dots');
+    const thumbs = document.getElementById('gallery-thumbs');
+
+    function renderGallery() {
+      const item = galleryPhotos[activePhoto];
+      photo.src = item.src;
+      photo.alt = item.caption;
+      caption.textContent = item.caption;
+      dots.innerHTML = galleryPhotos.map((_, index) => `<span class="dot${index === activePhoto ? ' active' : ''}"></span>`).join('');
+      thumbs.innerHTML = galleryPhotos.map((entry, index) => `
+        <button type="button" class="${index === activePhoto ? 'active' : ''}" data-index="${index}">
+          <img src="${entry.src}" alt="${entry.caption}" />
+        </button>
+      `).join('');
+      thumbs.querySelectorAll('button').forEach((button) => {
+        button.addEventListener('click', () => {
+          activePhoto = Number(button.dataset.index);
+          renderGallery();
+        });
+      });
+    }
+
+    function move(delta) {
+      activePhoto = (activePhoto + delta + galleryPhotos.length) % galleryPhotos.length;
+      renderGallery();
+    }
+
+    document.getElementById('prev-photo').addEventListener('click', () => move(-1));
+    document.getElementById('next-photo').addEventListener('click', () => move(1));
+    renderGallery();
+  </script>
+</body>
+</html>

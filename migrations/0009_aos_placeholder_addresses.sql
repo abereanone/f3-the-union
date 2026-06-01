@@ -1,0 +1,13 @@
+UPDATE aos SET address = '101 Pottersville Road, Pottersville, OH' WHERE slug = 'the_farm';
+UPDATE aos SET address = '102 Pottersville Road, Pottersville, OH' WHERE slug = 'the_yard';
+UPDATE aos SET address = '103 Pottersville Road, Pottersville, OH' WHERE slug = 'the_factory';
+UPDATE aos SET address = '104 Pottersville Road, Pottersville, OH' WHERE slug = 'the_plant';
+UPDATE aos SET address = '105 Pottersville Road, Pottersville, OH' WHERE slug = 'the_redzone';
+UPDATE aos SET address = '106 Pottersville Road, Pottersville, OH' WHERE slug = 'the_cafeteria';
+UPDATE aos SET address = '107 Pottersville Road, Pottersville, OH' WHERE slug = 'the_floor';
+UPDATE aos SET address = '108 Pottersville Road, Pottersville, OH' WHERE slug = 'the_breakroom';
+UPDATE aos SET address = '201 Pottersville Road, Pottersville, OH' WHERE slug = 'the_dock';
+UPDATE aos SET address = '202 Pottersville Road, Pottersville, OH' WHERE slug = 'the_forge';
+UPDATE aos SET address = '203 Pottersville Road, Pottersville, OH' WHERE slug = 'the_show';
+UPDATE aos SET address = '301 Pottersville Road, Pottersville, OH' WHERE slug = 'the_clocktower';
+UPDATE aos SET address = '401 Pottersville Road, Pottersville, OH' WHERE slug = 'the_fountain';

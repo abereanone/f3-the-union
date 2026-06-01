@@ -1,0 +1,1044 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Miles Data</title>
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="stylesheet" href="/public.css" />
+  <style>
+    body {
+      max-width: 980px;
+      font-size: 16.5px;
+    }
+
+    :root {
+      --table-header-bg: #d9e3f7;
+      --table-header-text: #1f3b6d;
+      --table-stripe-bg: #f0d2cc;
+      --detail-stripe-light: #f7ebe7;
+      --detail-stripe-dark: #e8c1b8;
+    }
+
+    .top-nav {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      background: #fff;
+    }
+
+    .top-nav a {
+      color: #1f3b6d;
+      text-decoration: none;
+    }
+
+    .top-nav a:hover,
+    .top-nav a:focus {
+      text-decoration: underline;
+    }
+
+    .meta {
+      color: #555;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .section {
+      margin: 1.5rem 0;
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin: 0.75rem 0 1rem;
+    }
+
+    .controls label {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      font-size: 0.95rem;
+    }
+
+    .controls input,
+    .controls select {
+      padding: 0.35rem 0.5rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 1rem;
+    }
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 0.5rem 0.6rem;
+      text-align: left;
+      vertical-align: middle;
+    }
+
+    th {
+      background: var(--table-header-bg);
+      color: var(--table-header-text);
+      font-weight: 800;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    th button {
+      background: none;
+      border: 0;
+      padding: 0;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      color: #1f3b6d;
+    }
+
+    th button:hover,
+    th button:focus {
+      text-decoration: underline;
+    }
+
+    .table-wrap {
+      max-height: 520px;
+      overflow: auto;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    .table-wrap--auto {
+      max-height: none;
+      overflow: visible;
+    }
+
+    .striped tbody tr:nth-child(even) {
+      background: var(--table-stripe-bg);
+    }
+
+    .striped-by-name tbody tr {
+      background: transparent;
+    }
+
+    .striped-by-name tbody tr.stripe-a {
+      background: var(--table-stripe-bg);
+    }
+
+    .detail-panel {
+      background: #fff;
+      border: 2px solid rgba(31, 59, 109, 0.12);
+      border-radius: 4px;
+      margin: 0.15rem 0;
+    }
+
+    .stripe-a .detail-panel {
+      background: var(--table-stripe-bg);
+    }
+
+    .detail-row td {
+      padding-top: 0.3rem;
+      padding-bottom: 0.3rem;
+    }
+
+    .striped-by-name tbody tr.detail-row {
+      background: #fff;
+    }
+
+    .striped-by-name tbody tr.detail-row.stripe-a {
+      background: var(--table-stripe-bg);
+    }
+
+    .detail-table th,
+    .detail-table td {
+      background: transparent;
+    }
+
+    .detail-table th {
+      background: var(--detail-stripe-light);
+    }
+
+    .stripe-a .detail-table th {
+      background: var(--detail-stripe-dark);
+    }
+
+    .detail-table tbody tr:nth-child(even),
+    .detail-table tbody tr:nth-child(odd) {
+      background: transparent;
+    }
+
+    .detail-table tbody tr:nth-child(even) {
+      background: var(--detail-stripe-light);
+    }
+
+    .stripe-a .detail-table tbody tr:nth-child(even) {
+      background: var(--detail-stripe-dark);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.15rem 0.4rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      background: #ffe9d2;
+      color: #6a3b00;
+      margin-left: 0.35rem;
+    }
+
+    .muted {
+      color: #777;
+    }
+
+    .notice {
+      background: #eef7ed;
+      border: 1px solid #bdd9b8;
+      border-radius: 4px;
+      color: #234f25;
+      font-weight: 700;
+      margin: 0 0 1rem;
+      padding: 0.65rem 0.75rem;
+    }
+
+    .person-name {
+      font-weight: 800;
+    }
+
+    .toggle-btn {
+      width: 1.2rem;
+      height: 1.2rem;
+      padding: 0;
+      border: 1px solid #cdd4e3;
+      background: #fff;
+      color: #1f3b6d;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 0.7rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      vertical-align: middle;
+    }
+
+    .toggle-cell {
+      text-align: center;
+      width: 2.2rem;
+      vertical-align: middle;
+      padding-top: 0.25rem;
+      padding-bottom: 0.25rem;
+    }
+
+    .toggle-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    .toggle-btn[aria-expanded="true"] .arrow {
+      transform: rotate(90deg);
+    }
+
+    .arrow {
+      display: block;
+      width: 0;
+      height: 0;
+      font-size: 0;
+      line-height: 0;
+      border-top: 0.22rem solid transparent;
+      border-bottom: 0.22rem solid transparent;
+      border-left: 0.32rem solid #1f3b6d;
+      transform-origin: 45% 50%;
+    }
+
+    .challenge-grid {
+      display: grid;
+      grid-template-columns: minmax(180px, 240px) minmax(0, 1fr);
+      gap: 1rem;
+      align-items: start;
+    }
+
+    .challenge-image {
+      width: 100%;
+      border-radius: 6px;
+      border: 1px solid #d8d8d8;
+      display: block;
+    }
+
+    #challenge-meta {
+      margin-bottom: 0.7rem;
+    }
+
+    .challenge-miles-col {
+      width: 5.5rem;
+    }
+
+    @media (max-width: 760px) {
+      .challenge-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    #daily-snapshot {
+      margin: 0.75rem 0;
+    }
+
+    .snapshot-section {
+      background: #eef2f9;
+      border: 1px solid #d7dce8;
+      border-radius: 6px;
+      padding: 0.7rem 0.85rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .snapshot-heading {
+      font-weight: 800;
+      color: #1f3b6d;
+      margin-bottom: 0.4rem;
+      font-size: 0.97rem;
+    }
+
+    .snapshot-rows {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem 1.25rem;
+      font-size: 0.93rem;
+    }
+
+    .snapshot-entry {
+      white-space: nowrap;
+    }
+
+    .snapshot-name {
+      font-weight: 700;
+    }
+
+    .year-pills {
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.75rem;
+    }
+
+    .pill {
+      padding: 0.2rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid #cdd4e3;
+      background: #fff;
+      color: #1f3b6d;
+      font: inherit;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .pill--active {
+      background: #1f3b6d;
+      color: #fff;
+      border-color: #1f3b6d;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+  <a class="brand" href="/"><img src="/media/f3-logo.webp" alt="F3" class="brand-logo" />F3 The Union</a>
+  <nav class="public-nav" aria-label="PAX navigation">
+    <a href="/pax/">PAX Home</a>
+    <a href="/pax/fng/">FNG</a>
+    <a href="/pax/miles/">Miles</a>
+    <a href="/pax/miles/data.html">Miles Data</a>
+    <a href="/pax/reports/">Reports</a>
+    <a href="/pax/reminders/">Reminders</a>
+  </nav>
+</header>
+  <h1>Miles Data</h1>
+  <div id="submission-notice" class="notice" hidden></div>
+  <div id="daily-snapshot"></div>
+  <div id="challenges-container"></div>
+
+  <div class="section" id="summary-section">
+    <h2>Leaderboard</h2>
+    <div id="leaderboard-year-pills" class="year-pills"></div>
+    <div class="table-wrap table-wrap--auto">
+      <table class="striped striped-by-name">
+        <thead>
+          <tr>
+            <th class="toggle-cell"></th>
+            <th>Name</th>
+            <th>Run</th>
+            <th>Walk</th>
+            <th>Ruck</th>
+            <th>Bike (/3)</th>
+            <th>Swim (X4)</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody id="summary-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section" id="exceptions-section">
+    <h2>Potential Exceptions</h2>
+    <div id="exceptions-content" class="muted">Loadingâ€¦</div>
+    <div class="muted" style="margin-top: 0.5rem;">
+      To resolve exceptions, contact Floppy Disk for help editing the data.
+    </div>
+  </div>
+
+  <div class="section" id="raw-section">
+    <h2>All Entries</h2>
+    <div id="year-pills" class="year-pills"></div>
+    <div class="controls">
+      <label>
+        Name
+        <input id="filter-name" type="text" placeholder="Search name" />
+      </label>
+      <label>
+        Date
+        <input id="filter-date" type="date" />
+      </label>
+      <label>
+        Category
+        <select id="filter-category">
+          <option value="">All</option>
+          <option value="run">Run</option>
+          <option value="walk">Walk</option>
+          <option value="ruck">Ruck</option>
+          <option value="bike">Bike</option>
+          <option value="swim">Swim</option>
+        </select>
+      </label>
+      <label class="muted" id="row-count"></label>
+    </div>
+    <div class="table-wrap">
+      <table class="striped">
+        <thead>
+          <tr>
+            <th><button data-sort="rowNumber" type="button">Row</button></th>
+            <th><button data-sort="timestamp" type="button">Timestamp</button></th>
+            <th><button data-sort="name" type="button">Name</button></th>
+            <th><button data-sort="date" type="button">Date</button></th>
+            <th><button data-sort="run" type="button">Run</button></th>
+            <th><button data-sort="walk" type="button">Walk</button></th>
+            <th><button data-sort="ruck" type="button">Ruck</button></th>
+            <th><button data-sort="bike" type="button">Bike</button></th>
+            <th><button data-sort="swim" type="button">Swim</button></th>
+          </tr>
+        </thead>
+        <tbody id="raw-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+  const DATA_BASE = '/api/miles/';
+  const numberFields = ['run', 'walk', 'ruck', 'bike', 'swim'];
+  const BIKE_DIVISOR = 3;
+  const SWIM_MULTIPLIER = 4;
+  let rawRows = [];
+  let currentSort = { key: 'timestamp', dir: 'desc' };
+  let monthlyByPerson = {};
+  const currentYear = String(new Date().getFullYear());
+  let filterYear = currentYear;
+  let leaderboardYear = currentYear;
+
+  function formatGeneratedAt(value) {
+    if (!value) return '';
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) return value;
+    return date.toLocaleString(undefined, {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: true
+    });
+  }
+
+  function formatMiles(value) {
+    if (!value) return '';
+    return Number(value).toFixed(2);
+  }
+
+  function round2(value) {
+    return Math.round(value * 100) / 100;
+  }
+
+  function dateToYmd(date) {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  }
+
+  function ymdToUtcMs(value) {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(value || '')) return Number.NaN;
+    const [year, month, day] = value.split('-').map(Number);
+    return Date.UTC(year, month - 1, day);
+  }
+
+  function daysInclusive(startYmd, endYmd) {
+    const startMs = ymdToUtcMs(startYmd);
+    const endMs = ymdToUtcMs(endYmd);
+    if (!Number.isFinite(startMs) || !Number.isFinite(endMs) || endMs < startMs) return 0;
+    const dayMs = 24 * 60 * 60 * 1000;
+    return Math.floor((endMs - startMs) / dayMs) + 1;
+  }
+
+  function formatMilesFixed(value) {
+    return Number(value || 0).toFixed(2);
+  }
+
+  function formatDateForMeta(ymd) {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(ymd || '')) return ymd;
+    const [year, month, day] = ymd.split('-').map(Number);
+    return `${month}/${day}/${year}`;
+  }
+
+  function rowEarnedMiles(row) {
+    return Number(row.run || 0)
+      + Number(row.walk || 0)
+      + Number(row.ruck || 0)
+      + (Number(row.bike || 0) / BIKE_DIVISOR)
+      + (Number(row.swim || 0) * SWIM_MULTIPLIER);
+  }
+
+  function monthKey(dateStr) {
+    if (!dateStr) return '';
+    return dateStr.slice(0, 7);
+  }
+
+  function formatMonthLabel(value) {
+    if (!value || value.length !== 7) return value;
+    return `${value.slice(2, 4)}-${value.slice(5, 7)}`;
+  }
+
+  function buildMonthlyTotals(rows) {
+    const byPerson = {};
+    rows.forEach((row) => {
+      const name = row.name || '';
+      const month = monthKey(row.date);
+      if (!name || !month) return;
+      const key = `${name}||${month}`;
+      if (!byPerson[key]) {
+        byPerson[key] = {
+          name,
+          month,
+          run: 0,
+          walk: 0,
+          ruck: 0,
+          bike: 0,
+          swim: 0,
+          total: 0
+        };
+      }
+      numberFields.forEach((field) => {
+        const value = Number(row[field] || 0);
+        byPerson[key][field] += value;
+        byPerson[key].total += value;
+      });
+    });
+
+    const grouped = {};
+    Object.values(byPerson).forEach((entry) => {
+      entry.bike = entry.bike / BIKE_DIVISOR;
+      entry.swim = entry.swim * SWIM_MULTIPLIER;
+      entry.total = entry.run + entry.walk + entry.ruck + entry.bike + entry.swim;
+      numberFields.forEach((field) => {
+        entry[field] = round2(entry[field]);
+      });
+      entry.total = round2(entry.total);
+      (grouped[entry.name] ||= []).push(entry);
+    });
+    Object.values(grouped).forEach((list) => {
+      list.sort((a, b) => b.month.localeCompare(a.month));
+    });
+    return grouped;
+  }
+
+  function rowMatchesCategory(row, category) {
+    if (!category) return true;
+    return Number(row[category]) > 0;
+  }
+
+  function buildSummaryFromRaw(rows, year) {
+    const byPerson = {};
+    rows.forEach((row) => {
+      if (year && !(row.date || '').startsWith(year)) return;
+      const name = row.name || '';
+      if (!name) return;
+      if (!byPerson[name]) byPerson[name] = { name, run: 0, walk: 0, ruck: 0, bike: 0, swim: 0 };
+      numberFields.forEach((field) => { byPerson[name][field] += Number(row[field] || 0); });
+    });
+    return Object.values(byPerson).map((p) => {
+      const person = {
+        name: p.name,
+        run: round2(p.run),
+        walk: round2(p.walk),
+        ruck: round2(p.ruck),
+        bike: round2(p.bike / BIKE_DIVISOR),
+        swim: round2(p.swim * SWIM_MULTIPLIER),
+      };
+      person.total = round2(person.run + person.walk + person.ruck + person.bike + person.swim);
+      return person;
+    });
+  }
+
+  function renderLeaderboardYearPills() {
+    const years = [...new Set(rawRows.map((r) => (r.date || '').slice(0, 4)).filter(Boolean))]
+      .sort((a, b) => b - a);
+    const container = document.getElementById('leaderboard-year-pills');
+    container.innerHTML = '';
+    ['', ...years].forEach((year) => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'pill' + (leaderboardYear === year ? ' pill--active' : '');
+      btn.textContent = year || 'All';
+      btn.dataset.year = year;
+      container.appendChild(btn);
+    });
+  }
+
+  function renderLeaderboard() {
+    const filteredRows = leaderboardYear
+      ? rawRows.filter((r) => (r.date || '').startsWith(leaderboardYear))
+      : rawRows;
+    monthlyByPerson = buildMonthlyTotals(filteredRows);
+    renderSummaryTable(buildSummaryFromRaw(rawRows, leaderboardYear));
+  }
+
+  function renderYearPills() {
+    const years = [...new Set(rawRows.map((r) => (r.date || '').slice(0, 4)).filter(Boolean))]
+      .sort((a, b) => b - a);
+    const container = document.getElementById('year-pills');
+    container.innerHTML = '';
+    ['', ...years].forEach((year) => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'pill' + (filterYear === year ? ' pill--active' : '');
+      btn.textContent = year || 'All';
+      btn.dataset.year = year;
+      container.appendChild(btn);
+    });
+  }
+
+  function applyFilters(rows) {
+    const nameValue = document.getElementById('filter-name').value.trim().toLowerCase();
+    const dateValue = document.getElementById('filter-date').value;
+    const categoryValue = document.getElementById('filter-category').value;
+    return rows.filter((row) => {
+      if (filterYear && !(row.date || '').startsWith(filterYear)) return false;
+      if (nameValue && !row.name.toLowerCase().includes(nameValue)) return false;
+      if (dateValue && row.date !== dateValue) return false;
+      if (!rowMatchesCategory(row, categoryValue)) return false;
+      return true;
+    });
+  }
+
+  function compareValues(a, b, key) {
+    const av = a[key];
+    const bv = b[key];
+    if (numberFields.includes(key)) {
+      return Number(av) - Number(bv);
+    }
+    return String(av || '').localeCompare(String(bv || ''), undefined, { numeric: true });
+  }
+
+  function renderRawTable() {
+    const filtered = applyFilters(rawRows);
+    const rows = filtered.slice().sort((a, b) => {
+      const order = compareValues(a, b, currentSort.key);
+      return currentSort.dir === 'asc' ? order : -order;
+    });
+
+    const body = document.getElementById('raw-body');
+    body.innerHTML = '';
+
+    rows.forEach((row) => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>${row.rowNumber ?? ''}</td>
+        <td>${row.timestamp ?? ''}</td>
+        <td>${row.name ?? ''}</td>
+        <td>${row.date ?? ''}</td>
+        <td>${formatMiles(row.run)}</td>
+        <td>${formatMiles(row.walk)}</td>
+        <td>${formatMiles(row.ruck)}</td>
+        <td>${formatMiles(row.bike)}</td>
+        <td>${formatMiles(row.swim)}</td>
+      `;
+      body.appendChild(tr);
+    });
+
+    const count = document.getElementById('row-count');
+    count.textContent = `${rows.length} rows`;
+  }
+
+  function renderSummaryTable(summary) {
+    const body = document.getElementById('summary-body');
+    body.innerHTML = '';
+
+    summary.slice().sort((a, b) => b.total - a.total).forEach((person, index) => {
+      const tr = document.createElement('tr');
+      const hasMonthly = (monthlyByPerson[person.name] || []).length > 0;
+      const stripeClass = index % 2 === 0 ? 'stripe-a' : '';
+      if (stripeClass) tr.classList.add(stripeClass);
+      tr.innerHTML = `
+        <td class="toggle-cell">
+          <button type="button" class="toggle-btn" data-toggle="${person.name}" aria-expanded="false" ${hasMonthly ? '' : 'disabled'}>
+            <span class="arrow">â–¶</span>
+          </button>
+        </td>
+        <td class="person-name">${person.name}</td>
+        <td>${formatMiles(person.run)}</td>
+        <td>${formatMiles(person.walk)}</td>
+        <td>${formatMiles(person.ruck)}</td>
+        <td>${formatMiles(person.bike)}</td>
+        <td>${formatMiles(person.swim)}</td>
+        <td><strong>${formatMiles(person.total)}</strong></td>
+      `;
+      body.appendChild(tr);
+
+      const detailRow = document.createElement('tr');
+      detailRow.dataset.detail = person.name;
+      detailRow.classList.add('detail-row');
+      detailRow.style.display = 'none';
+      if (stripeClass) detailRow.classList.add(stripeClass);
+      const details = monthlyByPerson[person.name] || [];
+      const detailTotals = details.reduce((totals, entry) => {
+        numberFields.forEach((field) => {
+          totals[field] += Number(entry[field] || 0);
+        });
+        totals.total += Number(entry.total || 0);
+        return totals;
+      }, {
+        run: 0,
+        walk: 0,
+        ruck: 0,
+        bike: 0,
+        swim: 0,
+        total: 0
+      });
+      const rowsHtml = details.length
+        ? details.map((m) => `
+            <tr>
+              <td>${formatMonthLabel(m.month)}</td>
+              <td>${formatMiles(m.run)}</td>
+              <td>${formatMiles(m.walk)}</td>
+              <td>${formatMiles(m.ruck)}</td>
+              <td>${formatMiles(m.bike)}</td>
+              <td>${formatMiles(m.swim)}</td>
+              <td><strong>${formatMiles(m.total)}</strong></td>
+            </tr>
+          `).join('')
+        : `<tr><td colspan="7" class="muted">No monthly entries found.</td></tr>`;
+
+      detailRow.innerHTML = `
+        <td colspan="9">
+          <div class="table-wrap detail-panel" style="max-height: 240px;">
+            <table class="detail-table">
+              <thead>
+                <tr>
+                  <th>Month</th>
+                  <th>Run</th>
+                  <th>Walk</th>
+                  <th>Ruck</th>
+                  <th>Bike (/3)</th>
+                  <th>Swim (X4)</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody>${rowsHtml}</tbody>
+              <tfoot>
+                <tr>
+                  <th>Total</th>
+                  <th>${formatMiles(detailTotals.run)}</th>
+                  <th>${formatMiles(detailTotals.walk)}</th>
+                  <th>${formatMiles(detailTotals.ruck)}</th>
+                  <th>${formatMiles(detailTotals.bike)}</th>
+                  <th>${formatMiles(detailTotals.swim)}</th>
+                  <th>${formatMiles(detailTotals.total)}</th>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </td>
+      `;
+      body.appendChild(detailRow);
+    });
+  }
+
+  function renderChallenges(challenges, rows) {
+    const container = document.getElementById('challenges-container');
+    container.innerHTML = '';
+
+    (challenges || []).forEach((challenge) => {
+      const { startDate, endDate, goalMiles, imageUrl, name, participants } = challenge;
+      const participantSet = new Set(participants || []);
+
+      const today = dateToYmd(new Date());
+      const asOf = today < startDate ? startDate : (today > endDate ? endDate : today);
+      const elapsedDays = daysInclusive(startDate, asOf);
+      const challengeDays = daysInclusive(startDate, endDate);
+      const remainingDays = daysInclusive(asOf, endDate);
+      const projectionFactor = elapsedDays > 0 ? challengeDays / elapsedDays : 0;
+
+      const totalsByName = {};
+      participantSet.forEach((pName) => { totalsByName[pName] = 0; });
+
+      (rows || []).forEach((row) => {
+        const rName = (row && row.name ? String(row.name) : '').trim();
+        const date = row && row.date ? String(row.date) : '';
+        if (!rName || !date || !participantSet.has(rName)) return;
+        if (date < startDate || date > endDate) return;
+        totalsByName[rName] += rowEarnedMiles(row);
+      });
+
+      const challengeRows = Array.from(participantSet).map((pName) => {
+        const earned = round2(totalsByName[pName] || 0);
+        const milesToGoal = round2(goalMiles - earned);
+        const neededAvg = round2(remainingDays > 0 ? Math.max(0, milesToGoal) / remainingDays : 0);
+        const avgPerDay = round2(elapsedDays > 0 ? earned / elapsedDays : 0);
+        const projected = round2(earned * projectionFactor);
+        return { name: pName, avgPerDay, earned, milesToGoal, neededAvg, projected };
+      }).sort((a, b) => {
+        if (b.projected !== a.projected) return b.projected - a.projected;
+        if (b.earned !== a.earned) return b.earned - a.earned;
+        return a.name.localeCompare(b.name);
+      });
+
+      const metaText = `Window: ${formatDateForMeta(startDate)} through ${formatDateForMeta(endDate)} (inclusive). Projection uses average miles/day from ${formatDateForMeta(startDate)} to ${formatDateForMeta(asOf)}.`;
+
+      let bodyRows;
+      if (!challengeRows.length) {
+        bodyRows = `<tr><td colspan="6" class="muted">No PAX enrolled yet.</td></tr>`;
+      } else {
+        bodyRows = challengeRows.map((entry) => `
+          <tr>
+            <td class="person-name">${entry.name}</td>
+            <td>${formatMilesFixed(entry.earned)}</td>
+            <td>${formatMilesFixed(entry.milesToGoal)}</td>
+            <td>${formatMilesFixed(entry.neededAvg)}</td>
+            <td>${formatMilesFixed(entry.avgPerDay)}</td>
+            <td><strong>${formatMilesFixed(entry.projected)}</strong></td>
+          </tr>
+        `).join('');
+      }
+
+      const tableHtml = `
+        <div class="meta" style="margin-bottom: 0.7rem;">${metaText}</div>
+        <div class="table-wrap table-wrap--auto">
+          <table class="striped">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Actual Miles</th>
+                <th>Miles to ${goalMiles}</th>
+                <th>Needed Avg/day</th>
+                <th>Actual Avg/Day</th>
+                <th>Projected</th>
+              </tr>
+            </thead>
+            <tbody>${bodyRows}</tbody>
+          </table>
+        </div>
+      `;
+
+      const section = document.createElement('div');
+      section.className = 'section';
+      if (imageUrl) {
+        section.innerHTML = `
+          <h2>${name}</h2>
+          <div class="challenge-grid">
+            <img class="challenge-image" src="${imageUrl}" alt="${name} graphic" />
+            <div>${tableHtml}</div>
+          </div>
+        `;
+      } else {
+        section.innerHTML = `<h2>${name}</h2>${tableHtml}`;
+      }
+      container.appendChild(section);
+    });
+  }
+
+  function renderExceptions(exceptions) {
+    const section = document.getElementById('exceptions-section');
+    const container = document.getElementById('exceptions-content');
+    if (!exceptions || exceptions.length === 0) {
+      section.style.display = 'none';
+      return;
+    }
+
+    section.style.display = '';
+    const list = document.createElement('div');
+    exceptions.forEach((entry) => {
+      const block = document.createElement('div');
+      block.style.marginBottom = '0.75rem';
+      if (entry.type === 'future date entered') {
+        block.innerHTML = `
+          <strong>${entry.name || ''}</strong> â€” ${entry.date || ''} â€” future date entered
+          <span class="badge">row #${entry.row ?? ''}</span>
+        `;
+      } else if (entry.type === 'duplicate entry') {
+        const rows = (entry.rows || [])
+          .map((row) => `#${row.row}: ${formatMiles(row.miles)} mi`)
+          .join(', ');
+        block.innerHTML = `
+          <strong>${entry.name || ''}</strong> â€” ${entry.date || ''} â€” ${entry.category || ''}
+          <span class="badge">${(entry.rows || []).length} rows</span>
+          <div class="muted">${rows}</div>
+        `;
+      } else {
+        block.innerHTML = `
+          <strong>${entry.name || ''}</strong> â€” ${entry.date || ''} â€” ${entry.type || 'unknown exception'}
+        `;
+      }
+      list.appendChild(block);
+    });
+    container.innerHTML = '';
+    container.appendChild(list);
+  }
+  function handleSortClick(event) {
+    const key = event.target.dataset.sort;
+    if (!key) return;
+    if (currentSort.key === key) {
+      currentSort.dir = currentSort.dir === 'asc' ? 'desc' : 'asc';
+    } else {
+      currentSort = { key, dir: 'asc' };
+    }
+    renderRawTable();
+  }
+
+  function applyQueryPrefill() {
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get('name');
+    const submitted = params.get('submitted');
+    if (name) {
+      const input = document.getElementById('filter-name');
+      input.value = name;
+    }
+    if (submitted === '1') {
+      const notice = document.getElementById('submission-notice');
+      const summary = params.get('summary');
+      const date = params.get('date');
+      notice.textContent = summary
+        ? `Miles entry received: ${summary}${date ? ` for ${formatDateForMeta(date)}` : ''}. Current results are shown below.`
+        : 'Miles entry received. Current results are shown below.';
+      notice.hidden = false;
+    }
+  }
+
+  function renderDailySnapshot(rows) {
+    const container = document.getElementById('daily-snapshot');
+    container.innerHTML = '';
+
+    function ymd(offsetDays) {
+      const d = new Date();
+      d.setDate(d.getDate() + offsetDays);
+      return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+    }
+
+    const today = ymd(0);
+    const yesterday = ymd(-1);
+
+    function dayTotals(date) {
+      const byPerson = {};
+      rows.forEach((row) => {
+        if (row.date !== date) return;
+        const name = row.name || '';
+        if (!name) return;
+        if (!byPerson[name]) byPerson[name] = 0;
+        byPerson[name] += rowEarnedMiles(row);
+      });
+      return Object.entries(byPerson)
+        .map(([name, earned]) => ({ name, earned: round2(earned) }))
+        .sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: 'base' }) || b.earned - a.earned);
+    }
+
+    function renderBlock(label, date) {
+      const totals = dayTotals(date);
+      if (!totals.length) return null;
+      const [, month, day] = date.split('-');
+      const entries = totals.map(({ name, earned }) =>
+        `<span class="snapshot-entry"><span class="snapshot-name">${name}</span> ${earned.toFixed(2)}</span>`
+      ).join('');
+      const div = document.createElement('div');
+      div.className = 'snapshot-section';
+      div.innerHTML = `<div class="snapshot-heading">${label} ${month}/${day}</div><div class="snapshot-rows">${entries}</div>`;
+      return div;
+    }
+
+    const blocks = [renderBlock('Today', today), renderBlock('Yesterday', yesterday)].filter(Boolean);
+    blocks.forEach((b) => container.appendChild(b));
+  }
+
+  async function init() {
+    const [raw, summary, exceptions, challengeData] = await Promise.all([
+      fetch(`${DATA_BASE}raw`).then((res) => res.json()),
+      fetch(`${DATA_BASE}summary`).then((res) => res.json()),
+      fetch(`${DATA_BASE}exceptions`).then((res) => res.json()),
+      fetch('/api/challenges').then((res) => res.json()),
+    ]);
+
+    rawRows = Array.isArray(raw.rows) ? raw.rows : [];
+
+    const today = dateToYmd(new Date());
+    const oneWeekAgo = dateToYmd(new Date(Date.now() - 7 * 24 * 60 * 60 * 1000));
+    const activeChallenges = (challengeData.challenges || []).filter((c) => c.endDate >= oneWeekAgo);
+
+    renderDailySnapshot(rawRows);
+    renderYearPills();
+    renderLeaderboardYearPills();
+    renderLeaderboard();
+    renderChallenges(activeChallenges, rawRows);
+    renderExceptions(exceptions.exceptions || []);
+    applyQueryPrefill();
+    renderRawTable();
+  }
+
+  document.getElementById('leaderboard-year-pills').addEventListener('click', (event) => {
+    const pill = event.target.closest('.pill');
+    if (!pill) return;
+    leaderboardYear = pill.dataset.year;
+    renderLeaderboardYearPills();
+    renderLeaderboard();
+  });
+
+  document.getElementById('year-pills').addEventListener('click', (event) => {
+    const pill = event.target.closest('.pill');
+    if (!pill) return;
+    filterYear = pill.dataset.year;
+    renderYearPills();
+    renderRawTable();
+  });
+
+  document.getElementById('raw-section').addEventListener('click', handleSortClick);
+  document.getElementById('summary-section').addEventListener('click', (event) => {
+    const button = event.target.closest('button[data-toggle]');
+    if (!button) return;
+    const toggle = button.dataset.toggle;
+    if (!toggle) return;
+    const detail = document.querySelector(`tr[data-detail="${CSS.escape(toggle)}"]`);
+    if (!detail) return;
+    const isOpen = detail.style.display === '';
+    detail.style.display = isOpen ? 'none' : '';
+    button.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+  });
+  ['filter-name', 'filter-date', 'filter-category'].forEach((id) => {
+    document.getElementById(id).addEventListener('input', renderRawTable);
+    document.getElementById(id).addEventListener('change', renderRawTable);
+  });
+
+  init().catch((err) => {
+    const generatedAt = document.getElementById('generated-at');
+    generatedAt.textContent = 'Unable to load data.';
+    console.error(err);
+  });
+  </script>
+</body>
+</html>

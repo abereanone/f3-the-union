@@ -1,0 +1,287 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Calendar Reminders - F3 The Union</title>
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="stylesheet" href="/public.css" />
+  <style>
+    body { max-width: 980px; }
+    .top-nav {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      background: #fff;
+      flex-wrap: wrap;
+    }
+    .top-nav a { color: #1f3b6d; text-decoration: none; }
+    .top-nav a:hover, .top-nav a:focus { text-decoration: underline; }
+    .panel {
+      border: 1px solid #d7dce8;
+      border-radius: 6px;
+      padding: 1rem;
+      margin: 1rem 0;
+      background: #fff;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 0.8rem;
+      align-items: end;
+    }
+    label {
+      display: grid;
+      gap: 0.35rem;
+      font-weight: 700;
+    }
+    input, select, textarea, button { font: inherit; }
+    input, select, textarea {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 0.52rem 0.6rem;
+      border: 1px solid #cfd6e5;
+      border-radius: 4px;
+    }
+    textarea { min-height: 76px; resize: vertical; }
+    button {
+      border: 0;
+      border-radius: 4px;
+      background: #1f3b6d;
+      color: #fff;
+      padding: 0.55rem 1rem;
+      cursor: pointer;
+      font-weight: 800;
+    }
+    button.secondary { background: #6b7280; }
+    button.danger { background: #8a271f; }
+    .status { min-height: 1.4rem; font-weight: 700; }
+    .error { color: #8a271f; }
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; min-width: 850px; }
+    th, td { border: 1px solid #d7dce8; padding: 0.55rem; text-align: left; vertical-align: top; }
+    th { background: #d9e3f7; color: #1f3b6d; }
+    .actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+  <a class="brand" href="/"><img src="/media/f3-logo.webp" alt="F3" class="brand-logo" />F3 The Union</a>
+  <nav class="public-nav" aria-label="PAX navigation">
+    <a href="/pax/">PAX Home</a>
+    <a href="/pax/fng/">FNG</a>
+    <a href="/pax/miles/">Miles</a>
+    <a href="/pax/miles/data.html">Miles Data</a>
+    <a href="/pax/reports/">Reports</a>
+    <a href="/pax/reminders/">Reminders</a>
+  </nav>
+</header>
+  <h1>Calendar Reminders</h1>
+  <p>Store important dates and anniversaries, then send Slack reminders when they are approaching.</p>
+
+  <section class="panel">
+    <h2 id="form-title">Add Reminder</h2>
+    <form id="reminder-form">
+      <input id="reminder-id" type="hidden" />
+      <div class="form-grid">
+        <label>Title <input id="title" required /></label>
+        <label>Event Date <input id="event-date" type="date" required /></label>
+        <label>
+          Frequency
+          <select id="frequency">
+            <option value="once">One time</option>
+            <option value="annual">Annual</option>
+            <option value="monthly">Monthly</option>
+          </select>
+        </label>
+        <label>Remind Days Before <input id="remind-days-before" type="number" min="0" max="365" value="7" /></label>
+      </div>
+      <div class="form-grid" style="margin-top:0.8rem;">
+        <label>Slack Channel ID <input id="slack-channel-id" placeholder="Optional, defaults to site-q" /></label>
+        <label style="display:flex;align-items:center;gap:0.45rem;margin-top:1.7rem;">
+          <input id="is-active" type="checkbox" checked style="width:auto;" />
+          Active
+        </label>
+      </div>
+      <label style="margin-top:0.8rem;">Notes <textarea id="notes"></textarea></label>
+      <div class="actions" style="margin-top:0.8rem;">
+        <button id="save-btn" type="submit">Save Reminder</button>
+        <button id="cancel-edit" class="secondary hidden" type="button">Cancel Edit</button>
+        <button id="run-now" class="secondary" type="button">Run Reminder Check Now</button>
+      </div>
+      <div id="form-status" class="status"></div>
+    </form>
+  </section>
+
+  <section class="panel">
+    <h2>Saved Reminders</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Date</th>
+            <th>Frequency</th>
+            <th>Window</th>
+            <th>Next</th>
+            <th>Status</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="reminders-body"></tbody>
+      </table>
+    </div>
+    <div id="table-status" class="status"></div>
+  </section>
+  <script>
+    let reminders = [];
+
+    function esc(value) {
+      return String(value || '').replace(/[&<>"']/g, (ch) => ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;',
+      }[ch]));
+    }
+
+    function setStatus(id, message, isError = false) {
+      const el = document.getElementById(id);
+      el.textContent = message;
+      el.className = `status${isError ? ' error' : ''}`;
+    }
+
+    async function api(path, options = {}) {
+      const res = await fetch(path, {
+        ...options,
+        headers: { 'content-type': 'application/json', ...(options.headers || {}) },
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || data.ok === false) throw new Error(data?.error?.message || 'Request failed.');
+      return data;
+    }
+
+    async function loadReminders() {
+      try {
+        const data = await api('/api/reminders');
+        reminders = data.reminders || [];
+        renderReminders();
+      } catch (err) {
+        setStatus('table-status', err.message, true);
+      }
+    }
+
+    function renderReminders() {
+      const body = document.getElementById('reminders-body');
+      if (!reminders.length) {
+        body.innerHTML = '<tr><td colspan="7">No reminders yet.</td></tr>';
+        return;
+      }
+
+      body.innerHTML = reminders.map((r) => `
+        <tr>
+          <td><strong>${esc(r.title)}</strong>${r.notes ? `<br><small>${esc(r.notes)}</small>` : ''}</td>
+          <td>${esc(r.eventDate)}</td>
+          <td>${esc(r.frequency)}</td>
+          <td>${Number(r.remindDaysBefore)} day${Number(r.remindDaysBefore) === 1 ? '' : 's'}</td>
+          <td>${esc(r.nextOccurrence || '-')}</td>
+          <td>${r.isActive ? 'Active' : 'Inactive'}${r.lastNotifiedFor ? `<br><small>Last: ${esc(r.lastNotifiedFor)}</small>` : ''}</td>
+          <td>
+            <div class="actions">
+              <button class="secondary" type="button" data-edit="${esc(r.id)}">Edit</button>
+              <button class="danger" type="button" data-delete="${esc(r.id)}">Delete</button>
+            </div>
+          </td>
+        </tr>
+      `).join('');
+
+      body.querySelectorAll('[data-edit]').forEach((button) => {
+        button.addEventListener('click', () => editReminder(button.dataset.edit));
+      });
+      body.querySelectorAll('[data-delete]').forEach((button) => {
+        button.addEventListener('click', () => deleteReminder(button.dataset.delete));
+      });
+    }
+
+    function editReminder(id) {
+      const r = reminders.find((item) => item.id === id);
+      if (!r) return;
+      document.getElementById('form-title').textContent = 'Edit Reminder';
+      document.getElementById('reminder-id').value = r.id;
+      document.getElementById('title').value = r.title;
+      document.getElementById('event-date').value = r.eventDate;
+      document.getElementById('frequency').value = r.frequency;
+      document.getElementById('remind-days-before').value = r.remindDaysBefore;
+      document.getElementById('slack-channel-id').value = r.slackChannelId || '';
+      document.getElementById('notes').value = r.notes || '';
+      document.getElementById('is-active').checked = r.isActive;
+      document.getElementById('cancel-edit').classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function resetForm() {
+      document.getElementById('form-title').textContent = 'Add Reminder';
+      document.getElementById('reminder-form').reset();
+      document.getElementById('reminder-id').value = '';
+      document.getElementById('remind-days-before').value = '7';
+      document.getElementById('is-active').checked = true;
+      document.getElementById('cancel-edit').classList.add('hidden');
+    }
+
+    async function deleteReminder(id) {
+      if (!confirm('Delete this reminder?')) return;
+      try {
+        await api(`/api/reminders/${encodeURIComponent(id)}`, { method: 'DELETE' });
+        await loadReminders();
+      } catch (err) {
+        setStatus('table-status', err.message, true);
+      }
+    }
+
+    document.getElementById('reminder-form').addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const id = document.getElementById('reminder-id').value;
+      const payload = {
+        title: document.getElementById('title').value.trim(),
+        eventDate: document.getElementById('event-date').value,
+        frequency: document.getElementById('frequency').value,
+        remindDaysBefore: Number(document.getElementById('remind-days-before').value),
+        slackChannelId: document.getElementById('slack-channel-id').value.trim(),
+        notes: document.getElementById('notes').value.trim(),
+        isActive: document.getElementById('is-active').checked,
+      };
+
+      try {
+        await api(id ? `/api/reminders/${encodeURIComponent(id)}` : '/api/reminders', {
+          method: id ? 'PUT' : 'POST',
+          body: JSON.stringify(payload),
+        });
+        setStatus('form-status', 'Saved.');
+        resetForm();
+        await loadReminders();
+      } catch (err) {
+        setStatus('form-status', err.message, true);
+      }
+    });
+
+    document.getElementById('cancel-edit').addEventListener('click', resetForm);
+    document.getElementById('run-now').addEventListener('click', async () => {
+      try {
+        const data = await api('/api/reminders/run', { method: 'POST', body: '{}' });
+        setStatus('form-status', `Checked ${data.checked}; sent ${data.sent}.`);
+        await loadReminders();
+      } catch (err) {
+        setStatus('form-status', err.message, true);
+      }
+    });
+
+    loadReminders();
+  </script>
+</body>
+</html>

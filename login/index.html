@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>PAX Login - F3 The Union</title>
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="/public.css" />
+</head>
+<body>
+  <main class="login-page">
+    <section class="login-panel">
+      <a class="brand" href="/"><img src="/media/f3-logo.webp" alt="F3" class="brand-logo" />F3 The Union</a>
+      <h1>PAX Login</h1>
+      <p>Use the email tied to your F3 The Union Slack account.</p>
+
+      <form id="email-form">
+        <label>
+          Email
+          <input id="email" type="email" autocomplete="email" required />
+        </label>
+        <button id="request-code" type="submit">Send Code</button>
+      </form>
+
+      <form id="code-form" class="hidden">
+        <label>
+          Code
+          <input id="code" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="6" required />
+        </label>
+        <button id="verify-code" type="submit">Verify Code</button>
+      </form>
+
+      <div id="login-status" class="status" role="status"></div>
+    </section>
+  </main>
+
+  <script>
+    const emailForm = document.getElementById('email-form');
+    const codeForm = document.getElementById('code-form');
+    const statusEl = document.getElementById('login-status');
+    const emailInput = document.getElementById('email');
+    const codeInput = document.getElementById('code');
+    const params = new URLSearchParams(window.location.search);
+    const requestedNext = params.get('next') || '/pax/';
+    const nextPath = requestedNext === '/pax' || requestedNext.startsWith('/pax/') ? requestedNext : '/pax/';
+
+    function setStatus(message, isError = false) {
+      statusEl.textContent = message;
+      statusEl.className = `status${isError ? ' error' : ''}`;
+    }
+
+    async function checkExistingSession() {
+      try {
+        const res = await fetch('/api/me');
+        if (res.ok) window.location.href = nextPath;
+      } catch {}
+    }
+
+    emailForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const button = document.getElementById('request-code');
+      button.disabled = true;
+      setStatus('Sending...');
+      try {
+        const res = await fetch('/api/auth/request-code', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({ email: emailInput.value }),
+        });
+        const data = await res.json();
+        if (!res.ok || !data.ok) throw new Error(data?.error?.message || 'Unable to send code.');
+        codeForm.classList.remove('hidden');
+        codeInput.focus();
+        setStatus(data.devAuthBypass ? `Dev mode: use ${data.devLoginCode || '000000'}.` : 'Code sent. Check your email.');
+      } catch (err) {
+        setStatus(err.message || 'Unable to send code.', true);
+      } finally {
+        button.disabled = false;
+      }
+    });
+
+    codeForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const button = document.getElementById('verify-code');
+      button.disabled = true;
+      setStatus('Verifying...');
+      try {
+        const res = await fetch('/api/auth/verify-code', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({ email: emailInput.value, code: codeInput.value }),
+        });
+        const data = await res.json();
+        if (!res.ok || !data.ok) throw new Error(data?.error?.message || 'Login failed.');
+        window.location.href = nextPath;
+      } catch (err) {
+        setStatus(err.message || 'Login failed.', true);
+      } finally {
+        button.disabled = false;
+      }
+    });
+
+    checkExistingSession();
+  </script>
+</body>
+</html>

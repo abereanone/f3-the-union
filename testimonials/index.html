@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Testimonials - F3 The Union</title>
+  <meta name="description" content="Stories from men who post with F3 The Union." />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="/public.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/"><img src="/media/f3-logo.webp" alt="F3" class="brand-logo" />F3 The Union</a>
+    <nav class="public-nav" aria-label="Main navigation">
+      <a href="/#workouts">Workouts</a>
+      <a href="/core-principles/">Core Principles</a>
+      <a href="/gallery/">Gallery</a>
+      <a href="/testimonials/">Testimonials</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <div class="social-links" aria-label="Social links">
+        <a href="https://www.facebook.com/f3theunion/" target="_blank" rel="noopener">Facebook</a>
+      </div>
+      <a class="nav-login" href="/login/">PAX Login</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-intro">
+      <div class="section-inner">
+        <h1>Testimonials</h1>
+        <p>Men who found accountability, friendship, and momentum in the gloom.</p>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="section-inner testimonial-shell" aria-live="polite">
+        <div class="testimonial-media">
+          <img id="testimonial-photo" src="/media/floppy-disk.jpg" alt="Michael C. Testimonial." />
+        </div>
+        <blockquote class="testimonial-quote" id="testimonial-quote">The most significant change I've experienced through F3 is learning that I can do much harder things than I thought possible.</blockquote>
+        <p class="testimonial-name" id="testimonial-name">Michael C.</p>
+        <div class="slider-controls">
+          <button id="prev-testimonial" type="button">Previous</button>
+          <div id="testimonial-dots" class="dots" aria-label="Testimonial position"></div>
+          <button id="next-testimonial" type="button">Next</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="section-inner">
+      <div class="footer-brand">
+        <img src="/media/f3-logo.webp" alt="F3 Nation logo" class="footer-logo" />
+        <p class="mission">The mission of F3 is to plant, grow, and serve small workout groups for men for the invigoration of male community leadership.</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="/">Home</a>
+        <a href="/core-principles/">Core Principles</a>
+        <a href="/gallery/">Gallery</a>
+        <a href="/login/">PAX Login</a>
+      </nav>
+    </div>
+      <div class="section-inner footer-legal">
+      The F3 logo is a trademark of F3 Nation and is used with permission. <a href="https://f3nation.com" target="_blank" rel="noopener">F3Nation.com</a>
+    </div>
+  </footer>
+
+  <script>
+    const testimonials = [
+      {
+        name: 'Floppy Disk',
+        photo: '/media/floppy-disk.jpg',
+        quote: 'F3 gave me accountability before sunrise and a group of men who expect me to keep showing up.',
+      },
+      {
+        name: 'Justin Giaimo',
+        photo: '/media/giaimo.jpg',
+        quote: 'F3 delivers on the fitness, but it\'s the fellowship that keeps you coming back. Being part of this group has directly challenged and equipped me to be a better leader, husband, and father.',
+      },
+      {
+        name: 'Coffin',
+        photo: '/media/coffin.jpg',
+        quote: 'The work is simple: post, push the man next to you, and leave better than you arrived.',
+      },
+    ];
+
+    let activeIndex = 0;
+    const photo = document.getElementById('testimonial-photo');
+    const quote = document.getElementById('testimonial-quote');
+    const name = document.getElementById('testimonial-name');
+    const dots = document.getElementById('testimonial-dots');
+
+    function renderDots() {
+      dots.innerHTML = testimonials.map((_, index) => `<span class="dot${index === activeIndex ? ' active' : ''}"></span>`).join('');
+    }
+
+    function renderTestimonial() {
+      const item = testimonials[activeIndex];
+      photo.src = item.photo;
+      photo.alt = `${item.name} testimonial photo placeholder`;
+      quote.textContent = item.quote;
+      name.textContent = item.name;
+      renderDots();
+    }
+
+    function move(delta) {
+      activeIndex = (activeIndex + delta + testimonials.length) % testimonials.length;
+      renderTestimonial();
+    }
+
+    document.getElementById('prev-testimonial').addEventListener('click', () => move(-1));
+    document.getElementById('next-testimonial').addEventListener('click', () => move(1));
+    renderTestimonial();
+  </script>
+</body>
+</html>
