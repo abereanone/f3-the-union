@@ -39,7 +39,7 @@
         <div class="testimonial-media">
           <img id="testimonial-photo" src="/media/floppy-disk.jpg" alt="Michael C. Testimonial." />
         </div>
-        <blockquote class="testimonial-quote" id="testimonial-quote">The most significant change I've experienced through F3 is learning that I can do much harder things than I thought possible.</blockquote>
+        <blockquote class="testimonial-quote" id="testimonial-quote"></blockquote>
         <p class="testimonial-name" id="testimonial-name">Michael C.</p>
         <div class="slider-controls">
           <button id="prev-testimonial" type="button">Previous</button>
@@ -71,12 +71,12 @@
   <script>
     const testimonials = [
       {
-        name: 'Floppy Disk',
+        name: 'Michael C.',
         photo: '/media/floppy-disk.jpg',
-        quote: 'F3 gave me accountability before sunrise and a group of men who expect me to keep showing up.',
+        quote: 'The most significant change I\'ve experienced through F3 is learning that I can do much harder things than I thought possible.',
       },
       {
-        name: 'Justin Giaimo',
+        name: 'Justin G.',
         photo: '/media/giaimo.jpg',
         quote: 'F3 delivers on the fitness, but it\'s the fellowship that keeps you coming back. Being part of this group has directly challenged and equipped me to be a better leader, husband, and father.',
       },
@@ -92,6 +92,7 @@
     const quote = document.getElementById('testimonial-quote');
     const name = document.getElementById('testimonial-name');
     const dots = document.getElementById('testimonial-dots');
+
 
     function renderDots() {
       dots.innerHTML = testimonials.map((_, index) => `<span class="dot${index === activeIndex ? ' active' : ''}"></span>`).join('');
