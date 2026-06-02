@@ -46,7 +46,7 @@ img {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 0.3rem clamp(0.85rem, 3vw, 2rem);
+  padding: 0.5rem clamp(0.85rem, 3vw, 2rem);
   background: rgba(251, 250, 245, 0.94);
   backdrop-filter: blur(6px);
   border-bottom: 1px solid var(--line);
@@ -64,8 +64,8 @@ img {
 }
 
 .brand-logo {
-  width: 28px;
-  height: 28px;
+  height: 54px;
+  width: auto;
   object-fit: contain;
   flex-shrink: 0;
 }
