@@ -1,3 +1,5 @@
 User-agent: *
 Disallow: /pax/
 Disallow: /api/
+
+Sitemap: https://f3theunion.com/sitemap.xml
