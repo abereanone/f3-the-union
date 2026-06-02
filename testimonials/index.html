@@ -30,7 +30,6 @@
     <section class="page-intro">
       <div class="section-inner">
         <h1>Testimonials</h1>
-        <p>Men who found accountability, friendship, and momentum in the gloom.</p>
       </div>
     </section>
 
@@ -87,7 +86,7 @@
       },
     ];
 
-    let activeIndex = 0;
+    let activeIndex = Math.floor(Math.random() * testimonials.length);
     const photo = document.getElementById('testimonial-photo');
     const quote = document.getElementById('testimonial-quote');
     const name = document.getElementById('testimonial-name');
