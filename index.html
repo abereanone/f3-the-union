@@ -166,6 +166,8 @@
     };
 
     const regionOrder = ['Marysville', 'Richwood', 'Plain City', 'Bellefontaine'];
+    const hiddenPublicAoSlugs = new Set(['the_breakroom', 'the_cafeteria', 'the_forge']);
+    const hiddenPublicAoNames = new Set(['The Breakroom', 'The Cafeteria', 'The Forge']);
 
     function escapeHtml(value) {
       return String(value || '').replace(/[&<>"']/g, (ch) => ({
@@ -180,7 +182,7 @@
     function renderRegions(grouped) {
       const grid = document.getElementById('region-grid');
       grid.innerHTML = regionOrder.map((region, index) => {
-        const aos = [...(grouped[region] || [])].sort(compareAos);
+        const aos = [...(grouped[region] || [])].filter(isPublicAo).sort(compareAos);
         const items = aos.map((ao) => `
           <li>
             <span class="ao-name">${escapeHtml(ao.name)}${ao.notes ? ` <span class="ao-tag">${escapeHtml(ao.notes)}</span>` : ''}</span>
@@ -205,6 +207,15 @@
           button.setAttribute('aria-expanded', String(isOpen));
         });
       });
+    }
+
+    function isPublicAo(ao) {
+      const notes = String(ao.notes || '').trim().toLowerCase();
+      const slug = String(ao.slug || ao.id || '').trim().toLowerCase();
+      const name = String(ao.name || '').trim();
+      return notes !== 'book study'
+        && !hiddenPublicAoSlugs.has(slug)
+        && !hiddenPublicAoNames.has(name);
     }
 
     function formatAoSchedule(ao) {
