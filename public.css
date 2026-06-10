@@ -102,19 +102,30 @@ img {
   text-decoration: none;
 }
 
-.social-links a:hover,
 .social-links a:focus {
   background: var(--field);
+}
+
+@media (hover: hover) {
+  .social-links a:hover {
+    background: var(--field);
+  }
 }
 
 .public-nav a {
   text-decoration: none;
 }
 
-.public-nav a:hover,
 .public-nav a:focus {
   text-decoration: underline;
   text-underline-offset: 0.25rem;
+}
+
+@media (hover: hover) {
+  .public-nav a:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.25rem;
+  }
 }
 
 .nav-login {

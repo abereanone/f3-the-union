@@ -383,7 +383,7 @@
 
   <div class="section" id="exceptions-section">
     <h2>Potential Exceptions</h2>
-    <div id="exceptions-content" class="muted">Loadingâ€¦</div>
+    <div id="exceptions-content" class="muted">Loading...</div>
     <div class="muted" style="margin-top: 0.5rem;">
       To resolve exceptions, contact Floppy Disk for help editing the data.
     </div>
@@ -881,7 +881,7 @@
       block.style.marginBottom = '0.75rem';
       if (entry.type === 'future date entered') {
         block.innerHTML = `
-          <strong>${entry.name || ''}</strong> â€” ${entry.date || ''} â€” future date entered
+          <strong>${entry.name || ''}</strong> - ${entry.date || ''} - future date entered
           <span class="badge">row #${entry.row ?? ''}</span>
         `;
       } else if (entry.type === 'duplicate entry') {
@@ -889,13 +889,13 @@
           .map((row) => `#${row.row}: ${formatMiles(row.miles)} mi`)
           .join(', ');
         block.innerHTML = `
-          <strong>${entry.name || ''}</strong> â€” ${entry.date || ''} â€” ${entry.category || ''}
+          <strong>${entry.name || ''}</strong> - ${entry.date || ''} - ${entry.category || ''}
           <span class="badge">${(entry.rows || []).length} rows</span>
           <div class="muted">${rows}</div>
         `;
       } else {
         block.innerHTML = `
-          <strong>${entry.name || ''}</strong> â€” ${entry.date || ''} â€” ${entry.type || 'unknown exception'}
+          <strong>${entry.name || ''}</strong> - ${entry.date || ''} - ${entry.type || 'unknown exception'}
         `;
       }
       list.appendChild(block);

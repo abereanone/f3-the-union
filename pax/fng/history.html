@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow" />
-  <title>FNG History â€” F3 The Union</title>
+  <title>FNG History | F3 The Union</title>
   <link rel="icon" href="/favicon.ico" />
   <link rel="stylesheet" href="../../style.css" />
   <link rel="stylesheet" href="/public.css" />
@@ -208,7 +208,7 @@
       <h2 style="margin-top:0;">All FNG Entries <span id="total-badge" class="total-badge"></span></h2>
 
       <div class="search-row">
-        <input id="search-input" type="search" placeholder="Search name, location, EHâ€¦" />
+        <input id="search-input" type="search" placeholder="Search name, location, EH..." />
         <select id="filter-location" class="filter-select">
           <option value="">All locations</option>
         </select>
@@ -275,7 +275,7 @@
       e.preventDefault();
       const btn = document.getElementById('request-code');
       btn.disabled = true;
-      setLoginStatus('Sendingâ€¦', false);
+      setLoginStatus('Sending...', false);
       try {
         const res = await fetch('/api/auth/request-code', {
           method: 'POST',
@@ -285,7 +285,7 @@
         const data = await res.json();
         if (!res.ok) { setLoginStatus(data?.error?.message || 'Error sending code.', true); return; }
         document.getElementById('code-form').classList.remove('hidden');
-        setLoginStatus('Code sent â€” check your email.', false);
+        setLoginStatus('Code sent - check your email.', false);
         if (data.devAuthBypass) setLoginStatus(`Dev mode: use ${data.devLoginCode || '000000'}`, false);
       } catch { setLoginStatus('Network error.', true); }
       finally { btn.disabled = false; }
@@ -299,7 +299,7 @@
       e.preventDefault();
       const btn = document.getElementById('verify-code');
       btn.disabled = true;
-      setLoginStatus('Verifyingâ€¦', false);
+      setLoginStatus('Verifying...', false);
       try {
         const res = await fetch('/api/auth/verify-code', {
           method: 'POST',
@@ -386,14 +386,14 @@
         tr.innerHTML = `
           <td>${date}</td>
           <td>${esc(e.legalName)}</td>
-          <td>${esc(e.f3Name || 'â€”')}</td>
+          <td>${esc(e.f3Name || '-')}</td>
           <td>${esc(e.location)}</td>
-          <td>${esc(e.ehedBy || 'â€”')}</td>
-          <td>${e.email ? `<a href="mailto:${esc(e.email)}">${esc(e.email)}</a>` : 'â€”'}</td>
-          <td>${esc(e.phone || 'â€”')}</td>
+          <td>${esc(e.ehedBy || '-')}</td>
+          <td>${e.email ? `<a href="mailto:${esc(e.email)}">${esc(e.email)}</a>` : '-'}</td>
+          <td>${esc(e.phone || '-')}</td>
           <td><span class="badge ${e.joinedSlack ? 'yes' : 'no'}">${e.joinedSlack ? 'Yes' : 'No'}</span></td>
-          <td>${esc(e.secondPost || 'â€”')}</td>
-          <td>${esc(e.notes || 'â€”')}</td>
+          <td>${esc(e.secondPost || '-')}</td>
+          <td>${esc(e.notes || '-')}</td>
           <td>
             ${currentPerson?.isAdmin
               ? `<button class="secondary edit-row-btn" data-id="${esc(e.id)}" style="font-size:0.8rem;padding:0.25rem 0.5rem;">Edit</button>`
@@ -475,7 +475,7 @@
     async function saveEdit(entryId, cell) {
       const form = cell.querySelector(`#form-${entryId}`);
       const statusEl = form.querySelector('.edit-status');
-      statusEl.textContent = 'Savingâ€¦';
+      statusEl.textContent = 'Saving...';
 
       const payload = {
         legalName: form.querySelector('.ef-legal').value.trim(),

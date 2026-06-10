@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow" />
-  <title>FNG Registration â€” F3 The Union</title>
+  <title>FNG Registration | F3 The Union</title>
   <link rel="icon" href="/favicon.ico" />
   <link rel="stylesheet" href="../../style.css" />
   <link rel="stylesheet" href="/public.css" />
@@ -121,7 +121,7 @@
 
     .history-link a { color: #1f3b6d; }
 
-    /* honeypot â€” visually hidden */
+    /* honeypot - visually hidden */
     .hp-field { position: absolute; left: -9999px; }
 
     @media (max-width: 560px) {
@@ -149,7 +149,7 @@
   <div id="success-panel" class="success-panel panel">
     <h2>You're in!</h2>
     <p id="success-name"></p>
-    <p>Check your email for a welcome message. Your next step is joining our Slack workspace â€” that's where the pax connect between workouts.</p>
+    <p>Check your email for a welcome message. Your next step is joining our Slack workspace. | That's where the we connect between workouts.</p>
     <a class="slack-link" href="https://join.slack.com/t/f3theunion/shared_invite/zt-3yuik6r2e-jRhoULZd4xxTvot0AO3GAw"
        target="_blank" rel="noopener">Join F3 The Union on Slack</a>
     <p style="margin-top:1rem;font-size:0.9rem;color:#555;">
@@ -161,7 +161,7 @@
     <p class="required-note">Fields marked * are required.</p>
     <form id="fng-form" novalidate>
 
-      <!-- Honeypot â€” must stay hidden from humans -->
+      <!-- Honeypot - must stay hidden from humans -->
       <div class="hp-field" aria-hidden="true">
         <label>Website <input name="website" type="text" tabindex="-1" autocomplete="off" /></label>
       </div>
@@ -250,7 +250,7 @@
           dl.appendChild(opt);
         });
       } catch {
-        // datalist is optional â€” form still works without it
+        // datalist is optional - form still works without it
       }
     }
 
@@ -262,7 +262,7 @@
     document.getElementById('fng-form').addEventListener('submit', async (e) => {
       e.preventDefault();
       submitBtn.disabled = true;
-      setStatus('Submittingâ€¦', false);
+      setStatus('Submitting...', false);
 
       const honeypot = document.querySelector('input[name="website"]').value;
 
