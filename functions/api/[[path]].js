@@ -1231,8 +1231,8 @@ async function runFngSlackRecheck(ctx) {
 
 function fngSlackRecheckLimit(ctx) {
   const parsed = Number.parseInt(String(ctx.env.FNG_SLACK_RECHECK_LIMIT || ''), 10);
-  if (Number.isFinite(parsed) && parsed > 0) return Math.min(parsed, 500);
-  return 100;
+  if (Number.isFinite(parsed) && parsed > 0) return Math.min(parsed, 20);
+  return 20;
 }
 
 function isLikelyEmail(email) {
