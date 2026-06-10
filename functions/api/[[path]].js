@@ -54,6 +54,12 @@ export async function onRequest(ctx) {
     if (method === 'POST' && path === '/reminders/run' && isReminderAutomationAuthorized(ctx, url)) {
       return await runReminderNotifications(ctx);
     }
+    if (method === 'POST' && path === '/fng/slack-recheck/run') {
+      if (!isFngSlackRecheckAuthorized(ctx, url)) {
+        return error('FORBIDDEN', 'Invalid FNG Slack recheck secret.', 403);
+      }
+      return await runFngSlackRecheck(ctx);
+    }
 
     if (method === 'GET' && path === '/miles/raw') return await rawMiles(ctx);
     if (method === 'GET' && path === '/miles/summary') return await milesSummary(ctx, url);
@@ -857,6 +863,13 @@ function isReminderAutomationAuthorized(ctx, url) {
   return header === secret || url.searchParams.get('secret') === secret;
 }
 
+function isFngSlackRecheckAuthorized(ctx, url) {
+  const secret = String(ctx.env.FNG_SLACK_RECHECK_SECRET || '').trim();
+  if (!secret) return false;
+  const header = ctx.request.headers.get('x-fng-slack-recheck-secret') || '';
+  return header === secret || url.searchParams.get('secret') === secret;
+}
+
 async function listPeople(ctx) {
   const result = await ctx.env.DB.prepare(
     'SELECT id, email, f3_name, is_admin FROM people WHERE is_active = 1 ORDER BY lower(f3_name)',
@@ -1163,6 +1176,79 @@ async function setChallengeEnrollment(ctx, person, challengeId) {
 }
 
 // ─── FNG ────────────────────────────────────────────────────────────────────
+
+async function runFngSlackRecheck(ctx) {
+  const limit = fngSlackRecheckLimit(ctx);
+  const checkedBefore = new Date(Date.now() - DAY_MS).toISOString();
+  const result = await ctx.env.DB.prepare(
+    `SELECT id, email
+     FROM fng_entries
+     WHERE joined_slack = 0
+       AND email IS NOT NULL
+       AND trim(email) != ''
+       AND (last_slack_recheck_at IS NULL OR last_slack_recheck_at < ?)
+     ORDER BY COALESCE(source_timestamp, created_at) DESC
+     LIMIT ${limit}`,
+  ).bind(checkedBefore).all();
+
+  let joined = 0;
+  let notFound = 0;
+  let inactive = 0;
+  let invalidEmail = 0;
+
+  for (const entry of result.results) {
+    const email = String(entry.email || '').trim().toLowerCase();
+    const checkedAt = nowIso();
+
+    if (!isLikelyEmail(email)) {
+      invalidEmail += 1;
+      await updateFngSlackRecheckResult(ctx, entry.id, checkedAt, 'invalid_email', false);
+      continue;
+    }
+
+    const slackUser = await lookupSlackUserByEmail(ctx, email);
+    if (slackUser && !slackUser.deleted && !slackUser.is_bot && !slackUser.is_app_user) {
+      joined += 1;
+      await updateFngSlackRecheckResult(ctx, entry.id, checkedAt, 'joined', true);
+    } else if (slackUser) {
+      inactive += 1;
+      await updateFngSlackRecheckResult(ctx, entry.id, checkedAt, 'inactive', false);
+    } else {
+      notFound += 1;
+      await updateFngSlackRecheckResult(ctx, entry.id, checkedAt, 'not_found', false);
+    }
+  }
+
+  return json({
+    ok: true,
+    checked: result.results.length,
+    joined,
+    notFound,
+    inactive,
+    invalidEmail,
+  });
+}
+
+function fngSlackRecheckLimit(ctx) {
+  const parsed = Number.parseInt(String(ctx.env.FNG_SLACK_RECHECK_LIMIT || ''), 10);
+  if (Number.isFinite(parsed) && parsed > 0) return Math.min(parsed, 500);
+  return 100;
+}
+
+function isLikelyEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+async function updateFngSlackRecheckResult(ctx, entryId, checkedAt, result, joinedSlack) {
+  await ctx.env.DB.prepare(
+    `UPDATE fng_entries
+     SET joined_slack = CASE WHEN ? THEN 1 ELSE joined_slack END,
+         last_slack_recheck_at = ?,
+         slack_recheck_result = ?,
+         updated_at = CURRENT_TIMESTAMP
+     WHERE id = ?`,
+  ).bind(joinedSlack ? 1 : 0, checkedAt, result, entryId).run();
+}
 
 async function fngPaxList(ctx) {
   const result = await ctx.env.DB.prepare(

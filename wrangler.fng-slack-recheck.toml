@@ -1,0 +1,9 @@
+name = "f3-the-union-fng-slack-recheck"
+main = "workers/fng-slack-recheck.mjs"
+compatibility_date = "2026-05-19"
+
+[vars]
+PUBLIC_SITE_ORIGIN = "https://f3theunion.com"
+
+[triggers]
+crons = [ "0 13 * * *" ]

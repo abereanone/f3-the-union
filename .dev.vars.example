@@ -9,6 +9,8 @@ SEND_POSTS_TO_DEBUGGING=1
 CONTACT_SLACK_CHANNEL_ID=C03T6Q9CPDX
 REMINDERS_SLACK_CHANNEL_ID=C03T6Q9CPDX
 REMINDER_RUN_SECRET=replace_me_for_external_scheduler
+FNG_SLACK_RECHECK_SECRET=replace_me_for_external_scheduler
+FNG_SLACK_RECHECK_LIMIT=100
 
 # FNG — send all welcome emails to this address instead of the FNG's real email (for testing)
 DEV_EMAIL_OVERRIDE=

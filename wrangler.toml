@@ -13,3 +13,6 @@ preview_database_id = "f3_the_union"
 #
 # [triggers]
 # crons = [ "0 12 * * *" ]
+#
+# Separate scheduled Worker entrypoint for FNG Slack rechecks:
+# node scripts/wrangler.mjs deploy --config wrangler.fng-slack-recheck.toml
