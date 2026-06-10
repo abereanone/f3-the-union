@@ -1187,7 +1187,10 @@ async function runFngSlackRecheck(ctx) {
        AND email IS NOT NULL
        AND trim(email) != ''
        AND (last_slack_recheck_at IS NULL OR last_slack_recheck_at < ?)
-     ORDER BY COALESCE(source_timestamp, created_at) DESC
+     ORDER BY
+       last_slack_recheck_at IS NOT NULL,
+       last_slack_recheck_at,
+       COALESCE(source_timestamp, created_at) DESC
      LIMIT ${limit}`,
   ).bind(checkedBefore).all();
 
