@@ -593,10 +593,11 @@
     return `${month}/${day}`;
   }
 
-  function sameDayActivityPrompt(payload) {
+  function sameDayActivityPrompt(payload, existingEntries = []) {
     const selected = people.find((person) => person.id === payload.personId);
     const name = selected ? selected.f3Name : 'this PAX';
-    return `There is already a ${payload.category} entry for ${name} on ${formatDate(payload.activityDate)}. Are you sure ${name} did 2 ${categoryLabel(payload.category)} that day?`;
+    const total = existingEntries.length + 1;
+    return `There is already a ${payload.category} entry for ${name} on ${formatDate(payload.activityDate)}. Are you sure ${name} did ${total} ${categoryLabel(payload.category)} that day?`;
   }
 
   function activityPayloads(confirmSameDayActivity = false) {
@@ -629,7 +630,8 @@
       return method === 'PUT' ? await api.put(path, payload) : await api.post(path, payload);
     } catch (err) {
       if (err.code === 'SAME_DAY_ACTIVITY_CONFIRMATION_REQUIRED') {
-        if (confirm(sameDayActivityPrompt(payload))) {
+        const existingEntries = err.details?.entries || [];
+        if (confirm(sameDayActivityPrompt(payload, existingEntries))) {
           return method === 'PUT'
             ? await api.put(path, { ...payload, confirmSameDayActivity: true })
             : await api.post(path, { ...payload, confirmSameDayActivity: true });
@@ -644,8 +646,15 @@
     setStatus(els.entryStatus, 'Saving...');
     try {
       if (els.entryId.value) {
-        const payload = activityPayloads(false)[0];
-        await savePayloadWithConfirmation(`/api/miles/entries/${encodeURIComponent(els.entryId.value)}`, 'PUT', payload);
+        const editingEntry = recentEntries.find((e) => e.id === els.entryId.value);
+        const payloads = activityPayloads(false);
+        for (const payload of payloads) {
+          if (payload.category === editingEntry?.category) {
+            await savePayloadWithConfirmation(`/api/miles/entries/${encodeURIComponent(els.entryId.value)}`, 'PUT', payload);
+          } else {
+            await savePayloadWithConfirmation('/api/miles/entries', 'POST', payload);
+          }
+        }
         setStatus(els.entryStatus, 'Entry updated.');
         await loadAppData();
       } else {
@@ -781,7 +790,7 @@
       els.activityDate.value = entry.date;
       els.activityInputs.forEach((input) => {
         input.value = input.dataset.activity === entry.category ? Number(entry.miles || 0).toFixed(2) : '';
-        input.disabled = input.dataset.activity !== entry.category;
+        input.disabled = false;
       });
       els.formHeading.textContent = 'Edit Miles';
       els.saveEntry.textContent = 'Save Changes';

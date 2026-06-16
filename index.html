@@ -198,6 +198,13 @@
           const card = button.closest('.region-card');
           const isOpen = card.classList.toggle('open');
           button.setAttribute('aria-expanded', String(isOpen));
+          if (isOpen) {
+            setTimeout(() => {
+              const headerHeight = document.querySelector('.site-header')?.offsetHeight || 0;
+              const top = card.getBoundingClientRect().top + window.scrollY - headerHeight - 12;
+              window.scrollTo({ top, behavior: 'smooth' });
+            }, 0);
+          }
         });
       });
     }

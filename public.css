@@ -38,6 +38,11 @@ img {
   max-width: 100%;
 }
 
+:target,
+section[id] {
+  scroll-margin-top: 80px;
+}
+
 .site-header {
   position: sticky;
   top: 0;
@@ -91,24 +96,26 @@ img {
   align-items: center;
   gap: 0.5rem;
   flex-wrap: wrap;
-  font-size: 0.84rem;
-  font-weight: 900;
 }
 
 .social-links a {
-  border: 1px solid var(--line);
+  color: var(--white);
+  background: #1877f2;
   border-radius: 4px;
-  padding: 0.15rem 0.4rem;
+  padding: 0.2rem 0.6rem;
   text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 800;
+  line-height: 1.5;
 }
 
 .social-links a:focus {
-  background: var(--field);
+  background: #0f65d9;
 }
 
 @media (hover: hover) {
   .social-links a:hover {
-    background: var(--field);
+    background: #0f65d9;
   }
 }
 
@@ -133,6 +140,10 @@ img {
   background: var(--olive-dark);
   padding: 0.2rem 0.6rem;
   border-radius: 4px;
+  font-size: 0.88rem;
+  font-weight: 800;
+  line-height: 1.5;
+  text-decoration: none;
 }
 
 .hero {
@@ -513,8 +524,19 @@ textarea {
 }
 
 .testimonial-shell {
-  max-width: 780px;
+  max-width: 900px;
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+@media (max-width: 640px) {
+  .testimonial-shell {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
 }
 
 .gallery-shell {
@@ -665,31 +687,62 @@ textarea {
 
 .testimonial-media {
   overflow: hidden;
-  border-radius: 6px;
+  border-radius: 8px;
   background: var(--steel);
-  max-height: 560px;
 }
 
 .testimonial-media img {
   width: 100%;
   height: auto;
   display: block;
-  max-height: 560px;
-  object-fit: contain;
+  object-fit: cover;
+}
+
+.testimonial-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 .testimonial-quote {
-  margin: 1.25rem 0 0.5rem;
-  font-size: clamp(1.35rem, 3vw, 2.25rem);
-  font-weight: 900;
-  line-height: 1.15;
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.65;
+  font-style: italic;
+  color: var(--body);
 }
 
 .testimonial-name {
   margin: 0;
   color: var(--muted);
-  font-weight: 900;
+  font-weight: 700;
+  font-size: 0.95rem;
   text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.testimonial-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.dots {
+  display: flex;
+  gap: 0.45rem;
+}
+
+.dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 999px;
+  background: #b7b09f;
+}
+
+.dot.active {
+  background: var(--rust);
 }
 
 

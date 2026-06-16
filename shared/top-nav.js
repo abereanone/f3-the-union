@@ -1,7 +1,7 @@
 (() => {
   const container = document.getElementById('top-nav');
   if (!container) return;
-  container.innerHTML =
+  container.insertAdjacentHTML('beforebegin',
     '<header class="site-header">' +
     '<a class="brand" href="/"><img src="/media/f3-logo.webp" alt="F3" class="brand-logo" />F3 The Union</a>' +
     '<nav class="public-nav" aria-label="PAX navigation">' +
@@ -15,5 +15,7 @@
     '<a href="/pax/reminders/">Reminders</a>' +
     '<a href="/pax/never-q/">Need VQ</a>' +
     '</nav>' +
-    '</header>';
+    '</header>'
+  );
+  container.remove();
 })();

@@ -1,7 +1,7 @@
 (() => {
   const container = document.getElementById('public-nav');
   if (!container) return;
-  container.innerHTML =
+  container.insertAdjacentHTML('beforebegin',
     '<header class="site-header">' +
     '<a class="brand" href="/"><img src="/media/f3-theunion-logo.jpg" alt="F3 The Union" class="brand-logo" /></a>' +
     '<nav class="public-nav" aria-label="Main navigation">' +
@@ -17,5 +17,7 @@
     '</div>' +
     '<a class="nav-login" href="/login/">PAX Login</a>' +
     '</div>' +
-    '</header>';
+    '</header>'
+  );
+  container.remove();
 })();
