@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -17,22 +17,7 @@
   <link rel="stylesheet" href="/public.css" />
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="/"><img src="/media/f3-theunion-logo.jpg" alt="F3 The Union" class="brand-logo" /></a>
-    <nav class="public-nav" aria-label="Main navigation">
-      <a href="/#workouts">Workouts</a>
-      <a href="/core-principles/">Core Principles</a>
-      <a href="/gallery/">Gallery</a>
-      <a href="/testimonials/">Testimonials</a>
-      <a href="/#contact">Contact</a>
-    </nav>
-    <div class="header-actions">
-      <div class="social-links" aria-label="Social links">
-        <a href="https://www.facebook.com/f3theunion/" target="_blank" rel="noopener">Facebook</a>
-      </div>
-      <a class="nav-login" href="/login/">PAX Login</a>
-    </div>
-  </header>
+  <div id="public-nav"></div><script src="/shared/public-nav.js"></script>
 
   <main>
     <section class="page-intro">
@@ -43,19 +28,27 @@
 
     <section class="band">
       <div class="section-inner gallery-shell">
-        <div class="gallery-main">
-          <img id="gallery-photo" src="/media/group-large-flags.jpg" alt="The PAX of F3 The Union, flags flying at dusk." />
+        <div class="gallery-layout">
+          <div class="gallery-thumbs-col" id="gallery-thumbs"></div>
+          <div class="gallery-viewer">
+            <img id="gallery-photo" src="/media/group-large-flags.jpg" alt="" />
+            <p id="gallery-caption" class="gallery-caption"></p>
+          </div>
         </div>
-        <p id="gallery-caption" class="gallery-caption">The PAX of F3 The Union, flags flying at dusk.</p>
-        <div class="slider-controls">
-          <button id="prev-photo" type="button">Previous</button>
-          <div id="gallery-dots" class="dots" aria-label="Gallery position"></div>
-          <button id="next-photo" type="button">Next</button>
-        </div>
-        <div id="gallery-thumbs" class="gallery-thumbs"></div>
       </div>
     </section>
   </main>
+
+  <!-- Lightbox (mobile) -->
+  <div id="gallery-lightbox" class="gallery-lightbox" role="dialog" aria-modal="true">
+    <button class="lb-close" id="lb-close" aria-label="Close">✕</button>
+    <img id="lb-img" src="" alt="" />
+    <p class="lb-caption" id="lb-caption"></p>
+    <div class="lb-controls">
+      <button id="lb-prev" type="button">&#8249; Prev</button>
+      <button id="lb-next" type="button">Next &#8250;</button>
+    </div>
+  </div>
 
   <footer class="site-footer">
     <div class="section-inner">
@@ -95,38 +88,85 @@
     ];
 
     let activePhoto = 0;
+    const isMobile = () => window.matchMedia('(max-width: 700px)').matches;
+
     const photo = document.getElementById('gallery-photo');
     const caption = document.getElementById('gallery-caption');
-    const dots = document.getElementById('gallery-dots');
-    const thumbs = document.getElementById('gallery-thumbs');
+    const thumbsCol = document.getElementById('gallery-thumbs');
+    const lightbox = document.getElementById('gallery-lightbox');
+    const lbImg = document.getElementById('lb-img');
+    const lbCaption = document.getElementById('lb-caption');
 
-    function renderGallery() {
-      const item = galleryPhotos[activePhoto];
+    function updateViewer(index) {
+      const item = galleryPhotos[index];
       photo.src = item.src;
       photo.alt = item.caption;
       caption.textContent = item.caption;
-      dots.innerHTML = galleryPhotos.map((_, index) => `<span class="dot${index === activePhoto ? ' active' : ''}"></span>`).join('');
-      thumbs.innerHTML = galleryPhotos.map((entry, index) => `
-        <button type="button" class="${index === activePhoto ? 'active' : ''}" data-index="${index}">
-          <img src="${entry.src}" alt="${entry.caption}" />
-        </button>
-      `).join('');
-      thumbs.querySelectorAll('button').forEach((button) => {
-        button.addEventListener('click', () => {
-          activePhoto = Number(button.dataset.index);
-          renderGallery();
-        });
+      thumbsCol.querySelectorAll('button').forEach((btn, i) => {
+        btn.classList.toggle('active', i === index);
       });
     }
 
-    function move(delta) {
-      activePhoto = (activePhoto + delta + galleryPhotos.length) % galleryPhotos.length;
-      renderGallery();
+    function openLightbox(index) {
+      activePhoto = index;
+      const item = galleryPhotos[index];
+      lbImg.src = item.src;
+      lbImg.alt = item.caption;
+      lbCaption.textContent = item.caption;
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
     }
 
-    document.getElementById('prev-photo').addEventListener('click', () => move(-1));
-    document.getElementById('next-photo').addEventListener('click', () => move(1));
-    renderGallery();
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function lbMove(delta) {
+      activePhoto = (activePhoto + delta + galleryPhotos.length) % galleryPhotos.length;
+      openLightbox(activePhoto);
+    }
+
+    function thumbSrc(src) {
+      return src.replace('/media/', '/media/thumbs/');
+    }
+
+    // Build thumbs
+    thumbsCol.innerHTML = galleryPhotos.map((entry, index) => `
+      <button type="button" data-index="${index}">
+        <img src="${thumbSrc(entry.src)}" alt="${entry.caption}" loading="lazy" />
+      </button>
+    `).join('');
+
+    thumbsCol.querySelectorAll('button').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const index = Number(btn.dataset.index);
+        if (isMobile()) {
+          openLightbox(index);
+        } else {
+          activePhoto = index;
+          updateViewer(index);
+        }
+      });
+    });
+
+    document.getElementById('lb-close').addEventListener('click', closeLightbox);
+    document.getElementById('lb-prev').addEventListener('click', () => lbMove(-1));
+    document.getElementById('lb-next').addEventListener('click', () => lbMove(1));
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') lbMove(-1);
+      if (e.key === 'ArrowRight') lbMove(1);
+    });
+
+    // Init desktop viewer with first photo
+    updateViewer(0);
   </script>
 </body>
 </html>

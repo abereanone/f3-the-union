@@ -6,21 +6,13 @@
   <meta name="robots" content="noindex, nofollow" />
   <title>FNG Registration | F3 The Union</title>
   <link rel="icon" href="/favicon.ico" />
-  <link rel="stylesheet" href="../../style.css" />
   <link rel="stylesheet" href="/public.css" />
   <style>
-    body { max-width: 720px; }
-
-    .top-nav {
-      display: flex;
-      gap: 1.5rem;
-      align-items: center;
-      margin-bottom: 1rem;
-      font-weight: 600;
-      background: #fff;
+    .page-content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 1rem;
     }
-    .top-nav a { color: #1f3b6d; text-decoration: none; }
-    .top-nav a:hover, .top-nav a:focus { text-decoration: underline; }
 
     .panel {
       border: 1px solid #d7dce8;
@@ -131,11 +123,10 @@
   </style>
 </head>
 <body>
-  <div id="top-nav"></div><script src="/shared/top-nav.js"></script>
+  <div id="public-nav"></div><script src="/shared/public-nav.js"></script>
+  <main class="page-content">
   <h1>FNG Registration</h1>
   <p>Welcome to F3 The Union! Fill out this form to get registered. A welcome email will be sent to you with next steps, including a link to join our Slack workspace.</p>
-  <p class="history-link">Leadership: <a href="/fng/history.html">View FNG History</a> (login required)</p>
-
   <div id="success-panel" class="success-panel panel">
     <h2>You're in!</h2>
     <p id="success-name"></p>
@@ -159,22 +150,22 @@
       <div class="form-grid">
         <label>
           Legal Name *
-          <input id="legal-name" type="text" autocomplete="name" required placeholder="Your real name" />
+          <input id="legal-name" type="text" autocomplete="name" required />
         </label>
         <label>
-          F3 Nickname
-          <input id="f3-name" type="text" placeholder="e.g. Floppy Disk" />
+          F3 Nickname *
+          <input id="f3-name" type="text" required />
         </label>
       </div>
 
       <div class="form-grid" style="margin-top:1rem;">
         <label>
-          Email Address
-          <input id="email" type="email" autocomplete="email" placeholder="you@example.com" />
+          Email Address *
+          <input id="email" type="email" autocomplete="email" required />
         </label>
         <label>
           Phone Number
-          <input id="phone" type="tel" autocomplete="tel" placeholder="555-555-5555" maxlength="12" />
+          <input id="phone" type="tel" autocomplete="tel" maxlength="12" />
         </label>
       </div>
 
@@ -182,7 +173,7 @@
         <label>
           Emergency Contact
           <span class="hint">Name and phone number</span>
-          <input id="emergency-contact" type="text" placeholder="Jane Doe, (555) 555-5555" />
+          <input id="emergency-contact" type="text" />
         </label>
       </div>
 
@@ -194,8 +185,8 @@
           </select>
         </label>
         <label>
-          Who EH'd?
-          <input id="ehed-by" type="text" list="pax-list" placeholder="Search for a PAX..." autocomplete="off" />
+          Who Invited You?
+          <input id="ehed-by" type="text" list="pax-list" autocomplete="off" />
           <datalist id="pax-list"></datalist>
         </label>
       </div>
@@ -215,7 +206,7 @@
 
     async function loadLocations() {
       try {
-        const res = await fetch('/fng/locations.json');
+        const res = await fetch('/pax/fng/locations.json');
         const locations = await res.json();
         const sel = document.getElementById('location');
         locations.forEach(({ name }) => {
@@ -272,6 +263,16 @@
         submitBtn.disabled = false;
         return;
       }
+      if (!payload.f3Name) {
+        setStatus('F3 nickname is required.', true);
+        submitBtn.disabled = false;
+        return;
+      }
+      if (!payload.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(payload.email)) {
+        setStatus('A valid email address is required.', true);
+        submitBtn.disabled = false;
+        return;
+      }
       if (!payload.location) {
         setStatus('Please choose a location.', true);
         submitBtn.disabled = false;
@@ -313,5 +314,6 @@
     loadLocations();
     loadPax();
   </script>
+  </main>
 </body>
 </html>

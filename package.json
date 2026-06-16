@@ -9,9 +9,11 @@
     "db:migrate:remote": "node scripts/wrangler.mjs d1 migrations apply f3_the_union --remote",
     "people:sql": "node scripts/people-csv-to-sql.mjs",
     "miles:sql": "node scripts/miles-json-to-sql.mjs",
-    "miles:sheet:sql": "node scripts/miles-sheet-csv-to-sql.mjs"
+    "miles:sheet:sql": "node scripts/miles-sheet-csv-to-sql.mjs",
+    "generate:thumbs": "node scripts/generate-thumbs.mjs"
   },
   "devDependencies": {
+    "sharp": "^0.35.1",
     "wrangler": "^4.93.0",
     "xlsx": "^0.18.5"
   }
