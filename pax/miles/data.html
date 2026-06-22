@@ -808,16 +808,28 @@
       if (!challengeRows.length) {
         bodyRows = `<tr><td colspan="6" class="muted">No PAX enrolled yet.</td></tr>`;
       } else {
-        bodyRows = challengeRows.map((entry) => `
+        bodyRows = challengeRows.map((entry) => {
+          let goalCell;
+          if (entry.milesToGoal <= 0) {
+            goalCell = `<td style="font-weight:800;">🏆</td>`;
+          } else if (entry.milesToGoal <= goalMiles * 0.10) {
+            goalCell = `<td style="color:#1a7a1a;font-weight:800;">${formatMilesFixed(entry.milesToGoal)}</td>`;
+          } else if (entry.milesToGoal <= goalMiles * 0.20) {
+            goalCell = `<td style="color:#a07000;font-weight:800;">${formatMilesFixed(entry.milesToGoal)}</td>`;
+          } else {
+            goalCell = `<td style="color:#b02020;font-weight:800;">${formatMilesFixed(entry.milesToGoal)}</td>`;
+          }
+          return `
           <tr>
             <td class="person-name">${entry.name}</td>
             <td>${formatMilesFixed(entry.earned)}</td>
-            <td>${formatMilesFixed(entry.milesToGoal)}</td>
+            ${goalCell}
             <td>${formatMilesFixed(entry.neededAvg)}</td>
             <td>${formatMilesFixed(entry.avgPerDay)}</td>
             <td><strong>${formatMilesFixed(entry.projected)}</strong></td>
           </tr>
-        `).join('');
+        `;
+        }).join('');
       }
 
       const tableHtml = `
