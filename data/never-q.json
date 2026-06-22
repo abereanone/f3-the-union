@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-15T01:35:53.640Z",
+  "generated_at": "2026-06-22T01:35:50.503Z",
   "window_days": 60,
   "region_org_id": 38363,
   "report": "never_q",
@@ -37,9 +37,18 @@
       "pax": "Guano",
       "user_id": "119134",
       "home_region_id": "38363",
-      "bds_attended": 5,
+      "bds_attended": 4,
       "last_attended_date": "2026-06-10",
       "last_attended_ao": "The Dock",
+      "q_status": "Never Q"
+    },
+    {
+      "pax": "JLO",
+      "user_id": "127184",
+      "home_region_id": "38363",
+      "bds_attended": 3,
+      "last_attended_date": "2026-06-16",
+      "last_attended_ao": "The Show",
       "q_status": "Never Q"
     },
     {
@@ -52,12 +61,12 @@
       "q_status": "Never Q"
     },
     {
-      "pax": "JLO",
-      "user_id": "127184",
-      "home_region_id": "38363",
+      "pax": "Jolly Rancher",
+      "user_id": "1103",
+      "home_region_id": "36758",
       "bds_attended": 1,
-      "last_attended_date": "2026-06-11",
-      "last_attended_ao": "The Show",
+      "last_attended_date": "2026-06-19",
+      "last_attended_ao": "The Yard",
       "q_status": "Never Q"
     },
     {
@@ -85,15 +94,6 @@
       "bds_attended": 1,
       "last_attended_date": "2026-05-25",
       "last_attended_ao": "The Farm",
-      "q_status": "Never Q"
-    },
-    {
-      "pax": "Sky miles",
-      "user_id": "99917",
-      "home_region_id": "38363",
-      "bds_attended": 1,
-      "last_attended_date": "2026-04-21",
-      "last_attended_ao": "The Clocktower",
       "q_status": "Never Q"
     }
   ]
