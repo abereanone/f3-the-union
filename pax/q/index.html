@@ -466,7 +466,7 @@
         setText(pax, entry.pax);
         setText(statusBadge, entry.q_status || 'Unknown');
         setText(qDate, displayQDate(entry));
-        setText(daysSince, daysSinceLastQ(entry)?.toLocaleString() || '');
+        setText(daysSince, daysSinceLastQ(entry)?.toLocaleString() || (entry.q_status === 'Never Q' ? '>60' : ''));
         setText(qAo, displayQAo(entry));
         setText(attended, Number(entry.attended_since_last_q || 0).toLocaleString());
 
