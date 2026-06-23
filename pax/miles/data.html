@@ -816,6 +816,8 @@
             goalCell = `<td style="color:#1a7a1a;font-weight:800;">${formatMilesFixed(entry.milesToGoal)}</td>`;
           } else if (entry.milesToGoal <= goalMiles * 0.20) {
             goalCell = `<td style="color:#a07000;font-weight:800;">${formatMilesFixed(entry.milesToGoal)}</td>`;
+          } else if (entry.milesToGoal <= goalMiles * 0.30) {
+            goalCell = `<td style="color:#d2691e;font-weight:800;">${formatMilesFixed(entry.milesToGoal)}</td>`;
           } else {
             goalCell = `<td style="color:#b02020;font-weight:800;">${formatMilesFixed(entry.milesToGoal)}</td>`;
           }
