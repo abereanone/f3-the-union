@@ -468,7 +468,7 @@
         setText(qDate, displayQDate(entry));
         setText(daysSince, daysSinceLastQ(entry)?.toLocaleString() || (entry.q_status === 'Never Q' ? '>60' : ''));
         setText(qAo, displayQAo(entry));
-        setText(attended, Number(entry.attended_since_last_q || 0).toLocaleString());
+        setText(attended, (entry.q_status === 'Future Q Scheduled' ? 0 : Number(entry.attended_since_last_q || 0)).toLocaleString());
 
         status.appendChild(statusBadge);
         tr.append(pax, status, qDate, daysSince, qAo, attended);
